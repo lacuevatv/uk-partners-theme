@@ -1,0 +1,203 @@
+<?php
+/**
+ * Functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WordPress
+ * @subpackage uk_partners_theme
+ * @since 1.0
+ */
+
+/**
+ * Twenty Seventeen only works in WordPress 4.7 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
+
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+
+if ( ! function_exists( ' uk_partners_theme_setup' ) ) {
+    function uk_partners_theme_setup() {
+        /*
+        * Make theme available for translation.
+        * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentyseventeen
+        * If you're building a theme based on Twenty Seventeen, use a find and replace
+        * to change 'twentyseventeen' to the name of your theme in all the template files.
+        */
+
+        load_theme_textdomain( 'ukpartnerstheme', get_template_directory() . '/languages' );
+
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support( 'automatic-feed-links' );
+
+        /*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+        add_theme_support( 'title-tag' );
+        
+        /*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+        add_theme_support( 'post-thumbnails' );
+        
+        // This theme uses wp_nav_menu() in three location.
+		register_nav_menus( array(
+			'menu-1' => esc_html__( 'Principal', 'ukpartnerstheme' ),
+			'menu-2' => esc_html__( 'Superior', 'ukpartnerstheme' ),
+        ) );
+        
+        /*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+        ) );
+        
+        // Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'thonet_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) ) );
+
+		// Add theme support for selective refresh for widgets.
+        add_theme_support( 'customize-selective-refresh-widgets' );
+        
+        /**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support( 'custom-logo', array(
+			'height'      => 500,
+			'width'       => 500,
+			'flex-width'  => true,
+			'flex-height' => true,
+		) );
+    }
+}
+
+add_action( 'after_setup_theme', 'uk_partners_theme_setup' );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function uk_partners_theme_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Barra lateral', 'ukpartnerstheme' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Agregar widgets aquí.', 'ukpartnerstheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'ukpartnerstheme' ),
+		'id'            => 'footer-sidebar-1',
+		'description'   => esc_html__( 'Agregar widgets aquí.', 'ukpartnerstheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'ukpartnerstheme' ),
+		'id'            => 'footer-sidebar-2',
+		'description'   => esc_html__( 'Agregar widgets aquí.', 'ukpartnerstheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+    ) );
+    
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer 3', 'ukpartnerstheme' ),
+		'id'            => 'footer-sidebar-3',
+		'description'   => esc_html__( 'Agregar widgets aquí.', 'ukpartnerstheme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+
+add_action( 'widgets_init', 'uk_partners_theme_widgets_init' );
+
+
+/**
+ * Enqueue scripts and styles.
+ */
+function uk_partners_theme_scripts() {
+	//owlcarousel
+	wp_enqueue_style( 'owlcarousel', get_template_directory_uri() . '/assets/css/owl-styles/owl.carousel.min.css', array(), '2.2.1', 'all' );
+	//estilo principal del sitio y de la tienda
+	wp_enqueue_style( 'main-style', get_stylesheet_uri() );
+
+	//agregar js específico de woocommerce
+	wp_enqueue_script( 'thonet-woocommerce', get_template_directory_uri() . '/assets/js/main-script.js', array('jquery'), '1.0', true );
+
+	wp_localize_script( 'main-script', 'UKPartnersScriptsData', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	) );
+
+}
+
+add_action( 'wp_enqueue_scripts', 'uk_partners_theme_scripts' );
+
+/**
+ * Enqueue scripts and styles for admin.
+ */
+
+if ( ! function_exists( 'uk_partners_theme_wp_admin_style_scripts' ) ) {
+	/**
+	 * enqueue admin style
+	 *
+	 * @since 1.0
+	 *
+	 * @uses wp_enqueue_style()
+	 */
+	function uk_partners_theme_wp_admin_style_scripts() {
+        wp_enqueue_style( 'uk_partners_theme-style-admin', get_template_directory_uri() . '/assets/css/style-admin.css', array(), '1.0', 'all' );
+
+        wp_enqueue_script( 'uk_partners_theme-admin-script', get_template_directory_uri() . '/assets/js/admin-script.js', array('jquery'), '1.0', true );
+		
+	}
+}
+
+add_action( 'admin_enqueue_scripts', 'uk_partners_theme_wp_admin_style_scripts' );
+
+
+/**
+ * ADITIONALS
+*/
+//Custom template tags for this theme.
+require get_template_directory() . '/inc/template-tags.php';
+//Customizer additions.
+//require get_template_directory() . '/inc/customizer.php';
+//Load settings files.
+//require get_template_directory() . '/admin/settings.php';
+//require get_template_directory() . '/admin/meta-boxes.php';
+//require_once get_template_directory() . '/admin/ajax.php';

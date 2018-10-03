@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg2724"
+   version="1.1"
+   viewBox="0 0 10.292292 10.292292"
+   height="10.292292mm"
+   width="10.292292mm">
+  <defs
+     id="defs2718" />
+  <metadata
+     id="metadata2721">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(179.0152,-44.657426)"
+     id="layer1">
+    <g
+       id="g32"
+       transform="matrix(0.26458333,0,0,0.26458333,-193.23655,-0.36142794)">
+      <path
+         id="path28"
+         d="m 73.2,208.8 c -10.6,0 -19.2,-8.6 -19.2,-19.2 0,-10.6 8.6,-19.2 19.2,-19.2 10.6,0 19.2,8.6 19.2,19.2 0,10.6 -8.7,19.2 -19.2,19.2 z"
+         stroke-miterlimit="10"
+         style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-miterlimit:10" />
+      <circle
+         id="circle30"
+         r="16.5"
+         cy="189.60001"
+         cx="73.199997"
+         style="fill:#ffffff" />
+    </g>
+    <polyline
+       id="polyline34"
+       points="75.6,196.3 69,189.7 75.6,183.1 "
+       stroke-miterlimit="10"
+       style="fill:none;stroke:#3ac0c3;stroke-width:2;stroke-miterlimit:10"
+       transform="matrix(0.26458333,0,0,0.26458333,-193.23655,-0.36142794)" />
+  </g>
+</svg>

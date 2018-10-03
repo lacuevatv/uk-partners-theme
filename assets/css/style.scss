@@ -1,0 +1,53 @@
+/*
+Theme Name: UK Partners Theme
+Theme URI: 
+Author: lqva
+Author URI: http://lacueva.tv
+Description: Tema creado para UK Partners
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ukpartners
+Tags: 
+
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Reset
+2.0 Fuentes
+3.0 VARIABLES
+4.0 GENERAL
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+
+@import 'sass/reset';
+
+/*--------------------------------------------------------------
+2.0 Fuentes
+--------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700|Roboto:400,400i');
+
+/*--------------------------------------------------------------
+3.0 variables
+--------------------------------------------------------------*/
+
+@import 'sass/variables';
+
+/*--------------------------------------------------------------
+4.0 General
+--------------------------------------------------------------*/
+
+html, body {
+    font-family: $fuente-principal;
+    color: $color-texto;
+    background-color: $color-blanco;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
