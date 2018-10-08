@@ -13,6 +13,13 @@ $color-verde: #5fba46; //rgba(95,186,70,1)
 $color-rojo: #ec1c24; //rgba(236,28,36,1)
 $color-naranja: #f6921e; //rgba(246,146,30,1)
 $color-violeta: #8a4398; //rgba(138,67,152,1)
+$color-fondo-negro: #333333;
+$color-fondo-gris-oscuro: #494746;
+$color-fondo-gris-claro: #e5e6e7;
+
+$transitionSpeed:.5s;
+$transitionSpeedx2: 1s;
+$globalPadding: 5%;
 
 
 /*GRID OPTIONS*/
@@ -73,6 +80,22 @@ align-items: center;
 -ms-justify-content: center;
 -o-justify-content: center;
 justify-content: center;
+
+display: flex;
+display: -o-flex;
+display: -ms-flex;
+display: -moz-flex;
+display: -webkit-flex;
+-webkit-align-items: center;
+-moz-align-items: center;
+-ms-align-items: center;
+-o-align-items: center;
+align-items: center;
+-webkit-justify-content: space-between;
+-moz-justify-content: space-between;
+-ms-justify-content: space-between;
+-o-justify-content: space-between;
+justify-content: space-between;
 
 
 &:hover {

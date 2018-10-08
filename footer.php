@@ -17,18 +17,51 @@
 		</div><!-- #content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="wrap">
-				
-                
-				<?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
-				
-				<?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
 
-				<?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
+			<div class="first-footer">
+				<div class="wrap">
+					<div class="footer-columns">
+						<div class="footer-column-wrapper">
+							<?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
+						</div>
 
+						<div class="footer-column-wrapper">
+							<?php dynamic_sidebar( 'footer-sidebar-2' ); ?>
+						</div>
+
+						<div class="footer-column-wrapper">
+							<?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
+						</div>
+					</div>
+					
+					<div class="footer-logos">
+						<ul id="footer-logos" class="owl-carousel">
+							<li>
+								<a href="#" alt="logo-partners">
+									<img src="<?php echo IMAGES_DIR ?>temp/logo1.png">
+								</a>
+							</li>
+							<li>
+								<a href="#" alt="logo-partners">
+									<img src="<?php echo IMAGES_DIR ?>temp/logo2.png">
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div><!-- .wrap -->
+			</div><!-- .first-footer -->
 				
-				
-			</div><!-- .wrap -->
+			
+			<div class="second-footer">
+				<div class="wrap">
+					<p class="legales-sitio">
+						<?php _e('Desarrollo por', 'ukpartnerstheme'); ?> <a href="#">Natalia Costanzo</a>
+					</p>
+				</div><!-- .wrap -->
+			</div><!-- .second-footer -->
+
+			
 		</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->

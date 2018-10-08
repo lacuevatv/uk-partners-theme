@@ -27,27 +27,43 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Directo al contenido', 'ukpartnerstheme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Menú superior', 'ukpartnerstheme' ); ?>">
+			
+			<?php get_template_part( 'template-parts/header/content', 'barra-sup' ); ?>
+			
+			<div class="wrap">
+				<div class="barra-principal">
+					<h1>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<span class="screen-reader-text screen-reader-text-hidden" aria-hidden="true"><?php bloginfo( 'name' ); ?></span>
+							<picture>
+								<source srcset="<?php echo IMAGES_DIR ?>logo-uk.svg" type="image/svg+xml">
+								<source srcset="<?php echo IMAGES_DIR ?>logo-uk.png,<?php echo IMAGES_DIR ?>logo-uk@2x.png 2x" media="(min-width: 315px)">
+								<img src="<?php echo IMAGES_DIR ?>logo-uk.png" alt="Logo sitio">
+							</picture>
+						</a>
+					</h1>
 
-		<nav id="site-navigation" class="main-navigation">
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'primary-menu',
-					'container_class'=> 'primary-menu-wrapper',
-				) );
-			?>
+					<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+						<span class="screen-reader-text"><?php
+						_e( 'Menú', 'ukpartnerstheme' );
+						?></span>
+						<span class="tog1"></span>
+						<span class="tog2"></span>
+						<span class="tog3"></span>
+					</button>
 
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-2',
-					'menu_id'        => 'sup-menu',
-					'menu_class'     => 'sup-menu',
-					'container_class'=> 'sup-menu-wrapper',
-				) );
-			?>
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'menu_class'     => 'primary-menu',
+							'container_class'=> 'primary-menu-wrapper',
+						) );
+					?>
+				</div>
+			</div><!-- //.wrap -->
 		</nav>
-
 	</header><!-- #masthead -->
 
 	<div class="site-content-contain">

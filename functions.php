@@ -17,6 +17,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
+//CONSTANTES //
+define('IMAGES_DIR' , get_template_directory_uri() . '/assets/images/');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -153,11 +156,14 @@ add_action( 'widgets_init', 'uk_partners_theme_widgets_init' );
 function uk_partners_theme_scripts() {
 	//owlcarousel
 	wp_enqueue_style( 'owlcarousel', get_template_directory_uri() . '/assets/css/owl-styles/owl.carousel.min.css', array(), '2.2.1', 'all' );
-	//estilo principal del sitio y de la tienda
+	//estilo principal del sitio
 	wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 
-	//agregar js específico de woocommerce
-	wp_enqueue_script( 'thonet-woocommerce', get_template_directory_uri() . '/assets/js/main-script.js', array('jquery'), '1.0', true );
+	//agregar js de owlcarousel
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0', true );
+
+	//agregar js específico del theme
+	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/main-script.js', array('jquery'), '1.0', true );
 
 	wp_localize_script( 'main-script', 'UKPartnersScriptsData', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
