@@ -18,11 +18,12 @@ Tags:
 1.0 Base styles
 2.0 MAIN FOOTER
 3.0 MAIN HEADER & NAV
+4.0 SIDEBARS & WIDGETS
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Base styles
 --------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,700|Roboto:400,400i");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto:400,400i");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -161,6 +162,36 @@ button {
 /*FUENTES*/
 /*COLORES*/
 /*GRID OPTIONS*/
+/*MIXINS*/
+/*EXTENSIONS*/
+.title-basic-dash, .widget .widget-title {
+  padding-bottom: 1rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.title-basic-dash:before, .widget .widget-title:before {
+  content: "";
+  display: block;
+  background-color: #18bdca;
+  width: 30%;
+  max-width: 2.5rem;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.title-basic-dash-center {
+  text-align: center;
+}
+.title-basic-dash-center:before {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 /*
 @media (min-width: $md) {}
 -webkit-
@@ -203,12 +234,13 @@ justify-content: space-between;
 
 &:hover {
   zoom: 1;
-  filter: alpha(opacity=50);
-  opacity: 0.5;
+  filter: alpha(opacity=70);
+  opacity: 0.7;
 }
 */
 html, body {
   font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   color: #929497;
   background-color: #fff;
   font-size: 1rem;
@@ -542,6 +574,7 @@ html, body {
 }
 @media (min-width: 992px) {
   .barra-principal .primary-menu-wrapper .primary-menu {
+    font-size: 0.85rem;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -768,6 +801,78 @@ html, body {
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: initial;
+}
+
+/*--------------------------------------------------------------
+4.0 SIDEBARS & WIDGETS
+--------------------------------------------------------------*/
+/*
+ * WIDGETS
+*/
+.widget {
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+.widget .widget-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.widget p {
+  margin-bottom: 0.2em;
+}
+.widget .follow-us-widget {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+}
+.widget .follow-us-widget li {
+  margin-right: 1rem;
+}
+.widget .follow-us-widget li .icon-follow-us {
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.widget .follow-us-widget li .icon-follow-us:hover {
+  zoom: 1;
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
+.widget .follow-us-widget li .icon-follow-facebook {
+  background-image: url(assets/images/icon-face.png);
+  background-size: cover;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+  .widget .follow-us-widget li .icon-follow-facebook {
+    background-image: url(assets/images/icon-face@2x.png);
+    background-size: cover;
+  }
+}
+.widget .follow-us-widget li .icon-follow-instagram {
+  background-image: url(assets/images/icon-inst.png);
+  background-size: cover;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+  .widget .follow-us-widget li .icon-follow-instagram {
+    background-image: url(assets/images/icon-inst@2x.png);
+    background-size: cover;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

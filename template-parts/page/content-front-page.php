@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" style="display:flex;aling-items:center;justify-content:center;height:480px">
+<article id="post-<?php the_ID(); ?>" style="display:flex;align-items:center;justify-content:center;height:480px">
 
 <div class="wrap">
         <header class="entry-header">
