@@ -7,7 +7,7 @@ $color-blanco: #fff;
 $color-negro: #323232; //rgba(50,50,50,1)
 $color-texto: #929497; //rgba(146,148,151,1)
 $color-texto-gris: #808184; //rgba(128,129,132,1)
-$color-texto-negro: #58595b; //rgba(88,89,91,1)
+$color-texto-negro: #595a5c; //rgba(88,89,91,1)
 $color-turqueza: #18bdca; //rgba(24,189,202,1)
 $color-verde: #5fba46; //rgba(95,186,70,1)
 $color-rojo: #ec1c24; //rgba(236,28,36,1)
@@ -59,7 +59,9 @@ $xlg: 1600px;
           transform: $var;
 }
 
-/*EXTENSIONS*/
+/*EXTENSIONS
+*claves que no funcionan solas
+*/
 
 .title-basic-dash {
   padding-bottom: 1rem;
@@ -70,6 +72,7 @@ $xlg: 1600px;
       display: block;
       background-color: $color-turqueza;
       width: 30%;
+      min-width: 1rem;
       max-width: 2.5rem;
       height: 2px;
       position: absolute;

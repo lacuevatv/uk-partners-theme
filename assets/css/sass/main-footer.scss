@@ -33,19 +33,6 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
-        /*@media (max-width: $md) {
-            -webkit-flex-direction: column;
-            -moz-flex-direction: column;
-            -ms-flex-direction: column;
-            -o-flex-direction: column;
-            flex-direction: column;
-            -webkit-align-items: flex-start;
-            -moz-align-items: flex-start;
-            -ms-align-items: flex-start;
-            -o-align-items: flex-start;
-            align-items: flex-start;
-        }*/
-
         .footer-column-wrapper {
             @media (max-width: $md) {
                 margin-bottom: 40px;

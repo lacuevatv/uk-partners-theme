@@ -18,7 +18,9 @@ Tags:
 1.0 Base styles
 2.0 MAIN FOOTER
 3.0 MAIN HEADER & NAV
-4.0 SIDEBARS & WIDGETS
+4.0 GRILLA
+5.0 SIDEBARS & WIDGETS
+6.0 FRONT PAGE
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -43,6 +45,11 @@ html, body {
     min-height: 100%;
 }
 
+.site-content-contain {
+    position: relative;
+    z-index: 1;
+}
+
 .wrap {
     width: 80%;
     margin: 0 auto;
@@ -61,8 +68,20 @@ html, body {
 @import 'sass/main-header';
 
 /*--------------------------------------------------------------
-4.0 SIDEBARS & WIDGETS
+4.0 GRILLA
+--------------------------------------------------------------*/
+
+@import 'sass/grilla-botones';
+
+/*--------------------------------------------------------------
+5.0 SIDEBARS & WIDGETS
 --------------------------------------------------------------*/
 
 @import 'sass/sidebar';
+
+/*--------------------------------------------------------------
+6.0 FRONT PAGE
+--------------------------------------------------------------*/
+
+@import 'sass/front-page';
 

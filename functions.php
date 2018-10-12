@@ -207,3 +207,135 @@ require get_template_directory() . '/inc/template-tags.php';
 //require get_template_directory() . '/admin/settings.php';
 //require get_template_directory() . '/admin/meta-boxes.php';
 //require_once get_template_directory() . '/admin/ajax.php';
+
+
+/**
+ * DATA QUE REMPLAZA LA BD POR AHORA
+*/
+
+global $sliders_databd;
+$sliders_databd = array(
+    array(
+        'titulo' => 'Viajes de estudio a Londres.',
+        'image' => IMAGES_DIR . 'temp/header1.jpg',
+        'image-mobile' => IMAGES_DIR . 'temp/header1-mobile.jpg',
+        'texto' => 'Todo lo que siempre imaginaste... y más.',
+        'url' => '#',
+        'target' => '_self',
+        'texto-boton' => 'Más información',
+	),
+	array(
+        'titulo' => 'Arma tu viaje',
+        'image' => IMAGES_DIR . 'temp/header2.jpg',
+        'image-mobile' => IMAGES_DIR . 'temp/header2-mobile.jpg',
+        'texto' => 'Podés viajar solo en cualquier momento del año y por el tiempo que quieras y al destino que quieras',
+        'url' => '#',
+        'target' => '_self',
+        'texto-boton' => 'Más información',
+    ),
+);
+
+global $testimonios_databd;
+$testimonios_databd = array(
+    array(
+        'nombre' => 'Pili Candria',
+        'image' => IMAGES_DIR . 'temp/persona.png',
+        'texto' => 'El viaje fue increíble. No paramos un minuto, los coordinadores no querían que nos perdiéramos nada de lo que había para contarnos y mostrarnos. Hicimos mil actividades distintas, siempre había algo más para ver. Además, como estábamos yendo a las clases, podíamos disfrutar más las salidas. La profesora organizaba las clases según las actividades que teníamos en el día, y hacía que entendiéramos lo que íbamos a ver a la tarde. Fue genial haber conocido Inglaterra así.',
+	),
+	array(
+        'nombre' => 'Nati Apellido',
+        'image' => IMAGES_DIR . 'default_persona.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+    ),
+);
+
+global $destinos_databd;
+$destinos_databd = array(
+    array(
+        'titulo' => 'Edimburgo',
+        'image' => IMAGES_DIR . 'temp/edinburgo.jpg',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+	),
+	
+	array(
+        'titulo' => 'Oxford',
+        'image' => IMAGES_DIR . 'temp/oxford.jpg',
+		'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+		'url' => '#',
+		'destacado' => true,
+	),
+	
+	array(
+        'titulo' => 'Torquay',
+        'image' => IMAGES_DIR . 'temp/torquay.jpg',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+	),
+
+	array(
+        'titulo' => 'Dublin',
+        'image' => IMAGES_DIR . 'temp/dublin.jpg',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+	),
+
+	array(
+        'titulo' => 'New York',
+        'image' => IMAGES_DIR . 'temp/newyork.jpg',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+	),
+
+	array(
+        'titulo' => 'Más Lugares',
+        'image' => IMAGES_DIR . 'default_destinos.png',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+	),
+);
+
+global $cursos_databd;
+$cursos_databd = array(
+    array(
+        'titulo' => 'General English',
+        'image' => IMAGES_DIR . 'temp/curso2.jpg',
+		'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+		'url' => '#',
+		'destacado' => false,
+	),
+	array(
+        'titulo' => 'Teachers training',
+        'image' => IMAGES_DIR . 'temp/curso1.jpg',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => true,
+	),
+	array(
+        'titulo' => 'Family English',
+        'image' => IMAGES_DIR . 'default_cursos.png',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+	),
+	array(
+        'titulo' => 'University Fundation Programme',
+        'image' => IMAGES_DIR . 'default_cursos.png',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+	),
+	array(
+        'titulo' => 'Kids Choice English',
+        'image' => IMAGES_DIR . 'default_cursos.png',
+		'texto' => '',
+		'url' => '#',
+		'destacado' => false,
+    ),
+);
+

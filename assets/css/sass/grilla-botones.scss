@@ -1,0 +1,184 @@
+.row {
+    position: relative;
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+
+
+.row-align-center {
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+.row-justify-center {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+}
+
+.row-justify-between {
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.row-reverse-in-pc {
+    @media (min-width: $md) {
+        -webkit-flex-direction: row-reverse;
+        -moz-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        -o-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    padding: .8rem 1rem;
+    @include transition(all $transitionSpeed);
+
+    &:hover {
+        zoom: 1;
+        filter: alpha(opacity=70);
+        opacity: 0.7;
+    }
+
+}
+
+.btn-violeta {
+    background-color: $color-violeta;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-verde {
+    background-color: $color-verde;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-rojo {
+    background-color: $color-rojo;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-naranja {
+    background-color: $color-naranja;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+//navegación carousel
+.owl-carousel {
+    position: relative;
+    .owl-nav {
+
+        .icon-arrow {
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+
+        .icon-arrow-left {
+            background-image: url(assets/images/icon-arrow-left.png);
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            @include transition(all $transitionSpeed);
+            left: -5%;
+
+            @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+                background-image: url(assets/images/icon-arrow-left@2x.png);
+                background-size: 40px 40px;
+            }
+
+            &:hover {
+                zoom: 1;
+                filter: alpha(opacity=70);
+                opacity: 0.7;
+            }
+        }
+
+        .icon-arrow-right {
+            background-image: url(assets/images/icon-arrow-right.png);
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            @include transition(all $transitionSpeed);
+            right: -5%;
+
+            @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+                background-image: url(assets/images/icon-arrow-right@2x.png);
+                background-size: 40px 40px;
+            }
+
+            &:hover {
+                zoom: 1;
+                filter: alpha(opacity=70);
+                opacity: 0.7;
+            }
+        }
+
+        .icon-arrow-left-d {
+            background-image: url(assets/images/icon-arrow-left-d.png);
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            @include transition(all $transitionSpeed);
+            left: -5%;
+
+            @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+                background-image: url(assets/images/icon-arrow-left-d@2x.png);
+                background-size: 40px 40px;
+            }
+
+            &:hover {
+                zoom: 1;
+                filter: alpha(opacity=70);
+                opacity: 0.7;
+            }
+        }
+
+        .icon-arrow-right-d {
+            background-image: url(assets/images/icon-arrow-right-d.png);
+            background-size: 40px 40px;
+            background-repeat: no-repeat;
+            @include transition(all $transitionSpeed);
+            right: -5%;
+
+            @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+                background-image: url(assets/images/icon-arrow-right-d@2x.png);
+                background-size: 40px 40px;
+            }
+
+            &:hover {
+                zoom: 1;
+                filter: alpha(opacity=70);
+                opacity: 0.7;
+            }
+        }
+    }
+}
