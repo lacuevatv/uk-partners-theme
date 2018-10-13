@@ -536,6 +536,10 @@ html, body {
     height: 85px;
   }
 }
+.barra-principal h1 {
+  position: relative;
+  z-index: 11;
+}
 .barra-principal h1 img {
   display: block;
   width: 35px;
@@ -1351,7 +1355,7 @@ html, body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
-  width: 100%;
+  width: 110%;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen .shutter {
   display: block;
@@ -1539,7 +1543,7 @@ html, body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
-  width: 100%;
+  width: 110%;
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-imagen .shutter {
   display: block;

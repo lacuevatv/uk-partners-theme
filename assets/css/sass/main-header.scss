@@ -218,6 +218,8 @@
     }
 
     h1 {
+        position: relative;
+        z-index: 11;
         img {
             display: block;
             width: 35px;
