@@ -68,7 +68,8 @@
      * FUNCIONES
     */
    function loaderOff() {
-       $('.loader').fadeOut();
+       $('.loader').addClass('loader-off');
+       $('.barra-principal').find('h1 img').removeClass('image-loader');
    }//loaderOff()
 
     function getCarouselFooter() {

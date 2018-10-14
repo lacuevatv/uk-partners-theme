@@ -25,7 +25,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<div class="loader">
+	<!--<div class="loader">
 		<picture>
 			<source srcset="<?php echo IMAGES_DIR ?>logo-uk.svg" type="image/svg+xml">
 			<source srcset="<?php echo IMAGES_DIR ?>logo-uk.png,<?php echo IMAGES_DIR ?>logo-uk@2x.png 2x" media="(min-width: 315px)">
@@ -37,8 +37,8 @@
 			<span class="animation-blink">.</span>
 			<span class="animation-blink-2">.</span>
 		</p>
-		<!--<img src="<?php echo IMAGES_DIR; ?>loader espiral.gif" class="loader-image">-->
-	</div>
+		
+	</div>-->
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Directo al contenido', 'ukpartnerstheme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
@@ -48,13 +48,22 @@
 			
 			<div class="wrap">
 				<div class="barra-principal">
+					<div class="loader">
+						<p>
+							<?php _e( 'Bienvenidos', 'ukpartnerstheme' ); ?>
+							<span>.</span>
+							<span class="animation-blink">.</span>
+							<span class="animation-blink-2">.</span>
+						</p>
+					</div>
+
 					<h1>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<span class="screen-reader-text screen-reader-text-hidden" aria-hidden="true"><?php bloginfo( 'name' ); ?></span>
 							<picture>
 								<source srcset="<?php echo IMAGES_DIR ?>logo-uk.svg" type="image/svg+xml">
 								<source srcset="<?php echo IMAGES_DIR ?>logo-uk.png,<?php echo IMAGES_DIR ?>logo-uk@2x.png 2x" media="(min-width: 315px)">
-								<img src="<?php echo IMAGES_DIR ?>logo-uk.png" alt="Logo sitio">
+								<img class="image-loader" src="<?php echo IMAGES_DIR ?>logo-uk.png" alt="Logo sitio">
 							</picture>
 						</a>
 					</h1>
