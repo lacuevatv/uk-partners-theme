@@ -351,11 +351,13 @@
                         font-weight: 700;
                         font-size: 1rem;
                         margin-bottom: .5rem;
+                        width: 100%;
                     }
                     p {
                         font-size: .7rem;
                         line-height: 1rem;
                         margin-bottom: 1rem;
+                        width: 100%;
                     }
                 }//.destino-contenido
                 
@@ -479,7 +481,7 @@
                         z-index: 1;
                         top: 50%;
                         @include transform(translateY(-50%));
-                        left: 0;
+                        left: -5%;
                         width: 110%;
                     }
 
@@ -544,11 +546,13 @@
                         font-weight: 700;
                         font-size: 1rem;
                         margin-bottom: .5rem;
+                        width: 100%;
                     }
                     p {
                         font-size: .7rem;
                         line-height: 1rem;
                         margin-bottom: 1rem;
+                        width: 100%;
                     }
                 }//.curso-contenido
                 

@@ -243,7 +243,106 @@ justify-content: space-between;
   opacity: 0.7;
 }
 */
+.row {
+  position: relative;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.row-align-center {
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+
+.row-justify-center {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+}
+
+.row-justify-between {
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+  .row-reverse-in-pc {
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    -o-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+}
+
+.animation-blink {
+  opacity: 0;
+  animation-name: blinking;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+.animation-blink-2 {
+  opacity: 0;
+  animation-name: blinking-2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blinking-2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 html, body {
+  position: relative;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   color: #929497;
@@ -261,6 +360,21 @@ html, body {
 .wrap {
   width: 80%;
   margin: 0 auto;
+}
+
+.loader {
+  position: absolute;
+  z-index: 44;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #323232;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 10rem;
+}
+.loader p {
+  margin: 2rem auto 2rem;
 }
 
 /*--------------------------------------------------------------
@@ -811,56 +925,8 @@ html, body {
 }
 
 /*--------------------------------------------------------------
-4.0 GRILLA
+4.0 BOTONES
 --------------------------------------------------------------*/
-.row {
-  position: relative;
-  display: flex;
-  display: -o-flex;
-  display: -ms-flex;
-  display: -moz-flex;
-  display: -webkit-flex;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  -o-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.row-align-center {
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
-}
-
-.row-justify-center {
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-}
-
-.row-justify-between {
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-}
-
-@media (min-width: 992px) {
-  .row-reverse-in-pc {
-    -webkit-flex-direction: row-reverse;
-    -moz-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    -o-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-  }
-}
-
 .btn {
   display: inline-block;
   cursor: pointer;
@@ -1427,11 +1493,13 @@ html, body {
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido p {
   font-size: 0.7rem;
   line-height: 1rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino:hover .destino-imagen .shutter {
@@ -1542,7 +1610,7 @@ html, body {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  left: 0;
+  left: -5%;
   width: 110%;
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-imagen .shutter {
@@ -1615,11 +1683,13 @@ html, body {
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-contenido p {
   font-size: 0.7rem;
   line-height: 1rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso:hover .curso-imagen .shutter {

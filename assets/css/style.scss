@@ -35,7 +35,12 @@ Tags:
 
 @import 'sass/variables';
 
+@import 'sass/grilla';
+
+@import 'sass/animations';
+
 html, body {
+    position: relative;
     font-family: $fuente-principal;
     font-weight: 500;
     color: $color-texto;
@@ -55,6 +60,22 @@ html, body {
     margin: 0 auto;
 }
 
+.loader {
+    position: absolute;
+    z-index: 44;
+    width: 100%;
+    height: 100%;
+    background-color:$color-blanco;
+    color: $color-negro;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 10rem;
+
+    p {
+        margin: 2rem auto 2rem;
+    }
+}
+
 /*--------------------------------------------------------------
 2.0 Main Footer
 --------------------------------------------------------------*/
@@ -68,10 +89,10 @@ html, body {
 @import 'sass/main-header';
 
 /*--------------------------------------------------------------
-4.0 GRILLA
+4.0 BOTONES
 --------------------------------------------------------------*/
 
-@import 'sass/grilla-botones';
+@import 'sass/botones';
 
 /*--------------------------------------------------------------
 5.0 SIDEBARS & WIDGETS

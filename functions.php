@@ -217,7 +217,7 @@ global $sliders_databd;
 $sliders_databd = array(
     array(
         'titulo' => 'Viajes de estudio a Londres.',
-        'image' => IMAGES_DIR . 'temp/header1.jpg',
+		'image' => IMAGES_DIR . 'temp/header1.jpg',
         'image-mobile' => IMAGES_DIR . 'temp/header1-mobile.jpg',
         'texto' => 'Todo lo que siempre imaginaste... y más.',
         'url' => '#',

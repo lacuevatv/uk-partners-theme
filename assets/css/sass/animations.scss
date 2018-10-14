@@ -1,0 +1,31 @@
+.animation-blink {
+    opacity: 0;
+    animation-name: blinking;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+.animation-blink-2 {
+    opacity: 0;
+    animation-name: blinking-2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes blinking {
+    0% {opacity: 0;}
+    30% {opacity: 0;}
+    40% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes blinking-2 {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    60% {opacity: 1;}
+    90% {opacity: 1;}
+    100% {opacity: 0;}
+}

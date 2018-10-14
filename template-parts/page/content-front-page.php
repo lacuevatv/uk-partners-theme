@@ -11,8 +11,8 @@
                 <li class="slider-item">
                     <div class="slider-image">
                         <picture>
-                            <source class="owl-lazy" srcset="<?php echo $slider['image-mobile']; ?>" media="(max-width: 769px)">
-                            <img class="owl-lazy" data-src="<?php echo $slider['image']; ?>" alt="<?php echo $slider['titulo']; ?>">
+                            <source srcset="<?php echo $slider['image-mobile']; ?>" media="(max-width: 769px)">
+                            <img src="<?php echo $slider['image']; ?>" alt="<?php echo $slider['titulo']; ?>">
                         </picture>
                         
                         <span class="shutter">
@@ -62,8 +62,8 @@
                                 <article class="destino<?php if ($destino['destacado']) {echo ' destino-destacado'; } ?>">
                                     
                                     <span class="tag-destacado"><?php _e('Nuevo', 'ukpartnerstheme'); ?></span>
-                                    <div class="destino-imagen">
-                                        <img src="<?php echo $destino['image']; ?>" alt="<?php echo $destino['titulo']; ?>">
+                                    <div class="destino-imagen load-images-ajax">
+                                        <img data-src="<?php echo $destino['image']; ?>" alt="<?php echo $destino['titulo']; ?>">
                                         <span class="shutter"></span>
                                     </div>
 
@@ -90,10 +90,10 @@
 
 <!-- **********ARMA VIAJE********* -->
     <section class="uk-arma-viaje">
-        <div class="background-section-wrapper">
+        <div class="background-section-wrapper load-images-ajax">
             <picture>
                 <source srcset="<?php echo IMAGES_DIR; ?>temp/viaje-mobile.jpg" media="(max-width: 769px)">
-                <img src="<?php echo IMAGES_DIR; ?>temp/viaje.jpg" alt="<?php _e('Arma tu viaje', 'ukpartnerstheme'); ?>">
+                <img data-src="<?php echo IMAGES_DIR; ?>temp/viaje.jpg" alt="<?php _e('Arma tu viaje', 'ukpartnerstheme'); ?>">
             </picture>
             <span class="shutter"></span>
         </div>
@@ -141,7 +141,7 @@
                                         
                                         <span class="tag-destacado"><?php _e('Nuevo', 'ukpartnerstheme'); ?></span>
                                         <div class="curso-imagen">
-                                            <img src="<?php echo $curso['image']; ?>" alt="<?php echo $curso['titulo']; ?>">
+                                            <img class="owl-lazy" data-src="<?php echo $curso['image']; ?>" alt="<?php echo $curso['titulo']; ?>">
                                             <span class="shutter"></span>
                                         </div>
 
@@ -170,10 +170,10 @@
 
 <!-- **********ALOJAMIENTOS********* -->
     <section class="uk-alojamiento">
-        <div class="background-section-wrapper">
+        <div class="background-section-wrapper load-images-ajax">
             <picture>
                 <source srcset="<?php echo IMAGES_DIR ?>temp/alojamiento-mobile.jpg" media="(max-width: 769px)">
-                <img src="<?php echo IMAGES_DIR; ?>temp/alojamiento.jpg" alt="<?php _e('Alojamiento', 'ukpartnerstheme'); ?>">
+                <img data-src="<?php echo IMAGES_DIR; ?>temp/alojamiento.jpg" alt="<?php _e('Alojamiento', 'ukpartnerstheme'); ?>">
             </picture>
             <span class="shutter"></span>
         </div>
@@ -219,7 +219,7 @@
                         <li class="testimonio-item">
                             <div class="testimonio-image">
                                 <figure>
-                                    <img src="<?php echo $testimonio['image']; ?>" alt="<?php echo $testimonio['nombre']; ?>">
+                                    <img class="owl-lazy" data-src="<?php echo $testimonio['image']; ?>" alt="<?php echo $testimonio['nombre']; ?>">
                                 </figure>
                                 <h3 class="testimonio-nombre">
                                     <?php echo $testimonio['nombre']; ?>

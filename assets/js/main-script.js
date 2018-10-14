@@ -40,16 +40,25 @@
 
 } )( jQuery );
 
-//window load
+/*
+* window load
+*/
 ( function( $ ) {
 
 	$(window).on('load', function(){
-
-        //carousel de pagina de inicio
-        getCarouselInicio();
+        //oculta el loader
+        loaderOff();
         //carousel de logos en el footer se inicia siempre
         getCarouselFooter();
 
+        //carousel de pagina de inicio
+        getCarouselInicio();
+        
+
+        //carga las imagenes por ajax
+        getLazyImages();
+
+        //inicial los parallax
         initParallax();
         
     });//window load
@@ -58,8 +67,12 @@
     /*
      * FUNCIONES
     */
+   function loaderOff() {
+       $('.loader').fadeOut();
+   }//loaderOff()
+
     function getCarouselFooter() {
-            
+        
         $('#footer-logos').owlCarousel({
             autoplay:true,
             autoplayTimeout:4000,
@@ -92,8 +105,7 @@
             autoplayTimeout:4000,
             autoplayHoverPause:true,
             loop:true,
-            lazyLoad:true,
-            margin:10,
+            margin:0,
             nav:true,
             navText : ['<span class="icon-arrow icon-arrow-left"></span>','<span class="icon-arrow icon-arrow-right"></span>'],
             responsive:{
@@ -110,6 +122,7 @@
             autoHeight: true,
             loop:true,
             margin:10,
+            lazyLoad:true,
             nav:true,
             navText : ['<span class="icon-arrow icon-arrow-left-d"></span>','<span class="icon-arrow icon-arrow-right-d"></span>'],
             responsive:{
@@ -123,6 +136,7 @@
             loop:true,
             margin:0,
             nav:true,
+            lazyLoad:true,
             navText : ['<span class="icon-arrow icon-arrow-left-d"></span>','<span class="icon-arrow icon-arrow-right-d"></span>'],
             responsive:{
                 0:{
@@ -139,7 +153,24 @@
         });
     }//getCarouselInicio()
 
+    /*
+     * carga las imagenes por ajax
+    */
+    function getLazyImages() {
+        $('.load-images-ajax').each(function(){
+            var img = $(this).find('img');
+        
+            $(img).attr('src', $(img).attr('data-src') );
+            if ( $(img).attr('src') != '') {
+                $(this).fadeIn();
+            }
+        });
+    }
 
+
+    /*
+     *inicia los paralax
+    */
     function initParallax() {
         //detiene el parallax en sistemas apple mobiles
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -189,5 +220,7 @@
             
         });//scroll
     }//initParallax()
+
+    
 
 } )( jQuery );
