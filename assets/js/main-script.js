@@ -48,19 +48,18 @@
 	$(window).on('load', function(){
         //oculta el loader
         loaderOff();
+        
         //carousel de logos en el footer se inicia siempre
         getCarouselFooter();
 
         //carousel de pagina de inicio
-        getCarouselInicio();
-        
+        getCarouselInicio();    
 
         //carga las imagenes por ajax
         getLazyImages();
 
         //inicial los parallax
         initParallax();
-
 
     });//window load
     
