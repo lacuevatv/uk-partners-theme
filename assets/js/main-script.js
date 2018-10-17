@@ -61,6 +61,9 @@
         //inicial los parallax
         initParallax();
 
+        //inicia parallax de los headers en las paginas
+        initParallaxHeader();
+
     });//window load
     
 
@@ -170,7 +173,7 @@
 
 
     /*
-     *inicia los paralax
+     *inicia los paralax del front page
     */
     function initParallax() {
         //detiene el parallax en sistemas apple mobiles
@@ -222,6 +225,25 @@
         });//scroll
     }//initParallax()
 
+    /*
+     *inicia los paralax de los headers
+    */
+    function initParallaxHeader() {
+        
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return true;
+        }
+
+        $(window).scroll(function(){
+            //valor de barra que necesitan todos
+            var barra = ($(window).scrollTop());
+            var headerImg = $('.page-header').find('img');
+            var mover = (barra * 1.9 / 100 )+50;
+
+            $(headerImg).css('top',  mover + '%'); 
+        });
+    }//initParallaxHeader()
     
     /*
     * IN VIEW ANIMATION

@@ -19,6 +19,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 
 //CONSTANTES //
 define('IMAGES_DIR' , get_template_directory_uri() . '/assets/images/');
+define('TEMPLATES' , get_template_directory_uri() . '/template-parts/');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -339,3 +340,70 @@ $cursos_databd = array(
     ),
 );
 
+global $crewJefes_databd;
+$crewJefes_databd = array(
+    array(
+		'titulo' => 'Hernan Piazzo.',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'temp/crew1.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Hernan Piazzo.',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'temp/crew1.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+);
+
+global $crew_databd;
+$crew_databd = array(
+    array(
+		'titulo' => 'Mariel Gonzalez',
+		'charge' => 'Operation Manager',
+		'image' => IMAGES_DIR . 'temp/crew2.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Mariana U',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'default_persona.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Hernan Piazzo',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'temp/crew3.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Mariana U',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'default_persona.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Mariel Gonzalez',
+		'charge' => 'Operation Manager',
+		'image' => IMAGES_DIR . 'temp/crew2.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Mariana U',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'default_persona.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Hernan Piazzo',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'temp/crew3.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+	array(
+		'titulo' => 'Mariana U',
+		'charge' => '',
+		'image' => IMAGES_DIR . 'default_persona.png',
+        'texto' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+	),
+);
