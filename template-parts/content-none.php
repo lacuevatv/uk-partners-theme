@@ -13,8 +13,8 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nada encontrado', 'ukpartnerstheme' ); ?></h1>
+	
+		<h1 class="page-title-404"><?php _e( 'No hemos encontrado nada', 'ukpartnerstheme' ); ?></h1>
 	</header>
 	<div class="page-content">
 		<?php
@@ -24,7 +24,7 @@
 
 		<?php else : ?>
 
-			<p><?php _e( 'Parece que no se ha podido encontrar lo que estabas buscando.', 'ukpartnerstheme' ); ?></p>
+			<p class="p-404"><?php _e( 'Parece que no se ha podido encontrar lo que estabas buscando.', 'ukpartnerstheme' ); ?></p>
             
         <?php endif; ?>
 	</div><!-- .page-content -->

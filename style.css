@@ -22,6 +22,7 @@ Tags:
 5.0 SIDEBARS & WIDGETS
 6.0 FRONT PAGE
 7.0 PAGES
+8.0 PAGES
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Base styles
@@ -169,12 +170,12 @@ button {
 /*EXTENSIONS
 *claves que no funcionan solas
 */
-.title-basic-dash, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title {
+.title-basic-dash, .post .entry-header .wrapper-title .entry-title, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title {
   padding-bottom: 1rem;
   position: relative;
   margin-bottom: 1rem;
 }
-.title-basic-dash:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before {
+.title-basic-dash:before, .post .entry-header .wrapper-title .entry-title:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before {
   content: "";
   display: block;
   background-color: #18bdca;
@@ -978,7 +979,7 @@ html, body {
 .btn {
   display: inline-block;
   cursor: pointer;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 1rem;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1013,6 +1014,13 @@ html, body {
 
 .btn-naranja {
   background-color: #f6921e;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-turqueza {
+  background-color: #18bdca;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 600;
@@ -1439,12 +1447,17 @@ html, body {
 }
 @media (min-width: 768px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
-    height: 305px;
+    height: 290px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1250px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
-    height: 375px;
+    height: 350px;
+  }
+}
+@media (min-width: 1600px) {
+  .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
+    height: 400px;
   }
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado {
@@ -1634,7 +1647,17 @@ html, body {
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso {
-    height: 400px;
+    height: 300px;
+  }
+}
+@media (min-width: 1250px) {
+  .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso {
+    height: 350px;
+  }
+}
+@media (min-width: 1600px) {
+  .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso {
+    height: 450px;
   }
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .tag-destacado {
@@ -1971,8 +1994,27 @@ html, body {
 }
 
 /*--------------------------------------------------------------
-6.0 PAGES
+7.0 PAGES
 --------------------------------------------------------------*/
+.default-page-wrapper {
+  padding: 2rem 0;
+}
+
+.page-title-404 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #595a5c;
+  margin: 2rem auto 4rem;
+}
+
+.p-404 {
+  font-family: "Roboto", "Montserrat", sans-serif;
+  margin: 2rem auto 4rem;
+  text-align: center;
+}
+
 .page-header {
   position: relative;
   padding: 3rem 1rem;
@@ -2209,6 +2251,135 @@ html, body {
   .page-content-wrapper .crew-section .jefes li {
     margin: 0 2%;
   }
+}
+
+/*--------------------------------------------------------------
+8.0 POSTS
+--------------------------------------------------------------*/
+.content-posts-wrapper {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 4rem auto 5rem;
+}
+.content-posts-wrapper article {
+  background-color: #e5e6e7;
+  width: 100%;
+  margin: 1rem 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+@media (min-width: 768px) {
+  .content-posts-wrapper article {
+    width: 45%;
+    margin: 1rem 2%;
+  }
+}
+@media (min-width: 992px) {
+  .content-posts-wrapper article {
+    width: 30%;
+    margin: 1rem 1%;
+  }
+}
+@media (min-width: 1600px) {
+  .content-posts-wrapper article {
+    width: 22%;
+    margin: 1rem 1%;
+  }
+}
+
+.post {
+  position: relative;
+}
+.post .entry-header .post-thumbnail {
+  background-color: #494746;
+  overflow: hidden;
+  position: relative;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.post .entry-header .post-thumbnail img {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: -10%;
+  width: 120%;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.post .entry-header .wrapper-title {
+  padding: 2rem 1.5rem 0;
+}
+.post .entry-header .wrapper-title .entry-title {
+  color: #595a5c;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.post .entry-content {
+  padding: 0 1.5rem;
+}
+.post .entry-content p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-family: "Roboto", "Montserrat", sans-serif;
+}
+.post .entry-content .btn-leer-mas {
+  margin: 1rem auto 2rem;
+  color: #fff;
+  font-size: 0.8rem;
+}
+.post .tag-destacado {
+  display: none;
+  background-color: #8a4398;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 111;
+  top: -1rem;
+  left: 50%;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.post:hover .post-thumbnail img {
+  -webkit-transform: translateY(-50%) scale(1.2);
+  -moz-transform: translateY(-50%) scale(1.2);
+  -ms-transform: translateY(-50%) scale(1.2);
+  transform: translateY(-50%) scale(1.2);
+}
+
+.destacado .tag-destacado {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

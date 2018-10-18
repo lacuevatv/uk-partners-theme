@@ -1,3 +1,22 @@
+.default-page-wrapper {
+    padding: 2rem 0;
+}
+
+.page-title-404 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-align: center;
+    color: $color-texto-negro;
+    margin: 2rem auto 4rem;
+}
+
+.p-404 {
+    font-family: $fuente-secundaria;
+    margin: 2rem auto 4rem;
+    text-align: center;
+}
+
 .page-header {
     position: relative;
     padding: 3rem 1rem;
@@ -249,3 +268,5 @@
     }//.crew-section
 
 }//.about-page-content-wrapper
+
+

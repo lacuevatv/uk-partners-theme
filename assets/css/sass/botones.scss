@@ -2,7 +2,7 @@
 .btn {
     display: inline-block;
     cursor: pointer;
-    padding: .8rem 1rem;
+    padding: .6rem 1rem;
     @include transition(all $transitionSpeed);
 
     &:hover {
@@ -40,6 +40,14 @@
     font-size: 1rem;
     font-weight: 600;
 }
+
+.btn-turqueza {
+    background-color: $color-turqueza;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
 
 
 //navegación carousel
