@@ -12,32 +12,92 @@
 
 get_header(); ?>
 
-
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-
+	<main id="main" class="site-main post" role="main">
+		
 		<?php
-		/* Start the Loop */
-		while ( have_posts() ) : the_post();
+		/* Start the post */
+		while ( have_posts() ) : the_post(); ?>
+	
+			<header class="entry-header page-header">
+				<?php if ( is_single() ) : ?>
+					
+					<div class="header-image">
+						<?php the_post_thumbnail( 'post-thumbnails' ); ?>
+						<span class="shutter"></span>
+					</div><!-- .header-image -->
 
-			get_template_part( 'template-parts/post/content', get_post_format() );
+					<div class="wrap">
+						<?php the_title( '<h1 class="entry-title page-title-header">', '</h1>' ); ?>
+					</div>
+				
+				<?php else: 
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+				
+				endif; ?>
 
-			/*the_post_navigation( array(
-				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ) . '</span></span>',
-			) );*/
+			</header><!-- .entry-header -->
 
-		endwhile; // End of the loop.
-		?>
+			<div class="wrap row row-justify-between">
+
+				<div class="wrapper-single-post-w-sidebar">
+
+					<div class="meta-resumen-single-post-wrapper">
+						<ul class="meta-resumen-list">
+							<li>
+								Todo el año
+							</li>
+							<li>
+								2 semanas mínimo
+							</li>
+							<li>
+								+ 14 años
+							</li>
+						</ul>
+					</div>
+
+					<?php 
+					
+					get_template_part( 'template-parts/post/content', 'single-post' );
+
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+
+					/*the_post_navigation( array(
+						'prev_text' => '<span class="screen-reader-text">' . __( 'Anterior', 'ukpartnerstheme' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Anterior', 'ukpartnerstheme' ) . '</span>',
+						'next_text' => '<span class="screen-reader-text">' . __( 'Siguiente', 'ukpartnerstheme' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Siguiente', 'ukpartnerstheme' ) . '</span>',
+					) );*/
+
+					?>
+
+				</div><!-- //.wrapper-single-post-w-sidebar-->
+
+				<aside id="contact-sidebar" class="contact-sidebar widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Formulario Contacto', 'ukpartnerstheme' ); ?>">
+					<button class="btn btn-turqueza toggle-buton-single-contact">
+						<?php _e( 'Solicitar información', 'ukpartnerstheme' ); ?>
+					</button>
+					<div class="wrapper-contact-form">
+						<?php dynamic_sidebar( 'contact-sidebar' ); ?>
+					</div>
+				</aside><!-- #single-sidebar -->
+				
+			</div><!-- //.wrap -->
+
+			<?php 
+			/*
+				* INFO AUXILIAR DEL POST
+				* donde estudiar, etc
+				* carousel
+			*/
+	
+			get_template_part( 'template-parts/post/content', 'single-extra' );	
+
+		endwhile; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
-<?php get_sidebar(); ?>
-
 
 <?php get_footer();

@@ -25,25 +25,21 @@
             }
         });
 
+        //muestra el formulario en el movil
+        toggleButonSingleContact();
+
+        //muestar el contenido de los tabs cuando hay alguno
+        initTabs();
+
     });//document-ready
 
 
-    /*
-    * scroll to id
-    * se pasa con numeral #LINK
-    */
-    function scrollToID ( id ) {
-        $('html, body').stop().animate({
-            scrollTop: $(id).offset().top -90
-        }, 'slow');
-    }
 
-} )( jQuery );
 
 /*
 * window load
 */
-( function( $ ) {
+
 
 	$(window).on('load', function(){
         //oculta el loader
@@ -64,12 +60,30 @@
         //inicia parallax de los headers en las paginas
         initParallaxHeader();
 
+        //carousel de pagina de inicio
+        getCarouselSinglePost(); 
+
+        
+        
+        
     });//window load
     
 
     /*
      * FUNCIONES
     */
+
+
+     /*
+    * scroll to id
+    * se pasa con numeral #LINK
+    */
+    function scrollToID ( id ) {
+        $('html, body').stop().animate({
+            scrollTop: $(id).offset().top -90
+        }, 'slow');
+    }
+
    function loaderOff() {
        $('.loader').addClass('loader-off');
        $('.barra-principal').find('h1 img').removeClass('image-loader');
@@ -156,6 +170,34 @@
             }
         });
     }//getCarouselInicio()
+
+
+    function getCarouselSinglePost() {
+        $('.carousel-lista').owlCarousel({
+            autoplay:true,
+            autoplayTimeout:4000,
+            autoplayHoverPause:true,
+            loop:true,
+            margin:0,
+            nav:true,
+            lazyLoad:true,
+            navText : ['<span class="icon-arrow icon-arrow-left-d"></span>','<span class="icon-arrow icon-arrow-right-d"></span>'],
+            responsive:{
+                0:{
+                    items:1
+                },
+                760:{
+                    items:2
+                },
+                992:{
+                    items:3
+                },
+                1200:{
+                    items:4
+                }
+            }
+        });
+    }//getCarouselSinglePost()
 
     /*
      * carga las imagenes por ajax
@@ -286,5 +328,32 @@
         $window.trigger('scroll');
     }//startAnimations()
 
+    function toggleButonSingleContact() {
+        $(document).on('click', '.toggle-buton-single-contact', function(){
+            var form = $('.wrapper-contact-form');
+
+            if ( $(form).height() == 0 ) {
+                var h = $(form).prop('scrollHeight')
+                $(form).css('height', h + 'px');
+            } else {
+                $(form).css('height', 0);
+            }
+        });
+    }
+    
+    function initTabs() {
+        $(document).on('click', '.title-tab', function(){
+            
+            var article = $(this).closest('article')
+            var tab = $(article).find('.contenido-tab');
+
+            if ( $(tab).height() == 0 ) {
+                var h = $(tab).prop('scrollHeight')
+                $(tab).css('height', h + 'px');
+            } else {
+                $(tab).css('height', 0);
+            }
+        });
+    }
 
 } )( jQuery );

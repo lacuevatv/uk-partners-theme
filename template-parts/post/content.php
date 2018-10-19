@@ -16,12 +16,13 @@
 	<span class="tag-destacado">
 		<?php _e('100% Off', 'ukpartnerstheme' ); ?>
 	</span>
+	
 	<script>
-
 		//QUITAR ESTO QUE LO PUSE SOLO PARA MOSTRAR UNO DESTACADO
 		jQuery('#post-14').addClass('destacado');
 
 	</script>
+
 	<header class="entry-header">
 		<?php if ( ! is_single() ) : ?>
 			
@@ -34,44 +35,27 @@
 		<?php endif; ?>
 
 		<?php
-		if ( 'post' === get_post_type() ) {
-			echo '<div class="entry-meta">';
-				if ( is_single() ) {
-					uk_partners_theme_posted_on();
-				} else {
-					uk_partners_theme_time_link();
-					//uk_partners_theme_edit_link();
-				};
-			echo '</div><!-- .entry-meta -->';
-		};
-
-		if ( is_single() ) {
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		} elseif ( is_front_page() && is_home() ) {
-			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-		} else {
+		
+		if ( ! is_single() ) {
 			the_title( '<div class="wrapper-title"><h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2></div>' );
+		} elseif (  is_front_page() && is_home() ) {
+			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		}
 		?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-		/* translators: %s: Name of current post */
-		the_excerpt();
-		?>
-		<a class="btn btn-leer-mas btn-turqueza" href="<?php the_permalink(); ?>">
-			Leer más
-		</a>
 
+	<div class="entry-content<?php if ( is_single() ) { echo ' entry-content-single'; } ?>">
 		<?php
-		wp_link_pages( array(
-			'before'      => '<div class="page-links">' . __( 'Páginas:', 'ukpartnerstheme' ),
-			'after'       => '</div>',
-			'link_before' => '<span class="page-number">',
-			'link_after'  => '</span>',
-		) );
-		?>
+		if ( ! is_single() ) { 
+			
+			the_excerpt(); ?>
+
+			<a class="btn btn-leer-mas btn-turqueza" href="<?php esc_url( the_permalink() ); ?>">
+				Leer más
+			</a>
+
+		<?php } ?>
 	</div><!-- .entry-content -->
 
 	<?php
@@ -80,5 +64,4 @@
 	}
 	?>
 	
-
 </article><!-- #post-## -->

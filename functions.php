@@ -146,6 +146,16 @@ function uk_partners_theme_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Single Contacto', 'ukpartnerstheme' ),
+		'id'            => 'contact-sidebar',
+		'description'   => esc_html__( 'Agregar widgets aquí.', 'ukpartnerstheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 
 add_action( 'widgets_init', 'uk_partners_theme_widgets_init' );
