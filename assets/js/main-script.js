@@ -31,6 +31,9 @@
         //muestar el contenido de los tabs cuando hay alguno
         initTabs();
 
+        //hace el formulario de contacto fixed en pc
+        initSingleBarContactFixed();
+        
     });//document-ready
 
 
@@ -354,6 +357,19 @@
                 $(tab).css('height', 0);
             }
         });
+    }
+
+
+    function initSingleBarContactFixed() {
+        if (window.innerWidth > 992) {
+            var sidebar = $('.wrapper-contact-form')
+            /*var siteHeader = $('.site-header');
+            var header = $('.header-image');
+            var h = siteHeader.height() + header.height();
+            $(sidebar).css('position', 'fixed')
+            $(sidebar).css('top',h +'px')*/
+
+        }
     }
 
 } )( jQuery );

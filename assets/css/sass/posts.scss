@@ -182,13 +182,14 @@
     }//.tag-destacado
 
     &:hover {
-        .post-thumbnail {
-            img {
-                @include transform(translateY(-50%) scale(1.2));
-            }
-        }//.post-thumbnail:hover
+        .entry-header {
+            .post-thumbnail {
+                img {
+                    @include transform(translateY(-50%) scale(1.2));
+                }
+            }//.post-thumbnail:hover
+        }
     }
-
 
 }//.post del loop
 
@@ -317,7 +318,7 @@
 
             .widget-title {
                 padding-top: 1rem;
-                font-size: 1.1rem;
+                font-size: 1rem;
                 font-weight: 700;
             }
             

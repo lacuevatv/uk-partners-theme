@@ -170,12 +170,12 @@ button {
 /*EXTENSIONS
 *claves que no funcionan solas
 */
-.title-basic-dash, .post .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title {
+.title-basic-dash, .post .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title {
   padding-bottom: 1rem;
   position: relative;
   margin-bottom: 1rem;
 }
-.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before {
+.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before {
   content: "";
   display: block;
   background-color: #18bdca;
@@ -2257,6 +2257,291 @@ html, body {
   }
 }
 
+/*
+ * PAGINA ALOJAMIENTOS
+*/
+.category-alojamientos-wrapper {
+  /*
+  * SINGLE SIDEBAR
+  * donde va el formulario de contacto
+  */
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento {
+  padding: 2rem 0;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento {
+    padding: 5rem 0 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento {
+    width: 70%;
+    padding-right: 10%;
+  }
+}
+@media (min-width: 1600px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento {
+    width: 80%;
+  }
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .uk-content {
+  font-family: "Roboto", "Montserrat", sans-serif;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento {
+  text-transform: uppercase;
+  margin: 3rem 0 0.5rem;
+  color: #595a5c;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento {
+  padding: 2rem 0;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento:hover .post-thumbnail img {
+  -webkit-transform: translateY(-50%) scale(1.2);
+  -moz-transform: translateY(-50%) scale(1.2);
+  -ms-transform: translateY(-50%) scale(1.2);
+  transform: translateY(-50%) scale(1.2);
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-thumbnail {
+  background-color: #494746;
+  overflow: hidden;
+  position: relative;
+  z-index: 11;
+  width: 100%;
+  height: 250px;
+  margin-bottom: 1rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+@media (min-width: 576px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-thumbnail {
+    height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-thumbnail {
+    width: 40%;
+    height: 250px;
+  }
+}
+@media (min-width: 992px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-thumbnail {
+    width: 100%;
+    height: 350px;
+  }
+}
+@media (min-width: 1250px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-thumbnail {
+    width: 40%;
+    height: 270px;
+  }
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-thumbnail img {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: -10%;
+  width: 120%;
+  height: auto;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content {
+    width: 58%;
+  }
+}
+@media (min-width: 992px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content {
+    width: 100%;
+  }
+}
+@media (min-width: 1250px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content {
+    width: 58%;
+  }
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title {
+  text-transform: uppercase;
+  margin: 0rem 0 1rem;
+  color: #595a5c;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-contenido {
+  padding: 0;
+  font-size: 0.9rem;
+  font-family: "Roboto", "Montserrat", sans-serif;
+  border-bottom: 1px solid #e5e6e7;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-contenido p {
+  font-size: 0.9rem;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .tag-destacado-alojamientos {
+  color: #18bdca;
+  font-weight: 700;
+  display: block;
+  visibility: hidden;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper {
+  position: relative;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list {
+  padding: 0.5rem 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  background-color: #e5e6e7;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list {
+    padding: 0.5rem 1rem;
+    font-size: 0.6rem;
+  }
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .destacado .inner-wrapper-alojamiento .tag-destacado-alojamientos {
+  visibility: visible;
+  padding: 0.5rem 0;
+}
+.category-alojamientos-wrapper .contact-sidebar {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  .category-alojamientos-wrapper .contact-sidebar {
+    width: 30%;
+  }
+}
+@media (min-width: 1600px) {
+  .category-alojamientos-wrapper .contact-sidebar {
+    width: 20%;
+  }
+}
+.category-alojamientos-wrapper .contact-sidebar .toggle-buton-single-contact {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  .category-alojamientos-wrapper .contact-sidebar .toggle-buton-single-contact {
+    display: none;
+  }
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form {
+  background-color: #dad8d7;
+  padding: 0 2rem;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  /*
+   * formulario contact form 7
+  */
+}
+@media (min-width: 992px) {
+  .category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form {
+    height: initial;
+    overflow: visible;
+    position: relative;
+    top: -2rem;
+    z-index: 111;
+  }
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .widget-title {
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+@media (min-width: 576px) {
+  .category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .widget-title {
+    font-size: 1rem;
+  }
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 {
+  width: 100%;
+  max-width: 680px;
+  margin: 1rem auto 2rem;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form p {
+  position: relative;
+  height: 3.4rem;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form label {
+  position: absolute;
+  width: 100%;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child {
+  position: relative;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form input, .category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  color: #929497;
+  background-color: #e5e6e7;
+  border: none;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form input {
+  height: 2.5rem;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
+  height: 7rem;
+  padding: 0.5rem 0.5rem;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit] {
+  margin: 6rem auto 1rem;
+  cursor: pointer;
+  width: 10rem;
+  background-color: #ec1c24;
+  border: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 0.1rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit]:hover {
+  zoom: 1;
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
+
 /*--------------------------------------------------------------
 8.0 POSTS
 --------------------------------------------------------------*/
@@ -2445,7 +2730,7 @@ html, body {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.post:hover .post-thumbnail img {
+.post:hover .entry-header .post-thumbnail img {
   -webkit-transform: translateY(-50%) scale(1.2);
   -moz-transform: translateY(-50%) scale(1.2);
   -ms-transform: translateY(-50%) scale(1.2);
@@ -2588,7 +2873,7 @@ html, body {
 }
 .post .contact-sidebar .wrapper-contact-form .widget-title {
   padding-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 .post .contact-sidebar .wrapper-contact-form .wpcf7 {
