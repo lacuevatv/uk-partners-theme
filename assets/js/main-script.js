@@ -37,12 +37,9 @@
     });//document-ready
 
 
-
-
-/*
-* window load
-*/
-
+    /*
+    * window load
+    */
 
 	$(window).on('load', function(){
         //oculta el loader
@@ -66,8 +63,7 @@
         //carousel de pagina de inicio
         getCarouselSinglePost(); 
 
-        
-        
+   
         
     });//window load
     
@@ -361,14 +357,56 @@
 
 
     function initSingleBarContactFixed() {
+        //debe funcionar si es mayor a 992, porque sino la barra no existe
         if (window.innerWidth > 992) {
-            var sidebar = $('.wrapper-contact-form')
-            /*var siteHeader = $('.site-header');
+
+            //el sidebar a mover
+            var sidebar = $('.wrapper-contact-form');
+            var sidebarWidth = $(sidebar).innerWidth();
+            //el contenedor
+            var contenedor = $('.site-main');
+            var padding = 70;
+            //el limite superior
+            var siteHeader = $('.site-header');
             var header = $('.header-image');
             var h = siteHeader.height() + header.height();
-            $(sidebar).css('position', 'fixed')
-            $(sidebar).css('top',h +'px')*/
+            
+            //el limite inferior
+            var footer = $('.site-footer');
+            var footer_height = footer.outerHeight();
+            var footer_top_position = footer.offset().top;
+            var footer_bottom_position = (footer_top_position + footer_height);
+            
 
+            $(window).scroll(function(){
+                //valor de barra que necesitan todos
+                var barra = ($(window).scrollTop());
+                var window_height = $(window).height();
+                var window_top_position = barra;
+                var window_bottom_position = (window_top_position + window_height);
+                
+                if ( ( barra > (h-35) ) ) {   
+                    //si cruza el limite superior se hace fixed:
+                    $(sidebar).css('position', 'fixed')
+                    $(sidebar).css('width', sidebarWidth + 'px')
+                    $(sidebar).css('top',  '15%');
+                    
+                    
+                    if ( ( footer_bottom_position >= window_top_position  && footer_top_position <= window_bottom_position ) ) {
+                        $(sidebar).css('position', 'relative');
+                        $(sidebar).css('top', contenedor.height() -sidebar.height()-padding + 'px');
+                        $(sidebar).css('transition', 'initial');
+                        
+                    }
+
+                } else {
+                    //sino, se mantiene como esta
+                    $(sidebar).css('position', 'relative')
+                    $(sidebar).css('top',  '-2rem'); 
+                    
+                }
+
+            });
         }
     }
 

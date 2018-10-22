@@ -1485,6 +1485,10 @@ html, body {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
   left: -5%;
   width: 110%;
 }
@@ -1567,6 +1571,12 @@ html, body {
   width: 100%;
 }
 @media (min-width: 992px) {
+  .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino:hover .destino-imagen img {
+    -webkit-transform: translateY(-50%) scale(1.2);
+    -moz-transform: translateY(-50%) scale(1.2);
+    -ms-transform: translateY(-50%) scale(1.2);
+    transform: translateY(-50%) scale(1.2);
+  }
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino:hover .destino-imagen .shutter {
     zoom: 1;
     filter: alpha(opacity=70);
@@ -1685,6 +1695,10 @@ html, body {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
   left: -5%;
   width: 110%;
 }
@@ -1767,6 +1781,12 @@ html, body {
   width: 100%;
 }
 @media (min-width: 992px) {
+  .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso:hover .curso-imagen img {
+    -webkit-transform: translateY(-50%) scale(1.2);
+    -moz-transform: translateY(-50%) scale(1.2);
+    -ms-transform: translateY(-50%) scale(1.2);
+    transform: translateY(-50%) scale(1.2);
+  }
   .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso:hover .curso-imagen .shutter {
     zoom: 1;
     filter: alpha(opacity=70);
@@ -2380,7 +2400,7 @@ html, body {
   margin: 0rem 0 1rem;
   color: #595a5c;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-contenido {
   padding: 0;
@@ -2430,6 +2450,7 @@ html, body {
 .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .destacado .inner-wrapper-alojamiento .tag-destacado-alojamientos {
   visibility: visible;
   padding: 0.5rem 0;
+  font-size: 1.2rem;
 }
 .category-alojamientos-wrapper .contact-sidebar {
   width: 100%;
@@ -2633,6 +2654,7 @@ html, body {
   color: #595a5c;
   text-transform: uppercase;
   font-weight: 700;
+  font-size: 1.2rem;
 }
 .post .entry-content {
   font-family: "Roboto", "Montserrat", sans-serif;

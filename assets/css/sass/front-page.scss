@@ -289,6 +289,7 @@
                         z-index: 1;
                         top: 50%;
                         @include transform(translateY(-50%));
+                        @include transition(all $transitionSpeed);
                         left: -5%;
                         width: 110%;
                     }
@@ -369,6 +370,9 @@
                     @media (min-width: $md) {
 
                         .destino-imagen {
+                            img {
+                                @include transform(translateY(-50%) scale(1.2));
+                            }
                             .shutter {
                                 zoom: 1;
                                 filter: alpha(opacity=70);
@@ -490,6 +494,7 @@
                         z-index: 1;
                         top: 50%;
                         @include transform(translateY(-50%));
+                        @include transition(all $transitionSpeed);
                         left: -5%;
                         width: 110%;
                     }
@@ -570,6 +575,9 @@
                     @media (min-width: $md) {
 
                         .curso-imagen {
+                            img {
+                                @include transform(translateY(-50%) scale(1.2));
+                            }
                             .shutter {
                                 zoom: 1;
                                 filter: alpha(opacity=70);
