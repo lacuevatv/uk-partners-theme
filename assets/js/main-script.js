@@ -32,7 +32,9 @@
         initTabs();
 
         //hace el formulario de contacto fixed en pc
-        initSingleBarContactFixed();
+        if (is_alojamientos) {
+            initSingleBarContactFixed();
+        }
         
     });//document-ready
 
@@ -389,7 +391,11 @@
                     //si cruza el limite superior se hace fixed:
                     $(sidebar).css('position', 'fixed')
                     $(sidebar).css('width', sidebarWidth + 'px')
-                    $(sidebar).css('top',  '15%');
+                    if (window.innerHeight < 650) {
+                        $(sidebar).css('top',  '5%'); 
+                    } else {
+                        $(sidebar).css('top',  '10%'); 
+                    }
                     
                     
                     if ( ( footer_bottom_position >= window_top_position  && footer_top_position <= window_bottom_position ) ) {

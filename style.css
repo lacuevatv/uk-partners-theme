@@ -2613,7 +2613,7 @@ html, body {
 }
 
 /*
-* este post corresponde al single y está en el <article> anterior
+* este post corresponde al loop y está en el <article> anterior
 */
 .post {
   position: relative;
@@ -2632,10 +2632,26 @@ html, body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
+@media (min-width: 768px) {
+  .post .entry-header .post-thumbnail {
+    height: 190px;
+  }
+}
+@media (min-width: 1250px) {
+  .post .entry-header .post-thumbnail {
+    height: 240px;
+  }
+}
+@media (min-width: 1600px) {
+  .post .entry-header .post-thumbnail {
+    height: 260px;
+  }
+}
 .post .entry-header .post-thumbnail img {
   position: absolute;
   z-index: 1;
   top: 50%;
+  height: auto;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -3089,6 +3105,10 @@ html, body {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
   left: -5%;
   width: 110%;
 }
@@ -3171,6 +3191,12 @@ html, body {
   width: 100%;
 }
 @media (min-width: 992px) {
+  .post .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen img {
+    -webkit-transform: translateY(-50%) scale(1.2);
+    -moz-transform: translateY(-50%) scale(1.2);
+    -ms-transform: translateY(-50%) scale(1.2);
+    transform: translateY(-50%) scale(1.2);
+  }
   .post .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen .shutter {
     zoom: 1;
     filter: alpha(opacity=70);

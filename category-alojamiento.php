@@ -11,7 +11,9 @@
  */
 
 get_header(); ?>
-
+<script>
+var is_alojamientos = true;
+</script>
 <header class="entry-header page-header">
 	<div class="header-image">
 		<picture>

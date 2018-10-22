@@ -42,7 +42,7 @@
 }//.content-posts-wrapper
 
 /*
-* este post corresponde al single y está en el <article> anterior
+* este post corresponde al loop y está en el <article> anterior
 */
 
 .post {
@@ -60,10 +60,23 @@
             height: 270px;
             @include transition(all $transitionSpeed);
 
+            @media (min-width: $sm) {
+                height: 190px;
+            }
+
+            @media (min-width: $lg) {
+                height: 240px;
+            }
+
+            @media (min-width: $xlg) {
+                height: 260px;
+            }
+
             img {
                 position: absolute;
                 z-index: 1;
                 top: 50%;
+                height: auto;
                 @include transform(translateY(-50%));
                 left: -10%;
                 width: 120%;
@@ -520,6 +533,7 @@
                         z-index: 1;
                         top: 50%;
                         @include transform(translateY(-50%));
+                        @include transition(all $transitionSpeed);
                         left: -5%;
                         width: 110%;
                     }
@@ -600,6 +614,10 @@
                     @media (min-width: $md) {
 
                         .item-imagen {
+                            img {
+                                @include transform(translateY(-50%) scale(1.2));
+                            }
+
                             .shutter {
                                 zoom: 1;
                                 filter: alpha(opacity=70);
