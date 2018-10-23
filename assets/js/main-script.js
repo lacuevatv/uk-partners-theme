@@ -86,8 +86,11 @@
     }
 
    function loaderOff() {
-       $('.loader').addClass('loader-off');
-       $('.barra-principal').find('h1 img').removeClass('image-loader');
+       setTimeout(function(){
+        $('.loader').addClass('loader-off');
+        $('.barra-principal').find('h1 img').removeClass('image-loader');
+       },2000);
+       
    }//loaderOff()
 
     function getCarouselFooter() {

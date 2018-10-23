@@ -170,12 +170,12 @@ button {
 /*EXTENSIONS
 *claves que no funcionan solas
 */
-.title-basic-dash, .post .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title {
+.title-basic-dash, .post .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title, .barra-principal .loader p {
   padding-bottom: 1rem;
   position: relative;
   margin-bottom: 1rem;
 }
-.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before {
+.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before, .barra-principal .loader p:before {
   content: "";
   display: block;
   background-color: #18bdca;
@@ -188,10 +188,10 @@ button {
   bottom: 0;
 }
 
-.title-basic-dash-center, .page-header .page-title-header, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text {
+.title-basic-dash-center, .page-header .page-title-header, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .barra-principal .loader p {
   text-align: center;
 }
-.title-basic-dash-center:before, .page-header .page-title-header:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before {
+.title-basic-dash-center:before, .page-header .page-title-header:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .barra-principal .loader p:before {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -560,10 +560,11 @@ html, body {
 .barra-sup-wrapper .sup-menu-wrapper .sup-menu .menu-item-has-children .sub-menu {
   visibility: hidden;
   position: absolute;
-  background-color: #323232;
+  background-color: #494746;
   width: 100%;
   padding: 1.5rem 2rem;
   z-index: 11;
+  font-size: 0.7rem;
   top: 37px;
   min-width: 180px;
   margin-left: -10px;
@@ -661,6 +662,7 @@ html, body {
   }
 }
 .barra-principal .loader p {
+  text-transform: uppercase;
   margin: 4rem auto 2rem;
 }
 .barra-principal .loader-off {
@@ -709,7 +711,7 @@ html, body {
 }
 @media (min-width: 992px) {
   .barra-principal h1 .image-loader {
-    left: 37vw;
+    left: 37.6vw;
   }
 }
 .barra-principal .primary-menu-wrapper {
@@ -1261,6 +1263,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: rgba(106, 107, 110, 0.5);
+  mix-blend-mode: multiply;
 }
 .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido {
   position: relative;
@@ -1404,6 +1407,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: rgba(106, 107, 110, 0.5);
+  mix-blend-mode: multiply;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper {
   margin-top: 4rem;
@@ -1986,6 +1990,7 @@ html, body {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 0.7rem;
+  border: none;
 }
 .uk-front-page-wrapper .front-page-footer .wpcf7 form input {
   height: 2.5rem;
@@ -2078,6 +2083,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: rgba(106, 107, 110, 0.5);
+  mix-blend-mode: multiply;
 }
 .page-header .page-title-header {
   position: relative;
@@ -2092,9 +2098,10 @@ html, body {
 }
 
 .page-content-wrapper .main-content-editor {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0;
   margin: 3rem auto 2rem;
+  text-align: center;
 }
 @media (min-width: 992px) {
   .page-content-wrapper .main-content-editor {
@@ -2104,6 +2111,7 @@ html, body {
 @media (min-width: 1250px) {
   .page-content-wrapper .main-content-editor {
     padding: 0 2rem;
+    width: 80%;
   }
 }
 .page-content-wrapper .main-content-editor strong {
@@ -2530,7 +2538,7 @@ html, body {
   font-weight: 500;
   font-size: 0.7rem;
   color: #929497;
-  background-color: #e5e6e7;
+  background-color: #f3f1f1;
   border: none;
 }
 .category-alojamientos-wrapper .contact-sidebar .wrapper-contact-form .wpcf7 form input {
@@ -2937,7 +2945,7 @@ html, body {
   font-weight: 500;
   font-size: 0.7rem;
   color: #929497;
-  background-color: #e5e6e7;
+  background-color: #f3f1f1;
   border: none;
 }
 .post .contact-sidebar .wrapper-contact-form .wpcf7 form input {

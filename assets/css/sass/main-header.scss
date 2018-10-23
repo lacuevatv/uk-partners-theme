@@ -137,10 +137,11 @@
                 .sub-menu {
                     visibility: hidden;
                     position: absolute;
-                    background-color: $color-negro;
+                    background-color: $color-fondo-gris-oscuro;
                     width: 100%;
                     padding: 1.5rem 2rem;
                     z-index: 11;
+                    font-size: .7rem;
                     top: 37px;
                     min-width: 180px;
                     margin-left: -10px;
@@ -236,7 +237,11 @@
             padding-top: 10rem;
         }
         p {
+            @extend .title-basic-dash;
+            @extend .title-basic-dash-center;
+            text-transform: uppercase;
             margin: 4rem auto 2rem;
+
         }
     }
 
@@ -274,7 +279,7 @@
                 left: 35vw;
             }
             @media (min-width: $md) {
-                left: 37vw;
+                left: 37.6vw;
             }
         }
     }//h1
