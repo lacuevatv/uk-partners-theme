@@ -197,7 +197,10 @@ if ( ! function_exists( 'uk_partners_theme_wp_admin_style_scripts' ) ) {
 	 * @uses wp_enqueue_style()
 	 */
 	function uk_partners_theme_wp_admin_style_scripts() {
-        wp_enqueue_style( 'uk_partners_theme-style-admin', get_template_directory_uri() . '/assets/css/style-admin.css', array(), '1.0', 'all' );
+        wp_enqueue_style( 'uk_partners_theme-style-admin', get_template_directory_uri() . '/assets/css/admin-style.css', array(), '1.0', 'all' );
+		
+		//agregar el paquete de media para usar la api
+		wp_enqueue_media();
 
         wp_enqueue_script( 'uk_partners_theme-admin-script', get_template_directory_uri() . '/assets/js/admin-script.js', array('jquery'), '1.0', true );
 		
@@ -210,12 +213,24 @@ add_action( 'admin_enqueue_scripts', 'uk_partners_theme_wp_admin_style_scripts' 
 /**
  * ADITIONALS
 */
+//habilita los svg
+
+function ukpartners_upload_mimes($mimes = array()) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+
+add_filter('upload_mimes', 'ukpartners_upload_mimes');
+ 
+
+
+
 //Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 //Customizer additions.
 //require get_template_directory() . '/inc/customizer.php';
 //Load settings files.
-//require get_template_directory() . '/admin/settings.php';
+require get_template_directory() . '/admin/settings.php';
 //require get_template_directory() . '/admin/meta-boxes.php';
 //require_once get_template_directory() . '/admin/ajax.php';
 

@@ -1,0 +1,58 @@
+/*
+ * setting page
+*/
+.uk-settings-page {
+
+    h1 {
+        font-size: 2rem;
+        margin: 3rem 0 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    form {
+        margin: 3rem 2rem; 
+        text-align: center;
+
+        table {
+            tr {
+                border-bottom: 1px solid #bbb;
+            }
+        }
+        .uk-settings-page-inputs {
+            display: flex;
+            display: -o-flex;
+            display: -ms-flex;
+            display: -moz-flex;
+            display: -webkit-flex;
+            -webkit-justify-content: space-between;
+            -moz-justify-content: space-between;
+            -ms-justify-content: space-between;
+            -o-justify-content: space-between;
+            justify-content: space-between;
+            
+            label {
+                text-align: left;
+                width: 15%;
+            }
+            input {
+                text-align: left;
+                display: block;
+                width: 85%;
+            }
+
+            #logo-uk {
+                width: 70%;
+            }
+
+            .upload-images-btn {
+                width: 15%;
+            }
+        }
+    }
+}//.uk-settings-page
+
+p.submit {
+    text-align: right;
+    margin-top: 5rem;
+}
