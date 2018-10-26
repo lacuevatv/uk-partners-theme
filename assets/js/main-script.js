@@ -28,13 +28,7 @@
         //muestra el formulario en el movil
         toggleButonSingleContact();
 
-        //muestar el contenido de los tabs cuando hay alguno
-        initTabs();
-
-        //hace el formulario de contacto fixed en pc
-        if (is_alojamientos) {
-            initSingleBarContactFixed();
-        }
+        
         
     });//document-ready
 
@@ -66,8 +60,6 @@
 
         //carousel de pagina de inicio
         getCarouselSinglePost(); 
-
-   
         
     });//window load
     

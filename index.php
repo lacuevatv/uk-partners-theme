@@ -43,6 +43,7 @@ get_header(); ?>
 		</div><!--//.wrap-->
 
 	</header>
+	
 <?php else : ?>
 
 	<header class="page-header">

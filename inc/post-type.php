@@ -45,6 +45,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
             'public'      => true,
             'has_archive' => false,
             'register_meta_box_cb' => 'uk_partners_theme_meta_box_partners',
+            'show_in_nav_menus' => false,
             'menu_icon'   => 'dashicons-groups'
             )
         );
@@ -62,6 +63,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
             ),
             'public'      => true,
             'has_archive' => false,
+            'show_in_nav_menus' => false,
             'menu_icon'   => 'dashicons-editor-quote'
             )
         );
@@ -79,6 +81,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
             ),
             'public'      => true,
             'has_archive' => false,
+            'show_in_nav_menus' => false,
             'register_meta_box_cb' => 'uk_partners_theme_meta_box_sliders',
             'menu_icon'   => 'dashicons-desktop'
             )
@@ -191,6 +194,7 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => true,
+            'show_in_nav_menus' => false,
             )
         );
         register_taxonomy( 'tagalojamientos', 'alojamientos', array(
@@ -198,6 +202,7 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => false,
+            'show_in_nav_menus' => false,
             )
         );
 
@@ -209,6 +214,7 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => true,
+            'show_in_nav_menus' => false,
             )
         );
         register_taxonomy( 'tagcursos', 'cursos', array(
@@ -216,6 +222,7 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => false,
+            'show_in_nav_menus' => false,
             )
         );
 
@@ -227,6 +234,7 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => true,
+            'show_in_nav_menus' => false,
             )
         );
         register_taxonomy( 'tagdestinos', 'destinos', array(
@@ -234,6 +242,7 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => false,
+            'show_in_nav_menus' => false,
             )
         );
 
@@ -245,33 +254,13 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => true,
+            'show_in_nav_menus' => false,
             )
         );
     }
 endif;
 
 add_action( 'init', 'uk_partners_theme_register_private_taxonomy' );
-
-/**
- * Reseteamos las reglas de permalinks para asegurarnos de que
-* los links a nuestro post type funcionen.
-*
-*/
-if ( ! function_exists( 'uk_partners_theme_flush_rewrite_rules' ) ) :
-/**
- * Reset rewrite rules for reentrly added post type and taxonomies.
- *
- * @since 1.0
- */
-function uk_partners_theme_flush_rewrite_rules() {
-	if ( ! get_option( 'uk_partners_theme_flushed_rewrite_rules' ) ) {
-		flush_rewrite_rules();
-		add_option( 'uk_partners_theme_flushed_rewrite_rules', true );
-	}
-}
-endif;
-
-add_action( 'init', 'uk_partners_theme_flush_rewrite_rules', 90 );
 
 
 /**
@@ -312,3 +301,36 @@ if ( ! function_exists( 'uk_partners_theme_meta_box_sliders' ) ) :
     }
 endif;
 
+
+// funciones generales //
+
+
+
+/**
+ * Reset rewrite rules for reentrly added post type and taxonomies.
+ *
+ * @since 1.0
+ */
+if ( ! function_exists( 'uk_partners_theme_flush_rewrite_rules' ) ) :
+    add_action( 'init', 'uk_partners_theme_flush_rewrite_rules', 90 );
+
+function uk_partners_theme_flush_rewrite_rules() {
+	if ( ! get_option( 'uk_partners_theme_flushed_rewrite_rules' ) ) {
+		flush_rewrite_rules();
+		add_option( 'uk_partners_theme_flushed_rewrite_rules', true );
+	}
+}
+endif;
+
+/**
+ * Delete template transients.
+ *
+ * @since 1.1
+ */
+if ( ! function_exists( 'uk_partners_theme_delete_all_transients_created' ) ) :
+    add_action( 'save_post', 'uk_partners_theme_delete_all_transients_created' );
+    
+    function uk_partners_theme_delete_all_transients_created() {
+            //delete_transient( 'tarifas_shortcode_tarifas' );
+    }
+endif;
