@@ -157,7 +157,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
                 'title', 'editor', 'thumbnail'
             ),
             'public'      => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'taxonomies' => array('catalojamientos', 'tagalojamientos'),
             'rewrite' => array('slug' => __( 'alojamientos', 'ukpartnerstheme' ),'with_front' => false),
             'menu_icon'   => 'dashicons-building'

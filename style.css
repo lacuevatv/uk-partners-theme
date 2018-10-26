@@ -2423,7 +2423,8 @@ html, body {
   color: #18bdca;
   font-weight: 700;
   display: block;
-  visibility: hidden;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
 }
 .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper {
   position: relative;
@@ -2454,11 +2455,6 @@ html, body {
     padding: 0.5rem 1rem;
     font-size: 0.6rem;
   }
-}
-.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .destacado .inner-wrapper-alojamiento .tag-destacado-alojamientos {
-  visibility: visible;
-  padding: 0.5rem 0;
-  font-size: 1.2rem;
 }
 .category-alojamientos-wrapper .contact-sidebar {
   width: 100%;

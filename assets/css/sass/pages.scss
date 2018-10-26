@@ -390,7 +390,8 @@
                     color: $color-turqueza;
                     font-weight: 700;
                     display: block;
-                    visibility: hidden;
+                    padding: .5rem 0;
+                    font-size: 1.2rem;
                 }
 
             }//.post-content
@@ -431,15 +432,7 @@
 
     }//.content-posts-wrapper-alojamiento
 
-    .content-posts-wrapper-alojamiento .destacado {
-        .inner-wrapper-alojamiento {
-            .tag-destacado-alojamientos {
-                visibility: visible;
-                padding: .5rem 0;
-                font-size: 1.2rem;
-            }
-        }
-    }
+    
 
     /*
     * SINGLE SIDEBAR
