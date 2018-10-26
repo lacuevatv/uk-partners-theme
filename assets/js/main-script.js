@@ -45,7 +45,9 @@
 
 	$(window).on('load', function(){
         //oculta el loader
-        loaderOff();
+        setTimeout(function(){
+            loaderOff();
+        },10);
         
         //carousel de logos en el footer se inicia siempre
         getCarouselFooter();
@@ -86,10 +88,9 @@
     }
 
    function loaderOff() {
-       setTimeout(function(){
+       
         $('.loader').addClass('loader-off');
         $('.barra-principal').find('h1 img').removeClass('image-loader');
-       },2000);
        
    }//loaderOff()
 

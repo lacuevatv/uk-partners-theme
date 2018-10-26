@@ -221,16 +221,20 @@ function ukpartners_upload_mimes($mimes = array()) {
 }
 
 add_filter('upload_mimes', 'ukpartners_upload_mimes');
- 
-
 
 
 //Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
+
 //Customizer additions.
 //require get_template_directory() . '/inc/customizer.php';
+
+//Custon Posty Types
+require get_template_directory() . '/inc/post-type.php';
+
 //Load settings files.
 require get_template_directory() . '/admin/settings.php';
+
 //require get_template_directory() . '/admin/meta-boxes.php';
 //require_once get_template_directory() . '/admin/ajax.php';
 
