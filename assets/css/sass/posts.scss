@@ -45,7 +45,7 @@
 * este post corresponde al loop y está en el <article> anterior
 */
 
-.post {
+.post, .cursos, .destinos {
     position: relative;
 
     .entry-header {
@@ -226,7 +226,7 @@
 /*
 * este post corresponde al single y está en <main>
 */
-.post {
+.post, .cursos, .destinos {
     //wrapper de post single con sidebar
     .wrapper-single-post-w-sidebar {
         width: 100%;

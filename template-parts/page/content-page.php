@@ -1,21 +1,26 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header page-header">
+
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <header class="entry-header page-header">
         <div class="header-image">
-		
-			<?php 
+            <?php 
             if ( has_post_thumbnail()) {
                 the_post_thumbnail(); 
                 echo '<span class="shutter"></span>';
+            } else {
+                echo '<picture>';
+                    echo '<source srcset="' . IMAGES_DIR . 'headermobile-default.jpg" media="(max-width: 769px)">';
+                    echo '<img src="' . IMAGES_DIR . 'header-default.jpg" alt="'. get_the_title() . ' - ' .get_bloginfo('name').'">';
+                echo '</picture>';
+                echo '<span class="shutter"></span>';
             }
-            ?>
-		
-		</div>
-		
+            ?>  
+        </div>
+        
         <div class="wrap">
             <?php the_title( '<h1 class="entry-title page-title-header">', '</h1>' ); ?>
         </div>
         
-	</header><!-- .entry-header -->
+    </header><!-- .entry-header -->
 
 	<div class="entry-content page-content-wrapper">
         <div class="wrap">
@@ -28,4 +33,4 @@
 		
 
 	</div><!-- .entry-content -->
-</article><!-- #post-## -->
+</div><!-- #post-## -->

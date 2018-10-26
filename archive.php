@@ -24,7 +24,16 @@ get_header(); ?>
 	
 	<div class="wrap">
 		<h1 class="entry-title page-title-header">
-			<?php single_cat_title(); ?>
+			<?php
+			//si es categoria muestra el titulo de la categoria
+				if (is_category() ) {
+					single_cat_title();
+				} elseif ( get_post_type() ) {
+					echo get_post_type();
+				} else {
+					bloginfo('name');
+				} 
+			?>
 		</h1>
 	</div>
 </header><!-- .entry-header -->

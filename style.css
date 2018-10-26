@@ -170,12 +170,12 @@ button {
 /*EXTENSIONS
 *claves que no funcionan solas
 */
-.title-basic-dash, .post .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title, .barra-principal .loader p {
+.title-basic-dash, .post .extra-single-wrapper .title-section, .cursos .extra-single-wrapper .title-section, .destinos .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title, .barra-principal .loader p {
   padding-bottom: 1rem;
   position: relative;
   margin-bottom: 1rem;
 }
-.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before, .barra-principal .loader p:before {
+.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .cursos .extra-single-wrapper .title-section:before, .destinos .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .cursos .entry-header .wrapper-title .entry-title:before, .destinos .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before, .barra-principal .loader p:before {
   content: "";
   display: block;
   background-color: #18bdca;
@@ -2619,10 +2619,10 @@ html, body {
 /*
 * este post corresponde al loop y está en el <article> anterior
 */
-.post {
+.post, .cursos, .destinos {
   position: relative;
 }
-.post .entry-header .post-thumbnail {
+.post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
   background-color: #494746;
   overflow: hidden;
   position: relative;
@@ -2637,21 +2637,21 @@ html, body {
   transition: all 0.5s;
 }
 @media (min-width: 768px) {
-  .post .entry-header .post-thumbnail {
+  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
     height: 190px;
   }
 }
 @media (min-width: 1250px) {
-  .post .entry-header .post-thumbnail {
+  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
     height: 240px;
   }
 }
 @media (min-width: 1600px) {
-  .post .entry-header .post-thumbnail {
+  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
     height: 260px;
   }
 }
-.post .entry-header .post-thumbnail img {
+.post .entry-header .post-thumbnail img, .cursos .entry-header .post-thumbnail img, .destinos .entry-header .post-thumbnail img {
   position: absolute;
   z-index: 1;
   top: 50%;
@@ -2667,96 +2667,96 @@ html, body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-.post .entry-header .wrapper-title {
+.post .entry-header .wrapper-title, .cursos .entry-header .wrapper-title, .destinos .entry-header .wrapper-title {
   padding: 2rem 1.5rem 0;
 }
-.post .entry-header .wrapper-title .entry-title {
+.post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title {
   color: #595a5c;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2rem;
 }
-.post .entry-content {
+.post .entry-content, .cursos .entry-content, .destinos .entry-content {
   font-family: "Roboto", "Montserrat", sans-serif;
   padding: 0 1.5rem;
 }
-.post .entry-content h1, .post .entry-content h2, .post .entry-content h3, .post .entry-content h4 {
+.post .entry-content h1, .post .entry-content h2, .post .entry-content h3, .post .entry-content h4, .cursos .entry-content h1, .cursos .entry-content h2, .cursos .entry-content h3, .cursos .entry-content h4, .destinos .entry-content h1, .destinos .entry-content h2, .destinos .entry-content h3, .destinos .entry-content h4 {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   color: #595a5c;
 }
-.post .entry-content h2 {
+.post .entry-content h2, .cursos .entry-content h2, .destinos .entry-content h2 {
   font-size: 1.2rem;
   line-height: 1.4rem;
   margin: 1rem 0 2rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content h2 {
+  .post .entry-content h2, .cursos .entry-content h2, .destinos .entry-content h2 {
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
 }
-.post .entry-content h3 {
+.post .entry-content h3, .cursos .entry-content h3, .destinos .entry-content h3 {
   font-size: 1.1rem;
   line-height: 1.2rem;
   margin: 0.8rem 0 1rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content h3 {
+  .post .entry-content h3, .cursos .entry-content h3, .destinos .entry-content h3 {
     font-size: 1.2rem;
     line-height: 1.2rem;
   }
 }
-.post .entry-content h4 {
+.post .entry-content h4, .cursos .entry-content h4, .destinos .entry-content h4 {
   font-size: 1rem;
   line-height: 1.2rem;
   margin: 0.8rem 0 1rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content h4 {
+  .post .entry-content h4, .cursos .entry-content h4, .destinos .entry-content h4 {
     font-size: 1.1rem;
     line-height: 1.1rem;
   }
 }
-.post .entry-content p {
+.post .entry-content p, .cursos .entry-content p, .destinos .entry-content p {
   font-size: 0.9rem;
   margin: 1rem 0;
 }
 @media (min-width: 768px) {
-  .post .entry-content p {
+  .post .entry-content p, .cursos .entry-content p, .destinos .entry-content p {
     font-size: 1rem;
   }
 }
-.post .entry-content ul, .post .entry-content ol {
+.post .entry-content ul, .post .entry-content ol, .cursos .entry-content ul, .cursos .entry-content ol, .destinos .entry-content ul, .destinos .entry-content ol {
   margin: 1.2rem 0;
   font-size: 0.9rem;
   padding-left: 1rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content ul, .post .entry-content ol {
+  .post .entry-content ul, .post .entry-content ol, .cursos .entry-content ul, .cursos .entry-content ol, .destinos .entry-content ul, .destinos .entry-content ol {
     font-size: 1rem;
   }
 }
-.post .entry-content li {
+.post .entry-content li, .cursos .entry-content li, .destinos .entry-content li {
   padding-left: 0.8rem;
   list-style: disc;
 }
-.post .entry-content .btn-leer-mas {
+.post .entry-content .btn-leer-mas, .cursos .entry-content .btn-leer-mas, .destinos .entry-content .btn-leer-mas {
   margin: 1rem auto 2rem;
   color: #fff;
   font-size: 0.8rem;
   text-decoration: none;
 }
-.post .entry-content strong {
+.post .entry-content strong, .cursos .entry-content strong, .destinos .entry-content strong {
   font-weight: 700;
 }
-.post .entry-content em {
+.post .entry-content em, .cursos .entry-content em, .destinos .entry-content em {
   font-style: italic;
 }
-.post .entry-content a {
+.post .entry-content a, .cursos .entry-content a, .destinos .entry-content a {
   text-decoration: underline;
 }
-.post .tag-destacado {
+.post .tag-destacado, .cursos .tag-destacado, .destinos .tag-destacado {
   display: none;
   background-color: #8a4398;
   color: #fff;
@@ -2772,7 +2772,7 @@ html, body {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.post:hover .entry-header .post-thumbnail img {
+.post:hover .entry-header .post-thumbnail img, .cursos:hover .entry-header .post-thumbnail img, .destinos:hover .entry-header .post-thumbnail img {
   -webkit-transform: translateY(-50%) scale(1.2);
   -moz-transform: translateY(-50%) scale(1.2);
   -ms-transform: translateY(-50%) scale(1.2);
@@ -2793,7 +2793,7 @@ html, body {
 /*
 * este post corresponde al single y está en <main>
 */
-.post {
+.post, .cursos, .destinos {
   /*
   * SINGLE SIDEBAR
   * donde va el formulario de contacto
@@ -2802,25 +2802,25 @@ html, body {
    * INFO EXTRA DEL POST
   */
 }
-.post .wrapper-single-post-w-sidebar {
+.post .wrapper-single-post-w-sidebar, .cursos .wrapper-single-post-w-sidebar, .destinos .wrapper-single-post-w-sidebar {
   width: 100%;
 }
 @media (min-width: 992px) {
-  .post .wrapper-single-post-w-sidebar {
+  .post .wrapper-single-post-w-sidebar, .cursos .wrapper-single-post-w-sidebar, .destinos .wrapper-single-post-w-sidebar {
     width: 70%;
     padding-right: 10%;
   }
 }
 @media (min-width: 1600px) {
-  .post .wrapper-single-post-w-sidebar {
+  .post .wrapper-single-post-w-sidebar, .cursos .wrapper-single-post-w-sidebar, .destinos .wrapper-single-post-w-sidebar {
     width: 80%;
   }
 }
-.post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper {
+.post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper {
   position: relative;
 }
 @media (min-width: 768px) {
-  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper {
+  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper {
     margin-top: 0;
     position: absolute;
     width: 100%;
@@ -2829,12 +2829,12 @@ html, body {
   }
 }
 @media (min-width: 992px) {
-  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper {
+  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper {
     width: 70%;
     padding-right: 10%;
   }
 }
-.post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
+.post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
   padding: 1rem 0.5rem;
   text-transform: uppercase;
   font-size: 0.6rem;
@@ -2856,42 +2856,42 @@ html, body {
   justify-content: space-between;
 }
 @media (min-width: 768px) {
-  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
+  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
     padding: 1rem 1.5rem;
     font-size: 1rem;
   }
 }
-.post .entry-content-single {
+.post .entry-content-single, .cursos .entry-content-single, .destinos .entry-content-single {
   padding: 1rem 0 2rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content-single {
+  .post .entry-content-single, .cursos .entry-content-single, .destinos .entry-content-single {
     padding: 3rem 0 2rem;
   }
 }
-.post .contact-sidebar {
+.post .contact-sidebar, .cursos .contact-sidebar, .destinos .contact-sidebar {
   width: 100%;
 }
 @media (min-width: 992px) {
-  .post .contact-sidebar {
+  .post .contact-sidebar, .cursos .contact-sidebar, .destinos .contact-sidebar {
     width: 30%;
   }
 }
 @media (min-width: 1600px) {
-  .post .contact-sidebar {
+  .post .contact-sidebar, .cursos .contact-sidebar, .destinos .contact-sidebar {
     width: 20%;
   }
 }
-.post .contact-sidebar .toggle-buton-single-contact {
+.post .contact-sidebar .toggle-buton-single-contact, .cursos .contact-sidebar .toggle-buton-single-contact, .destinos .contact-sidebar .toggle-buton-single-contact {
   color: #fff;
   margin-bottom: 1rem;
 }
 @media (min-width: 992px) {
-  .post .contact-sidebar .toggle-buton-single-contact {
+  .post .contact-sidebar .toggle-buton-single-contact, .cursos .contact-sidebar .toggle-buton-single-contact, .destinos .contact-sidebar .toggle-buton-single-contact {
     display: none;
   }
 }
-.post .contact-sidebar .wrapper-contact-form {
+.post .contact-sidebar .wrapper-contact-form, .cursos .contact-sidebar .wrapper-contact-form, .destinos .contact-sidebar .wrapper-contact-form {
   background-color: #dad8d7;
   padding: 0 2rem;
   height: 0;
@@ -2905,7 +2905,7 @@ html, body {
   */
 }
 @media (min-width: 992px) {
-  .post .contact-sidebar .wrapper-contact-form {
+  .post .contact-sidebar .wrapper-contact-form, .cursos .contact-sidebar .wrapper-contact-form, .destinos .contact-sidebar .wrapper-contact-form {
     height: initial;
     overflow: visible;
     position: relative;
@@ -2913,28 +2913,28 @@ html, body {
     z-index: 111;
   }
 }
-.post .contact-sidebar .wrapper-contact-form .widget-title {
+.post .contact-sidebar .wrapper-contact-form .widget-title, .cursos .contact-sidebar .wrapper-contact-form .widget-title, .destinos .contact-sidebar .wrapper-contact-form .widget-title {
   padding-top: 1rem;
   font-size: 1rem;
   font-weight: 700;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 {
+.post .contact-sidebar .wrapper-contact-form .wpcf7, .cursos .contact-sidebar .wrapper-contact-form .wpcf7, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 {
   width: 100%;
   max-width: 680px;
   margin: 1rem auto 2rem;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form p {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form p, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form p, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form p {
   position: relative;
   height: 3.4rem;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form label {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form label, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form label, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form label {
   position: absolute;
   width: 100%;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child {
   position: relative;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form input, .post .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form input, .post .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
   width: 100%;
   padding: 1rem 0.5rem;
   font-family: "Montserrat", sans-serif;
@@ -2944,14 +2944,14 @@ html, body {
   background-color: #f3f1f1;
   border: none;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form input {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form input, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input {
   height: 2.5rem;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
   height: 7rem;
   padding: 0.5rem 0.5rem;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit] {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit], .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit], .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit] {
   margin: 6rem auto 1rem;
   cursor: pointer;
   width: 10rem;
@@ -2968,12 +2968,12 @@ html, body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit]:hover {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit]:hover, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit]:hover, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input[type=submit]:hover {
   zoom: 1;
   filter: alpha(opacity=70);
   opacity: 0.7;
 }
-.post .extra-single-wrapper {
+.post .extra-single-wrapper, .cursos .extra-single-wrapper, .destinos .extra-single-wrapper {
   padding: 1rem 0;
   margin: 2rem 0;
   /*
@@ -2981,47 +2981,47 @@ html, body {
   */
 }
 @media (min-width: 992px) {
-  .post .extra-single-wrapper {
+  .post .extra-single-wrapper, .cursos .extra-single-wrapper, .destinos .extra-single-wrapper {
     margin: 0;
   }
 }
-.post .extra-single-wrapper .title-section {
+.post .extra-single-wrapper .title-section, .cursos .extra-single-wrapper .title-section, .destinos .extra-single-wrapper .title-section {
   text-transform: uppercase;
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: #595a5c;
   font-weight: 700;
 }
-.post .extra-single-wrapper .tabs-wrapper {
+.post .extra-single-wrapper .tabs-wrapper, .cursos .extra-single-wrapper .tabs-wrapper, .destinos .extra-single-wrapper .tabs-wrapper {
   margin: 1rem 0 5rem;
   width: 100%;
 }
 @media (min-width: 992px) {
-  .post .extra-single-wrapper .tabs-wrapper {
+  .post .extra-single-wrapper .tabs-wrapper, .cursos .extra-single-wrapper .tabs-wrapper, .destinos .extra-single-wrapper .tabs-wrapper {
     width: 70%;
     padding-right: 10%;
   }
 }
 @media (min-width: 1600px) {
-  .post .extra-single-wrapper .tabs-wrapper {
+  .post .extra-single-wrapper .tabs-wrapper, .cursos .extra-single-wrapper .tabs-wrapper, .destinos .extra-single-wrapper .tabs-wrapper {
     width: 80%;
   }
 }
-.post .extra-single-wrapper .tabs-wrapper .tabs-lista li {
+.post .extra-single-wrapper .tabs-wrapper .tabs-lista li, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista li, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista li {
   border-bottom: 1px solid #494746;
 }
-.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab {
+.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab {
   position: relative;
   font-size: 0.9rem;
 }
-.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab {
+.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab {
   position: relative;
   cursor: pointer;
   padding: 1rem 0;
   text-transform: uppercase;
   padding-left: 1.5rem;
 }
-.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab:before {
+.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab:before, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab:before, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab:before {
   content: "";
   position: absolute;
   width: 0.2rem;
@@ -3038,7 +3038,7 @@ html, body {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab {
+.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab {
   display: block;
   padding-left: 1.5rem;
   font-size: 0.8rem;
@@ -3049,49 +3049,49 @@ html, body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab p {
+.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab p, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab p, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab p {
   margin-bottom: 0.5rem;
 }
-.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab a {
+.post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab a, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab a, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab a {
   margin-bottom: 2rem;
   color: #8a4398;
   font-size: 0.7rem;
   padding: 0.2rem 0.8rem;
 }
-.post .extra-single-wrapper .carousel-wrapper {
+.post .extra-single-wrapper .carousel-wrapper, .cursos .extra-single-wrapper .carousel-wrapper, .destinos .extra-single-wrapper .carousel-wrapper {
   margin-top: 1rem;
   margin-bottom: 2rem;
   margin-left: -1rem;
   margin-right: -1rem;
 }
-.post .extra-single-wrapper .carousel-wrapper .item {
+.post .extra-single-wrapper .carousel-wrapper .item, .cursos .extra-single-wrapper .carousel-wrapper .item, .destinos .extra-single-wrapper .carousel-wrapper .item {
   position: relative;
   height: 260px;
 }
 @media (min-width: 768px) {
-  .post .extra-single-wrapper .carousel-wrapper .item {
+  .post .extra-single-wrapper .carousel-wrapper .item, .cursos .extra-single-wrapper .carousel-wrapper .item, .destinos .extra-single-wrapper .carousel-wrapper .item {
     height: 280px;
   }
 }
 @media (min-width: 992px) {
-  .post .extra-single-wrapper .carousel-wrapper .item {
+  .post .extra-single-wrapper .carousel-wrapper .item, .cursos .extra-single-wrapper .carousel-wrapper .item, .destinos .extra-single-wrapper .carousel-wrapper .item {
     height: 260px;
   }
 }
 @media (min-width: 1250px) {
-  .post .extra-single-wrapper .carousel-wrapper .item {
+  .post .extra-single-wrapper .carousel-wrapper .item, .cursos .extra-single-wrapper .carousel-wrapper .item, .destinos .extra-single-wrapper .carousel-wrapper .item {
     height: 260px;
   }
 }
 @media (min-width: 1600px) {
-  .post .extra-single-wrapper .carousel-wrapper .item {
+  .post .extra-single-wrapper .carousel-wrapper .item, .cursos .extra-single-wrapper .carousel-wrapper .item, .destinos .extra-single-wrapper .carousel-wrapper .item {
     height: 350px;
   }
 }
-.post .extra-single-wrapper .carousel-wrapper .item .tag-destacado {
+.post .extra-single-wrapper .carousel-wrapper .item .tag-destacado, .cursos .extra-single-wrapper .carousel-wrapper .item .tag-destacado, .destinos .extra-single-wrapper .carousel-wrapper .item .tag-destacado {
   display: none;
 }
-.post .extra-single-wrapper .carousel-wrapper .item .item-imagen {
+.post .extra-single-wrapper .carousel-wrapper .item .item-imagen, .cursos .extra-single-wrapper .carousel-wrapper .item .item-imagen, .destinos .extra-single-wrapper .carousel-wrapper .item .item-imagen {
   overflow: hidden;
   background-color: #323232;
   position: absolute;
@@ -3101,7 +3101,7 @@ html, body {
   width: 90%;
   height: 90%;
 }
-.post .extra-single-wrapper .carousel-wrapper .item .item-imagen img {
+.post .extra-single-wrapper .carousel-wrapper .item .item-imagen img, .cursos .extra-single-wrapper .carousel-wrapper .item .item-imagen img, .destinos .extra-single-wrapper .carousel-wrapper .item .item-imagen img {
   position: absolute;
   z-index: 1;
   top: 50%;
@@ -3116,7 +3116,7 @@ html, body {
   left: -5%;
   width: 110%;
 }
-.post .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter {
+.post .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter, .cursos .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter, .destinos .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter {
   display: block;
   position: absolute;
   z-index: 11;
@@ -3132,13 +3132,13 @@ html, body {
   transition: all 0.5s;
 }
 @media (min-width: 992px) {
-  .post .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter {
+  .post .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter, .cursos .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter, .destinos .extra-single-wrapper .carousel-wrapper .item .item-imagen .shutter {
     background-color: #18bdca;
     filter: alpha(opacity=0);
     opacity: 0;
   }
 }
-.post .extra-single-wrapper .carousel-wrapper .item .item-contenido {
+.post .extra-single-wrapper .carousel-wrapper .item .item-contenido, .cursos .extra-single-wrapper .carousel-wrapper .item .item-contenido, .destinos .extra-single-wrapper .carousel-wrapper .item .item-contenido {
   color: #fff;
   position: absolute;
   z-index: 11;
@@ -3173,7 +3173,7 @@ html, body {
   transition: all 0.5s;
 }
 @media (min-width: 992px) {
-  .post .extra-single-wrapper .carousel-wrapper .item .item-contenido {
+  .post .extra-single-wrapper .carousel-wrapper .item .item-contenido, .cursos .extra-single-wrapper .carousel-wrapper .item .item-contenido, .destinos .extra-single-wrapper .carousel-wrapper .item .item-contenido {
     visibility: hidden;
     -webkit-transform: translateY(50%);
     -moz-transform: translateY(50%);
@@ -3181,32 +3181,32 @@ html, body {
     transform: translateY(50%);
   }
 }
-.post .extra-single-wrapper .carousel-wrapper .item .item-contenido h1 {
+.post .extra-single-wrapper .carousel-wrapper .item .item-contenido h1, .cursos .extra-single-wrapper .carousel-wrapper .item .item-contenido h1, .destinos .extra-single-wrapper .carousel-wrapper .item .item-contenido h1 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   width: 100%;
 }
-.post .extra-single-wrapper .carousel-wrapper .item .item-contenido p {
+.post .extra-single-wrapper .carousel-wrapper .item .item-contenido p, .cursos .extra-single-wrapper .carousel-wrapper .item .item-contenido p, .destinos .extra-single-wrapper .carousel-wrapper .item .item-contenido p {
   font-size: 0.7rem;
   line-height: 1rem;
   margin-bottom: 1rem;
   width: 100%;
 }
 @media (min-width: 992px) {
-  .post .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen img {
+  .post .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen img, .cursos .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen img, .destinos .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen img {
     -webkit-transform: translateY(-50%) scale(1.2);
     -moz-transform: translateY(-50%) scale(1.2);
     -ms-transform: translateY(-50%) scale(1.2);
     transform: translateY(-50%) scale(1.2);
   }
-  .post .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen .shutter {
+  .post .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen .shutter, .cursos .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen .shutter, .destinos .extra-single-wrapper .carousel-wrapper .item:hover .item-imagen .shutter {
     zoom: 1;
     filter: alpha(opacity=70);
     opacity: 0.7;
   }
-  .post .extra-single-wrapper .carousel-wrapper .item:hover .item-contenido {
+  .post .extra-single-wrapper .carousel-wrapper .item:hover .item-contenido, .cursos .extra-single-wrapper .carousel-wrapper .item:hover .item-contenido, .destinos .extra-single-wrapper .carousel-wrapper .item:hover .item-contenido {
     visibility: visible;
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
@@ -3214,7 +3214,7 @@ html, body {
     transform: translateY(0);
   }
 }
-.post .extra-single-wrapper .carousel-wrapper .item-destacado .tag-destacado {
+.post .extra-single-wrapper .carousel-wrapper .item-destacado .tag-destacado, .cursos .extra-single-wrapper .carousel-wrapper .item-destacado .tag-destacado, .destinos .extra-single-wrapper .carousel-wrapper .item-destacado .tag-destacado {
   display: block;
   position: absolute;
   z-index: 111;
@@ -3231,11 +3231,11 @@ html, body {
   font-size: 0.8rem;
   padding: 0.3rem 1rem;
 }
-.post .extra-single-wrapper .carousel-wrapper .owl-nav {
+.post .extra-single-wrapper .carousel-wrapper .owl-nav, .cursos .extra-single-wrapper .carousel-wrapper .owl-nav, .destinos .extra-single-wrapper .carousel-wrapper .owl-nav {
   display: none;
 }
 @media (min-width: 768px) {
-  .post .extra-single-wrapper .carousel-wrapper .owl-nav {
+  .post .extra-single-wrapper .carousel-wrapper .owl-nav, .cursos .extra-single-wrapper .carousel-wrapper .owl-nav, .destinos .extra-single-wrapper .carousel-wrapper .owl-nav {
     display: block;
   }
 }

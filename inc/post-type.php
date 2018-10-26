@@ -116,7 +116,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
                 'singular_name' => __( 'destino', 'ukpartnerstheme' ),
             ),
             'supports'      => array (
-                'title', 'editor', 'thumbnail'
+                'title', 'excerpt', 'editor', 'thumbnail',
             ),
             'public'      => true,
             'has_archive' => true,
@@ -135,7 +135,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
                 'singular_name' => __( 'curso', 'ukpartnerstheme' ),
             ),
             'supports'      => array (
-                'title', 'editor', 'thumbnail'
+                'title', 'editor', 'thumbnail', 'excerpt'
             ),
             'public'      => true,
             'has_archive' => true,
