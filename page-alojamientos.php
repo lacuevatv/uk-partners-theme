@@ -53,48 +53,56 @@ if ( have_posts() ) :  the_post() ?>
 
                         </div>
                         
+                        <div class="content-posts-alojamiento">
                         <?php
+
+                        $listaCategorias = get_terms(array(
+                            'taxonomy' => 'catalojamientos',
+                            'hide_empty' => false,
+                        ));
+
+                        //ahora se hace un query por cada categoria en especial:
+                        foreach ($listaCategorias as $categoria) {
+
                         $alojamientos = new WP_Query( array(
                                 'post_type' => 'alojamientos',
-                                /*'tax_query' => array(
+                                'tax_query' => array(
                                     array(
-                                        'taxonomy' => 'catcrew',
-                                        'field'    => 'category_name',
-                                        'terms'    => 'destacado',
+                                        'taxonomy' => 'catalojamientos',
+                                        //'field'    => 'category_name',
+                                        'terms'    => $categoria->term_id,
                                         ),
-                                    ),*/
+                                    ),
                                 )
                             );
-                        
 
                         if ( $alojamientos->have_posts() ) : ?>
-
-                        <div class="content-posts-alojamiento">
                         
                         <?php 
 
-                        echo '<h2 class="title-category-alojamiento">' . 'categoria' . '</h2>';
+                        echo '<h2 class="title-category-alojamiento">' . $categoria->name . '</h2>';
 
                             while ( $alojamientos->have_posts() ) : $alojamientos->the_post();
                                 $nombre = get_the_title();
                                 $parrafo = get_the_content();
 
-
                                 get_template_part( 'template-parts/post/content', 'alojamiento' );
+
                             endwhile;
                             
-                            the_posts_pagination( array(
+                            /*the_posts_pagination( array(
                                 'prev_text' => '<span class="screen-reader-text">' . __( 'Anterior', 'ukpartnerstheme' ) . '</span>',
                                 'next_text' => '<span class="screen-reader-text">' . __( 'Siguiente', 'ukpartnerstheme' ) . '</span>',
                                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Página', 'ukpartnerstheme' ) . ' </span>',
-                            ) );
+                            ) );*/
 
                         wp_reset_postdata();
+                        endif;
+
+                        }//foreach de categorias
                         ?>
 
                         </div><!-- //.content-posts-alojamiento -->
-
-                        <?php endif; ?>
 
                     </div><!-- //.content-posts-wrapper-alojamiento -->
 

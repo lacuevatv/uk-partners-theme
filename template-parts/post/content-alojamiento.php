@@ -7,11 +7,8 @@
  * @package WordPress
  * @subpackage uk_partners_theme
  * @since 1.0
- * @version 1.2
+ * @version 1.0
  */
-
-get_the_terms( $post->ID, 'taxonomy' )
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="inner-wrapper-alojamiento row row-justify-between">
@@ -35,7 +32,7 @@ get_the_terms( $post->ID, 'taxonomy' )
             <?php the_terms( $post->ID, 'tagalojamientos', '', ' - ' ); ?>
             <script>jQuery('.tag-destacado-alojamientos a').click(function(e){e.preventDefault(); });</script>
         </span>
-    
+           
         <div class="meta-resumen-single-post-wrapper">
             <ul class="meta-resumen-list">
                 <li>
@@ -49,7 +46,6 @@ get_the_terms( $post->ID, 'taxonomy' )
                 </li>
             </ul>
         </div>
-	
 
     </div><!--//.inner-wrapper-alojamiento-->
 </article><!-- #post-## -->
