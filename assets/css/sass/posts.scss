@@ -182,7 +182,7 @@
     }//.entry-content
 
     .tag-destacado {
-        display: none;
+        display: block;
         background-color: $color-violeta;
         color: $color-blanco;
         text-transform: uppercase;
@@ -190,9 +190,13 @@
         z-index: 111;
         top: -1rem;
         left: 50%;
-        padding: 0.3rem 0.5rem;
+        
         font-size: .8rem;
         @include transform(translateX(-50%));
+
+        a {
+            padding: 0.3rem 0.5rem;
+        }
     }//.tag-destacado
 
     &:hover {
@@ -210,15 +214,10 @@
 /*
  * TAG DE DESTACADO, EN LOOP SE MUESTRA EN SINGLE NO
 */
-.destacado {
-    .tag-destacado {
-        display: block;
-    }
-}//.destacado
 .wrapper-single-post-w-sidebar {
     .destacado {
         .tag-destacado {
-            display: none;
+            //display: none;
         }
     }
 }
@@ -515,7 +514,21 @@
                 }
                 
                 .tag-destacado {
-                    display: none;
+                    display: block;
+                    position: absolute;
+                    z-index: 111;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    top: .3rem;
+                    color: $color-blanco;
+                    background-color: $color-violeta;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: .8rem;
+                    
+                    a {
+                        padding: .3rem 1rem;
+                    }
                 }    
 
                 .item-imagen {
@@ -634,22 +647,6 @@
 
             }//.item
 
-            .item-destacado {
-                .tag-destacado {
-                    display: block;
-                    position: absolute;
-                    z-index: 111;
-                    left: 50%;
-                    @include transform(translateX(-50%));
-                    top: .3rem;
-                    color: $color-blanco;
-                    background-color: $color-violeta;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    font-size: .8rem;
-                    padding: .3rem 1rem;
-                } 
-            }
 
             .owl-nav {
                 display: none;

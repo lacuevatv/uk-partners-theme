@@ -53,7 +53,7 @@ var is_alojamientos, is_home;
          * pagina de inicio
         */
         if (is_home) {
-            //carousel de pagina de inicio
+            //todos los carouseles de pagina de inicio
             getCarouselInicio();    
 
             //carga las imagenes por ajax
@@ -61,11 +61,12 @@ var is_alojamientos, is_home;
 
             //inicial los parallax
             initParallax();
-
-            //carousel de pagina de inicio
-            getCarouselSinglePost(); 
         }
 
+        //carousel de destinos o galería de imagen en single post
+        getCarouselSinglePost(); 
+        //acordeon de cursos en single post
+        initTabs();
         
 
         /*
@@ -379,11 +380,11 @@ var is_alojamientos, is_home;
             var sidebarWidth = $(sidebar).innerWidth();
             //el contenedor
             var contenedor = $('.site-main');
-            var padding = 70;
+            var padding = 150;
             //el limite superior
             var siteHeader = $('.site-header');
             var header = $('.header-image');
-            var h = siteHeader.height() + header.height();
+            var alturaHeader = siteHeader.height() + header.height();
             
             //el limite inferior
             var footer = $('.site-footer');
@@ -399,7 +400,7 @@ var is_alojamientos, is_home;
                 var window_top_position = barra;
                 var window_bottom_position = (window_top_position + window_height);
                 
-                if ( ( barra > (h-35) ) ) {   
+                if ( ( barra > (alturaHeader-35) ) ) {   
                     //si cruza el limite superior se hace fixed:
                     $(sidebar).css('position', 'fixed')
                     $(sidebar).css('width', sidebarWidth + 'px')
@@ -412,7 +413,7 @@ var is_alojamientos, is_home;
                     
                     if ( ( footer_bottom_position >= window_top_position  && footer_top_position <= window_bottom_position ) ) {
                         $(sidebar).css('position', 'relative');
-                        $(sidebar).css('top', contenedor.height() -sidebar.height()-padding + 'px');
+                        $(sidebar).css('top', contenedor.height() -sidebar.height()-alturaHeader + 'px');
                         $(sidebar).css('transition', 'initial');
                         
                     }

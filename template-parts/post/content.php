@@ -14,14 +14,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<span class="tag-destacado">
-		<?php _e('100% Off', 'ukpartnerstheme' ); ?>
+		<?php //_e('100% Off', 'ukpartnerstheme' ); ?>
+		<?php the_tags('', ' ' ); ?>
 	</span>
 	
-	<script>
-		//QUITAR ESTO QUE LO PUSE SOLO PARA MOSTRAR UNO DESTACADO
-		jQuery('#post-14').addClass('destacado');
-
-	</script>
+	
 
 	<header class="entry-header">
 		<?php if ( ! is_single() ) : ?>
