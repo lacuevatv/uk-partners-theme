@@ -14,7 +14,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<span class="tag-destacado">
-		<?php //_e('100% Off', 'ukpartnerstheme' ); ?>
 		<?php the_tags('', ' ' ); ?>
 	</span>
 	

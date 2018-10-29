@@ -231,11 +231,12 @@ require get_template_directory() . '/inc/template-tags.php';
 
 //Custon Posty Types
 require get_template_directory() . '/inc/post-type.php';
+//meta boxes
+require get_template_directory() . '/admin/meta-boxes.php';
 
 //Load settings files.
 require get_template_directory() . '/admin/settings.php';
 
-//require get_template_directory() . '/admin/meta-boxes.php';
 //require_once get_template_directory() . '/admin/ajax.php';
 
 
