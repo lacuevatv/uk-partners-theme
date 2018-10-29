@@ -62,7 +62,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_partner_callback' ) ) {
         	<div class="uk_partner_metabox_input_data_wrapper">
         		<div class="metabox_input_data">
 	            	<label for="uk_url_partner">
-						<?php esc_html_e( 'Url ', 'ukpartnerstheme' ); ?>
+						<?php esc_html_e( 'Url', 'ukpartnerstheme' ); ?>
 					</label>
             		<input type="text" name="uk_url_partner" id="uk_url_partner" value="<?php echo isset($metaPartner) ? esc_attr( $metaPartner) : ''; ?>"/>		
 	            </div>
@@ -181,7 +181,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_sliders_callback' ) ) {
 	            	<label for="uk_open_sliders">
 						<?php esc_html_e( 'Abrir en ventana nueva', 'ukpartnerstheme' ); ?>
 					</label>
-            		<input type="checkbox" name="uk_open_sliders" id="uk_open_sliders" value="<?php echo isset($metaSliders[2]) ? esc_attr( $metaSliders[2]) : '' ?>" <?php if ($metaSliders[2] == '1') {echo 'checked'; } ?>/>		
+            		<input type="checkbox" name="uk_open_sliders" id="uk_open_sliders" value="<?php echo isset($metaSliders[2]) ? esc_attr( $metaSliders[2]) : '' ?>" <?php if (isset($metaSliders[2]) && $metaSliders[2] == '1') {echo 'checked'; } ?>/>		
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_imagen_sliders">
@@ -266,3 +266,107 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_sliders' ) ) {
 }
 
 add_action( 'save_post', 'uk_partners_theme_save_metabox_sliders', 10, 2 );
+
+
+/*------------------
+* METABOX 3: CREW
+-------------------*/
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_crew' ) ) {
+	/**
+	 * Register custom meta boxes for product. Section: header.
+	 *
+	 * @since 1.0
+	 *
+	 * @uses add_meta_box()
+	 */
+    function uk_partners_theme_add_metabox_crew() {
+        add_meta_box(
+            'cargo',
+            __( 'Cargo', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_crew_callback',
+            'crew'
+        );
+    }
+}
+
+add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_crew' );
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_crew_callback' ) ) {
+	/**
+	 * Print HTML for meta box.
+	 *
+	 * @since 1.0
+	 *
+	 * @param WP_Post $post
+	 *
+	 * @see uk_partners_theme_add_metabox_partner()
+	 */
+    function uk_partners_theme_add_metabox_crew_callback( WP_Post $post ) {
+        wp_nonce_field( 'uk_partners_theme_crew', 'uk_partners_theme_crew_nonce' );
+
+        $metaCrew = get_post_meta( $post->ID, '_crew', true );
+        ?>
+
+        <div class="uk_partner_metabox_wrapper">
+        	<p>
+        		<?php _e('<strong> Instrucciónes</strong>: Insertar el cargo (opcional).', 'ukpartnerstheme' ); ?>
+        	</p>
+
+        	<div class="uk_partner_metabox_input_data_wrapper">
+        		<div class="metabox_input_data">
+	            	<label for="uk_cargo_crew">
+						<?php esc_html_e( 'Cargo', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_cargo_crew" id="uk_cargo_crew" value="<?php echo isset($metaCrew) ? sanitize_text_field( $metaCrew) : ''; ?>"/>		
+	            </div>
+            </div>
+        </div>
+        <?php
+
+    }
+}
+
+if ( ! function_exists( 'uk_partners_theme_save_metabox_crew' ) ) {
+	/**
+	 * Save meta data for a post.
+	 *
+	 * @param int     $post_id
+	 * @param WP_Post $post
+	 *
+	 * @since 1.0
+	 * @see uk_partners_add_metabox_partner()
+	 */
+    function uk_partners_theme_save_metabox_crew( $post_id, WP_Post $post ) {
+        // Si no se reciben los datos o no hay ninguno, salir de la función.
+        $dato = isset( $_POST['uk_cargo_crew'] ) ? sanitize_text_field($_POST['uk_cargo_crew']) : '';
+        if ($dato == '') {
+			return;
+		}
+        //si es un autosave salir de la funcion
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        	return;
+        }
+
+    // Si no se aprueba el chequeo de seguridad, salir de la función.
+	   if ( ! isset( $_POST['uk_partners_theme_crew_nonce'] ) || ! wp_verify_nonce( $_POST['uk_partners_theme_crew_nonce'], 'uk_partners_theme_crew' ) ) {
+		  return;
+	   }
+
+        $post_type = get_post_type_object( $post->post_type );
+
+        // Si el usuario actual no tiene permisos para modificar el post, salir de la función.
+        if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+            return;
+        }
+		
+        // Guardamos:
+
+        
+        update_post_meta( $post_id, '_crew', $dato );
+        
+        
+ 	}   
+}
+
+add_action( 'save_post', 'uk_partners_theme_save_metabox_crew', 10, 2 );
