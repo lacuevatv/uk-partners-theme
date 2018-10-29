@@ -42,9 +42,33 @@
   width: 15%;
 }
 
-p.submit {
-  text-align: right;
-  margin-top: 5rem;
+/*
+ * META BOXES
+*/
+.uk_partner_metabox_wrapper .uk_partner_metabox_input_data_wrapper .metabox_input_data {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  margin: 1rem 0;
+}
+.uk_partner_metabox_wrapper .uk_partner_metabox_input_data_wrapper .metabox_input_data label {
+  width: 25%;
+}
+.uk_partner_metabox_wrapper .uk_partner_metabox_input_data_wrapper .metabox_input_data input {
+  width: 50%;
+}
+.uk_partner_metabox_wrapper .uk_partner_metabox_input_data_wrapper .metabox_input_data input[type=checkbox] {
+  width: 1rem;
+}
+.uk_partner_metabox_wrapper .uk_partner_metabox_input_data_wrapper .metabox_input_data button {
+  width: 25%;
 }
 
 /*# sourceMappingURL=admin-style.css.map */

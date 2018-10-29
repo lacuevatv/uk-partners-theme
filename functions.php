@@ -247,13 +247,15 @@ require get_template_directory() . '/admin/settings.php';
 global $sliders_databd;
 $sliders_databd = array(
     array(
-        'titulo' => 'Viajes de estudio a Londres.',
+		'titulo' => 'Viajes de estudio a Londres.',
+		'texto-boton' => 'Más información',
+		'target' => '_self',
+		'texto' => 'Todo lo que siempre imaginaste... y más.',
 		'image' => IMAGES_DIR . 'temp/header1.jpg',
         'image-mobile' => IMAGES_DIR . 'temp/header1-mobile.jpg',
-        'texto' => 'Todo lo que siempre imaginaste... y más.',
         'url' => '#',
-        'target' => '_self',
-        'texto-boton' => 'Más información',
+        
+        
 	),
 	array(
         'titulo' => 'Arma tu viaje',
