@@ -4,8 +4,11 @@
  * @ver 1.0
  --------------------------------------------------------------
 >>> TABLE OF CONTENTS:
-
+1. READY: ejecuta lo más basico
+2. LOAD: ejecuta lo que necesita que este cargado primero, carouseles, parallax, etc
+3. Funciones varias
 --------------------------------------------------------------*/
+var is_alojamientos, is_home;
 
 
 //document ready
@@ -25,10 +28,8 @@
             }
         });
 
-        //muestra el formulario en el movil
+        //muestra el formulario en el movil, formulario que está en el sidebar
         toggleButonSingleContact();
-
-        
         
     });//document-ready
 
@@ -36,7 +37,6 @@
     /*
     * window load
     */
-
 	$(window).on('load', function(){
         //oculta el loader
         setTimeout(function(){
@@ -46,21 +46,37 @@
         //carousel de logos en el footer se inicia siempre
         getCarouselFooter();
 
-        //carousel de pagina de inicio
-        getCarouselInicio();    
-
-        //carga las imagenes por ajax
-        getLazyImages();
-
-        //inicial los parallax
-        initParallax();
-
         //inicia parallax de los headers en las paginas
         initParallaxHeader();
 
-        //carousel de pagina de inicio
-        getCarouselSinglePost(); 
+        /*
+         * pagina de inicio
+        */
+        if (is_home) {
+            //carousel de pagina de inicio
+            getCarouselInicio();    
+
+            //carga las imagenes por ajax
+            getLazyImages();
+
+            //inicial los parallax
+            initParallax();
+
+            //carousel de pagina de inicio
+            getCarouselSinglePost(); 
+        }
+
         
+
+        /*
+         * pagina de alojamientos
+        */
+        if (is_alojamientos) {
+            //inicia la barra lateral fixed
+            initSingleBarContactFixed();
+        }
+
+
     });//window load
     
 

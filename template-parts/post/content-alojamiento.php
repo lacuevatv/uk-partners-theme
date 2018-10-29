@@ -29,8 +29,9 @@
         </div><!-- .entry-content -->
         
         <span class="tag-destacado-alojamientos">
-            <?php the_terms( $post->ID, 'tagalojamientos', '', ' - ' ); ?>
-            <script>jQuery('.tag-destacado-alojamientos a').click(function(e){e.preventDefault(); });</script>
+            <?php //the_terms( $post->ID, 'tagalojamientos', '', ' - ' ); ?>
+            <?php the_tags('', ' ' ); ?>
+            <!--<script>jQuery('.tag-destacado-alojamientos a').click(function(e){e.preventDefault(); });</script>-->
         </span>
            
         <div class="meta-resumen-single-post-wrapper">

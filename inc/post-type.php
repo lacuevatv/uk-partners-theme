@@ -120,7 +120,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
             ),
             'public'      => true,
             'has_archive' => true,
-            'taxonomies' => array('catdestinos', 'tagdestinos'),
+            'taxonomies' => array('catdestinos', 'post_tag'),
             'rewrite' => array('slug' => __( 'destinos', 'ukpartnerstheme' ),'with_front' => false),
             'menu_icon'   => 'dashicons-location-alt'
             )
@@ -139,7 +139,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
             ),
             'public'      => true,
             'has_archive' => true,
-            'taxonomies' => array('catcursos', 'tagcursos'),
+            'taxonomies' => array('catcursos', 'post_tag'),
             'rewrite' => array('slug' => __( 'cursos', 'ukpartnerstheme' ),'with_front' => false),
             'menu_icon'   => 'dashicons-welcome-learn-more'
             )
@@ -158,7 +158,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
             ),
             'public'      => true,
             'has_archive' => false,
-            'taxonomies' => array('catalojamientos', 'tagalojamientos'),
+            'taxonomies' => array('catalojamientos', 'post_tag'),
             'rewrite' => array('slug' => __( 'alojamientos', 'ukpartnerstheme' ),'with_front' => false),
             'menu_icon'   => 'dashicons-building'
             )
@@ -197,14 +197,14 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'show_in_nav_menus' => false,
             )
         );
-        register_taxonomy( 'tagalojamientos', 'alojamientos', array(
+        /*register_taxonomy( 'tagalojamientos', 'alojamientos', array(
             'label'        => __( 'Etiquetas de Alojamientos', 'ukpartnerstheme' ),
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => false,
             'show_in_nav_menus' => false,
             )
-        );
+        );*/
 
         /**
          * CATEGORIA CURSOS
@@ -217,14 +217,14 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'show_in_nav_menus' => false,
             )
         );
-        register_taxonomy( 'tagcursos', 'cursos', array(
+        /*register_taxonomy( 'tagcursos', 'cursos', array(
             'label'        => __( 'Etiquetas de Cursos', 'ukpartnerstheme' ),
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => false,
             'show_in_nav_menus' => false,
             )
-        );
+        );*/
 
         /**
          * CATEGORIA DESTINOS
@@ -237,14 +237,14 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'show_in_nav_menus' => false,
             )
         );
-        register_taxonomy( 'tagdestinos', 'destinos', array(
+        /*register_taxonomy( 'tagdestinos', 'destinos', array(
             'label'        => __( 'Etiquetas de Destinos', 'ukpartnerstheme' ),
             'public'       => true,
             'rewrite'      => false,
             'hierarchical' => false,
             'show_in_nav_menus' => false,
             )
-        );
+        );*/
 
         /**
          * CATEGORIA CREW
