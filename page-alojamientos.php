@@ -65,16 +65,16 @@ if ( have_posts() ) :  the_post() ?>
                         foreach ($listaCategorias as $categoria) {
 
                         $alojamientos = new WP_Query( array(
-                                'post_type' => 'alojamientos',
-                                'tax_query' => array(
-                                    array(
-                                        'taxonomy' => 'catalojamientos',
-                                        //'field'    => 'category_name',
-                                        'terms'    => $categoria->term_id,
-                                        ),
+                            'post_type' => 'alojamientos',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'catalojamientos',
+                                    //'field'    => 'category_name',
+                                    'terms'    => $categoria->term_id,
                                     ),
-                                )
-                            );
+                                ),
+                            )
+                        );
 
                         if ( $alojamientos->have_posts() ) : ?>
                         

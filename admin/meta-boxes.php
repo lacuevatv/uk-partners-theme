@@ -56,7 +56,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_partner_callback' ) ) {
 
         <div class="uk_partner_metabox_wrapper">
         	<p>
-        		<?php _e('<strong> Instrucciónes</strong>: Insertar url del partner (opcional).', 'ukpartnerstheme' ); ?>
+        		<?php _e('Insertar url del partner (opcional).', 'ukpartnerstheme' ); ?>
         	</p>
 
         	<div class="uk_partner_metabox_input_data_wrapper">
@@ -161,7 +161,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_sliders_callback' ) ) {
 
         <div class="uk_partner_metabox_wrapper">
         	<p>
-        		<?php _e('<strong> Instrucciónes</strong>: Agregar imagen pc y imagen movil, texto del boton y url.', 'ukpartnerstheme' ); ?>
+        		<?php _e('Agregar imagen pc y imagen movil, texto del boton y url.', 'ukpartnerstheme' ); ?>
         	</p>
 
         	<div class="uk_partner_metabox_input_data_wrapper">
@@ -310,7 +310,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_crew_callback' ) ) {
 
         <div class="uk_partner_metabox_wrapper">
         	<p>
-        		<?php _e('<strong> Instrucciónes</strong>: Insertar el cargo (opcional).', 'ukpartnerstheme' ); ?>
+        		<?php _e('Insertar el cargo (opcional).', 'ukpartnerstheme' ); ?>
         	</p>
 
         	<div class="uk_partner_metabox_input_data_wrapper">
@@ -427,7 +427,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_meta_info_resumen_callbac
 
         <div class="uk_partner_metabox_wrapper">
         	<p>
-        		<?php _e('<strong> Instrucciónes</strong>: Agregar meta info y formulario de contacto.', 'ukpartnerstheme' ); ?>
+        		<?php _e('Agregar meta info y formulario de contacto.', 'ukpartnerstheme' ); ?>
         	</p>
 
         	<div class="uk_partner_metabox_input_data_wrapper">
@@ -514,7 +514,7 @@ add_action( 'save_post', 'uk_partners_theme_save_metabox_meta_info_resumen', 10,
 
 /*------------------
 * METABOX 5: CONTACT FORM
-* aparece en destinos y cursos
+* aparece en destinos y cursos y pagina de alojamientos
 -------------------*/
 
 if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code' ) ) {
@@ -539,6 +539,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code' ) ) {
             'uk_partners_theme_add_metabox_contact_form_code_callback',
 			'cursos'
 		);
+
 		global $post;
 		$pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
 
@@ -564,7 +565,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
 	 *
 	 * @param WP_Post $post
 	 *
-	 * @see uk_partners_theme_add_metabox_destinos()
+	 * @see uk_partners_theme_add_metabox_contact_form_code()
 	 */
     function uk_partners_theme_add_metabox_contact_form_code_callback( WP_Post $post ) {
         wp_nonce_field( 'uk_partners_theme_contact_form_code', 'uk_partners_theme_contact_form_code_nonce' );
@@ -574,7 +575,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
 
         <div class="uk_partner_metabox_wrapper">
         	<p>
-        		<?php _e('<strong>Instrucciónes</strong>: Agregar el código de Contact Form 7.', 'ukpartnerstheme' ); ?>
+        		<?php _e('Agregar el código de Contact Form 7.', 'ukpartnerstheme' ); ?>
         	</p>
 
         	<div class="uk_partner_metabox_input_data_wrapper">
@@ -584,6 +585,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
 					</label>
             		<input type="text" name="uk_contact_code" id="uk_contact_code" value="<?php echo isset($metaContactFormCode) ? esc_attr( $metaContactFormCode) : ''; ?>"/>		
 				</div>
+			</div>
         </div>
         <?php
 
@@ -633,3 +635,364 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
 }
 
 add_action( 'save_post', 'uk_partners_theme_save_metabox_contact_form_code', 10, 2 );
+
+/*------------------
+* METABOX 6: GALERÍA DE IMAGENES
+-------------------*/
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_galeria_imagenes' ) ) {
+	/**
+	 * Register custom meta boxes for product. Section: header.
+	 *
+	 * @since 1.0
+	 *
+	 * @uses add_meta_box()
+	 */
+    function uk_partners_theme_add_metabox_galeria_imagenes() {
+        add_meta_box(
+            'galeria_imagenes',
+            __( 'Galería de imágenes', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_galeria_imagenes_callback',
+			'destinos'
+        );
+    }
+}
+
+add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_galeria_imagenes' );
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_galeria_imagenes_callback' ) ) {
+	/**
+	 * Print HTML for meta box.
+	 *
+	 * @since 1.0
+	 *
+	 * @param WP_Post $post
+	 *
+	 * @see uk_partners_theme_add_metabox_galeria_imagenes()
+	 */
+    function uk_partners_theme_add_metabox_galeria_imagenes_callback( WP_Post $post ) {
+        wp_nonce_field( 'uk_partners_theme_galeria_imagenes', 'uk_partners_theme_galeria_imagenes_nonce' );
+
+        $imagenes = get_post_meta( $post->ID, '_uk_galeria_imagenes', true );
+        ?>
+
+        <div class="uk_partner_metabox_wrapper">
+        	<p>
+        		<?php _e('Seleccionar imágenes para la galería.', 'ukpartnerstheme' ); ?>
+        	</p>
+
+        	<div class="uk_partner_metabox_input_data_wrapper">
+        		
+				<div class="metabox_input_data">
+					<input type="text" name="uk_imagenes" id="uk_imagenes" value="<?php echo isset($imagenes[0]) ? esc_attr( $imagenes[0]) : ''; ?>"/>
+					<button type="button" class="upload-imagenes button-primary">Agregar imagenes</button>
+	            </div>
+            </div>
+        </div>
+        <?php
+
+    }
+}
+
+if ( ! function_exists( 'uk_partners_theme_save_metabox_galeria_imagenes' ) ) {
+	/**
+	 * Save meta data for a post.
+	 *
+	 * @param int     $post_id
+	 * @param WP_Post $post
+	 *
+	 * @since 1.0
+	 * @see uk_partners_add_metabox_sliders()
+	 */
+    function uk_partners_theme_save_metabox_galeria_imagenes( $post_id, WP_Post $post ) {
+        // Si no se reciben los datos o no hay ninguno, salir de la función.
+		
+		
+        //si es un autosave salir de la funcion
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        	return;
+        }
+
+    	// Si no se aprueba el chequeo de seguridad, salir de la función.
+	   if ( ! isset( $_POST['uk_partners_theme_galeria_imagenes_nonce'] ) || ! wp_verify_nonce( $_POST['uk_partners_theme_galeria_imagenes_nonce'], 'uk_partners_theme_galeria_imagenes' ) ) {
+		  return;
+	   }
+
+        $post_type = get_post_type_object( $post->post_type );
+
+        // Si el usuario actual no tiene permisos para modificar el post, salir de la función.
+        if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+            return;
+		}
+		
+        // Guardamos:
+		$imagenes = array();
+
+		array_push($imagenes, esc_url( $_POST['uk_imagenes'] ) );
+		
+        if ( ! empty( $imagenes ) ) {
+        	update_post_meta( $post_id, '_uk_galeria_imagenes', $imagenes );
+        }
+        
+        
+        
+ 	}   
+}
+
+add_action( 'save_post', 'uk_partners_theme_save_metabox_galeria_imagenes', 10, 2 );
+
+
+/*------------------
+* METABOX 7: SELECCIONAR CURSOS
+-------------------*/
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_select_cursos' ) ) {
+	/**
+	 * Register custom meta boxes for product. Section: header.
+	 *
+	 * @since 1.0
+	 *
+	 * @uses add_meta_box()
+	 */
+    function uk_partners_theme_add_metabox_select_cursos() {
+        add_meta_box(
+            'select_cursos',
+            __( 'Cursos del destino:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_select_cursos_callback',
+			'destinos'
+		);
+    }
+}
+
+add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_select_cursos' );
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_select_cursos_callback' ) ) {
+	/**
+	 * Print HTML for meta box.
+	 *
+	 * @since 1.0
+	 *
+	 * @param WP_Post $post
+	 *
+	 * @see uk_partners_theme_add_metabox_select_cursos()
+	 */
+    function uk_partners_theme_add_metabox_select_cursos_callback( WP_Post $post ) {
+        wp_nonce_field( 'uk_partners_theme_select_cursos', 'uk_partners_theme_select_cursos_nonce' );
+
+		$cursosSelected = get_post_meta( $post->ID, '_uk_meta_select_cursos', true ); ?>
+
+		<div class="uk_partner_metabox_wrapper">
+
+		<?php 
+		//busca cursos cargados
+		$cursos = new WP_Query( array(
+			'post_type' => 'cursos',
+			)
+		);
+		if ($cursos->have_posts()) : ?>
+
+        	<p>
+				<?php _e('Seleccionar los cursos de este destino.', 'ukpartnerstheme' ); ?>
+			</p>
+			
+			<div class="uk_partner_metabox_input_data_wrapper">
+			<?php while ( $cursos->have_posts() ) : $cursos->the_post();
+				$nombre = get_the_title();
+				$id = get_the_id();
+				$resumen = get_the_excerpt();
+				?>
+
+				<div class="metabox_input_data">
+					<input type="checkbox" name="curso_id" value="<?php echo $id; ?>">
+		            <label for="curso_id">
+						<?php echo $nombre; ?>
+					</label>
+				</div>
+
+			<?php endwhile; ?>
+
+			</div>
+
+		<?php else : ?>
+
+			<p>
+				<?php _e('No hay ningún curso cargado.', 'ukpartnerstheme' ); ?>
+			</p>
+
+		<?php endif; ?>
+		
+		</div>
+		
+		<?php
+
+    }
+}
+
+if ( ! function_exists( 'uk_partners_theme_save_metabox_select_cursos' ) ) {
+	/**
+	 * Save meta data for a post.
+	 *
+	 * @param int     $post_id
+	 * @param WP_Post $post
+	 *
+	 * @since 1.0
+	 * @see uk_partners_add_metabox_select_cursos_callback()
+	 */
+    function uk_partners_theme_save_metabox_select_cursos( $post_id, WP_Post $post ) {
+       		
+        //si es un autosave salir de la funcion
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        	return;
+        }
+
+    	// Si no se aprueba el chequeo de seguridad, salir de la función.
+	   if ( ! isset( $_POST['uk_partners_theme_select_cursos_nonce'] ) || ! wp_verify_nonce( $_POST['uk_partners_theme_select_cursos_nonce'], 'uk_partners_theme_select_cursos' ) ) {
+		  return;
+	   }
+
+        $post_type = get_post_type_object( $post->post_type );
+
+        // Si el usuario actual no tiene permisos para modificar el post, salir de la función.
+        if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+            return;
+		}
+		
+        // Guardamos:
+		$cursosToSave = array(
+	        $_POST['curso_id']
+	    );
+
+        update_post_meta( $post_id, '_uk_meta_select_cursos', $cursosToSave );
+
+ 	}
+}
+
+add_action( 'save_post', 'uk_partners_theme_save_metabox_select_cursos', 10, 2 );
+
+
+/*------------------
+* METABOX 8: SELECCIONAR DESTINOS
+-------------------*/
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_select_destinos' ) ) {
+	/**
+	 * Register custom meta boxes for product. Section: header.
+	 *
+	 * @since 1.0
+	 *
+	 * @uses add_meta_box()
+	 */
+    function uk_partners_theme_add_metabox_select_destinos() {
+        add_meta_box(
+            'select_destinos',
+            __( 'Destinos del curso:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_select_destinos_callback',
+			'cursos'
+		);
+    }
+}
+
+add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_select_destinos' );
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_select_destinos_callback' ) ) {
+	/**
+	 * Print HTML for meta box.
+	 *
+	 * @since 1.0
+	 *
+	 * @param WP_Post $post
+	 *
+	 * @see uk_partners_theme_add_metabox_select_destinos()
+	 */
+    function uk_partners_theme_add_metabox_select_destinos_callback( WP_Post $post ) {
+        wp_nonce_field( 'uk_partners_theme_select_destinos', 'uk_partners_theme_select_destinos_nonce' );
+
+		$cursosSelected = get_post_meta( $post->ID, '_uk_meta_select_destinos', true ); ?>
+
+		<div class="uk_partner_metabox_wrapper">
+
+		<?php 
+		//busca cursos cargados
+		$cursos = new WP_Query( array(
+			'post_type' => 'destinos',
+			)
+		);
+		if ($cursos->have_posts()) : ?>
+
+        	<p>
+				<?php _e('Seleccionar los destinos para cursar este curso.', 'ukpartnerstheme' ); ?>
+			</p>
+			
+			<div class="uk_partner_metabox_input_data_wrapper">
+			<?php while ( $cursos->have_posts() ) : $cursos->the_post();
+				$nombre = get_the_title();
+				$id = get_the_id();
+				$resumen = get_the_excerpt();
+				?>
+
+				<div class="metabox_input_data">
+					<input type="checkbox" name="destino_id" value="<?php echo $id; ?>">
+		            <label for="destino_id">
+						<?php echo $nombre; ?>
+					</label>
+				</div>
+
+			<?php endwhile; ?>
+
+			</div>
+
+		<?php else : ?>
+
+			<p>
+				<?php _e('No hay ningún destino cargado.', 'ukpartnerstheme' ); ?>
+			</p>
+
+		<?php endif; ?>
+		
+		</div>
+		
+		<?php
+
+    }
+}
+
+if ( ! function_exists( 'uk_partners_theme_save_metabox_select_destinos' ) ) {
+	/**
+	 * Save meta data for a post.
+	 *
+	 * @param int     $post_id
+	 * @param WP_Post $post
+	 *
+	 * @since 1.0
+	 * @see uk_partners_add_metabox_select_destinos_callback()
+	 */
+    function uk_partners_theme_save_metabox_select_destinos( $post_id, WP_Post $post ) {
+       		
+        //si es un autosave salir de la funcion
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        	return;
+        }
+
+    	// Si no se aprueba el chequeo de seguridad, salir de la función.
+	   if ( ! isset( $_POST['uk_partners_theme_select_destinos_nonce'] ) || ! wp_verify_nonce( $_POST['uk_partners_theme_select_destinos_nonce'], 'uk_partners_theme_select_destinos' ) ) {
+		  return;
+	   }
+
+        $post_type = get_post_type_object( $post->post_type );
+
+        // Si el usuario actual no tiene permisos para modificar el post, salir de la función.
+        if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+            return;
+		}
+		
+        // Guardamos:
+		$destinosToSave = array(
+	        $_POST['destinos_id']
+	    );
+
+        update_post_meta( $post_id, '_uk_meta_select_destinos', $destinosToSave );
+
+ 	}
+}
+
+add_action( 'save_post', 'uk_partners_theme_save_metabox_select_destinos', 10, 2 );
