@@ -370,3 +370,266 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_crew' ) ) {
 }
 
 add_action( 'save_post', 'uk_partners_theme_save_metabox_crew', 10, 2 );
+
+
+/*------------------
+* METABOX 4: META INFO RESUMEN
+* aparece en destinos, cursos y alojamientos
+-------------------*/
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_meta_info_resumen' ) ) {
+	/**
+	 * Register custom meta boxes for product. Section: header.
+	 *
+	 * @since 1.0
+	 *
+	 * @uses add_meta_box()
+	 */
+    function uk_partners_theme_add_metabox_meta_info_resumen() {
+        add_meta_box(
+            'meta-resumen',
+            __( 'Resumen:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_meta_info_resumen_callback',
+			'destinos'
+		);
+		add_meta_box(
+            'meta-resumen',
+            __( 'Resumen:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_meta_info_resumen_callback',
+			'alojamientos'
+		);
+		add_meta_box(
+            'meta-resumen',
+            __( 'Resumen:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_meta_info_resumen_callback',
+			'cursos'
+		);	
+    }
+}
+
+add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_meta_info_resumen' );
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_meta_info_resumen_callback' ) ) {
+	/**
+	 * Print HTML for meta box.
+	 *
+	 * @since 1.0
+	 *
+	 * @param WP_Post $post
+	 *
+	 * @see uk_partners_theme_add_metabox_destinos()
+	 */
+    function uk_partners_theme_add_metabox_meta_info_resumen_callback( WP_Post $post ) {
+        wp_nonce_field( 'uk_partners_theme_meta_info_resumen', 'uk_partners_theme_meta_info_resumen_nonce' );
+
+        $metaInfoResumen = get_post_meta( $post->ID, '_uk_meta_info_resumen', true );
+        ?>
+
+        <div class="uk_partner_metabox_wrapper">
+        	<p>
+        		<?php _e('<strong> Instrucciónes</strong>: Agregar meta info y formulario de contacto.', 'ukpartnerstheme' ); ?>
+        	</p>
+
+        	<div class="uk_partner_metabox_input_data_wrapper">
+        		<div class="metabox_input_data">
+	            	<label for="uk_meta_1">
+						<?php esc_html_e( 'Info 1', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_meta_1" id="uk_meta_1" value="<?php echo isset($metaInfoResumen[0]) ? sanitize_text_field( $metaInfoResumen[0]) : ''; ?>"/>		
+				</div>
+
+				<div class="metabox_input_data">
+	            	<label for="uk_meta_2">
+						<?php esc_html_e( 'Info 2', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_meta_2" id="uk_meta_2" value="<?php echo isset($metaInfoResumen[1]) ? sanitize_text_field( $metaInfoResumen[1]) : ''; ?>"/>		
+				</div>
+
+				<div class="metabox_input_data">
+	            	<label for="uk_meta_3">
+						<?php esc_html_e( 'Info 3', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_meta_3" id="uk_meta_3" value="<?php echo isset($metaInfoResumen[2]) ? sanitize_text_field( $metaInfoResumen[2]) : ''; ?>"/>		
+				</div>
+            </div>
+        </div>
+        <?php
+
+    }
+}
+
+if ( ! function_exists( 'uk_partners_theme_save_metabox_meta_info_resumen' ) ) {
+	/**
+	 * Save meta data for a post.
+	 *
+	 * @param int     $post_id
+	 * @param WP_Post $post
+	 *
+	 * @since 1.0
+	 * @see uk_partners_add_metabox_meta_info_resumen()
+	 */
+    function uk_partners_theme_save_metabox_meta_info_resumen( $post_id, WP_Post $post ) {
+        // Si no se reciben los datos o no hay ninguno, salir de la función.
+		$dato1 = isset( $_POST['uk_meta_1'] ) ? 1 : 0;
+		$dato2 = isset( $_POST['uk_meta_2'] ) ? 1 : 0;
+		$dato3 = isset( $_POST['uk_meta_3'] ) ? 1 : 0;
+		$datos_sumados = $dato1 + $dato2 + $dato3;
+		
+		if ( $datos_sumados == 0  ) {
+            return;
+        };
+		
+        //si es un autosave salir de la funcion
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        	return;
+        }
+
+    	// Si no se aprueba el chequeo de seguridad, salir de la función.
+	   if ( ! isset( $_POST['uk_partners_theme_meta_info_resumen_nonce'] ) || ! wp_verify_nonce( $_POST['uk_partners_theme_meta_info_resumen_nonce'], 'uk_partners_theme_meta_info_resumen' ) ) {
+		  return;
+	   }
+
+        $post_type = get_post_type_object( $post->post_type );
+
+        // Si el usuario actual no tiene permisos para modificar el post, salir de la función.
+        if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+            return;
+		}
+		
+        // Guardamos:
+		$dataResumen = array();
+		array_push($dataResumen, sanitize_text_field( $_POST['uk_meta_1'] ) );
+		array_push($dataResumen, sanitize_text_field( $_POST['uk_meta_2'] ) );
+		array_push($dataResumen, sanitize_text_field( $_POST['uk_meta_3'] ) );
+			
+        if ( ! empty( $dataResumen ) ) {
+        	update_post_meta( $post_id, '_uk_meta_info_resumen', $dataResumen );
+        }
+
+ 	}   
+}
+
+add_action( 'save_post', 'uk_partners_theme_save_metabox_meta_info_resumen', 10, 2 );
+
+
+/*------------------
+* METABOX 5: CONTACT FORM
+* aparece en destinos y cursos
+-------------------*/
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code' ) ) {
+	/**
+	 * Register custom meta boxes for product. Section: header.
+	 *
+	 * @since 1.0
+	 *
+	 * @uses add_meta_box()
+	 */
+    function uk_partners_theme_add_metabox_contact_form_code() {
+        add_meta_box(
+            'contact-form-code',
+            __( 'Formulario de contacto:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_contact_form_code_callback',
+			'destinos'
+		);
+
+		add_meta_box(
+            'contact-form-code',
+            __( 'Formulario de contacto:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_contact_form_code_callback',
+			'cursos'
+		);
+		global $post;
+		$pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+
+		if($pageTemplate == 'page-alojamientos.php' ) {
+			add_meta_box(
+				'contact-form-code',
+				__( 'Formulario de contacto:', 'ukpartnerstheme' ),
+				'uk_partners_theme_add_metabox_contact_form_code_callback',
+				'page'
+			);
+		}
+
+    }
+}
+
+add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_contact_form_code' );
+
+if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callback' ) ) {
+	/**
+	 * Print HTML for meta box.
+	 *
+	 * @since 1.0
+	 *
+	 * @param WP_Post $post
+	 *
+	 * @see uk_partners_theme_add_metabox_destinos()
+	 */
+    function uk_partners_theme_add_metabox_contact_form_code_callback( WP_Post $post ) {
+        wp_nonce_field( 'uk_partners_theme_contact_form_code', 'uk_partners_theme_contact_form_code_nonce' );
+
+        $metaContactFormCode = get_post_meta( $post->ID, '_uk_meta_contact_form_code', true );
+        ?>
+
+        <div class="uk_partner_metabox_wrapper">
+        	<p>
+        		<?php _e('<strong>Instrucciónes</strong>: Agregar el código de Contact Form 7.', 'ukpartnerstheme' ); ?>
+        	</p>
+
+        	<div class="uk_partner_metabox_input_data_wrapper">
+        		<div class="metabox_input_data">
+	            	<label for="uk_contact_code">
+						<?php esc_html_e( 'Código Formulario', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_contact_code" id="uk_contact_code" value="<?php echo isset($metaContactFormCode) ? esc_attr( $metaContactFormCode) : ''; ?>"/>		
+				</div>
+        </div>
+        <?php
+
+    }
+}
+
+if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
+	/**
+	 * Save meta data for a post.
+	 *
+	 * @param int     $post_id
+	 * @param WP_Post $post
+	 *
+	 * @since 1.0
+	 * @see uk_partners_add_metabox_contact_form_code()
+	 */
+    function uk_partners_theme_save_metabox_contact_form_code( $post_id, WP_Post $post ) {
+        // Si no se reciben los datos o no hay ninguno, salir de la función.
+		if ( ! isset( $_POST['uk_contact_code']) || $_POST['uk_contact_code'] == ''  ) {
+            return;
+        };
+		
+        //si es un autosave salir de la funcion
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        	return;
+        }
+
+    	// Si no se aprueba el chequeo de seguridad, salir de la función.
+	   if ( ! isset( $_POST['uk_partners_theme_contact_form_code_nonce'] ) || ! wp_verify_nonce( $_POST['uk_partners_theme_contact_form_code_nonce'], 'uk_partners_theme_contact_form_code' ) ) {
+		  return;
+	   }
+
+        $post_type = get_post_type_object( $post->post_type );
+
+        // Si el usuario actual no tiene permisos para modificar el post, salir de la función.
+        if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+            return;
+		}
+		
+        // Guardamos:
+		$data = esc_attr( $_POST['uk_contact_code'] );
+			
+        update_post_meta( $post_id, '_uk_meta_contact_form_code', $data );
+        
+
+ 	}   
+}
+
+add_action( 'save_post', 'uk_partners_theme_save_metabox_contact_form_code', 10, 2 );

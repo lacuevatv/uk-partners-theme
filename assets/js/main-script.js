@@ -211,6 +211,7 @@ var is_alojamientos, is_home;
                 }
             }
         });
+
     }//getCarouselSinglePost()
 
     /*

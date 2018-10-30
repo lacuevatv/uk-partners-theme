@@ -210,6 +210,8 @@ if ( ! function_exists( 'uk_partners_theme_wp_admin_style_scripts' ) ) {
 add_action( 'admin_enqueue_scripts', 'uk_partners_theme_wp_admin_style_scripts' );
 
 
+add_filter( 'use_default_gallery_style', '__return_false' );
+
 /**
  * ADITIONALS
 */
