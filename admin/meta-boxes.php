@@ -427,7 +427,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_meta_info_resumen_callbac
 
         <div class="uk_partner_metabox_wrapper">
         	<p>
-        		<?php _e('Agregar meta info y formulario de contacto.', 'ukpartnerstheme' ); ?>
+        		<?php _e('Agregar meta info.', 'ukpartnerstheme' ); ?>
         	</p>
 
         	<div class="uk_partner_metabox_input_data_wrapper">
@@ -454,7 +454,6 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_meta_info_resumen_callbac
             </div>
         </div>
         <?php
-
     }
 }
 
@@ -515,9 +514,10 @@ add_action( 'save_post', 'uk_partners_theme_save_metabox_meta_info_resumen', 10,
 /*------------------
 * METABOX 5: CONTACT FORM
 * aparece en destinos y cursos y pagina de alojamientos
+* ESTA DESHABILITADO PORQUE LO PUSE COMO WIDGET
 -------------------*/
 
-if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code' ) ) {
+//if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code' ) ) {
 	/**
 	 * Register custom meta boxes for product. Section: header.
 	 *
@@ -525,7 +525,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code' ) ) {
 	 *
 	 * @uses add_meta_box()
 	 */
-    function uk_partners_theme_add_metabox_contact_form_code() {
+    /*function uk_partners_theme_add_metabox_contact_form_code() {
         add_meta_box(
             'contact-form-code',
             __( 'Formulario de contacto:', 'ukpartnerstheme' ),
@@ -553,11 +553,11 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code' ) ) {
 		}
 
     }
-}
+}*/
 
-add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_contact_form_code' );
+//add_action( 'add_meta_boxes', 'uk_partners_theme_add_metabox_contact_form_code' );
 
-if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callback' ) ) {
+//if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callback' ) ) {
 	/**
 	 * Print HTML for meta box.
 	 *
@@ -567,7 +567,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
 	 *
 	 * @see uk_partners_theme_add_metabox_contact_form_code()
 	 */
-    function uk_partners_theme_add_metabox_contact_form_code_callback( WP_Post $post ) {
+	/*function uk_partners_theme_add_metabox_contact_form_code_callback( WP_Post $post ) {
         wp_nonce_field( 'uk_partners_theme_contact_form_code', 'uk_partners_theme_contact_form_code_nonce' );
 
         $metaContactFormCode = get_post_meta( $post->ID, '_uk_meta_contact_form_code', true );
@@ -590,9 +590,9 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
         <?php
 
     }
-}
+}*/
 
-if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
+//if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
 	/**
 	 * Save meta data for a post.
 	 *
@@ -602,12 +602,8 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
 	 * @since 1.0
 	 * @see uk_partners_add_metabox_contact_form_code()
 	 */
-    function uk_partners_theme_save_metabox_contact_form_code( $post_id, WP_Post $post ) {
-        // Si no se reciben los datos o no hay ninguno, salir de la función.
-		if ( ! isset( $_POST['uk_contact_code']) || $_POST['uk_contact_code'] == ''  ) {
-            return;
-        };
-		
+    /*function uk_partners_theme_save_metabox_contact_form_code( $post_id, WP_Post $post ) {
+       		
         //si es un autosave salir de la funcion
         if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
         	return;
@@ -632,9 +628,9 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
         
 
  	}   
-}
+}*/
 
-add_action( 'save_post', 'uk_partners_theme_save_metabox_contact_form_code', 10, 2 );
+//add_action( 'save_post', 'uk_partners_theme_save_metabox_contact_form_code', 10, 2 );
 
 /*------------------
 * METABOX 6: GALERÍA DE IMAGENES

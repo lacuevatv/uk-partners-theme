@@ -83,9 +83,9 @@ if ( have_posts() ) :  the_post() ?>
                         echo '<h2 class="title-category-alojamiento">' . $categoria->name . '</h2>';
 
                             while ( $alojamientos->have_posts() ) : $alojamientos->the_post();
-                                $nombre = get_the_title();
-                                $parrafo = get_the_content();
-
+                                //$nombre = get_the_title();
+                                //$parrafo = get_the_content();
+                                
                                 get_template_part( 'template-parts/post/content', 'alojamiento' );
 
                             endwhile;
@@ -96,7 +96,7 @@ if ( have_posts() ) :  the_post() ?>
                                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Página', 'ukpartnerstheme' ) . ' </span>',
                             ) );*/
 
-                        wp_reset_postdata();
+                        
                         endif;
 
                         }//foreach de categorias
@@ -107,6 +107,7 @@ if ( have_posts() ) :  the_post() ?>
                     </div><!-- //.content-posts-wrapper-alojamiento -->
 
                     <aside id="contact-sidebar" class="contact-sidebar widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Formulario Contacto', 'ukpartnerstheme' ); ?>">
+                        
                         <button class="btn btn-turqueza toggle-buton-single-contact">
                             <?php _e( 'Solicitar información', 'ukpartnerstheme' ); ?>
                         </button>
@@ -116,6 +117,7 @@ if ( have_posts() ) :  the_post() ?>
                         <script>
                             var is_alojamientos = true;
                         </script>
+                       
                     </aside><!-- #single-sidebar -->
 
                 </div><!-- //.wrap .row -->

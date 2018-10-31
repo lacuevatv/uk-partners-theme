@@ -29,24 +29,12 @@
         </div><!-- .entry-content -->
         
         <span class="tag-destacado-alojamientos">
-            <?php //the_terms( $post->ID, 'tagalojamientos', '', ' - ' ); ?>
             <?php the_tags('', ' ' ); ?>
-            <!--<script>jQuery('.tag-destacado-alojamientos a').click(function(e){e.preventDefault(); });</script>-->
         </span>
-           
-        <div class="meta-resumen-single-post-wrapper">
-            <ul class="meta-resumen-list">
-                <li>
-                    1 semanas min
-                </li>
-                <li>
-                    + 14 años
-                </li>
-                <li>
-                    + habitación 2 o 4 personas
-                </li>
-            </ul>
-        </div>
+          
+        <?php
+            echo uk_get_meta_info_resumen($post->ID);
+        ?>   
 
     </div><!--//.inner-wrapper-alojamiento-->
 </article><!-- #post-## -->

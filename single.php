@@ -43,21 +43,13 @@ get_header(); ?>
 
 				<div class="wrapper-single-post-w-sidebar">
 
-					<div class="meta-resumen-single-post-wrapper">
-						<ul class="meta-resumen-list">
-							<li>
-								Todo el año
-							</li>
-							<li>
-								2 semanas mínimo
-							</li>
-							<li>
-								+ 14 años
-							</li>
-						</ul>
-					</div>
-
+					
 					<?php 
+
+					$post_type = get_post_type( $post->ID );
+					if ( $post_type != 'post' ) {
+						echo uk_get_meta_info_resumen($post->ID);
+					}
 					
 					get_template_part( 'template-parts/post/content', 'single-post' );
 

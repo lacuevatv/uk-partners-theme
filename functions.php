@@ -210,19 +210,22 @@ if ( ! function_exists( 'uk_partners_theme_wp_admin_style_scripts' ) ) {
 add_action( 'admin_enqueue_scripts', 'uk_partners_theme_wp_admin_style_scripts' );
 
 
-add_filter( 'use_default_gallery_style', '__return_false' );
+//FILTROS
+
+
 
 /**
  * ADITIONALS
 */
 //habilita los svg
-
 function ukpartners_upload_mimes($mimes = array()) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
-
 add_filter('upload_mimes', 'ukpartners_upload_mimes');
+
+//QUITA LOS ESTILOS DE LA GALERÍA POR DEFECTO
+add_filter( 'use_default_gallery_style', '__return_false' );
 
 
 //Custom template tags for this theme.
@@ -241,6 +244,51 @@ require get_template_directory() . '/admin/settings.php';
 
 //require_once get_template_directory() . '/admin/ajax.php';
 
+
+/*
+ * FUNCIONES DEL TEMA
+ */
+
+if ( ! function_exists( 'uk_get_meta_info_resumen' ) ) {
+	/**
+	 * muestra los meta info resumenes de destinos, cursos y alojamientos
+	 *
+	 * @since 1.0
+	 *
+	 * @uses get_post_meta()
+	 */
+	function uk_get_meta_info_resumen($id) {
+		
+		$metaInfoResumen = get_post_meta( $id, '_uk_meta_info_resumen', true );
+		if ( ( is_array($metaInfoResumen) && !empty($metaInfoResumen) ) || $metaInfoResumen != '' ) :
+			ob_start();
+			?>
+			<div class="meta-resumen-single-post-wrapper">
+				<ul class="meta-resumen-list">
+					<?php 
+					if ( ! is_array($metaInfoResumen) ) {
+
+						echo '<li>'.$metaInfoResumen.'</li>';
+
+					} else {
+
+						foreach ($metaInfoResumen as $info) {
+							if ($info != '') {
+								echo '<li>'.$info.'</li>';
+							}	
+						}
+					}
+					?>
+				</ul>
+			</div>
+			
+			<?php
+			$metaInfoHtml = ob_get_contents();
+			ob_clean();
+			return $metaInfoHtml;
+		endif; 
+	}
+}
 
 /**
  * DATA QUE REMPLAZA LA BD POR AHORA
