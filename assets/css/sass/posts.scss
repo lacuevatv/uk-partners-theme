@@ -183,7 +183,7 @@
 
     .tag-destacado {
         display: block;
-        background-color: $color-violeta;
+        background-color: $color-turqueza;
         color: $color-blanco;
         text-transform: uppercase;
         position: absolute;
@@ -211,16 +211,39 @@
 
 }//.post del loop
 
-/*
- * TAG DE DESTACADO, EN LOOP SE MUESTRA EN SINGLE NO
-*/
-.wrapper-single-post-w-sidebar {
-    .destacado {
-        .tag-destacado {
-            //display: none;
+
+/*CORREGIMOS COLORES DE ACUERDO AL POST*/
+.cursos {
+    .tag-destacado {
+        background-color: $color-violeta;
+    }
+
+    .entry-header {
+        .post-thumbnail {
+            background-color: $color-turqueza;
+        }
+        .wrapper-title { 
+            .entry-title {
+                &:before {
+                    background-color: $color-violeta;
+                }
+            }
         }
     }
 }
+
+.destinos {
+    .tag-destacado {
+        background-color: $color-turqueza;
+    }
+
+    .entry-header {
+        .post-thumbnail {
+            background-color: $color-violeta;
+        }
+    }
+}
+
 
 /*
 * este post corresponde al single y está en <main>
@@ -521,7 +544,7 @@
                     @include transform(translateX(-50%));
                     top: .3rem;
                     color: $color-blanco;
-                    background-color: $color-violeta;
+                    background-color: $color-turqueza;
                     text-transform: uppercase;
                     font-weight: 700;
                     font-size: .8rem;

@@ -49,15 +49,15 @@ var is_alojamientos, is_home;
         //inicia parallax de los headers en las paginas
         initParallaxHeader();
 
+        //carga las imagenes por ajax
+        getLazyImages();
+
         /*
          * pagina de inicio
         */
         if (is_home) {
             //todos los carouseles de pagina de inicio
             getCarouselInicio();    
-
-            //carga las imagenes por ajax
-            getLazyImages();
 
             //inicial los parallax
             initParallax();

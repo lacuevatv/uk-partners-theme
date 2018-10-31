@@ -47,7 +47,7 @@
 			
 			the_excerpt(); ?>
 
-			<a class="btn btn-leer-mas btn-turqueza" href="<?php esc_url( the_permalink() ); ?>">
+			<a class="btn btn-leer-mas <?php if ($post_type == 'cursos') { echo 'btn-violeta'; } else {echo 'btn-turqueza';};?>" href="<?php esc_url( the_permalink() ); ?>">
 				Leer más
 			</a>
 

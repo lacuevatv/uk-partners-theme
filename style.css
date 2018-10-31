@@ -2758,7 +2758,7 @@ html, body {
 }
 .post .tag-destacado, .cursos .tag-destacado, .destinos .tag-destacado {
   display: block;
-  background-color: #8a4398;
+  background-color: #18bdca;
   color: #fff;
   text-transform: uppercase;
   position: absolute;
@@ -2781,9 +2781,24 @@ html, body {
   transform: translateY(-50%) scale(1.2);
 }
 
-/*
- * TAG DE DESTACADO, EN LOOP SE MUESTRA EN SINGLE NO
-*/
+/*CORREGIMOS COLORES DE ACUERDO AL POST*/
+.cursos .tag-destacado {
+  background-color: #8a4398;
+}
+.cursos .entry-header .post-thumbnail {
+  background-color: #18bdca;
+}
+.cursos .entry-header .wrapper-title .entry-title:before {
+  background-color: #8a4398;
+}
+
+.destinos .tag-destacado {
+  background-color: #18bdca;
+}
+.destinos .entry-header .post-thumbnail {
+  background-color: #8a4398;
+}
+
 /*
 * este post corresponde al single y está en <main>
 */
@@ -3093,7 +3108,7 @@ html, body {
   transform: translateX(-50%);
   top: 0.3rem;
   color: #fff;
-  background-color: #8a4398;
+  background-color: #18bdca;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.8rem;
