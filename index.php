@@ -47,7 +47,7 @@ get_header(); ?>
 <?php else : ?>
 
 	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Posts', 'ukpartnerstheme' ); ?></h2>
+		<h2 class="page-title"><?php _e( 'UK Partners', 'ukpartnerstheme' ); ?></h2>
 	</header>
 
 <?php endif; ?>

@@ -66,15 +66,25 @@ get_header(); ?>
 					?>
 
 				</div><!-- //.wrapper-single-post-w-sidebar-->
+	
+				
+				<?php if ($post_type != 'post' ) : ?>
 
-				<aside id="contact-sidebar" class="contact-sidebar widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Formulario Contacto', 'ukpartnerstheme' ); ?>">
-					<button class="btn btn-turqueza toggle-buton-single-contact">
-						<?php _e( 'Solicitar información', 'ukpartnerstheme' ); ?>
-					</button>
-					<div class="wrapper-contact-form">
-						<?php dynamic_sidebar( 'contact-sidebar' ); ?>
-					</div>
-				</aside><!-- #single-sidebar -->
+					<aside id="contact-sidebar" class="contact-sidebar widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Formulario Contacto', 'ukpartnerstheme' ); ?>">
+						
+						<button class="btn btn-turqueza toggle-buton-single-contact">
+							<?php _e( 'Solicitar información', 'ukpartnerstheme' ); ?>
+						</button>
+						<div class="wrapper-contact-form">
+							<?php dynamic_sidebar( 'contact-sidebar' ); ?>
+						</div>
+
+					</aside><!-- #single-sidebar -->
+
+				<?php else : ?>
+				<?php get_sidebar(); ?>
+				<?php endif; ?>
+
 				
 			</div><!-- //.wrap -->
 
