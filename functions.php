@@ -290,6 +290,188 @@ if ( ! function_exists( 'uk_get_meta_info_resumen' ) ) {
 	}
 }
 
+if ( ! function_exists( 'uk_get_meta_cursos' ) ) {
+	/**
+	 * muestra los cursos seleccionados que se pueden hacer en ese destino
+	 *
+	 * @since 1.0
+	 *
+	 * @uses get_post_meta()
+	 */
+	function uk_get_meta_cursos($id) {
+		$metaCursos = get_post_meta( $id, '_uk_meta_select_cursos', true );
+
+		var_dump($metaCursos);
+
+		if ( ( is_array($metaCursos) && !empty($metaCursos) ) || $metaCursos != '' ) :
+			ob_start();
+			?>
+			<h2 class="title-section">
+				<?php _e('Cursos', 'ukpartnerstheme'); ?>
+			</h2>
+
+			<div class="tabs-wrapper">
+				<ul class="tabs-lista">
+					<?php
+					/*foreach ($metaCursos as $curso) { ?>
+					<li>
+						<article class="tab">
+							<h1 class="title-tab">
+								<?php echo $curso['titulo']; ?>
+							</h1>
+							<div class="contenido-tab">
+								<p>
+									<?php echo $curso['texto']; ?>
+								</p>
+								<a href="<?php echo $curso['url']; ?>" class="btn btn-borde">
+									<?php _e('Leer más', 'ukpartnerstheme'); ?>
+								</a>
+							</div>
+						</article>
+					</li>
+					<?php }*/ ?>
+				</ul>
+			</div>
+			
+			<?php
+			/*$metaInfoHtml = ob_get_contents();
+			ob_clean();
+			return $metaInfoHtml;*/
+		endif; 
+	}
+}
+
+
+if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
+	/**
+	 * muestra la galería de fotos armada
+	 *
+	 * @since 1.0
+	 *
+	 * @uses get_post_meta()
+	 */
+	function uk_get_meta_galeria($id) {
+		
+		$galeria = get_post_meta( $id, '_uk_galeria_imagenes', true );
+
+		var_dump($galeria);
+
+		if ( ( is_array($galeria) && !empty($galeria) ) || $galeria != '' ) :
+			ob_start();
+			?>
+			<h2 class="title-section">
+				<?php _e('Galería de fotos', 'ukpartnerstheme'); ?>
+			</h2>
+
+			<div class="carousel-wrapper">
+				<ul class="carousel-lista owl-carousel">
+					<?php 
+					/*foreach ($galeria as $imagen) { ?>
+						
+						<li>
+							<a href="<?php echo $imagen['url']; ?>">
+								<article class="item<?php if ($imagen['destacado']) {echo ' item-destacado'; } ?>">
+									
+									<span class="tag-destacado"><?php _e('Nuevo', 'ukpartnerstheme'); ?></span>
+									<div class="item-imagen load-images-ajax">
+										<img data-src="<?php echo $destino['image']; ?>" alt="<?php echo $destino['titulo']; ?>">
+										<span class="shutter"></span>
+									</div>
+
+									<div class="item-contenido">
+										<h1>
+											<?php echo $destino['titulo']; ?>
+										</h1>
+										<p class="item-resumen">
+											<?php echo $destino['texto']; ?>
+										</p>
+									</div>
+									
+								</article>
+							</a>
+						</li>
+
+					<?php }*/ ?>
+					
+				</ul>
+			</div>
+			
+			<?php
+			/*$metaInfoHtml = ob_get_contents();
+			ob_clean();
+			return $metaInfoHtml;*/
+		endif; 
+	}
+}
+
+
+if ( ! function_exists( 'uk_get_meta_destinos' ) ) {
+	/**
+	 * muestra los destinos en los cuales se puede cursar el curso en cuestion
+	 *
+	 * @since 1.0
+	 *
+	 * @uses get_post_meta()
+	 */
+	function uk_get_meta_destinos($id) {
+		$destinos = get_post_meta( $id, '_uk_meta_select_destinos', true );
+
+		var_dump($destinos);
+
+		if ( ( is_array($destinos) && !empty($destinos) ) || $destinos != '' ) :
+			ob_start();
+			?>
+			<h2 class="title-section">
+				<?php _e('Donde estudiar', 'ukpartnerstheme'); ?>
+			</h2>
+
+			<div class="carousel-wrapper">
+				<ul class="carousel-lista owl-carousel">
+					<?php 
+					/*foreach ($destinos as $destino) { ?>
+						
+						<li>
+							<a href="<?php echo $destino['url']; ?>">
+								<article class="item<?php if ($destino['destacado']) {echo ' item-destacado'; } ?>">
+									
+									<span class="tag-destacado"><?php _e('Nuevo', 'ukpartnerstheme'); ?></span>
+									<div class="item-imagen load-images-ajax">
+										<img data-src="<?php echo $destino['image']; ?>" alt="<?php echo $destino['titulo']; ?>">
+										<span class="shutter"></span>
+									</div>
+
+									<div class="item-contenido">
+										<h1>
+											<?php echo $destino['titulo']; ?>
+										</h1>
+										<p class="item-resumen">
+											<?php echo $destino['texto']; ?>
+										</p>
+									</div>
+									
+								</article>
+							</a>
+						</li>
+
+					<?php }*/ ?>
+					
+				</ul>
+			</div>
+			
+			<?php
+			/*$metaInfoHtml = ob_get_contents();
+			ob_clean();
+			return $metaInfoHtml;*/
+		endif; 
+	}
+}
+
+
+
+
+
+
+
 /**
  * DATA QUE REMPLAZA LA BD POR AHORA
 */

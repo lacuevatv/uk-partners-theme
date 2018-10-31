@@ -9,6 +9,7 @@
  * @since 1.0
  * @version 1.0
  */
+$post_type = get_post_type( $post->ID );
 
 get_header(); ?>
 
@@ -46,7 +47,6 @@ get_header(); ?>
 					
 					<?php 
 
-					$post_type = get_post_type( $post->ID );
 					if ( $post_type != 'post' ) {
 						echo uk_get_meta_info_resumen($post->ID);
 					}
@@ -78,16 +78,30 @@ get_header(); ?>
 				
 			</div><!-- //.wrap -->
 
-			<?php 
-			/*
-				* INFO AUXILIAR DEL POST
-				* donde estudiar, etc
-				* carousel
-			*/
-	
-			get_template_part( 'template-parts/post/content', 'single-extra' );	
+			<aside class="extra-single-wrapper">
+    			<div class="wrap">
+					<?php 
+					/*
+						* INFO AUXILIAR DEL POST
+						* donde estudiar, etc
+						* carousel
+					*/
+					if ( $post_type == 'destinos' ) {
+						uk_get_meta_cursos($post->ID);
+						uk_get_meta_galeria($post->ID);
+					}
+					if ( $post_type == 'cursos' ) {
+						uk_get_meta_destinos($post->ID);
+					}
+					?>
+				</div><!-- .wrap -->
+			</aside>
 
-		endwhile; ?>
+			<?php 
+			//esto tenia todo harcodeado
+			//get_template_part( 'template-parts/post/content', 'single-extra' ); ?>
+
+		<?php endwhile; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
