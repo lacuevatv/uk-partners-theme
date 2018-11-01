@@ -1057,12 +1057,6 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_destinos' ) ) {
 	 * @see uk_partners_add_metabox_sliders()
 	 */
     function uk_partners_theme_save_metabox_home_destinos( $post_id, WP_Post $post ) {
-        // Si no se reciben los datos o no hay ninguno, salir de la función.
-		$dato1 = isset( $_POST['uk_home_destinos'] ) ? 1 : 0;
-		$dato2 = isset( $_POST['uk_home_numeros_destinos'] ) ? 1 : 0;
-		$dato3 = isset( $_POST['uk_home_destinos_ver_mas'] ) ? 1 : 0;
-		$dato4 = isset( $_POST['uk_home_destinos_texto'] ) ? 1 : 0;
-	
 		
         //si es un autosave salir de la funcion
         if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {

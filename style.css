@@ -1483,7 +1483,22 @@ html, body {
   }
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado {
-  display: none;
+  display: block;
+  background-color: #18bdca;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 111;
+  top: 0.3rem;
+  left: 50%;
+  font-size: 0.8rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado a {
+  padding: 0.3rem 0.5rem;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen {
   overflow: hidden;
@@ -1509,6 +1524,7 @@ html, body {
   transition: all 0.5s;
   left: -5%;
   width: 110%;
+  height: auto;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen .shutter {
   display: block;
@@ -1607,23 +1623,6 @@ html, body {
     -ms-transform: translateY(0);
     transform: translateY(0);
   }
-}
-.uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino-destacado .tag-destacado {
-  display: block;
-  position: absolute;
-  z-index: 111;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: 0.3rem;
-  color: #fff;
-  background-color: #8a4398;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding: 0.3rem 1rem;
 }
 .uk-front-page-wrapper .uk-arma-viaje {
   position: relative;

@@ -20,7 +20,9 @@ get_header(); ?>
 		</script>
 		<?php // Show the selected frontpage content.
 		if ( have_posts() ) :
-			while ( have_posts() ) : the_post(); ?>
+			while ( have_posts() ) : the_post();
+			$idHome= $post->ID
+			?>
 
 				<article id="post-<?php the_ID(); ?>" class="uk-front-page-wrapper">
 					<header class="front-page-header">
@@ -29,7 +31,8 @@ get_header(); ?>
 						/** 
 						 * 1. slider
 						*/
-						$checkHomeSliders = get_post_meta( $post->ID, '_uk_home_sliders', true );
+						$checkHomeSliders = get_post_meta( $idHome, '_uk_home_sliders', true );
+						
 						if ( $checkHomeSliders == '' || $checkHomeSliders == '0' || $checkHomeSliders == false ) : ?>
 							
 							<div class="wrap">
@@ -44,57 +47,82 @@ get_header(); ?>
 						endif; ?>
 					</header><!-- .entry-header -->
 				
-				
 				<?php
 
 
 				/** 
 				 * 2. destinos
 				*/
-				$metaDestinos = get_post_meta( $post->ID, '_uk_home_destinos', true );
-				var_dump($metaDestinos);
+				global $metaDestinos;
+				$metaDestinos = get_post_meta( $idHome, '_uk_home_destinos', true );
 
-				if ( $metaDestinos != null & $metaDestinos != '' && is_array($metaDestinos) & ! empty($metaDestinos) ) :
-					echo 'aca iría destinos';
-				else : 
-					echo 'destinos esta desactivado';
+				if ( $metaDestinos &&  $metaDestinos[0] == 1 && $metaDestinos != '' && is_array($metaDestinos) & ! empty($metaDestinos) ) :
+					
+					get_template_part( 'template-parts/page/content', 'destinos' );
+				
 				endif;
 
-				echo '<div><br></div>';
+				
 				/** 
 				 * 3. separador
 				*/
-				$separadorData = get_post_meta( $post->ID, '_uk_home_separador', true );
-				var_dump($separadorData);
+				$separadorData = get_post_meta( $idHome, '_uk_home_separador', true );
+				
+				if ( $separadorData &&  $separadorData[0] == 1 && $separadorData != '' && is_array($separadorData) & ! empty($separadorData) ) :
+					
+					var_dump($separadorData);
+				
+				endif;
 
-				echo '<div><br></div>';
+				
 
 				/** 
 				 * 4. cursos
 				*/
-				$metaDestinos = get_post_meta( $post->ID, '_uk_home_cursos', true );
-				var_dump($metaDestinos);
+				$metaCursos = get_post_meta( $idHome, '_uk_home_cursos', true );
+				
+				if ( $metaCursos &&  $metaCursos[0] == 1 && $metaCursos != '' && is_array($metaCursos) & ! empty($metaCursos) ) :
 
-				echo '<div><br></div>';
+					var_dump($metaCursos);
+				
+				endif;
+
+				
 
 				/** 
 				 * 5. alojamientos
 				*/
-				$alojamientoData = get_post_meta( $post->ID, '_uk_home_alojamientos', true );
-				var_dump($alojamientoData);
+				$alojamientoData = get_post_meta( $idHome, '_uk_home_alojamientos', true );
+				
+				if ( $alojamientoData &&  $alojamientoData[0] == 1 && $alojamientoData != '' && is_array($alojamientoData) & ! empty($alojamientoData) ) :
+				
+					var_dump($alojamientoData);
+				
+				endif;
 
-				echo '<div><br></div>';
+				
 				/** 
 				 * 6. testimonios
 				*/
-				$metaTestimonios = get_post_meta( $post->ID, '_uk_home_testimonios', true );
-				var_dump($metaTestimonios);
-				echo '<div><br></div>';
+				$metaTestimonios = get_post_meta( $idHome, '_uk_home_testimonios', true );
+				
+				if ( $metaTestimonios &&  $metaTestimonios[0] == 1 && $metaTestimonios != '' && is_array($metaTestimonios) & ! empty($metaTestimonios) ) :
+				
+					var_dump($metaTestimonios);
+				
+				endif;
+				
+
 				/** 
 				 * 7. contacto
 				*/
-				$metaContactFormCode = get_post_meta( $post->ID, '_uk_home_contacto', true );
-				var_dump($metaContactFormCode);
+				$metaContactFormCode = get_post_meta( $idHome, '_uk_home_contacto', true );
+				
+				if ( $metaContactFormCode &&  $metaContactFormCode[0] == 1 && $metaContactFormCode != '' && is_array($metaContactFormCode) & ! empty($metaContactFormCode) ) :
+				
+					var_dump($metaContactFormCode);
+				
+				endif;
 
 			endwhile;
 		else :
