@@ -1692,7 +1692,23 @@ html, body {
   }
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .tag-destacado {
-  display: none;
+  display: block;
+  position: absolute;
+  z-index: 111;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 0.3rem;
+  color: #fff;
+  background-color: #8a4398;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .tag-destacado a {
+  padding: 0.3rem 1rem;
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-imagen {
   overflow: hidden;
@@ -1718,6 +1734,7 @@ html, body {
   transition: all 0.5s;
   left: -5%;
   width: 110%;
+  height: auto;
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-imagen .shutter {
   display: block;
@@ -1817,23 +1834,6 @@ html, body {
     transform: translateY(0);
   }
 }
-.uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso-destacado .tag-destacado {
-  display: block;
-  position: absolute;
-  z-index: 111;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: 0.3rem;
-  color: #fff;
-  background-color: #8a4398;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding: 0.3rem 1rem;
-}
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .owl-nav {
   display: none;
 }
@@ -1841,6 +1841,9 @@ html, body {
   .uk-front-page-wrapper .uk-cursos .cursos-wrapper .owl-nav {
     display: block;
   }
+}
+.uk-front-page-wrapper .uk-cursos .btn-mas-cursos {
+  color: #fff;
 }
 .uk-front-page-wrapper .uk-alojamiento {
   position: relative;
@@ -1908,6 +1911,7 @@ html, body {
   width: 110%;
   position: relative;
   left: -5%;
+  height: auto;
 }
 .uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-image .testimonio-nombre {
   color: #18bdca;

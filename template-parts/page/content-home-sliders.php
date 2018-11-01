@@ -26,8 +26,7 @@
                     $imagen_movil = $imagen;
                 } else {
                     $imagen_movil = IMAGES_DIR . 'headermobile-default.jpg';
-                }
-                
+                }   
             }
             ?>
 

@@ -42,7 +42,7 @@ get_header(); ?>
 						<?php else : 
 							
 							the_title( '<h1 class="screen-reader-text">', '</h1>' );
-							get_template_part( 'template-parts/page/content', 'sliders' );
+							get_template_part( 'template-parts/page/content', 'home-sliders' );
 						
 						endif; ?>
 					</header><!-- .entry-header -->
@@ -58,7 +58,7 @@ get_header(); ?>
 
 				if ( $metaDestinos &&  $metaDestinos[0] == 1 && $metaDestinos != '' && is_array($metaDestinos) & ! empty($metaDestinos) ) :
 					
-					get_template_part( 'template-parts/page/content', 'destinos' );
+					get_template_part( 'template-parts/page/content', 'home-destinos' );
 				
 				endif;
 
@@ -66,24 +66,24 @@ get_header(); ?>
 				/** 
 				 * 3. separador
 				*/
+				global $separadorData;
 				$separadorData = get_post_meta( $idHome, '_uk_home_separador', true );
 				
 				if ( $separadorData &&  $separadorData[0] == 1 && $separadorData != '' && is_array($separadorData) & ! empty($separadorData) ) :
 					
-					var_dump($separadorData);
+					get_template_part( 'template-parts/page/content', 'home-separador' );
 				
 				endif;
-
-				
 
 				/** 
 				 * 4. cursos
 				*/
+				global $metaCursos;
 				$metaCursos = get_post_meta( $idHome, '_uk_home_cursos', true );
 				
 				if ( $metaCursos &&  $metaCursos[0] == 1 && $metaCursos != '' && is_array($metaCursos) & ! empty($metaCursos) ) :
 
-					var_dump($metaCursos);
+					get_template_part( 'template-parts/page/content', 'home-cursos' );
 				
 				endif;
 
@@ -92,11 +92,12 @@ get_header(); ?>
 				/** 
 				 * 5. alojamientos
 				*/
+				global $alojamientoData;
 				$alojamientoData = get_post_meta( $idHome, '_uk_home_alojamientos', true );
 				
 				if ( $alojamientoData &&  $alojamientoData[0] == 1 && $alojamientoData != '' && is_array($alojamientoData) & ! empty($alojamientoData) ) :
 				
-					var_dump($alojamientoData);
+					get_template_part( 'template-parts/page/content', 'home-alojamientos' );
 				
 				endif;
 
@@ -104,11 +105,12 @@ get_header(); ?>
 				/** 
 				 * 6. testimonios
 				*/
+				global $metaTestimonios;
 				$metaTestimonios = get_post_meta( $idHome, '_uk_home_testimonios', true );
 				
 				if ( $metaTestimonios &&  $metaTestimonios[0] == 1 && $metaTestimonios != '' && is_array($metaTestimonios) & ! empty($metaTestimonios) ) :
 				
-					var_dump($metaTestimonios);
+					get_template_part( 'template-parts/page/content', 'home-testimonios' );
 				
 				endif;
 				
@@ -118,11 +120,35 @@ get_header(); ?>
 				*/
 				$metaContactFormCode = get_post_meta( $idHome, '_uk_home_contacto', true );
 				
-				if ( $metaContactFormCode &&  $metaContactFormCode[0] == 1 && $metaContactFormCode != '' && is_array($metaContactFormCode) & ! empty($metaContactFormCode) ) :
+				if ( $metaContactFormCode &&  $metaContactFormCode[0] == 1 && $metaContactFormCode != '' && is_array($metaContactFormCode) & ! empty($metaContactFormCode) ) : ?>
 				
-					var_dump($metaContactFormCode);
+				<!-- **********FOOTER CONTACTO********* -->
+					<footer class="front-page-footer">
+						<div class="wrap row row-justify-between row-reverse-in-pc">
+
+							<div class="wrapper-text">
+								<h2 class="contact-title">
+									<?php esc_html_e($metaContactFormCode[1]); ?>
+								</h2>
+
+								<div class="text">
+									<?php echo $metaContactFormCode[2]; ?>
+								</div>
+							</div>
+						
+						<!-- ************ contact form 7 ********* --->
+							<?php 
+							if ( $metaContactFormCode[3] != '' ) {
+								echo do_shortcode( htmlspecialchars_decode($metaContactFormCode[3]) );
+							}
+								
+							?>
+
+						</div><!-- .wrap -->
+
+					</footer>
 				
-				endif;
+				<?php endif;
 
 			endwhile;
 		else :

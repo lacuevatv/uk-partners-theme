@@ -1184,7 +1184,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_separador_callback' 
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_separador_imagen_movil">
-						<?php esc_html_e( 'Imagen', 'ukpartnerstheme' ); ?>
+						<?php esc_html_e( 'Imagen Movil', 'ukpartnerstheme' ); ?>
 					</label>
 					<input type="text" name="uk_home_separador_imagen_movil" id="uk_home_separador_imagen_movil" value="<?php echo isset($separadorData[7]) ? esc_attr( $separadorData[7]) : ''; ?>"/>
 					<button type="button" class="upload-images button-primary">Agregar imagen</button>		
@@ -1310,12 +1310,24 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_cursos_callback' ) )
             		<input type="number" name="uk_home_numeros_cursos" id="uk_home_numeros_cursos" value="<?php echo isset($metaDestinos[1]) ? esc_attr( $metaDestinos[1]) : '10'; ?>"/>		
 				</div>
 				<div class="metabox_input_data">
+	            	<label for="uk_home_titulo_cursos">
+						<?php esc_html_e( 'Título', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_home_titulo_cursos" id="uk_home_titulo_cursos" value="<?php echo isset($metaDestinos[2]) ? esc_attr( $metaDestinos[2]) : '10'; ?>"/>		
+				</div>
+				<div class="metabox_input_data">
 					<label for="uk_home_cursos_ver_mas"><?php esc_html_e( 'Botón Leer más', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_cursos_ver_mas" id="uk_home_cursos_ver_mas" value="<?php echo isset($metaDestinos[2]) ? esc_attr( $metaDestinos[2]) : '' ?>" <?php if (isset($metaDestinos[2]) && $metaDestinos[2] == '1') {echo 'checked'; } ?>/>	
+					<input type="checkbox" name="uk_home_cursos_ver_mas" id="uk_home_cursos_ver_mas" value="<?php echo isset($metaDestinos[3]) ? esc_attr( $metaDestinos[3]) : '' ?>" <?php if (isset($metaDestinos[3]) && $metaDestinos[3] == '1') {echo 'checked'; } ?>/>	
+				</div>
+				<div class="metabox_input_data">
+	            	<label for="uk_home_url_cursos">
+						<?php esc_html_e( 'URL', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_home_url_cursos" id="uk_home_url_cursos" value="<?php echo isset($metaDestinos[4]) ? esc_attr( $metaDestinos[4]) : ''; ?>"/>		
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_home_cursos_texto"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
-					<textarea name="uk_home_cursos_texto" id="uk_home_cursos_texto"><?php echo isset($metaDestinos[3]) ?  esc_textarea($metaDestinos[3]) : '' ?></textarea>
+					<textarea name="uk_home_cursos_texto" id="uk_home_cursos_texto"><?php echo isset($metaDestinos[5]) ?  esc_textarea($metaDestinos[5]) : '' ?></textarea>
 				</div>
             </div>
         </div>
@@ -1357,9 +1369,12 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_cursos' ) ) {
 		$dataDestinos = array();
 
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_cursos'] ) );
-		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_numeros_cursos'] ) );
+		array_push($dataDestinos, esc_attr( $_POST['uk_home_numeros_cursos'] ) );
+		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_titulo_cursos'] ) );
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_cursos_ver_mas'] ) );
+		array_push($dataDestinos, esc_url( $_POST['uk_home_url_cursos'] ) );
 		array_push($dataDestinos, sanitize_textarea_field( $_POST['uk_home_cursos_texto'] ) );
+		
 		
         if ( ! empty( $dataDestinos ) ) {
         	update_post_meta( $post_id, '_uk_home_cursos', $dataDestinos );
@@ -1467,7 +1482,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_alojamientos_callbac
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_alojamiento_imagen_movil">
-						<?php esc_html_e( 'Imagen', 'ukpartnerstheme' ); ?>
+						<?php esc_html_e( 'Imagen Movil', 'ukpartnerstheme' ); ?>
 					</label>
 					<input type="text" name="uk_home_alojamiento_imagen_movil" id="uk_home_alojamiento_imagen_movil" value="<?php echo isset($alojamientoData[8]) ? esc_attr( $alojamientoData[8]) : ''; ?>"/>
 					<button type="button" class="upload-images button-primary">Agregar imagen</button>		
@@ -1584,7 +1599,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_testimonios_callback
 
         	<div class="uk_partner_metabox_input_data_wrapper">
 				<div class="metabox_input_data">
-					<label for="uk_home_testimonios"><?php esc_html_e( 'Activar Cursos', 'ukpartnerstheme' ); ?></label>	
+					<label for="uk_home_testimonios"><?php esc_html_e( 'Activar Testimonios', 'ukpartnerstheme' ); ?></label>	
 					<input type="checkbox" name="uk_home_testimonios" id="uk_home_testimonios" value="<?php echo isset($metaTestimonios[0]) ? esc_attr( $metaTestimonios[0]) : '' ?>" <?php if (isset($metaTestimonios[0]) && $metaTestimonios[0] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
@@ -1594,8 +1609,14 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_testimonios_callback
             		<input type="number" name="uk_home_numeros_testimonios" id="uk_home_numeros_testimonios" value="<?php echo isset($metaTestimonios[1]) ? esc_attr( $metaTestimonios[1]) : '10'; ?>"/>		
 				</div>
 				<div class="metabox_input_data">
+	            	<label for="uk_home_titulo_testimonios">
+						<?php esc_html_e( 'Título', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_home_titulo_testimonios" id="uk_home_titulo_testimonios" value="<?php echo isset($metaTestimonios[2]) ? esc_attr( $metaTestimonios[2]) : ''; ?>"/>		
+				</div>
+				<div class="metabox_input_data">
 					<label for="uk_home_testimonios_texto"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
-					<textarea name="uk_home_testimonios_texto" id="uk_home_testimonios_texto"><?php echo isset($metaTestimonios[2]) ?  esc_textarea($metaTestimonios[2]) : '' ?></textarea>
+					<textarea name="uk_home_testimonios_texto" id="uk_home_testimonios_texto"><?php echo isset($metaTestimonios[3]) ?  esc_textarea($metaTestimonios[3]) : '' ?></textarea>
 				</div>
             </div>
         </div>
@@ -1637,8 +1658,10 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_testimonios' ) ) {
 		$dataTestimonios = array();
 
 		array_push($dataTestimonios, esc_attr( $_POST['uk_home_testimonios'] ) );
-		array_push($dataTestimonios, sanitize_text_field( $_POST['uk_home_numeros_testimonios'] ) );
+		array_push($dataTestimonios, esc_attr( $_POST['uk_home_numeros_testimonios'] ) );
+		array_push($dataTestimonios, sanitize_text_field( $_POST['uk_home_titulo_testimonios'] ) );
 		array_push($dataTestimonios, sanitize_textarea_field( $_POST['uk_home_testimonios_texto'] ) );
+		
 		
         if ( ! empty( $dataTestimonios ) ) {
         	update_post_meta( $post_id, '_uk_home_testimonios', $dataTestimonios );
@@ -1714,8 +1737,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_contact_code_titulo_texto"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
-					<!--<textarea name="uk_contact_code_titulo_texto" id="uk_contact_code_titulo_texto"><?php echo isset($metaContactFormCode[2]) ?  esc_textarea($metaContactFormCode[2]) : '' ?></textarea>-->
-					<?php wp_editor( esc_textarea($metaContactFormCode[2]), 'uk_contact_code_titulo_texto', array('textarea_rows' => '5')); ?>
+					<?php wp_editor( $metaContactFormCode[2], 'uk_contact_code_titulo_texto', array('media_buttons' => false,  )); ?>
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_contact_code_shortcode">
@@ -1764,7 +1786,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
 		$dataContacto = array();
 		array_push($dataContacto, esc_attr( $_POST['uk_contact_code'] ) );
 		array_push($dataContacto, sanitize_text_field( $_POST['uk_contact_code_titulo'] ) );
-		array_push($dataContacto, sanitize_textarea_field( $_POST['uk_contact_code_titulo_texto'] ) );
+		array_push($dataContacto, $_POST['uk_contact_code_titulo_texto'] );
 		array_push($dataContacto, esc_html( $_POST['uk_contact_code_shortcode'] ) );
 		
         if ( ! empty( $dataContacto ) ) {

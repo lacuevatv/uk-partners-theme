@@ -493,7 +493,21 @@
                 }
                 
                 .tag-destacado {
-                    display: none;
+                    display: block;
+                    position: absolute;
+                    z-index: 111;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                    top: .3rem;
+                    color: $color-blanco;
+                    background-color: $color-violeta;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: .8rem;
+                    
+                    a {
+                        padding: .3rem 1rem;
+                    }
                 }    
 
                 .curso-imagen {
@@ -514,6 +528,7 @@
                         @include transition(all $transitionSpeed);
                         left: -5%;
                         width: 110%;
+                        height: auto;
                     }
 
                     .shutter {
@@ -611,22 +626,7 @@
 
             }//.curso
 
-            .curso-destacado {
-                .tag-destacado {
-                    display: block;
-                    position: absolute;
-                    z-index: 111;
-                    left: 50%;
-                    @include transform(translateX(-50%));
-                    top: .3rem;
-                    color: $color-blanco;
-                    background-color: $color-violeta;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    font-size: .8rem;
-                    padding: .3rem 1rem;
-                } 
-            }//.curso-destacado
+            
 
             .owl-nav {
                 display: none;
@@ -635,6 +635,10 @@
                 }
             }
         }//.cursos-wrapper
+
+        .btn-mas-cursos {
+            color: $color-blanco;
+        }
     }//.uk-cursos
 
     .uk-alojamiento {
@@ -702,6 +706,7 @@
                             width: 110%;
                             position: relative;
                             left: -5%;
+                            height: auto;
                         }
                     }
                     

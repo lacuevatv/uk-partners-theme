@@ -76,7 +76,7 @@ global $metaDestinos;
                                         <?php the_title(); ?>
                                     </h1>
                                     <p class="destino-resumen">
-                                        <?php //the_excerpt(); ?>
+                                        <?php the_excerpt(); ?>
                                     </p>
                                 </div>
                                 
