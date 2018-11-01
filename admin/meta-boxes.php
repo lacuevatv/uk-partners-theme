@@ -885,7 +885,9 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_sliders' ) ) {
 				__( 'Slider Home', 'ukpartnerstheme' ),
 				'uk_partners_theme_add_metabox_home_sliders_callback',
 				'page'
-			);	
+			);
+			
+			
 		}
         
     }

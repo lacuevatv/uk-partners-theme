@@ -224,8 +224,35 @@ function ukpartners_upload_mimes($mimes = array()) {
 }
 add_filter('upload_mimes', 'ukpartners_upload_mimes');
 
+//habilita los excerpt en las paginas
+add_post_type_support( 'page', 'excerpt' );
+
 //QUITA LOS ESTILOS DE LA GALERÍA POR DEFECTO
 add_filter( 'use_default_gallery_style', '__return_false' );
+
+
+if ( ! function_exists( 'remove_editor_en_template_home' ) ) {
+	/**
+	 * quita el editor de wordpress en el template de la pagina de inicio para que no haya errores
+	 *
+	 * @since 1.0
+	 *
+	 * @uses get_post_meta()
+	 */
+	add_action('init', 'remove_editor_en_template_home');
+
+	function remove_editor_en_template_home() {
+		if (isset($_GET['post'])) {
+			$id = $_GET['post'];
+			$pageTemplate = get_post_meta( $id, '_wp_page_template', true );
+
+			if( $pageTemplate == 'page-home.php' || $pageTemplate == 'admin/page-home.php' ) {
+				remove_post_type_support('page', 'editor');
+			}
+		}
+	}
+}
+
 
 
 //Custom template tags for this theme.
