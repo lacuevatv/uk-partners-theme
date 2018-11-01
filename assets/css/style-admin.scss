@@ -57,6 +57,11 @@
 */
 .uk_partner_metabox_wrapper {
 
+    p {
+        font-style: italic;
+        font-size: 110%;
+        margin-bottom: 2rem;
+    }
     //secciones
     .uk_partner_metabox_input_data_wrapper {
         .metabox_input_data {
@@ -73,8 +78,9 @@
             margin: 1rem 0;
             label {
                 width: 25%;
+                font-weight: bold;
             }
-            input {
+            input, textarea {
                 width: 50%;
             }
 
