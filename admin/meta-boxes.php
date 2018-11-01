@@ -355,7 +355,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_crew' ) ) {
         // Guardamos:
 
         
-        update_post_meta( $post_id, '_crew', $dato );
+        update_post_meta( $post_id, '_crew', sanitize_text_field( $_POST['uk_cargo_crew'] ) );
         
         
  	}   

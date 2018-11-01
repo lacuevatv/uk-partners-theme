@@ -72,7 +72,8 @@ if ( have_posts() ) :  the_post() ?>
 							<?php while ( $crewDestacado->have_posts() ) : $crewDestacado->the_post();
 							$nombre = get_the_title();
 							$parrafo = get_the_content();
-							$cargo = 'Cargo';
+							$cargo = get_post_meta( $post->ID, '_crew', true );
+							
 							if ( has_post_thumbnail()) {
 								$imagen = get_the_post_thumbnail(); 
 							} else {
@@ -128,7 +129,7 @@ if ( have_posts() ) :  the_post() ?>
 							<?php while ( $crew->have_posts() ) :$crew->the_post();
 							$nombre = get_the_title();
 							$parrafo = get_the_content();
-							$cargo = 'Cargo';
+							$cargo = get_post_meta( $post->ID, '_crew', true );
 							if ( has_post_thumbnail()) {
 								$imagen = get_the_post_thumbnail(); 
 							} else {
