@@ -138,7 +138,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
                 'title', 'editor', 'thumbnail', 'excerpt'
             ),
             'public'      => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'taxonomies' => array('catcursos', 'post_tag'),
             'rewrite' => array('slug' => __( 'cursos', 'ukpartnerstheme' ),'with_front' => false),
             'menu_icon'   => 'dashicons-welcome-learn-more'

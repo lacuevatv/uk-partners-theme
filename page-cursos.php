@@ -10,8 +10,9 @@
  * @since 1.0
  * @version 1.0
  */
+get_header();
 
-get_header(); ?>
+if ( have_posts() ) : the_post(); ?>
 
 <header class="entry-header page-header">
 	<div class="header-image">
@@ -37,18 +38,24 @@ get_header(); ?>
 </header><!-- .entry-header -->
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main category-wrapper" role="main">
+	<main id="main" class="site-main page-content-wrapper" role="main">
 		<div class="wrap">
+
+			<div class="main-content-editor">
+            <?php
+                the_content();
+            ?>
+			</div>
 			
             <?php
-            $posts = new WP_Query( array('post_type' => 'cursos') );
-			if ( $posts->have_posts() ) : ?>
+            $cursos = new WP_Query( array('post_type' => 'cursos') );
+			if ( $cursos->have_posts() ) : ?>
 
 			<div class="content-posts-wrapper">
 
 				<?php
 				/* Start the Loop */
-				while ( $posts->have_posts() ) : $posts->the_post();
+				while ( $cursos->have_posts() ) : $cursos->the_post();
 
 					/*
 					* Include the Post-Format-specific template for the content.
@@ -85,4 +92,5 @@ get_header(); ?>
 </div><!-- #primary -->
 
 <?php
+endif;
 get_footer();

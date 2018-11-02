@@ -11,7 +11,8 @@
  * @version 1.0
  */
 
-get_header(); ?>
+get_header();
+if ( have_posts() ) : the_post(); ?>
 
 <header class="entry-header page-header">
 	<div class="header-image">
@@ -37,9 +38,13 @@ get_header(); ?>
 </header><!-- .entry-header -->
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main category-wrapper" role="main">
+	<main id="main" class="site-main page-content-wrapper" role="main">
 		<div class="wrap">
 			
+			<div class="main-content-editor">
+            	<?php the_content(); ?>
+			</div>
+
             <?php
             $posts = new WP_Query( array('post_type' => 'post') );
 			if ( $posts->have_posts() ) : ?>
@@ -84,5 +89,5 @@ get_header(); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php
+<?php endif;
 get_footer();
