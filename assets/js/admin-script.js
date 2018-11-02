@@ -1,6 +1,6 @@
 jQuery(function($){
     
-    $(document).on( 'click', '#upload-logo-uk', function( event ){
+    $(document).on( 'click', '.upload-logo-uk', function( event ){
 
         event.preventDefault();
         //variables:

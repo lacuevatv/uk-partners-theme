@@ -35,7 +35,7 @@
   display: block;
   width: 85%;
 }
-.uk-settings-page form .uk-settings-page-inputs #logo-uk {
+.uk-settings-page form .uk-settings-page-inputs #logo-uk, .uk-settings-page form .uk-settings-page-inputs #logo-uk-svg {
   width: 70%;
 }
 .uk-settings-page form .uk-settings-page-inputs .upload-images-btn {

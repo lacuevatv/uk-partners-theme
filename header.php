@@ -31,7 +31,10 @@
 	<header id="masthead" class="site-header" role="banner">
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Menú superior', 'ukpartnerstheme' ); ?>">
 			
-			<?php get_template_part( 'template-parts/header/content', 'barra-sup' ); ?>
+			<?php
+			global $datosThemes;
+			$datosThemes = get_option('uk_partners_theme_settings');
+			get_template_part( 'template-parts/header/content', 'barra-sup' ); ?>
 			
 			<div class="wrap">
 				<div class="barra-principal">
@@ -48,9 +51,26 @@
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<span class="screen-reader-text screen-reader-text-hidden" aria-hidden="true"><?php bloginfo( 'name' ); ?></span>
 							<picture>
-								<source srcset="<?php echo IMAGES_DIR ?>logo-uk.svg" type="image/svg+xml">
-								<source srcset="<?php echo IMAGES_DIR ?>logo-uk.png,<?php echo IMAGES_DIR ?>logo-uk@2x.png 2x" media="(min-width: 315px)">
-								<img class="image-loader" src="<?php echo IMAGES_DIR ?>logo-uk.png" alt="Logo sitio">
+
+							<?php 
+							$logoSVG = $datosThemes['uk_partners_theme_logo_svg'];
+							$logo = $datosThemes['uk_partners_theme_logo'];
+
+							if ( $logoSVG == '' || $logo == '') { ?>
+								
+									<source srcset="<?php echo IMAGES_DIR ?>logo-uk.svg" type="image/svg+xml">
+									<source srcset="<?php echo IMAGES_DIR ?>logo-uk.png,<?php echo IMAGES_DIR ?>logo-uk@2x.png 2x" media="(min-width: 315px)">
+									<img class="image-loader" src="<?php echo IMAGES_DIR ?>logo-uk.png" alt="Logo sitio">
+							<?php } else { ?>
+								<?php if ($logoSVG != ' ') : ?>
+								<source srcset="<?php echo $logoSVG; ?>" type="image/svg+xml">
+								<?php endif; ?> 
+								<?php if ($logo != '') : ?>
+								<source srcset="<?php echo $logo; ?>" media="(min-width: 315px)">
+								<?php endif; ?> 
+								<img class="image-loader" src="<?php echo isset($logo) ? $logo : IMAGES_DIR . 'logo-uk.png'; ?>" alt="Logo sitio <?php bloginfo( 'name' ); ?>">
+							<?php } ?>
+
 							</picture>
 						</a>
 					</h1>

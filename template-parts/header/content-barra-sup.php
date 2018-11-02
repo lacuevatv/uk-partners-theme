@@ -1,10 +1,17 @@
+<?php
+global $datosThemes;
+?>
 <div class="barra-sup-wrapper">
     
-        <div class="redes-w">
-            Follow us
-            <ul class="icons-sup-wrapper">
+    <div class="redes-w">
+        <?php if ( ( isset($datosThemes['uk_partners_theme_redes_facebook']) && $datosThemes['uk_partners_theme_redes_facebook'] != '' ) || ( isset($datosThemes['uk_partners_theme_redes_instagram']) && $datosThemes['uk_partners_theme_redes_instagram'] != '' ) || ( isset($datosThemes['uk_partners_theme_redes_tel']) && $datosThemes['uk_partners_theme_redes_tel'] != '' ) ) : ?>
+
+        Follow us
+        
+        <ul class="icons-sup-wrapper">
+            <?php if ( isset($datosThemes['uk_partners_theme_redes_facebook']) && $datosThemes['uk_partners_theme_redes_facebook'] != '' ) : ?>
                 <li>
-                    <a href="#" target="_blank">
+                    <a href="<?php echo isset($datosThemes['uk_partners_theme_redes_facebook']) ? $datosThemes['uk_partners_theme_redes_facebook'] : '#' ?>" target="_blank">
                         <span class="screen-reader-text"><?php
                         _e( 'Facebook', 'ukpartnerstheme' );
                         ?></span>
@@ -17,8 +24,11 @@
                         
                     </a>
                 </li>
+            <?php endif;
+            
+            if ( isset($datosThemes['uk_partners_theme_redes_instagram']) && $datosThemes['uk_partners_theme_redes_instagram'] != '' ) : ?>
                 <li>
-                    <a href="#" target="_blank">
+                    <a href="<?php echo isset($datosThemes['uk_partners_theme_redes_instagram']) ? $datosThemes['uk_partners_theme_redes_instagram'] : '#' ?>" target="_blank">
                         <span class="screen-reader-text"><?php
                         _e( 'Instagram', 'ukpartnerstheme' );
                         ?></span>
@@ -31,8 +41,12 @@
                         
                     </a>
                 </li>
-                <li>
-                    <a href="tel:+5491111111111" target="_blank">
+            <?php endif;
+
+            if ( isset($datosThemes['uk_partners_theme_redes_tel']) && $datosThemes['uk_partners_theme_redes_tel'] != '' ) : ?>
+
+                <li>                        
+                    <a href="<?php echo uk_clean_tel_to_link($datosThemes['uk_partners_theme_redes_tel']); ?>" target="_blank">
                         <span class="screen-reader-text"><?php
                         _e( 'Teléfono', 'ukpartnerstheme' );
                         ?></span>
@@ -44,20 +58,23 @@
                             </picture>
                         
                         <span class="texto-iconos">
-                            +54 11 4901 8869
+                            <?php echo $datosThemes['uk_partners_theme_redes_tel']; ?>
                         </span>
                     </a>
                 </li>
-            </ul>
-        </div>
-        
-        <?php
-        wp_nav_menu( array(
-            'theme_location' => 'menu-2',
-            'menu_id'        => 'sup-menu',
-            'menu_class'     => 'sup-menu',
-            'container_class'=> 'sup-menu-wrapper',
-        ) );
-        ?>
+            <?php endif; ?>
+        </ul>
+
+        <?php endif; ?>
+    </div>
+    
+    <?php
+    wp_nav_menu( array(
+        'theme_location' => 'menu-2',
+        'menu_id'        => 'sup-menu',
+        'menu_class'     => 'sup-menu',
+        'container_class'=> 'sup-menu-wrapper',
+    ) );
+    ?>
     
 </div>

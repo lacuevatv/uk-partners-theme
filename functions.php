@@ -492,3 +492,23 @@ if ( ! function_exists( 'uk_get_meta_destinos' ) ) {
 		endif; 
 	}
 }
+
+if ( ! function_exists( 'uk_clean_tel_to_link' ) ) {
+	/**
+	 * muestra los cursos seleccionados que se pueden hacer en ese destino
+	 *
+	 * @since 1.0
+	 *
+	 * @uses get_post_meta()
+	 */
+	function uk_clean_tel_to_link($tel) {
+		if ( strrpos($tel, '+') === false ) {
+			$tel = '+' . $tel;
+
+		}
+
+		$tel = trim($tel);
+		$tel =  str_replace(' ','',$tel);
+		return 'tel:' . $tel;
+	}
+}

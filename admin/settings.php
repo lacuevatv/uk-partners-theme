@@ -113,15 +113,21 @@ function uk_partners_theme_settings_section_callback_html () {
 //funciones que imprimen html de los campos de descripcion superior
 function uk_partners_theme_settings_admin_html_head() {
     $UKSettings = get_option('uk_partners_theme_settings');
+    $imagenLogoSVG = $UKSettings['uk_partners_theme_logo_svg'];
     $imagenLogo = $UKSettings['uk_partners_theme_logo'];
     
     ?>
 
     <!-- seccion header -->
     <div class="uk-settings-page-inputs">
+        <label for="logo-uk-svg"><?php _e('Logo SVG', 'ukpartnerstheme'); ?></label>
+        <input id="logo-uk-svg" name="uk_partners_theme_settings[uk_partners_theme_logo_svg]" type="text" value="<?php echo isset($imagenLogoSVG) ? $imagenLogoSVG : ''; ?>">
+        <button type="button" class="button-primary upload-logo-uk">Agregar imagen</button>
+    </div>
+    <div class="uk-settings-page-inputs">
         <label for="logo-uk"><?php _e('Logo', 'ukpartnerstheme'); ?></label>
-        <input id="logo-uk" name="uk_partners_theme_settings[uk_partners_theme_logo]" type="text" value="<?php echo $imagenLogo; ?>">
-        <button type="button" id="upload-logo-uk" class="button-primary">Agregar imagen</button>
+        <input id="logo-uk" name="uk_partners_theme_settings[uk_partners_theme_logo]" type="text" value="<?php echo isset($imagenLogo) ? $imagenLogo : ''; ?>">
+        <button type="button" class="button-primary upload-logo-uk">Agregar imagen</button>
     </div>
 <?php
 }
