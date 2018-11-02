@@ -135,7 +135,7 @@ function uk_partners_theme_settings_admin_html_head() {
 function uk_partners_theme_settings_admin_html_redes() {
     $UKSettings = get_option('uk_partners_theme_settings');
     $telContact = $UKSettings['uk_partners_theme_redes_tel'];
-    $emailContact = $UKSettings['uk_partners_theme_redes_email'];
+    //$emailContact = $UKSettings['uk_partners_theme_redes_email'];
     $facebookSB = $UKSettings['uk_partners_theme_redes_facebook'];
     $instagramSB = $UKSettings['uk_partners_theme_redes_instagram'];
 	//$skypeSB = $UKSettings['uk_partners_theme_redes_skype'];
@@ -155,10 +155,10 @@ function uk_partners_theme_settings_admin_html_redes() {
         <input id="telefono-redes-uk" name="uk_partners_theme_settings[uk_partners_theme_redes_tel]" type="text" value="<?php echo $telContact; ?>">
     </div>
 
-    <div class="uk-settings-page-inputs">
-        <label for="email-redes-uk"><?php _e('Email', 'ukpartnerstheme'); ?></label>
+    <!--<div class="uk-settings-page-inputs">
+        <label for="email-redes-uk"><?php //_e('Email', 'ukpartnerstheme'); ?></label>
         <input id="email-redes-uk" name="uk_partners_theme_settings[uk_partners_theme_redes_email]" type="email" value="<?php echo $emailContact; ?>">
-    </div>
+    </div>-->
 
     <div class="uk-settings-page-inputs">
         <label for="facebook-redes-uk"><?php _e('Facebook', 'ukpartnerstheme'); ?></label>
