@@ -53,8 +53,8 @@
 							<picture>
 
 							<?php 
-							$logoSVG = $datosThemes['uk_partners_theme_logo_svg'];
-							$logo = $datosThemes['uk_partners_theme_logo'];
+							$logoSVG = isset($datosThemes['uk_partners_theme_logo_svg']) ? $datosThemes['uk_partners_theme_logo_svg'] : '';
+							$logo = isset($datosThemes['uk_partners_theme_logo']) ? $datosThemes['uk_partners_theme_logo'] : '';
 
 							if ( $logoSVG == '' || $logo == '') { ?>
 								
