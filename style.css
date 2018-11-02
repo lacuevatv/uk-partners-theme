@@ -805,6 +805,14 @@ html, body {
     width: 30%;
   }
 }
+.barra-principal .primary-menu-wrapper .primary-menu .current-menu-item > a {
+  color: #18bdca;
+}
+.barra-principal .primary-menu-wrapper .primary-menu .current-menu-item > a:before {
+  content: "";
+  display: block;
+  width: 30%;
+}
 .barra-principal .primary-menu-wrapper .primary-menu .menu-item-has-children {
   position: relative;
 }
@@ -2861,7 +2869,7 @@ html, body {
   }
 }
 .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
-  padding: 1rem 0.5rem;
+  padding: 0rem 0.5rem;
   text-transform: uppercase;
   font-size: 0.6rem;
   background-color: #e5e6e7;
@@ -2883,9 +2891,13 @@ html, body {
 }
 @media (min-width: 768px) {
   .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
-    padding: 1rem 1.5rem;
+    padding: 0rem 1.5rem;
     font-size: 1rem;
   }
+}
+.post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .post .entry-content-single, .cursos .entry-content-single, .destinos .entry-content-single {
   padding: 1rem 0 2rem;

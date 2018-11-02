@@ -375,6 +375,17 @@
                 
             }//li
 
+            .current-menu-item {
+                > a {
+                    color: $color-turqueza;
+                    &:before {
+                        content: '';
+                        display: block;
+                        width: 30%;
+                    }
+                }
+            }
+
             .menu-item-has-children {
                 position: relative;
                 > a {
