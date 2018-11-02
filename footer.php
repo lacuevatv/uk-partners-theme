@@ -22,7 +22,15 @@
 				<div class="wrap">
 					<div class="footer-columns">
 						<div class="footer-column-wrapper">
-							<?php dynamic_sidebar( 'footer-sidebar-1' ); ?>
+							<?php
+							global $datosThemes;
+							
+								if ( isset($datosThemes['uk_partners_theme_footer_seguinos']) && $datosThemes['uk_partners_theme_footer_seguinos'] == 1 ) {
+									get_template_part( 'template-parts/footer/content', 'follow-widget' );
+								} else {
+									dynamic_sidebar( 'footer-sidebar-1' );
+								}
+							?>
 						</div>
 
 						<div class="footer-column-wrapper">
@@ -30,7 +38,13 @@
 						</div>
 
 						<div class="footer-column-wrapper">
-							<?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
+							<?php
+								if (  isset($datosThemes['uk_partners_theme_footer_instagram']) && $datosThemes['uk_partners_theme_footer_instagram'] == 1 && $datosThemes['uk_partners_theme_footer_instagram_script'] != '') {
+									get_template_part( 'template-parts/footer/content', 'instagram-loop' );
+								} else {
+									dynamic_sidebar( 'footer-sidebar-3' );
+								}
+							?>
 						</div>
 					</div>
 					

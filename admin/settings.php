@@ -96,6 +96,34 @@ function uk_partners_theme_settings_api_init() {
         'uk-settings-admin-options'
     );
     
+    //campo para agregar redes sociales en el footer
+	add_settings_field (
+        //texto del tag 'id' del campo
+        'uk-settings-admin-options-seguinos-footer',
+        //título del campo
+        __('Redes sociales', 'ukpartnerstheme'),
+        //funcion que imprime el html del input
+        'uk_partners_theme_settings_admin_html_redes_footer',
+        //slug del menu donde debe aparecer
+        'uk_partners_theme_settings',
+        //id de la seccion que pertenece
+        'uk-settings-admin-options'
+    );
+
+    //campo para agregar redes sociales en el footer
+	add_settings_field (
+        //texto del tag 'id' del campo
+        'uk-settings-admin-options-instagram-footer',
+        //título del campo
+        __('Instagram Feed Footer', 'ukpartnerstheme'),
+        //funcion que imprime el html del input
+        'uk_partners_theme_settings_admin_html_instagram_footer',
+        //slug del menu donde debe aparecer
+        'uk_partners_theme_settings',
+        //id de la seccion que pertenece
+        'uk-settings-admin-options'
+    );
+    
 	register_setting(
         //palabra clave igual que se uso en setting fields
         'uk_partners_theme_settings_group',
@@ -211,4 +239,45 @@ function uk_partners_theme_settings_admin_html_redes() {
     </div>-->
         
 <?php
+}
+
+//funciones que imprimen html de la opcion de seguir en el footer
+function uk_partners_theme_settings_admin_html_redes_footer() {
+    $UKSettings = get_option('uk_partners_theme_settings');
+    $seguinos = isset($UKSettings['uk_partners_theme_footer_seguinos']) ? $UKSettings['uk_partners_theme_footer_seguinos'] : '0';
+    
+    ?>
+
+    <!-- seccion header -->
+    <div class="uk-settings-page-inputs">
+        <label for="uk_partners_theme_settings[uk_partners_theme_footer_seguinos]"><?php _e('Mostrar en Footer', 'ukpartnerstheme'); ?></label>
+        <input type="checkbox" name="uk_partners_theme_settings[uk_partners_theme_footer_seguinos]" value="<?php echo esc_attr( $seguinos); ?>" <?php if ($seguinos == '1') {echo 'checked'; } ?>/>	
+    </div>
+    
+<?php
+}
+
+function uk_partners_theme_settings_admin_html_instagram_footer() {
+    $UKSettings = get_option('uk_partners_theme_settings');
+    $activar = isset($UKSettings['uk_partners_theme_footer_instagram']) ? $UKSettings['uk_partners_theme_footer_instagram'] : '0';
+    $scriptInstagram = isset( $UKSettings['uk_partners_theme_footer_instagram_script'] ) ? $UKSettings['uk_partners_theme_footer_instagram_script'] : '';
+    
+    ?>
+
+    <!-- seccion header -->
+    <div class="uk-settings-page-inputs">
+        <label for="uk_partners_theme_settings[uk_partners_theme_footer_instagram]"><?php _e('Mostrar en Footer', 'ukpartnerstheme'); ?></label>
+        <input type="checkbox" name="uk_partners_theme_settings[uk_partners_theme_footer_instagram]" value="<?php echo esc_attr( $activar); ?>" <?php if ($activar == '1') {echo 'checked'; } ?>/>	
+    </div>
+
+    <div class="uk-settings-page-inputs">
+        <label for="uk_partners_theme_settings[uk_partners_theme_footer_instagram_script]"><?php _e('Copiar Link aquí', 'ukpartnerstheme'); ?></label>
+        <textarea name="uk_partners_theme_settings[uk_partners_theme_footer_instagram_script]"><?php echo  $scriptInstagram; ?></textarea>
+    </div>
+
+    <p style="text-align:left">
+        Para crear el link hay que visitar la página con el link debajo, loguearse, completar las variables, estilo cuantas imágenes, animación, etc. Luego hacer clic en Get Code y  te dara un script para copiar dentro de este espacio.</p>
+    <p style="text-align:left">Para ir a la página hacer click <a href="https://lightwidget.com/" target="_blank">Aquí</a></p>
+    
+    <?php
 }
