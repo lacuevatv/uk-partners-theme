@@ -381,9 +381,10 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 		
 		$galeria = get_post_meta( $id, '_uk_galeria_imagenes', true );
 
-		var_dump($galeria);
-
 		if ( ( is_array($galeria) && !empty($galeria) ) || $galeria != '' ) :
+			$galeria = $galeria[0];
+
+			$imagenes = explode( ',', $galeria );
 			ob_start();
 			?>
 			<h2 class="title-section">
@@ -393,24 +394,25 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 			<div class="carousel-wrapper">
 				<ul class="carousel-lista owl-carousel">
 					<?php 
-					/*foreach ($galeria as $imagen) { ?>
+					foreach ($imagenes as $imagen) {
+						if ( $imagen != '' ) :
+						$urlImagen = wp_get_attachment_image_src($imagen, 'full');
+						?>
 						
 						<li>
 							<a href="<?php echo $imagen['url']; ?>">
-								<article class="item<?php if ($imagen['destacado']) {echo ' item-destacado'; } ?>">
-									
-									<span class="tag-destacado"><?php _e('Nuevo', 'ukpartnerstheme'); ?></span>
+								<article class="item">
 									<div class="item-imagen load-images-ajax">
-										<img data-src="<?php echo $destino['image']; ?>" alt="<?php echo $destino['titulo']; ?>">
+										<img data-src="<?php echo $urlImagen[0]; ?>">
 										<span class="shutter"></span>
 									</div>
 
 									<div class="item-contenido">
 										<h1>
-											<?php echo $destino['titulo']; ?>
+											<?php //echo $destino['titulo']; ?>
 										</h1>
 										<p class="item-resumen">
-											<?php echo $destino['texto']; ?>
+											<?php //echo $destino['texto']; ?>
 										</p>
 									</div>
 									
@@ -418,7 +420,9 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 							</a>
 						</li>
 
-					<?php }*/ ?>
+					<?php 
+						endif;
+					} ?>
 					
 				</ul>
 			</div>

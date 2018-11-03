@@ -593,7 +593,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_galeria_imagenes' ) ) {
         // Guardamos:
 		$imagenes = array();
 
-		array_push($imagenes, esc_url( $_POST['uk_imagenes'] ) );
+		array_push($imagenes, $_POST['uk_imagenes'] );
 		
         if ( ! empty( $imagenes ) ) {
         	update_post_meta( $post_id, '_uk_galeria_imagenes', $imagenes );
