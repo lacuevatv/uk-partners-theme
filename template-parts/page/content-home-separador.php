@@ -24,7 +24,7 @@ if ( $imagenMovil == '' ) {
 <section class="uk-arma-viaje">
     <div class="background-section-wrapper load-images-ajax">
         <picture>
-            <source srcset="<?php echo esc_url($imagen_movil); ?>" media="(max-width: 769px)">
+            <source srcset="<?php echo esc_url($imagenMovil); ?>" media="(max-width: 769px)">
             <img data-src="<?php echo esc_url($imagen); ?>; ?>" alt="<?php _e('Arma tu viaje', 'ukpartnerstheme'); ?>">
         </picture>
         <span class="shutter"></span>
