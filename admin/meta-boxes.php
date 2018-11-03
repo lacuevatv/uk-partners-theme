@@ -759,38 +759,36 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_select_destinos_callback'
     function uk_partners_theme_add_metabox_select_destinos_callback( WP_Post $post ) {
         wp_nonce_field( 'uk_partners_theme_select_destinos', 'uk_partners_theme_select_destinos_nonce' );
 
-		$cursosSelected = get_post_meta( $post->ID, '_uk_meta_select_destinos', true ); ?>
+		$destinosSelected = get_post_meta( $post->ID, '_uk_meta_select_destinos', true ); ?>
 
 		<div class="uk_partner_metabox_wrapper">
+			<input type="hidden" name="destinos_id" id="destinos_id" value="<?php echo isset($destinosSelected) ? $destinosSelected : ''; ?>">
+			<?php 
+			//busca destinos cargados
+			$destinos = new WP_Query( array(
+				'post_type' => 'destinos',
+				)
+			);
+			if ($destinos->have_posts()) : ?>
 
-		<?php 
-		//busca cursos cargados
-		$cursos = new WP_Query( array(
-			'post_type' => 'destinos',
-			)
-		);
-		if ($cursos->have_posts()) : ?>
+				<p>
+					<?php _e('Seleccionar los destinos para cursar este curso.', 'ukpartnerstheme' ); ?>
+				</p>
+				
+				<div class="uk_partner_metabox_input_data_wrapper">
+					<?php while ( $destinos->have_posts() ) : $destinos->the_post();
+						$nombre = get_the_title();
+						$id = get_the_id();
+						$resumen = get_the_excerpt();
+						?>
+						<div class="metabox_input_data">
+							<input type="checkbox" class="input_destinos" name="destino_id" data-id="<?php echo $id; ?>"<?php if ( strpos($destinosSelected, $id.',') !== false ) { echo ' checked'; }?>>
+							<label for="destino_id">
+								<?php echo $nombre; ?>
+							</label>
+						</div>
 
-        	<p>
-				<?php _e('Seleccionar los destinos para cursar este curso.', 'ukpartnerstheme' ); ?>
-			</p>
-			
-			<div class="uk_partner_metabox_input_data_wrapper">
-			<?php while ( $cursos->have_posts() ) : $cursos->the_post();
-				$nombre = get_the_title();
-				$id = get_the_id();
-				$resumen = get_the_excerpt();
-				?>
-
-				<div class="metabox_input_data">
-					<input type="checkbox" name="destino_id" value="<?php echo $id; ?>">
-		            <label for="destino_id">
-						<?php echo $nombre; ?>
-					</label>
-				</div>
-
-			<?php endwhile; ?>
-
+					<?php endwhile; ?>
 			</div>
 
 		<?php else : ?>
@@ -838,11 +836,11 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_select_destinos' ) ) {
 		}
 		
         // Guardamos:
-		$destinosToSave = array(
-	        $_POST['destinos_id']
-	    );
+		
+	    
+	    
 
-        update_post_meta( $post_id, '_uk_meta_select_destinos', $destinosToSave );
+        update_post_meta( $post_id, '_uk_meta_select_destinos', sanitize_text_field($_POST['destinos_id']) );
 
  	}
 }

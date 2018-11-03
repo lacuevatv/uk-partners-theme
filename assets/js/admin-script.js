@@ -112,7 +112,6 @@ jQuery(function($){
         var idCurso = $(this).attr('data-id');
         var inputCursos = $('#cursos_id');
         var cursosValores = $(inputCursos).val();
-        console.log(cursosValores);
         if ( $(this).attr('checked') ) {
             //si es chequeado se agrega al inputCursos
 
@@ -131,7 +130,32 @@ jQuery(function($){
         }
 
         $(inputCursos).val(cursosValores);
-        console.log(cursosValores);
+    });
+
+
+    //guarda los destinos en un input al ser seleccionados
+    $(document).on('click', '.input_destinos', function(e) {
+        var idDestino = $(this).attr('data-id');
+        var inputDestinos = $('#destinos_id');
+        var destinosValores = $(inputDestinos).val();
+        if ( $(this).attr('checked') ) {
+            //si es chequeado se agrega al inputCursos
+
+            //busca a ver si ya esta agregado y si esta no hace nada
+            if ( destinosValores.indexOf(idDestino) == '-1' ) {
+                destinosValores = destinosValores + idDestino + ',';
+            }
+
+        } else {
+            //Si se desmarca hay que borrarlo
+            
+            if ( destinosValores.indexOf(idDestino) != '-1' ) {
+                destinosValores = destinosValores.replace( idDestino+',' , '' );
+            }
+
+        }
+
+        $(inputDestinos).val(destinosValores);
     });
 
     

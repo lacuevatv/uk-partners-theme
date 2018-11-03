@@ -64,7 +64,6 @@ global $metaDestinos;
                                         <?php 
                                         if ( has_post_thumbnail()) {
                                             echo '<img data-src="' . get_the_post_thumbnail_url() .'" alt="' . get_the_title() .'">';
-                                            //echo get_the_post_thumbnail();
                                             
                                         } else {
                                             echo '<img data-src="' . IMAGES_DIR .'default_destinos.png" alt="' . get_the_title() .'">';

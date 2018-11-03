@@ -452,9 +452,10 @@ if ( ! function_exists( 'uk_get_meta_destinos' ) ) {
 	function uk_get_meta_destinos($id) {
 		$destinos = get_post_meta( $id, '_uk_meta_select_destinos', true );
 
-		var_dump($destinos);
+		if ( ! is_array($destinos) && $destinos != '' ) :
 
-		if ( ( is_array($destinos) && !empty($destinos) ) || $destinos != '' ) :
+			$destinos = explode( ',', $destinos );
+
 			ob_start();
 			?>
 			<h2 class="title-section">
@@ -464,32 +465,38 @@ if ( ! function_exists( 'uk_get_meta_destinos' ) ) {
 			<div class="carousel-wrapper">
 				<ul class="carousel-lista owl-carousel">
 					<?php 
-					/*foreach ($destinos as $destino) { ?>
-						
-						<li>
-							<a href="<?php echo $destino['url']; ?>">
-								<article class="item<?php if ($destino['destacado']) {echo ' item-destacado'; } ?>">
-									
-									<span class="tag-destacado"><?php _e('Nuevo', 'ukpartnerstheme'); ?></span>
-									<div class="item-imagen load-images-ajax">
-										<img data-src="<?php echo $destino['image']; ?>" alt="<?php echo $destino['titulo']; ?>">
-										<span class="shutter"></span>
-									</div>
+					foreach ($destinos as $destino) {
+						if ( $destino != '' ) :
+							$destino = get_post($destino);
+						?>
+							<li>
+								<article class="item">
+									<span class="tag-destacado">
+										<?php 
+											echo get_the_tag_list('',' ', '', $destino->ID);
+										?>
+									</span>
 
-									<div class="item-contenido">
-										<h1>
-											<?php echo $destino['titulo']; ?>
-										</h1>
-										<p class="item-resumen">
-											<?php echo $destino['texto']; ?>
-										</p>
-									</div>
-									
+									<a href="<?php echo get_permalink($destino->ID); ?>">
+										<div class="item-imagen load-images-ajax">
+											<img data-src="<?php echo get_the_post_thumbnail_url($destino->ID, 'full'); ?>">
+											<span class="shutter"></span>
+										</div>
+
+										<div class="item-contenido">
+											<h1>
+												<?php echo $destino->post_title; ?>
+											</h1>
+											<p class="item-resumen">
+												<?php echo $destino->post_excerpt; ?>
+											</p>
+										</div>
+									</a>
 								</article>
-							</a>
-						</li>
-
-					<?php }*/ ?>
+							</li>
+						<?php endif;
+					
+					} ?>
 					
 				</ul>
 			</div>
