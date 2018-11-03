@@ -1036,8 +1036,14 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_destinos_callback' )
 					<input type="checkbox" name="uk_home_destinos_ver_mas" id="uk_home_destinos_ver_mas" value="<?php echo isset($metaDestinos[2]) ? esc_attr( $metaDestinos[2]) : '' ?>" <?php if (isset($metaDestinos[2]) && $metaDestinos[2] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
+	            	<label for="uk_home_url_destinos">
+						<?php esc_html_e( 'Url Pagina destinos', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_home_url_destinos" id="uk_home_url_destinos" value="<?php echo isset($metaDestinos[3]) ? esc_url( $metaDestinos[3]) : ''; ?>"/>		
+				</div>
+				<div class="metabox_input_data">
 					<label for="uk_home_destinos_texto"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
-					<textarea name="uk_home_destinos_texto" id="uk_home_destinos_texto"><?php echo isset($metaDestinos[3]) ?  esc_textarea($metaDestinos[3]) : '' ?></textarea>
+					<textarea name="uk_home_destinos_texto" id="uk_home_destinos_texto"><?php echo isset($metaDestinos[4]) ?  esc_textarea($metaDestinos[4]) : '' ?></textarea>
 				</div>
             </div>
         </div>
@@ -1081,7 +1087,9 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_destinos' ) ) {
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_destinos'] ) );
 		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_numeros_destinos'] ) );
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_destinos_ver_mas'] ) );
+		array_push($dataDestinos, esc_url( $_POST['uk_home_url_destinos'] ) );
 		array_push($dataDestinos, sanitize_textarea_field( $_POST['uk_home_destinos_texto'] ) );
+		
 		
         if ( ! empty( $dataDestinos ) ) {
         	update_post_meta( $post_id, '_uk_home_destinos', $dataDestinos );

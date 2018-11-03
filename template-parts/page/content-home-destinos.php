@@ -9,7 +9,7 @@ global $metaDestinos;
             <?php _e('Otros destinos', 'ukpartnerstheme'); ?>
         </h2>
         <p class="sub-line">
-            <?php esc_html_e($metaDestinos[3]); ?>
+            <?php esc_html_e($metaDestinos[4]); ?>
         </p>
 
         <div class="destinos-wrapper">
@@ -33,7 +33,7 @@ global $metaDestinos;
 
                     if ($metaDestinos[2] == 1 && $counterDestinos == $metaDestinos[1] ) { ?>
                         <li>
-                            <a href="<?php echo $destino['url']; ?>">
+                            <a href="<?php esc_html_e($metaDestinos[3]); ?>">
                                 <article class="destino">
                                     
                                     <div class="destino-imagen load-images-ajax">
@@ -60,28 +60,32 @@ global $metaDestinos;
                                 
                                 </span>
                                 <a href="<?php the_permalink(); ?>">
-                                <div class="destino-imagen load-images-ajax">
-                                    <?php 
-                                    if ( has_post_thumbnail()) {
-                                        echo '<img data-src="' . get_the_post_thumbnail_url() .'" alt="' . get_the_title() .'">';
-                                        //echo get_the_post_thumbnail();
-                                        
-                                    } else {
-                                        echo '<img data-src="' . IMAGES_DIR .'default_destinos.png" alt="' . get_the_title() .'">';
-                                    }
-                                    ?>
-                                    <span class="shutter"></span>
-                                </div>
+                                    <div class="destino-imagen load-images-ajax">
+                                        <?php 
+                                        if ( has_post_thumbnail()) {
+                                            echo '<img data-src="' . get_the_post_thumbnail_url() .'" alt="' . get_the_title() .'">';
+                                            //echo get_the_post_thumbnail();
+                                            
+                                        } else {
+                                            echo '<img data-src="' . IMAGES_DIR .'default_destinos.png" alt="' . get_the_title() .'">';
+                                        }
+                                        ?>
+                                        <span class="shutter"></span>
+                                    </div>
+                                    
+                                    <div class="destino-contenido">
+                                        <h1>
+                                            <?php the_title(); ?>
+                                        </h1>
+                                        <p class="destino-resumen">
+                                            <?php the_excerpt(); ?>
+                                        </p>
+
+                                        <button type="button" class="btn btn-turqueza">
+                                            <?php _e('Ver más', 'ukpartnerstheme'); ?>
+                                        </button>
+                                    </div>
                                 </a>
-                                <div class="destino-contenido">
-                                    <h1>
-                                        <?php the_title(); ?>
-                                    </h1>
-                                    <p class="destino-resumen">
-                                        <?php the_excerpt(); ?>
-                                    </p>
-                                </div>
-                                
                                 
                             </article>
                         </li>

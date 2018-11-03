@@ -1473,11 +1473,19 @@ html, body {
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
   position: relative;
-  height: 260px;
+  margin-bottom: 4rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
+    height: 450px;
+    width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
+    width: 100%;
     height: 290px;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 1250px) {
@@ -1497,7 +1505,7 @@ html, body {
   text-transform: uppercase;
   position: absolute;
   z-index: 111;
-  top: 0.3rem;
+  top: -0.7rem;
   left: 50%;
   font-size: 0.8rem;
   -webkit-transform: translateX(-50%);
@@ -1505,18 +1513,30 @@ html, body {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+@media (min-width: 992px) {
+  .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado {
+    top: 0.3rem;
+  }
+}
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado a {
   padding: 0.3rem 0.5rem;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen {
   overflow: hidden;
   background-color: #323232;
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 5%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 250px;
+}
+@media (min-width: 992px) {
+  .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+  }
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen img {
   position: absolute;
@@ -1535,7 +1555,7 @@ html, body {
   height: auto;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen .shutter {
-  display: block;
+  display: none;
   position: absolute;
   z-index: 11;
   top: 0;
@@ -1551,20 +1571,19 @@ html, body {
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-imagen .shutter {
+    display: block;
     background-color: #18bdca;
     filter: alpha(opacity=0);
     opacity: 0;
   }
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido {
-  color: #fff;
-  position: absolute;
   z-index: 11;
-  padding: 0.2rem 1rem;
-  width: 90%;
-  bottom: 5%;
-  left: 5%;
+  padding: 1rem 1rem;
   text-align: center;
+  position: relative;
+  color: #595a5c;
+  background-color: #e5e6e7;
   display: flex;
   display: -o-flex;
   display: -ms-flex;
@@ -1592,11 +1611,18 @@ html, body {
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido {
+    padding: 0.2rem 1rem;
+    color: #fff;
+    background-color: transparent;
     visibility: hidden;
     -webkit-transform: translateY(50%);
     -moz-transform: translateY(50%);
     -ms-transform: translateY(50%);
     transform: translateY(50%);
+    position: absolute;
+    width: 90%;
+    bottom: 5%;
+    left: 5%;
   }
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido h1 {
@@ -1611,6 +1637,15 @@ html, body {
   line-height: 1rem;
   margin-bottom: 1rem;
   width: 100%;
+}
+.uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido button {
+  color: #fff;
+  font-size: 0.7rem;
+}
+@media (min-width: 992px) {
+  .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido button {
+    display: none;
+  }
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino:hover .destino-imagen img {
