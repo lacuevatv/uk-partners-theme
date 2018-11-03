@@ -6,10 +6,10 @@ global $metaDestinos;
 <section class="uk-destinos">
     <div class="wrap">
         <h2 class="title-section">
-            <?php _e('Otros destinos', 'ukpartnerstheme'); ?>
+            <?php esc_html_e($metaDestinos[4]); ?>
         </h2>
         <p class="sub-line">
-            <?php esc_html_e($metaDestinos[4]); ?>
+            <?php esc_html_e($metaDestinos[5]); ?>
         </p>
 
         <div class="destinos-wrapper">

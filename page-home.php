@@ -132,7 +132,7 @@ get_header(); ?>
 								</h2>
 
 								<div class="text">
-									<?php echo $metaContactFormCode[2]; ?>
+									<?php echo wpautop($metaContactFormCode[2]); ?>
 								</div>
 							</div>
 						

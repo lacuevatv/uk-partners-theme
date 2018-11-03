@@ -1042,8 +1042,14 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_destinos_callback' )
             		<input type="text" name="uk_home_url_destinos" id="uk_home_url_destinos" value="<?php echo isset($metaDestinos[3]) ? esc_url( $metaDestinos[3]) : ''; ?>"/>		
 				</div>
 				<div class="metabox_input_data">
+	            	<label for="uk_home_titulo_destinos">
+						<?php esc_html_e( 'Título bloque', 'ukpartnerstheme' ); ?>
+					</label>
+            		<input type="text" name="uk_home_titulo_destinos" id="uk_home_titulo_destinos" value="<?php echo isset($metaDestinos[4]) ? esc_html( $metaDestinos[4]) : ''; ?>"/>		
+				</div>
+				<div class="metabox_input_data">
 					<label for="uk_home_destinos_texto"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
-					<textarea name="uk_home_destinos_texto" id="uk_home_destinos_texto"><?php echo isset($metaDestinos[4]) ?  esc_textarea($metaDestinos[4]) : '' ?></textarea>
+					<textarea name="uk_home_destinos_texto" id="uk_home_destinos_texto"><?php echo isset($metaDestinos[5]) ?  esc_textarea($metaDestinos[5]) : '' ?></textarea>
 				</div>
             </div>
         </div>
@@ -1088,6 +1094,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_destinos' ) ) {
 		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_numeros_destinos'] ) );
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_destinos_ver_mas'] ) );
 		array_push($dataDestinos, esc_url( $_POST['uk_home_url_destinos'] ) );
+		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_titulo_destinos'] ) );
 		array_push($dataDestinos, sanitize_textarea_field( $_POST['uk_home_destinos_texto'] ) );
 		
 		
@@ -1795,7 +1802,32 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
 		array_push($dataContacto, esc_attr( $_POST['uk_contact_code'] ) );
 		array_push($dataContacto, sanitize_text_field( $_POST['uk_contact_code_titulo'] ) );
 		array_push($dataContacto, $_POST['uk_contact_code_titulo_texto'] );
-		array_push($dataContacto, esc_html( $_POST['uk_contact_code_shortcode'] ) );
+		array_push($dataContacto, wp_kses( $_POST['uk_contact_code_shortcode'], $allowedposttags = array(
+			'h1'         => array(
+				'align' => true,
+				),
+				'h2'         => array(
+				'align' => true,
+				),
+				'h3'         => array(
+				'align' => true,
+				),
+				'h4'         => array(
+				'align' => true,
+				),
+				'h5' => array(
+				'align' => true,
+				),
+				'h6'         => array(
+				'align' => true,
+				),
+				'p'          => array(
+					'align'    => true,
+					'dir'      => true,
+					'lang'     => true,
+					'xml:lang' => true,
+					),
+		) ) );
 		
         if ( ! empty( $dataContacto ) ) {
         	update_post_meta( $post_id, '_uk_home_contacto', $dataContacto );
