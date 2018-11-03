@@ -107,6 +107,33 @@ jQuery(function($){
     });
 
 
+    //guarda los cursos en un input al ser seleccionados
+    $(document).on('click', '.input_cursos', function(e) {
+        var idCurso = $(this).attr('data-id');
+        var inputCursos = $('#cursos_id');
+        var cursosValores = $(inputCursos).val();
+        console.log(cursosValores);
+        if ( $(this).attr('checked') ) {
+            //si es chequeado se agrega al inputCursos
+
+            //busca a ver si ya esta agregado y si esta no hace nada
+            if ( cursosValores.indexOf(idCurso) == '-1' ) {
+                cursosValores = cursosValores + idCurso + ',';
+            }
+
+        } else {
+            //Si se desmarca hay que borrarlo
+            
+            if ( cursosValores.indexOf(idCurso) != '-1' ) {
+                cursosValores = cursosValores.replace( idCurso+',' , '' );
+            }
+
+        }
+
+        $(inputCursos).val(cursosValores);
+        console.log(cursosValores);
+    });
+
     
 
 });

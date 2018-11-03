@@ -551,7 +551,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_galeria_imagenes_callback
         	<div class="uk_partner_metabox_input_data_wrapper">
         		
 				<div class="metabox_input_data">
-					<input type="text" name="uk_imagenes" id="uk_imagenes" value="<?php echo isset($imagenes[0]) ? esc_attr( $imagenes[0]) : ''; ?>"/>
+					<input type="text" name="uk_imagenes" id="uk_imagenes" value="<?php echo isset($imagenes) ? esc_attr( $imagenes) : ''; ?>"/>
 					<button type="button" class="upload-imagenes button-primary">Agregar imagenes</button>
 	            </div>
             </div>
@@ -591,15 +591,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_galeria_imagenes' ) ) {
 		}
 		
         // Guardamos:
-		$imagenes = array();
-
-		array_push($imagenes, $_POST['uk_imagenes'] );
-		
-        if ( ! empty( $imagenes ) ) {
-        	update_post_meta( $post_id, '_uk_galeria_imagenes', $imagenes );
-        }
-        
-        
+		update_post_meta( $post_id, '_uk_galeria_imagenes', sanitize_text_field($_POST['uk_imagenes']) );
         
  	}   
 }
@@ -647,45 +639,43 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_select_cursos_callback' )
 		$cursosSelected = get_post_meta( $post->ID, '_uk_meta_select_cursos', true ); ?>
 
 		<div class="uk_partner_metabox_wrapper">
-
-		<?php 
-		//busca cursos cargados
-		$cursos = new WP_Query( array(
-			'post_type' => 'cursos',
-			)
-		);
-		if ($cursos->have_posts()) : ?>
-
-        	<p>
-				<?php _e('Seleccionar los cursos de este destino.', 'ukpartnerstheme' ); ?>
-			</p>
-			
 			<div class="uk_partner_metabox_input_data_wrapper">
-			<?php while ( $cursos->have_posts() ) : $cursos->the_post();
-				$nombre = get_the_title();
-				$id = get_the_id();
-				$resumen = get_the_excerpt();
-				?>
+				<input type="hidden" name="cursos_id" id="cursos_id" value="<?php echo isset($cursosSelected) ? $cursosSelected : ''; ?>">
+					<?php 
+					//busca cursos cargados
+					$cursos = new WP_Query( array(
+						'post_type' => 'cursos',
+						)
+					);
+					if ($cursos->have_posts()) : ?>
 
-				<div class="metabox_input_data">
-					<input type="checkbox" name="curso_id" value="<?php echo $id; ?>">
-		            <label for="curso_id">
-						<?php echo $nombre; ?>
-					</label>
-				</div>
+						<p>
+							<?php _e('Seleccionar los cursos de este destino.', 'ukpartnerstheme' ); ?>
+						</p>
 
-			<?php endwhile; ?>
+						<?php while ( $cursos->have_posts() ) : $cursos->the_post();
+							$nombre = get_the_title();
+							$id = get_the_id();
+							$resumen = get_the_excerpt();
+							?>
+							
+							<div class="metabox_input_data">
+								<input type="checkbox" class="input_cursos" name="curso_id" data-id="<?php echo $id; ?>"<?php if ( strpos($cursosSelected, $id.',') !== false ) { echo ' checked'; }?>>
+								<label for="curso_id">
+									<?php echo $nombre; ?>
+								</label>
+							</div>
 
+						<?php endwhile; ?>
+
+					<?php else : ?>
+
+						<p>
+							<?php _e('No hay ningún curso cargado.', 'ukpartnerstheme' ); ?>
+						</p>
+
+					<?php endif; ?>
 			</div>
-
-		<?php else : ?>
-
-			<p>
-				<?php _e('No hay ningún curso cargado.', 'ukpartnerstheme' ); ?>
-			</p>
-
-		<?php endif; ?>
-		
 		</div>
 		
 		<?php
@@ -723,11 +713,8 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_select_cursos' ) ) {
 		}
 		
         // Guardamos:
-		$cursosToSave = array(
-	        $_POST['curso_id']
-	    );
-
-        update_post_meta( $post_id, '_uk_meta_select_cursos', $cursosToSave );
+		
+        update_post_meta( $post_id, '_uk_meta_select_cursos', sanitize_text_field($_POST['cursos_id']) );
 
  	}
 }

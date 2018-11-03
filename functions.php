@@ -328,9 +328,9 @@ if ( ! function_exists( 'uk_get_meta_cursos' ) ) {
 	function uk_get_meta_cursos($id) {
 		$metaCursos = get_post_meta( $id, '_uk_meta_select_cursos', true );
 
-		var_dump($metaCursos);
-
-		if ( ( is_array($metaCursos) && !empty($metaCursos) ) || $metaCursos != '' ) :
+		if (  ! is_array($metaCursos) && $metaCursos != '' ) :
+			
+			$cursos = explode( ',', $metaCursos );
 			ob_start();
 			?>
 			<h2 class="title-section">
@@ -340,23 +340,29 @@ if ( ! function_exists( 'uk_get_meta_cursos' ) ) {
 			<div class="tabs-wrapper">
 				<ul class="tabs-lista">
 					<?php
-					/*foreach ($metaCursos as $curso) { ?>
-					<li>
-						<article class="tab">
-							<h1 class="title-tab">
-								<?php echo $curso['titulo']; ?>
-							</h1>
-							<div class="contenido-tab">
-								<p>
-									<?php echo $curso['texto']; ?>
-								</p>
-								<a href="<?php echo $curso['url']; ?>" class="btn btn-borde">
-									<?php _e('Leer más', 'ukpartnerstheme'); ?>
-								</a>
-							</div>
-						</article>
-					</li>
-					<?php }*/ ?>
+					foreach ($cursos as $curso) {
+						if ( $curso != '' ) : 
+						$curso = get_post($curso);
+						?>
+
+						<li>
+							<article class="tab">
+								<h1 class="title-tab">
+									<?php echo $curso->post_title; ?>
+								</h1>
+								<div class="contenido-tab">
+									<p>
+										<?php echo $curso->post_excerpt; ?>
+									</p>
+									<a href="<?php echo get_permalink($curso->ID); ?>" class="btn btn-borde">
+										<?php _e('Leer más', 'ukpartnerstheme'); ?>
+									</a>
+								</div>
+							</article>
+						</li>
+
+					<?php endif;
+					} ?>
 				</ul>
 			</div>
 			
@@ -381,8 +387,7 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 		
 		$galeria = get_post_meta( $id, '_uk_galeria_imagenes', true );
 
-		if ( ( is_array($galeria) && !empty($galeria) ) || $galeria != '' ) :
-			$galeria = $galeria[0];
+		if (  ! is_array($galeria) && $galeria != '' ) :
 
 			$imagenes = explode( ',', $galeria );
 			ob_start();
