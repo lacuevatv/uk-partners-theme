@@ -68,14 +68,17 @@ jQuery(function($){
     });
 
 
+    
+
     //SUBE MUCHAS IMAGENES PARA LA GALERÍA
     $(document).on( 'click', '.upload-imagenes', function( event ){
 
         event.preventDefault();
         //variables:
         var contenedor = this.closest('.metabox_input_data');
-        var input = $(contenedor).find('input');
+        var input = $('#uk_imagenes');
 
+        var urlImagenesPreview = [];
         var frame;
         
         // Create a new media frame
@@ -94,18 +97,54 @@ jQuery(function($){
             //var attachment = frame.state().get('selection').first().toJSON();
             var selection = frame.state().get('selection');
             selection.map( function( attachment ) {
-            attachment = attachment.toJSON();
-            
-            input.val( input.val()+attachment.id+',');
+                attachment = attachment.toJSON();
+                //guarda los nuevos datos en un input
+                input.val( input.val()+attachment.id+',');
+                //guardar data para actualizar
+                urlImagenesPreview.push(attachment);
             
             });
+            //actualizar la vista previa
+            addimagestopreview(urlImagenesPreview);
             
         });
 
         // Finally, open the modal on click
         frame.open();
+
+        
     });
 
+
+    //eliminar imagen al hacer clic en la cruz
+    $(document).on('click', '.del-image', function(){
+        var id = $(this).attr('data-id');
+        var li = $(this).closest('li').remove();
+
+        //borrarla del input
+        var input = $('#uk_imagenes');
+        var imagenes = $(input).val();
+        var nuevosvalores = imagenes.replace( id+',' , '' );
+        $(input).val(nuevosvalores)
+    });
+
+    //agrega nuevas imagenes
+    function addimagestopreview( data ) {
+        var input = $('#uk_imagenes');
+            var html = '';
+        console.log(data)
+        for (var i = 0; i < data.length; i++) {
+            html += '<li data-id="'+data[0].id+'" data-orden="0"><button class="del-image" data-id="'+data[0].id+'"></button><img src="'+data[0].url+'"></li>';
+        }
+
+        if ( html != '') {
+            $('.imagenes-galeria').append( $(html) );
+        }
+
+    }//updateGaleriaPreview()
+
+
+    
 
     //guarda los cursos en un input al ser seleccionados
     $(document).on('click', '.input_cursos', function(e) {

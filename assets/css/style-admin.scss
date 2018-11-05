@@ -1,3 +1,5 @@
+
+@import 'sass/variables';
 /*
  * setting page
 */
@@ -98,5 +100,72 @@
                 width: 25%;
             }
         }
+
+
+        .wrapper-galeria-admin-metabox {
+            text-align: left;
+            .button {
+                margin: 1rem 0;
+            }
+
+            .imagenes-galeria {
+                margin: 4rem 0 2rem;
+                display: flex;
+                display: -o-flex;
+                display: -ms-flex;
+                display: -moz-flex;
+                display: -webkit-flex;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -o-align-items: center;
+                align-items: center;
+                -webkit-flex-wrap:wrap;
+                -moz-flex-wrap:wrap;
+                -ms-flex-wrap:wrap;
+                -o-flex-wrap:wrap;
+                flex-wrap:wrap;
+
+                li {
+                    width: 150px;
+                    height: 150px;
+                    padding: .5rem;
+                    position: relative;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    button {
+                        position: absolute;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        background: #333;
+                        border: none;
+                        color: #fff;
+                        @include border-radius(50%);
+                        cursor: pointer;
+                        top: 1rem;
+                        right: 1rem;
+                        &:after {
+                            content: 'X';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            @include transform(translate3D(-50%,-50%,0));
+                        }
+
+                        &:hover {
+                            zoom: 1;
+                            filter: alpha(opacity=70);
+                            opacity: 0.7;
+                          }
+                    }
+                }//li
+            }//.imagenes-galeria
+        }//.wrapper-galeria-admin-metabox
+
     }//.uk_partner_metabox_input_data_wrapper
 }//.uk_partner_metabox_wrapper

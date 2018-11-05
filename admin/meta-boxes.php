@@ -107,7 +107,6 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_partner' ) ) {
         $dato = isset($POST_['uk_url_partner']) ? $POST_['uk_url_partner'] : '';
         update_post_meta( $post_id, '_url_partner', $dato );
         
-        
  	}   
 }
 
@@ -551,9 +550,28 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_galeria_imagenes_callback
         	<div class="uk_partner_metabox_input_data_wrapper">
         		
 				<div class="metabox_input_data">
-					<input type="text" name="uk_imagenes" id="uk_imagenes" value="<?php echo isset($imagenes) ? esc_attr( $imagenes) : ''; ?>"/>
-					<button type="button" class="upload-imagenes button-primary">Agregar imagenes</button>
+					<input type="hidden" name="uk_imagenes" id="uk_imagenes" value="<?php echo isset($imagenes) ? esc_attr( $imagenes) : ''; ?>"/>
 	            </div>
+				<div class="wrapper-galeria-admin-metabox">
+					<button type="button" class="upload-imagenes button-primary">Agregar imagenes</button>
+					<ul class="imagenes-galeria">
+						<?php 
+						if ( isset($imagenes) && $imagenes != '' ) {
+							$imagenes = explode( ',', $imagenes);
+							$contador = 1;
+							foreach ($imagenes as $imagen) {
+								if ( $imagen != '' ) :
+								$urlImagen = wp_get_attachment_image_src($imagen, 'full');
+									echo '<li data-id="'.$imagen.'" data-orden="'.$contador.'"><button class="del-image" data-id="'.$imagen.'"></button><img src="'.$urlImagen[0].'"></li>';
+
+									$contador++;
+								endif;
+							}
+
+						}
+						?>
+					</ul>
+				</div>
             </div>
         </div>
         <?php
