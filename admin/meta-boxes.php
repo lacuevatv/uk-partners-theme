@@ -104,7 +104,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_partner' ) ) {
 		
         // Guardamos:
 
-        
+        $dato = isset($POST_['uk_url_partner']) ? $POST_['uk_url_partner'] : '';
         update_post_meta( $post_id, '_url_partner', $dato );
         
         
@@ -246,7 +246,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_sliders' ) ) {
 
 		array_push($dataSlider, sanitize_text_field( $_POST['uk_btn_sliders'] ) );
 		
-		array_push($dataSlider, esc_attr( $_POST['uk_open_sliders'] ) );
+		array_push( $dataSlider, esc_attr( isset($_POST['uk_open_sliders']) ? $_POST['uk_open_sliders'] : '0' )  );
 
 		array_push($dataSlider, esc_url( $_POST['uk_imagen_sliders'] ) );
 
