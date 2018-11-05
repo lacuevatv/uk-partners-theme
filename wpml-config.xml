@@ -1,0 +1,34 @@
+<wpml-config>
+  <custom-types>
+    <custom-type translate="1">partners</custom-type>
+    <custom-type translate="1">testimonios</custom-type>
+    <custom-type translate="1">sliders</custom-type>
+    <custom-type translate="1">crew</custom-type>
+    <custom-type translate="1">destinos</custom-type>
+    <custom-type translate="1">cursos</custom-type>
+    <custom-type translate="1">alojamientos</custom-type>
+  </custom-types>
+  <taxonomies>
+    <taxonomy translate="1">catalojamientos</taxonomy>
+    <taxonomy translate="1">catcursos</taxonomy>
+    <taxonomy translate="1">catdestinos</taxonomy>
+    <taxonomy translate="1">catcrew</taxonomy>
+  </taxonomies>
+  <custom-fields>
+    <custom-field action="translate">_url_partner</custom-field>
+    <custom-field action="translate">_uk_sliders</custom-field>
+    <custom-field action="translate">_crew</custom-field>
+    <custom-field action="translate">_uk_meta_info_resumen</custom-field>
+    <custom-field action="translate">_uk_meta_contact_form_code</custom-field>
+    <custom-field action="translate">_uk_home_sliders</custom-field>
+    <custom-field action="translate">_uk_home_destinos</custom-field>
+    <custom-field action="translate">_uk_home_separador</custom-field>
+    <custom-field action="translate">_uk_home_cursos</custom-field>
+    <custom-field action="translate">_uk_home_alojamientos</custom-field>
+    <custom-field action="translate">_uk_home_testimonios</custom-field>
+    <custom-field action="translate">_uk_home_contacto</custom-field>
+    <custom-field action="translate">_uk_meta_select_cursos</custom-field>
+    <custom-field action="translate">_uk_galeria_imagenes</custom-field>
+    <custom-field action="translate">_uk_meta_select_destinos</custom-field>
+  </custom-fields>
+</wpml-config>

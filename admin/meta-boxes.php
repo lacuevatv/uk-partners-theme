@@ -1755,7 +1755,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_contact_code_titulo_texto"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
-					<?php wp_editor( $metaContactFormCode[2], 'uk_contact_code_titulo_texto', array('media_buttons' => false,  )); ?>
+					<?php wp_editor( isset($metaContactFormCode[2]) ? $metaContactFormCode[2] : '', 'uk_contact_code_titulo_texto', array('media_buttons' => false,  )); ?>
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_contact_code_shortcode">
