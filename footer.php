@@ -49,19 +49,32 @@
 					</div>
 					
 					<div class="footer-logos">
-						<ul id="footer-logos" class="owl-carousel">
-							<li>
-								<a href="#" alt="logo-partners">
-									<img src="<?php echo IMAGES_DIR ?>temp/logo1.png">
-								</a>
-							</li>
-							<li>
-								<a href="#" alt="logo-partners">
-									<img src="<?php echo IMAGES_DIR ?>temp/logo2.png">
-								</a>
-							</li>
-							
-						</ul>
+					
+					<?php $partners = new WP_Query( array('post_type' => 'partners') );
+						if ( $partners->have_posts() ) : ?>
+							<ul id="footer-logos" class="owl-carousel">
+								<?php 
+								while ( $partners->have_posts() ) : $partners->the_post();
+									//si no hay imagen destacada no lo muestra porque no tiene sentido
+									if ( has_post_thumbnail()) :
+									$url = get_post_meta( $post->ID, '_url_partner', true );
+									$imagen = get_the_post_thumbnail_url();
+									?>
+									
+									<li>
+										<a href="<?php echo isseT($url) ? $url : ''; ?>" alt="Uk Partners - "<?php echo get_the_title(); ?>>
+											<img src="<?php echo $imagen; ?>">
+										</a>
+									</li>
+
+									<?php endif;
+								
+								endwhile; ?>
+								
+							</ul>
+						
+						<?php endif; ?>
+					
 					</div>
 				</div><!-- .wrap -->
 			</div><!-- .first-footer -->
