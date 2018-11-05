@@ -528,3 +528,12 @@ if ( ! function_exists( 'uk_clean_tel_to_link' ) ) {
 		return 'tel:' . $tel;
 	}
 }
+
+
+
+function wpmlsupp_1706_reset_wpml_capabilities() {
+    if ( function_exists( 'icl_enable_capabilities' ) ) {
+        icl_enable_capabilities();
+    }
+}
+add_action( 'shutdown', 'wpmlsupp_1706_reset_wpml_capabilities' );
