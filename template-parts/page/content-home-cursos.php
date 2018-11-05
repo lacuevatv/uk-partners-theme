@@ -52,7 +52,7 @@ global $metaCursos;
                                                 <?php the_title(); ?>
                                             </h1>
                                             <p class="curso-resumen">
-                                                <?php the_excerpt(); ?>
+                                                <?php echo acortaTexto($post->post_excerpt, 30); ?>
                                             </p>
                                         </div>
                                     </a>        

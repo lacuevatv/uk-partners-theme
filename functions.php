@@ -531,9 +531,27 @@ if ( ! function_exists( 'uk_clean_tel_to_link' ) ) {
 
 
 
-function wpmlsupp_1706_reset_wpml_capabilities() {
-    if ( function_exists( 'icl_enable_capabilities' ) ) {
-        icl_enable_capabilities();
-    }
+function acortaTexto( $texto, $cantPalabras = 50, $final = null ) {
+	if ( null === $final ) {
+	$final = '&hellip;';
+	}	
+	$textoOriginal = $texto;
+	
+	//quitar html
+	$texto = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $texto );
+	$texto = strip_tags($texto);
+	
+	//reducir texto y agregar el final
+	 $words_array = preg_split( "/[\n\r\t ]+/", $texto, $cantPalabras + 1, PREG_SPLIT_NO_EMPTY );
+	$sep = ' ';
+	
+	//devolver texto reducido
+	if ( count( $words_array ) > $cantPalabras ) {
+		array_pop( $words_array );
+		$texto = implode( $sep, $words_array );
+		$texto = $texto . $final;
+	} else {
+		$texto = implode( $sep, $words_array );
+	}
+	return $texto;
 }
-add_action( 'shutdown', 'wpmlsupp_1706_reset_wpml_capabilities' );

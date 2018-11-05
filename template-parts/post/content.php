@@ -43,10 +43,11 @@
 
 	<div class="entry-content<?php if ( is_single() ) { echo ' entry-content-single'; } ?>">
 		<?php
-		if ( ! is_single() ) { 
+		if ( ! is_single() ) { ?>
 			
-			the_excerpt(); ?>
-
+			<p>
+				<?php echo acortaTexto($post->post_excerpt, 10); ?>
+			</p>
 			<a class="btn btn-leer-mas <?php if ($post_type == 'cursos') { echo 'btn-violeta'; } else {echo 'btn-turqueza';};?>" href="<?php esc_url( the_permalink() ); ?>">
 				Leer más
 			</a>

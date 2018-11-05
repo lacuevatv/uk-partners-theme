@@ -1145,6 +1145,10 @@ html, body {
 /*
  * WIDGETS
 */
+.default-sidebar {
+  padding: 3rem 0 1rem;
+}
+
 .widget {
   font-size: 0.88rem;
   font-weight: 400;
