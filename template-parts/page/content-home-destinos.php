@@ -77,7 +77,7 @@ global $metaDestinos;
                                             <?php the_title(); ?>
                                         </h1>
                                         <p class="destino-resumen">
-                                            <?php echo acortaTexto($post->post_excerpt, 30); ?>
+                                            <?php echo acortaTexto($post->post_excerpt, 10); ?>
                                         </p>
 
                                         <button type="button" class="btn btn-turqueza">

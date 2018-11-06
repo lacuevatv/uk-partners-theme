@@ -170,12 +170,12 @@ button {
 /*EXTENSIONS
 *claves que no funcionan solas
 */
-.title-basic-dash, .post .extra-single-wrapper .title-section, .cursos .extra-single-wrapper .title-section, .destinos .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title, .barra-principal .loader p {
+.title-basic-dash, .post .extra-single-wrapper .title-section, .cursos .extra-single-wrapper .title-section, .destinos .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-content-wrapper .crew-section .title-section, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title, .barra-principal .loader p {
   padding-bottom: 1rem;
   position: relative;
   margin-bottom: 1rem;
 }
-.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .cursos .extra-single-wrapper .title-section:before, .destinos .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .cursos .entry-header .wrapper-title .entry-title:before, .destinos .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before, .barra-principal .loader p:before {
+.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .cursos .extra-single-wrapper .title-section:before, .destinos .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .cursos .entry-header .wrapper-title .entry-title:before, .destinos .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-content-wrapper .crew-section .title-section:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before, .barra-principal .loader p:before {
   content: "";
   display: block;
   background-color: #18bdca;
@@ -188,10 +188,10 @@ button {
   bottom: 0;
 }
 
-.title-basic-dash-center, .page-header .page-title-header, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .barra-principal .loader p {
+.title-basic-dash-center, .page-content-wrapper .crew-section .title-section, .page-header .page-title-header, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .barra-principal .loader p {
   text-align: center;
 }
-.title-basic-dash-center:before, .page-header .page-title-header:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .barra-principal .loader p:before {
+.title-basic-dash-center:before, .page-content-wrapper .crew-section .title-section:before, .page-header .page-title-header:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .barra-principal .loader p:before {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -717,7 +717,7 @@ html, body {
 .barra-principal .primary-menu-wrapper {
   position: absolute;
   left: 0;
-  top: 40px;
+  top: 0;
   width: 100%;
   height: 0;
   -webkit-transition: all 0.5s;
@@ -725,7 +725,7 @@ html, body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
   overflow: hidden;
-  background-color: #323232;
+  background-color: #18bdca;
 }
 @media (min-width: 992px) {
   .barra-principal .primary-menu-wrapper {
@@ -742,7 +742,7 @@ html, body {
   margin-top: 10%;
   margin-bottom: 10%;
   padding: 0 10%;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 @media (min-width: 992px) {
   .barra-principal .primary-menu-wrapper .primary-menu {
@@ -771,8 +771,13 @@ html, body {
   position: relative;
   display: block;
   text-align: center;
-  padding: 0.7rem 1.2rem;
+  padding: 0.9rem 1.2rem;
   text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  .barra-principal .primary-menu-wrapper .primary-menu > li > a {
+    padding: 0.7rem 1.2rem;
+  }
 }
 @media (min-width: 992px) {
   .barra-principal .primary-menu-wrapper .primary-menu > li:last-child {
@@ -803,6 +808,14 @@ html, body {
     content: "";
     display: block;
     width: 30%;
+  }
+}
+.barra-principal .primary-menu-wrapper .primary-menu > li:first-child {
+  margin-top: 80px;
+}
+@media (min-width: 992px) {
+  .barra-principal .primary-menu-wrapper .primary-menu > li:first-child {
+    margin-top: 0;
   }
 }
 .barra-principal .primary-menu-wrapper .primary-menu .current-menu-item > a {
@@ -942,7 +955,7 @@ html, body {
   height: 3px;
   background-color: #fff;
   position: absolute;
-  left: 10px;
+  left: 5px;
   top: 20px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -987,6 +1000,7 @@ html, body {
 4.0 BOTONES
 --------------------------------------------------------------*/
 .btn {
+  font-family: "Montserrat", sans-serif;
   display: inline-block;
   cursor: pointer;
   padding: 0.6rem 1rem;
@@ -1288,7 +1302,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(106, 107, 110, 0.5);
+  background-color: rgba(106, 107, 110, 0.7);
   mix-blend-mode: multiply;
 }
 .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido {
@@ -1632,7 +1646,7 @@ html, body {
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido h1 {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   width: 100%;
 }
@@ -2137,6 +2151,7 @@ html, body {
   transform: translateY(-50%);
   left: 0;
   width: 100%;
+  height: auto;
 }
 .page-header .header-image .shutter {
   display: block;
@@ -2153,7 +2168,7 @@ html, body {
   position: relative;
   z-index: 111;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   color: #fff;
   font-size: 1.5rem;
@@ -2240,6 +2255,14 @@ html, body {
 }
 .page-content-wrapper .crew-section {
   position: relative;
+}
+.page-content-wrapper .crew-section .title-section {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #595a5c;
 }
 .page-content-wrapper .crew-section .crew-list {
   width: 100%;
@@ -2494,7 +2517,7 @@ html, body {
   position: relative;
 }
 .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list {
-  padding: 0.5rem 0.5rem;
+  padding: 0 0.5rem;
   text-transform: uppercase;
   font-size: 0.6rem;
   background-color: #e5e6e7;
@@ -2516,9 +2539,13 @@ html, body {
 }
 @media (min-width: 768px) {
   .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list {
-    padding: 0.5rem 1rem;
+    padding: 0 1rem;
     font-size: 0.6rem;
   }
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list li {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .category-alojamientos-wrapper .contact-sidebar {
   width: 100%;
@@ -2640,11 +2667,6 @@ html, body {
   display: -ms-flex;
   display: -moz-flex;
   display: -webkit-flex;
-  -webkit-align-items: flex-start;
-  -moz-align-items: flex-start;
-  -ms-align-items: flex-start;
-  -o-align-items: flex-start;
-  align-items: flex-start;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
@@ -2749,13 +2771,13 @@ html, body {
   font-family: "Montserrat", sans-serif;
   color: #595a5c;
 }
-.post .entry-content h2, .cursos .entry-content h2, .destinos .entry-content h2 {
+.post .entry-content h1, .post .entry-content h2, .cursos .entry-content h1, .cursos .entry-content h2, .destinos .entry-content h1, .destinos .entry-content h2 {
   font-size: 1.2rem;
   line-height: 1.4rem;
   margin: 1rem 0 2rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content h2, .cursos .entry-content h2, .destinos .entry-content h2 {
+  .post .entry-content h1, .post .entry-content h2, .cursos .entry-content h1, .cursos .entry-content h2, .destinos .entry-content h1, .destinos .entry-content h2 {
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
@@ -2827,8 +2849,9 @@ html, body {
   text-transform: uppercase;
   position: absolute;
   z-index: 111;
-  top: -1rem;
+  top: -0.7rem;
   left: 50%;
+  font-weight: 700;
   font-size: 0.8rem;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -2836,7 +2859,7 @@ html, body {
   transform: translateX(-50%);
 }
 .post .tag-destacado a, .cursos .tag-destacado a, .destinos .tag-destacado a {
-  padding: 0.3rem 0.5rem;
+  padding: 0.6rem 0.8rem;
 }
 .post:hover .entry-header .post-thumbnail img, .cursos:hover .entry-header .post-thumbnail img, .destinos:hover .entry-header .post-thumbnail img {
   -webkit-transform: translateY(-50%) scale(1.2);
@@ -2937,6 +2960,14 @@ html, body {
 .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before {
+  content: "";
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #18bdca;
+  margin-right: 0.5rem;
 }
 .post .entry-content-single, .cursos .entry-content-single, .destinos .entry-content-single {
   padding: 1rem 0 2rem;
@@ -3085,7 +3116,7 @@ html, body {
   }
 }
 .post .extra-single-wrapper .tabs-wrapper .tabs-lista li, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista li, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista li {
-  border-bottom: 1px solid #494746;
+  border-bottom: 1px solid #e5e6e7;
 }
 .post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab {
   position: relative;
@@ -3094,7 +3125,7 @@ html, body {
 .post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .title-tab {
   position: relative;
   cursor: pointer;
-  padding: 1rem 0;
+  padding: 0.3rem 0;
   text-transform: uppercase;
   padding-left: 1.5rem;
 }
@@ -3116,6 +3147,7 @@ html, body {
   transform: translateY(-50%);
 }
 .post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab {
+  font-family: "Roboto", "Montserrat", sans-serif;
   display: block;
   padding-left: 1.5rem;
   font-size: 0.8rem;
@@ -3130,6 +3162,8 @@ html, body {
   margin-bottom: 0.5rem;
 }
 .post .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab a, .cursos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab a, .destinos .extra-single-wrapper .tabs-wrapper .tabs-lista .tab .contenido-tab a {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
   margin-bottom: 2rem;
   color: #8a4398;
   font-size: 0.7rem;

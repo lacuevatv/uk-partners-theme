@@ -19,7 +19,6 @@ if ( have_posts() ) : the_post(); ?>
 		<?php 
 		if ( has_post_thumbnail()) {
 			the_post_thumbnail(); 
-			echo '<span class="shutter"></span>';
 		} else {
 			echo '<picture>';
 				echo '<source srcset="' . IMAGES_DIR . 'headermobile-default.jpg" media="(max-width: 769px)">';

@@ -8,6 +8,7 @@
     color: $color-blanco;
 }//.main-navigation
 
+
 .barra-sup-wrapper {
     background-color: $color-turqueza;
     width: 95%;
@@ -287,12 +288,13 @@
     .primary-menu-wrapper {
         position: absolute;
         left: 0;
-        top: 40px;
+        top: 0;
         width: 100%;
         height: 0;
         @include transition(all $transitionSpeed);
         overflow: hidden;
-        background-color: $color-negro;
+        background-color: $color-turqueza;
+
 
         @media (min-width: $md) {
             background-color: transparent;
@@ -308,7 +310,7 @@
             margin-top: 10%;
             margin-bottom: 10%;
             padding: 0 10%;
-            font-size: .9rem;
+            font-size: 1.2rem;
 
             @media (min-width: $md) {
                 font-size: .85rem;
@@ -337,8 +339,11 @@
                     position: relative;
                     display: block;
                     text-align: center;
-                    padding: 0.7rem 1.2rem;
+                    padding: 0.9rem 1.2rem;
                     text-transform: uppercase;
+                    @media (min-width: $md) {
+                        padding: 0.7rem 1.2rem;
+                    }
                 }//a
 
                 @media (min-width: $md) {
@@ -373,6 +378,13 @@
                     }
                 }//@md
                 
+                &:first-child {
+                    margin-top: 80px;
+
+                    @media (min-width: $md) {
+                        margin-top: 0;
+                    }
+                }
             }//li
 
             .current-menu-item {
@@ -510,7 +522,7 @@
             height: 3px;
             background-color: $color-blanco;
             position: absolute;
-            left: 10px;
+            left: 5px;
             top: 20px;
             @include transition(all $transitionSpeed);
         }

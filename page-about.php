@@ -23,7 +23,6 @@ if ( have_posts() ) :  the_post() ?>
 					<?php 
                     if ( has_post_thumbnail()) {
                         the_post_thumbnail(); 
-                        echo '<span class="shutter"></span>';
                     } else {
                         echo '<picture>';
                             echo '<source srcset="' . IMAGES_DIR . 'headermobile-default.jpg" media="(max-width: 769px)">';
@@ -123,7 +122,10 @@ if ( have_posts() ) :  the_post() ?>
 								);
 								
 						if ( $crew->have_posts() ) : ?>
-
+						
+						<h3 class="title-section">
+							Nuestro equipo
+						</h3>
 						<ul class="crew-list">
 						
 							<?php while ( $crew->have_posts() ) :$crew->the_post();

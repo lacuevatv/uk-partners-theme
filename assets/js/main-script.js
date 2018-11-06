@@ -22,6 +22,10 @@ var is_alojamientos, is_home;
 
             if ( $(menu).height() == 0 ) {
                 var h = $(menu).prop('scrollHeight')
+                var minh = innerHeight;
+                if ( h < innerHeight) {
+                    h = innerHeight;
+                }
                 $(menu).css('height', h + 'px');
             } else {
                 $(menu).css('height', 0);
@@ -30,6 +34,11 @@ var is_alojamientos, is_home;
 
         //muestra el formulario en el movil, formulario que está en el sidebar
         toggleButonSingleContact();
+
+
+        $('.tag-destacado a').click(function(e) {
+            e.preventDefault();
+        });
         
     });//document-ready
 
