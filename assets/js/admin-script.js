@@ -66,9 +66,7 @@ jQuery(function($){
             $(this).val('0');
         }
     });
-
-
-    
+ 
 
     //SUBE MUCHAS IMAGENES PARA LA GALERÍA
     $(document).on( 'click', '.upload-imagenes', function( event ){
@@ -102,10 +100,12 @@ jQuery(function($){
                 input.val( input.val()+attachment.id+',');
                 //guardar data para actualizar
                 urlImagenesPreview.push(attachment);
-            
+
             });
+            console.log(urlImagenesPreview)
             //actualizar la vista previa
             addimagestopreview(urlImagenesPreview);
+            
             
         });
 
@@ -128,13 +128,31 @@ jQuery(function($){
         $(input).val(nuevosvalores)
     });
 
+    //ordenar imagenes
+    var ordenIds = '';
+    $( '.imagenes-galeria' ).sortable({
+		stop: function () {
+            //borramos
+            ordenIds = '';
+
+			var li = $(this).find('li');
+			for (var i = 0; i < li.length; i++) {
+                $(li[i]).attr('data-orden', i+1);
+                ordenIds += $(li[i]).attr('data-id') + ',';
+				
+            }
+            
+            $('#uk_imagenes').val(ordenIds);
+		},
+	});
+	$( '.imagenes-galeria' ).disableSelection();
+
     //agrega nuevas imagenes
     function addimagestopreview( data ) {
         var input = $('#uk_imagenes');
             var html = '';
-        console.log(data)
         for (var i = 0; i < data.length; i++) {
-            html += '<li data-id="'+data[0].id+'" data-orden="0"><button class="del-image" data-id="'+data[0].id+'"></button><img src="'+data[0].url+'"></li>';
+            html += '<li data-id="'+data[i].id+'" data-orden="0"><button class="del-image" data-id="'+data[i].id+'"></button><img src="'+data[i].url+'"></li>';
         }
 
         if ( html != '') {
@@ -143,8 +161,9 @@ jQuery(function($){
 
     }//updateGaleriaPreview()
 
-
     
+    
+
 
     //guarda los cursos en un input al ser seleccionados
     $(document).on('click', '.input_cursos', function(e) {
