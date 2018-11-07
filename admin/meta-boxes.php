@@ -520,6 +520,13 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_galeria_imagenes' ) ) {
             __( 'Galería de imágenes', 'ukpartnerstheme' ),
             'uk_partners_theme_add_metabox_galeria_imagenes_callback',
 			'destinos'
+		);
+		
+		add_meta_box(
+            'galeria_imagenes',
+            __( 'Galería de imágenes', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_galeria_imagenes_callback',
+			'programas'
         );
     }
 }
@@ -635,6 +642,13 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_select_cursos' ) ) {
             __( 'Cursos del destino:', 'ukpartnerstheme' ),
             'uk_partners_theme_add_metabox_select_cursos_callback',
 			'destinos'
+		);
+
+		add_meta_box(
+            'select_cursos',
+            __( 'Cursos del destino:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_select_cursos_callback',
+			'programas'
 		);
     }
 }

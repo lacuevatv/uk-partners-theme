@@ -105,7 +105,10 @@ get_header(); ?>
 						* donde estudiar, etc
 						* carousel
 					*/
-					
+					if ( $post_type == 'programas' ) {
+						echo uk_get_meta_cursos($post->ID);
+						echo uk_get_meta_galeria($post->ID);
+					}
 					if ( $post_type == 'destinos' ) {
 						echo uk_get_meta_cursos($post->ID);
 						echo uk_get_meta_galeria($post->ID);

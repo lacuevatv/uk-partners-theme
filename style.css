@@ -170,12 +170,12 @@ button {
 /*EXTENSIONS
 *claves que no funcionan solas
 */
-.title-basic-dash, .post .extra-single-wrapper .title-section, .cursos .extra-single-wrapper .title-section, .destinos .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-content-wrapper .crew-section .title-section, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title, .barra-principal .loader p {
+.title-basic-dash, .post .extra-single-wrapper .title-section, .cursos .extra-single-wrapper .title-section, .destinos .extra-single-wrapper .title-section, .post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title, .programas .entry-header .wrapper-title .entry-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento, .page-content-wrapper .crew-section .title-section, .page-header .page-title-header, .uk-front-page-wrapper .front-page-footer .contact-title, .uk-front-page-wrapper section .title-section, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text, .widget .widget-title, .barra-principal .loader p {
   padding-bottom: 1rem;
   position: relative;
   margin-bottom: 1rem;
 }
-.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .cursos .extra-single-wrapper .title-section:before, .destinos .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .cursos .entry-header .wrapper-title .entry-title:before, .destinos .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-content-wrapper .crew-section .title-section:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before, .barra-principal .loader p:before {
+.title-basic-dash:before, .post .extra-single-wrapper .title-section:before, .cursos .extra-single-wrapper .title-section:before, .destinos .extra-single-wrapper .title-section:before, .post .entry-header .wrapper-title .entry-title:before, .cursos .entry-header .wrapper-title .entry-title:before, .destinos .entry-header .wrapper-title .entry-title:before, .programas .entry-header .wrapper-title .entry-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .alojamiento-title:before, .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .title-category-alojamiento:before, .page-content-wrapper .crew-section .title-section:before, .page-header .page-title-header:before, .uk-front-page-wrapper .front-page-footer .contact-title:before, .uk-front-page-wrapper section .title-section:before, .uk-front-page-wrapper .front-page-header .slider-wrapper .slider-item .slider-contenido .slider-text:before, .widget .widget-title:before, .barra-principal .loader p:before {
   content: "";
   display: block;
   background-color: #18bdca;
@@ -2727,10 +2727,10 @@ html, body {
 /*
 * este post corresponde al loop y está en el <article> anterior
 */
-.post, .cursos, .destinos {
+.post, .cursos, .destinos, .programas {
   position: relative;
 }
-.post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
+.post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail, .programas .entry-header .post-thumbnail {
   background-color: #494746;
   overflow: hidden;
   position: relative;
@@ -2745,21 +2745,21 @@ html, body {
   transition: all 0.5s;
 }
 @media (min-width: 768px) {
-  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
+  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail, .programas .entry-header .post-thumbnail {
     height: 190px;
   }
 }
 @media (min-width: 1250px) {
-  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
+  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail, .programas .entry-header .post-thumbnail {
     height: 240px;
   }
 }
 @media (min-width: 1600px) {
-  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail {
+  .post .entry-header .post-thumbnail, .cursos .entry-header .post-thumbnail, .destinos .entry-header .post-thumbnail, .programas .entry-header .post-thumbnail {
     height: 260px;
   }
 }
-.post .entry-header .post-thumbnail img, .cursos .entry-header .post-thumbnail img, .destinos .entry-header .post-thumbnail img {
+.post .entry-header .post-thumbnail img, .cursos .entry-header .post-thumbnail img, .destinos .entry-header .post-thumbnail img, .programas .entry-header .post-thumbnail img {
   position: absolute;
   z-index: 1;
   top: 50%;
@@ -2775,96 +2775,96 @@ html, body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-.post .entry-header .wrapper-title, .cursos .entry-header .wrapper-title, .destinos .entry-header .wrapper-title {
+.post .entry-header .wrapper-title, .cursos .entry-header .wrapper-title, .destinos .entry-header .wrapper-title, .programas .entry-header .wrapper-title {
   padding: 2rem 1.5rem 0;
 }
-.post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title {
+.post .entry-header .wrapper-title .entry-title, .cursos .entry-header .wrapper-title .entry-title, .destinos .entry-header .wrapper-title .entry-title, .programas .entry-header .wrapper-title .entry-title {
   color: #595a5c;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2rem;
 }
-.post .entry-content, .cursos .entry-content, .destinos .entry-content {
+.post .entry-content, .cursos .entry-content, .destinos .entry-content, .programas .entry-content {
   font-family: "Roboto", "Montserrat", sans-serif;
   padding: 0 1.5rem;
 }
-.post .entry-content h1, .post .entry-content h2, .post .entry-content h3, .post .entry-content h4, .cursos .entry-content h1, .cursos .entry-content h2, .cursos .entry-content h3, .cursos .entry-content h4, .destinos .entry-content h1, .destinos .entry-content h2, .destinos .entry-content h3, .destinos .entry-content h4 {
+.post .entry-content h1, .post .entry-content h2, .post .entry-content h3, .post .entry-content h4, .cursos .entry-content h1, .cursos .entry-content h2, .cursos .entry-content h3, .cursos .entry-content h4, .destinos .entry-content h1, .destinos .entry-content h2, .destinos .entry-content h3, .destinos .entry-content h4, .programas .entry-content h1, .programas .entry-content h2, .programas .entry-content h3, .programas .entry-content h4 {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   color: #595a5c;
 }
-.post .entry-content h1, .post .entry-content h2, .cursos .entry-content h1, .cursos .entry-content h2, .destinos .entry-content h1, .destinos .entry-content h2 {
+.post .entry-content h1, .post .entry-content h2, .cursos .entry-content h1, .cursos .entry-content h2, .destinos .entry-content h1, .destinos .entry-content h2, .programas .entry-content h1, .programas .entry-content h2 {
   font-size: 1.2rem;
   line-height: 1.4rem;
   margin: 1rem 0 2rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content h1, .post .entry-content h2, .cursos .entry-content h1, .cursos .entry-content h2, .destinos .entry-content h1, .destinos .entry-content h2 {
+  .post .entry-content h1, .post .entry-content h2, .cursos .entry-content h1, .cursos .entry-content h2, .destinos .entry-content h1, .destinos .entry-content h2, .programas .entry-content h1, .programas .entry-content h2 {
     font-size: 1.5rem;
     line-height: 1.5rem;
   }
 }
-.post .entry-content h3, .cursos .entry-content h3, .destinos .entry-content h3 {
+.post .entry-content h3, .cursos .entry-content h3, .destinos .entry-content h3, .programas .entry-content h3 {
   font-size: 1.1rem;
   line-height: 1.2rem;
   margin: 0.8rem 0 1rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content h3, .cursos .entry-content h3, .destinos .entry-content h3 {
+  .post .entry-content h3, .cursos .entry-content h3, .destinos .entry-content h3, .programas .entry-content h3 {
     font-size: 1.2rem;
     line-height: 1.2rem;
   }
 }
-.post .entry-content h4, .cursos .entry-content h4, .destinos .entry-content h4 {
+.post .entry-content h4, .cursos .entry-content h4, .destinos .entry-content h4, .programas .entry-content h4 {
   font-size: 1rem;
   line-height: 1.2rem;
   margin: 0.8rem 0 1rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content h4, .cursos .entry-content h4, .destinos .entry-content h4 {
+  .post .entry-content h4, .cursos .entry-content h4, .destinos .entry-content h4, .programas .entry-content h4 {
     font-size: 1.1rem;
     line-height: 1.1rem;
   }
 }
-.post .entry-content p, .cursos .entry-content p, .destinos .entry-content p {
+.post .entry-content p, .cursos .entry-content p, .destinos .entry-content p, .programas .entry-content p {
   font-size: 0.9rem;
   margin: 1rem 0;
 }
 @media (min-width: 768px) {
-  .post .entry-content p, .cursos .entry-content p, .destinos .entry-content p {
+  .post .entry-content p, .cursos .entry-content p, .destinos .entry-content p, .programas .entry-content p {
     font-size: 1rem;
   }
 }
-.post .entry-content ul, .post .entry-content ol, .cursos .entry-content ul, .cursos .entry-content ol, .destinos .entry-content ul, .destinos .entry-content ol {
+.post .entry-content ul, .post .entry-content ol, .cursos .entry-content ul, .cursos .entry-content ol, .destinos .entry-content ul, .destinos .entry-content ol, .programas .entry-content ul, .programas .entry-content ol {
   margin: 1.2rem 0;
   font-size: 0.9rem;
   padding-left: 1rem;
 }
 @media (min-width: 768px) {
-  .post .entry-content ul, .post .entry-content ol, .cursos .entry-content ul, .cursos .entry-content ol, .destinos .entry-content ul, .destinos .entry-content ol {
+  .post .entry-content ul, .post .entry-content ol, .cursos .entry-content ul, .cursos .entry-content ol, .destinos .entry-content ul, .destinos .entry-content ol, .programas .entry-content ul, .programas .entry-content ol {
     font-size: 1rem;
   }
 }
-.post .entry-content li, .cursos .entry-content li, .destinos .entry-content li {
+.post .entry-content li, .cursos .entry-content li, .destinos .entry-content li, .programas .entry-content li {
   padding-left: 0.8rem;
   list-style: disc;
 }
-.post .entry-content .btn-leer-mas, .cursos .entry-content .btn-leer-mas, .destinos .entry-content .btn-leer-mas {
+.post .entry-content .btn-leer-mas, .cursos .entry-content .btn-leer-mas, .destinos .entry-content .btn-leer-mas, .programas .entry-content .btn-leer-mas {
   margin: 1rem auto 2rem;
   color: #fff;
   font-size: 0.8rem;
   text-decoration: none;
 }
-.post .entry-content strong, .cursos .entry-content strong, .destinos .entry-content strong {
+.post .entry-content strong, .cursos .entry-content strong, .destinos .entry-content strong, .programas .entry-content strong {
   font-weight: 700;
 }
-.post .entry-content em, .cursos .entry-content em, .destinos .entry-content em {
+.post .entry-content em, .cursos .entry-content em, .destinos .entry-content em, .programas .entry-content em {
   font-style: italic;
 }
-.post .entry-content a, .cursos .entry-content a, .destinos .entry-content a {
+.post .entry-content a, .cursos .entry-content a, .destinos .entry-content a, .programas .entry-content a {
   text-decoration: underline;
 }
-.post .tag-destacado, .cursos .tag-destacado, .destinos .tag-destacado {
+.post .tag-destacado, .cursos .tag-destacado, .destinos .tag-destacado, .programas .tag-destacado {
   display: block;
   background-color: #18bdca;
   color: #fff;
@@ -2880,10 +2880,10 @@ html, body {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.post .tag-destacado a, .cursos .tag-destacado a, .destinos .tag-destacado a {
+.post .tag-destacado a, .cursos .tag-destacado a, .destinos .tag-destacado a, .programas .tag-destacado a {
   padding: 0.6rem 0.8rem;
 }
-.post:hover .entry-header .post-thumbnail img, .cursos:hover .entry-header .post-thumbnail img, .destinos:hover .entry-header .post-thumbnail img {
+.post:hover .entry-header .post-thumbnail img, .cursos:hover .entry-header .post-thumbnail img, .destinos:hover .entry-header .post-thumbnail img, .programas:hover .entry-header .post-thumbnail img {
   -webkit-transform: translateY(-50%) scale(1.2);
   -moz-transform: translateY(-50%) scale(1.2);
   -ms-transform: translateY(-50%) scale(1.2);

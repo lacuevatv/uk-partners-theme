@@ -7,12 +7,14 @@
     <custom-type translate="1">destinos</custom-type>
     <custom-type translate="1">cursos</custom-type>
     <custom-type translate="1">alojamientos</custom-type>
+    <custom-type translate="1">programas</custom-type>
   </custom-types>
   <taxonomies>
     <taxonomy translate="1">catalojamientos</taxonomy>
     <taxonomy translate="1">catcursos</taxonomy>
     <taxonomy translate="1">catdestinos</taxonomy>
     <taxonomy translate="1">catcrew</taxonomy>
+    <taxonomy translate="1">catprogramas</taxonomy>
   </taxonomies>
   <custom-fields>
     <custom-field action="translate">_url_partner</custom-field>

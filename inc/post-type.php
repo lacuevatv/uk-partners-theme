@@ -24,6 +24,7 @@
  * 5. Destinos
  * 6. Cursos
  * 7. Alojamientos
+ * 8. Programas
  * 
  * @package WordPress
  * @subpackage uk_partners_theme
@@ -164,6 +165,26 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
             )
         );
 
+
+        /*
+         * PROGRAMAS POST TYPE 
+        */
+        register_post_type ( 'programas', array (
+            'labels'       => array(
+                'name'          => __( 'programas', 'ukpartnerstheme' ),
+                'singular_name' => __( 'programa', 'ukpartnerstheme' ),
+            ),
+            'supports'      => array (
+                'title', 'excerpt', 'editor', 'thumbnail',
+            ),
+            'public'      => true,
+            'has_archive' => true,
+            'taxonomies' => array('catprogramas', 'post_tag'),
+            'rewrite' => array('slug' => __( 'programas', 'ukpartnerstheme' ),'with_front' => false),
+            'menu_icon'   => 'dashicons-palmtree'
+            )
+        );
+
         
 
 
@@ -257,6 +278,19 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'show_in_nav_menus' => false,
             )
         );
+
+        /**
+         * CATEGORIA PROGRAMAS
+        */
+        register_taxonomy( 'catprogramas', 'programas', array(
+            'label'        => __( 'Categorías de programas', 'ukpartnerstheme' ),
+            'public'       => true,
+            'rewrite'      => false,
+            'hierarchical' => true,
+            'show_in_nav_menus' => false,
+            )
+        );
+        
     }
 endif;
 
