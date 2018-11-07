@@ -2804,6 +2804,12 @@ html, body {
     line-height: 1.5rem;
   }
 }
+@media (min-width: 992px) {
+  .post .entry-content h1, .post .entry-content h2, .cursos .entry-content h1, .cursos .entry-content h2, .destinos .entry-content h1, .destinos .entry-content h2, .programas .entry-content h1, .programas .entry-content h2 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+}
 .post .entry-content h3, .cursos .entry-content h3, .destinos .entry-content h3, .programas .entry-content h3 {
   font-size: 1.1rem;
   line-height: 1.2rem;
@@ -2943,7 +2949,7 @@ html, body {
     position: absolute;
     width: 100%;
     z-index: 111;
-    top: -2rem;
+    top: -1.6rem;
   }
 }
 @media (min-width: 992px) {

@@ -111,6 +111,10 @@
                 font-size: 1.5rem;
                 line-height: 1.5rem; 
             }
+            @media (min-width: $md) {
+                font-size: 1.5rem;
+                line-height: 1.8rem; 
+            }
         }
 
         h3 {
@@ -264,7 +268,7 @@
                 position: absolute;
                 width: 100%;
                 z-index: 111;
-                top: -2rem;
+                top: -1.6rem;
             }
             @media (min-width: $md) {
                 width: 70%;
