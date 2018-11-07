@@ -57,6 +57,7 @@ if ( ! function_exists( ' uk_partners_theme_setup' ) ) {
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'medium', 768, 768 );
 		set_post_thumbnail_size( 550, 768, true );
 		
         // This theme uses wp_nav_menu() in three location.

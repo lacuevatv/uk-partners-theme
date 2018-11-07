@@ -45,6 +45,7 @@
 							<span class="animation-blink">.</span>
 							<span class="animation-blink-2">.</span>
 						</p>
+						<img src="<?php echo IMAGES_DIR; ?>/loader-uk.gif">
 					</div>
 
 					<h1>
