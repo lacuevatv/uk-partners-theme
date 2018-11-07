@@ -964,7 +964,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_sliders' ) ) {
 		}
 		
         // Guardamos:
-		update_post_meta( $post_id, '_uk_home_sliders', esc_attr($_POST['uk_home_sliders'])  );
+		update_post_meta( $post_id, '_uk_home_sliders', esc_attr( isset($_POST['uk_home_sliders']) ? $_POST['uk_home_sliders'] : '0')  );
     
  	}   
 }
@@ -1095,7 +1095,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_destinos' ) ) {
 
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_destinos'] ) );
 		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_numeros_destinos'] ) );
-		array_push($dataDestinos, esc_attr( $_POST['uk_home_destinos_ver_mas'] ) );
+		array_push($dataDestinos, esc_attr( isset( $_POST['uk_home_destinos_ver_mas'] ) ? $_POST['uk_home_destinos_ver_mas'] : '0' ) );
 		array_push($dataDestinos, esc_url( $_POST['uk_home_url_destinos'] ) );
 		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_titulo_destinos'] ) );
 		array_push($dataDestinos, sanitize_textarea_field( $_POST['uk_home_destinos_texto'] ) );
@@ -1250,7 +1250,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_separador' ) ) {
 		array_push($dataSeparador, sanitize_text_field( $_POST['uk_home_titulo'] ) );
 		array_push($dataSeparador, sanitize_text_field( $_POST['uk_home_separador_texto_boton'] ) );
 		array_push($dataSeparador, esc_url( $_POST['uk_home_separador_link_boton'] ) );
-		array_push($dataSeparador, esc_attr( $_POST['uk_home_separador_target_boton'] ) );
+		array_push($dataSeparador, esc_attr( isset( $_POST['uk_home_separador_target_boton'] ) ? $_POST['uk_home_separador_target_boton'] : '0' ) );
 		array_push($dataSeparador, sanitize_textarea_field( $_POST['uk_home_separador_texto_bloque'] ) );
 		array_push($dataSeparador, esc_url( $_POST['uk_home_separador_imagen'] ) );
 		array_push($dataSeparador, esc_url( $_POST['uk_home_separador_imagen_movil'] ) );
@@ -1389,7 +1389,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_cursos' ) ) {
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_cursos'] ) );
 		array_push($dataDestinos, esc_attr( $_POST['uk_home_numeros_cursos'] ) );
 		array_push($dataDestinos, sanitize_text_field( $_POST['uk_home_titulo_cursos'] ) );
-		array_push($dataDestinos, esc_attr( $_POST['uk_home_cursos_ver_mas'] ) );
+		array_push($dataDestinos, esc_attr( isset($_POST['uk_home_cursos_ver_mas']) ? $_POST['uk_home_cursos_ver_mas'] : '0' ) );
 		array_push($dataDestinos, esc_url( $_POST['uk_home_url_cursos'] ) );
 		array_push($dataDestinos, sanitize_textarea_field( $_POST['uk_home_cursos_texto'] ) );
 		
@@ -1544,7 +1544,7 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_alojamientos' ) ) {
         // Guardamos:
 		$dataAlojamiento = array();
 		
-		array_push($dataAlojamiento, esc_attr( $_POST['uk_home_alojamiento'] ) );
+		array_push($dataAlojamiento, esc_attr( isset($_POST['uk_home_alojamiento']) ? $_POST['uk_home_alojamiento'] : '' ) );
 		array_push($dataAlojamiento, sanitize_text_field( $_POST['uk_home_alojamiento_titulo'] ) );
 		array_push($dataAlojamiento, sanitize_text_field( $_POST['uk_home_alojamiento_mini_text'] ) );
 		array_push($dataAlojamiento, sanitize_text_field( $_POST['uk_home_alojamiento_texto_boton'] ) );

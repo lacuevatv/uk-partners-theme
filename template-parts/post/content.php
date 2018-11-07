@@ -23,8 +23,12 @@ $post_type = get_post_type();
 		<?php if ( ! is_single() ) : ?>
 			
 			<div class="post-thumbnail">
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'post-thumbnails' ); ?>
+				<a href="<?php the_permalink(); ?>" class="load-images-ajax">
+					<?php 
+					if ( has_post_thumbnail()) {
+						echo '<img class="owl-lazy" data-src="' . get_the_post_thumbnail_url(null, 'medium') .'" alt="' . get_the_title() .'">';
+					}
+					?>
 				</a>
 			</div><!-- .post-thumbnail -->
 			

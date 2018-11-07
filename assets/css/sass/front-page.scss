@@ -335,8 +335,8 @@
                         top: 50%;
                         @include transform(translateY(-50%));
                         @include transition(all $transitionSpeed);
-                        left: -5%;
-                        width: 110%;
+                        left: -50%;
+                        width: 200%;
                         height: auto;
                     }
 
@@ -554,8 +554,8 @@
                         top: 50%;
                         @include transform(translateY(-50%));
                         @include transition(all $transitionSpeed);
-                        left: -5%;
-                        width: 110%;
+                        left: -25%;
+                        width: 150%;
                         height: auto;
                     }
 

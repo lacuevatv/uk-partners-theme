@@ -26,7 +26,7 @@ get_header(); ?>
 					<div class="header-image">
 						<?php 
 						if ( has_post_thumbnail()) {
-							the_post_thumbnail(); 
+							the_post_thumbnail('full'); 
 						} else {
 							echo '<picture>';
 								echo '<source srcset="' . IMAGES_DIR . 'headermobile-default.jpg" media="(max-width: 769px)">';
@@ -63,9 +63,9 @@ get_header(); ?>
 					get_template_part( 'template-parts/post/content', 'single-post' );
 
 					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
+					/*if ( comments_open() || get_comments_number() ) :
 						comments_template();
-					endif;
+					endif;*/
 
 					/*the_post_navigation( array(
 						'prev_text' => '<span class="screen-reader-text">' . __( 'Anterior', 'ukpartnerstheme' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Anterior', 'ukpartnerstheme' ) . '</span>',
@@ -105,12 +105,13 @@ get_header(); ?>
 						* donde estudiar, etc
 						* carousel
 					*/
+					
 					if ( $post_type == 'destinos' ) {
-						uk_get_meta_cursos($post->ID);
-						uk_get_meta_galeria($post->ID);
+						echo uk_get_meta_cursos($post->ID);
+						echo uk_get_meta_galeria($post->ID);
 					}
 					if ( $post_type == 'cursos' ) {
-						uk_get_meta_destinos($post->ID);
+						echo uk_get_meta_destinos($post->ID);
 					}
 					?>
 				</div><!-- .wrap -->

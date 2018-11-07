@@ -73,8 +73,8 @@
                 top: 50%;
                 height: auto;
                 @include transform(translateY(-50%));
-                left: -10%;
-                width: 120%;
+                left: -25%;
+                width: 150%;
                 @include transition(all $transitionSpeed);
             }
         }//.post-thumbnail
@@ -294,7 +294,7 @@
 
                 @media (min-width: $sm) {
                     padding: 0rem 1.5rem;
-                    font-size: 1rem;
+                    font-size: .8rem;
                 }
 
                 li {
@@ -582,8 +582,8 @@
                         top: 50%;
                         @include transform(translateY(-50%));
                         @include transition(all $transitionSpeed);
-                        left: -5%;
-                        width: 110%;
+                        left: -50%;
+                        width: 200%;
                     }
 
                     .shutter {

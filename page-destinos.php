@@ -19,7 +19,7 @@ if ( have_posts() ) : the_post(); ?>
 	<div class="header-image">
 		<?php 
 		if ( has_post_thumbnail()) {
-			the_post_thumbnail(); 
+			the_post_thumbnail('full'); 
 		} else {
 			echo '<picture>';
 				echo '<source srcset="' . IMAGES_DIR . 'headermobile-default.jpg" media="(max-width: 769px)">';

@@ -10,7 +10,7 @@
  */
 
 /**
- * Twenty Seventeen only works in WordPress 4.7 or later.
+ * Only works in WordPress 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -56,8 +56,9 @@ if ( ! function_exists( ' uk_partners_theme_setup' ) ) {
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-        add_theme_support( 'post-thumbnails' );
-        
+		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 550, 768, true );
+		
         // This theme uses wp_nav_menu() in three location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Principal', 'ukpartnerstheme' ),
@@ -367,9 +368,9 @@ if ( ! function_exists( 'uk_get_meta_cursos' ) ) {
 			</div>
 			
 			<?php
-			/*$metaInfoHtml = ob_get_contents();
+			$metaInfoHtml = ob_get_contents();
 			ob_clean();
-			return $metaInfoHtml;*/
+			return $metaInfoHtml;
 		endif; 
 	}
 }
@@ -401,28 +402,26 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 					<?php 
 					foreach ($imagenes as $imagen) {
 						if ( $imagen != '' ) :
-						$urlImagen = wp_get_attachment_image_src($imagen, 'full');
+						$urlImagen = wp_get_attachment_image_src($imagen, 'medium');
 						?>
 						
 						<li>
-							<a href="<?php echo $imagen['url']; ?>">
-								<article class="item">
-									<div class="item-imagen load-images-ajax">
-										<img data-src="<?php echo $urlImagen[0]; ?>">
-										<span class="shutter"></span>
-									</div>
+							<article class="item">
+								<div class="item-imagen load-images-ajax">
+									<img data-src="<?php echo $urlImagen[0]; ?>">
+									<span class="shutter"></span>
+								</div>
 
-									<div class="item-contenido">
-										<h1>
-											<?php //echo $destino['titulo']; ?>
-										</h1>
-										<p class="item-resumen">
-											<?php //echo $destino['texto']; ?>
-										</p>
-									</div>
-									
-								</article>
-							</a>
+								<div class="item-contenido">
+									<h1>
+										<?php //echo $destino['titulo']; ?>
+									</h1>
+									<p class="item-resumen">
+										<?php //echo $destino['texto']; ?>
+									</p>
+								</div>
+								
+							</article>
 						</li>
 
 					<?php 
@@ -433,9 +432,9 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 			</div>
 			
 			<?php
-			/*$metaInfoHtml = ob_get_contents();
+			$metaInfoHtml = ob_get_contents();
 			ob_clean();
-			return $metaInfoHtml;*/
+			return $metaInfoHtml;
 		endif; 
 	}
 }
@@ -479,7 +478,7 @@ if ( ! function_exists( 'uk_get_meta_destinos' ) ) {
 
 									<a href="<?php echo get_permalink($destino->ID); ?>">
 										<div class="item-imagen load-images-ajax">
-											<img data-src="<?php echo get_the_post_thumbnail_url($destino->ID, 'full'); ?>">
+											<img data-src="<?php echo get_the_post_thumbnail_url($destino->ID, 'medium'); ?>">
 											<span class="shutter"></span>
 										</div>
 
@@ -502,9 +501,9 @@ if ( ! function_exists( 'uk_get_meta_destinos' ) ) {
 			</div>
 			
 			<?php
-			/*$metaInfoHtml = ob_get_contents();
+			$metaInfoHtml = ob_get_contents();
 			ob_clean();
-			return $metaInfoHtml;*/
+			return $metaInfoHtml;
 		endif; 
 	}
 }

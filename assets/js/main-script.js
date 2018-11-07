@@ -134,7 +134,6 @@ var is_alojamientos, is_home;
                 992:{
                     items:5
                 }
-
             }
         });
     }//getCarouselFooter()

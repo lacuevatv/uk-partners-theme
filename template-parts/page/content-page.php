@@ -4,7 +4,7 @@
         <div class="header-image">
             <?php 
             if ( has_post_thumbnail()) {
-                the_post_thumbnail(); 
+                the_post_thumbnail('full'); 
                 echo '<span class="shutter"></span>';
             } else {
                 echo '<picture>';
