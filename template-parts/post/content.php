@@ -52,7 +52,7 @@ $post_type = get_post_type();
 			<p>
 				<?php echo acortaTexto($post->post_excerpt, 10); ?>
 			</p>
-			<a class="btn btn-leer-mas <?php if ($post_type == 'cursos') { echo 'btn-violeta'; } else {echo 'btn-turqueza';};?>" href="<?php esc_url( the_permalink() ); ?>">
+			<a class="btn btn-leer-mas <?php if ($post_type == 'cursos') { echo 'btn-verde'; } elseif($post_type == 'programas') {echo 'btn-violeta';} else {echo 'btn-turqueza';};?>" href="<?php esc_url( the_permalink() ); ?>">
 				Leer más
 			</a>
 

@@ -144,7 +144,7 @@
                     z-index: 11;
                     font-size: .7rem;
                     top: 37px;
-                    min-width: 180px;
+                    min-width: 120px;
                     margin-left: -10px;
                     display: flex;
                     display: -o-flex;
@@ -254,7 +254,7 @@
 
     h1 {
         position: relative;
-        z-index: 111;
+        z-index: 1;
         img {
             position: relative;
             @include transition(all $transitionSpeedx2);
@@ -389,11 +389,13 @@
 
             .current-menu-item {
                 > a {
-                    color: $color-turqueza;
-                    &:before {
-                        content: '';
-                        display: block;
-                        width: 30%;
+                    @media (min-width: $md) {
+                        color: $color-turqueza;
+                        &:before {
+                            content: '';
+                            display: block;
+                            width: 30%;
+                        }
                     }
                 }
             }

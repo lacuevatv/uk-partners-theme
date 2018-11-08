@@ -39,12 +39,12 @@
 			<div class="wrap">
 				<div class="barra-principal">
 					<div class="loader">
-						<p>
+						<!--<p>
 							<?php _e( 'Bienvenidos', 'ukpartnerstheme' ); ?>
 							<span>.</span>
 							<span class="animation-blink">.</span>
 							<span class="animation-blink-2">.</span>
-						</p>
+						</p>-->
 						<img src="<?php echo IMAGES_DIR; ?>/loader-uk.gif">
 					</div>
 
@@ -61,7 +61,7 @@
 								
 									<source srcset="<?php echo IMAGES_DIR ?>logo-uk.svg" type="image/svg+xml">
 									<source srcset="<?php echo IMAGES_DIR ?>logo-uk.png,<?php echo IMAGES_DIR ?>logo-uk@2x.png 2x" media="(min-width: 315px)">
-									<img class="image-loader" src="<?php echo IMAGES_DIR ?>logo-uk.png" alt="Logo sitio">
+									<img src="<?php echo IMAGES_DIR ?>logo-uk.png" alt="Logo sitio">
 							<?php } else { ?>
 								<?php if ($logoSVG != ' ') : ?>
 								<source srcset="<?php echo $logoSVG; ?>" type="image/svg+xml">
@@ -69,7 +69,7 @@
 								<?php if ($logo != '') : ?>
 								<source srcset="<?php echo $logo; ?>" media="(min-width: 315px)">
 								<?php endif; ?> 
-								<img class="image-loader" src="<?php echo isset($logo) ? $logo : IMAGES_DIR . 'logo-uk.png'; ?>" alt="Logo sitio <?php bloginfo( 'name' ); ?>">
+								<img src="<?php echo isset($logo) ? $logo : IMAGES_DIR . 'logo-uk.png'; ?>" alt="Logo sitio <?php bloginfo( 'name' ); ?>">
 							<?php } ?>
 
 							</picture>

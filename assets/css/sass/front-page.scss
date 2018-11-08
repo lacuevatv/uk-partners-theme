@@ -148,7 +148,6 @@
     
     }//.front-page-header
 
-
     //seccion general del home
     section {
         position: relative;
@@ -160,7 +159,7 @@
             @extend .title-basic-dash;
             @extend .title-basic-dash-center;
             font-family: $fuente-principal;
-            font-weight: 500;
+            font-weight: 700;
             text-transform: uppercase;
             color: $color-texto-negro;
             font-size: 1.5rem;
@@ -231,7 +230,11 @@
     }//section
 
     .uk-programas {
-        background-color: $color-fondo-gris-claro;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eae9ea+0,eae9ea+100&0.76+0,1+100 */
+        background: -moz-linear-gradient(top, rgba(234,233,234,0.76) 0%, rgba(234,233,234,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(234,233,234,0.76) 0%,rgba(234,233,234,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(234,233,234,0.76) 0%,rgba(234,233,234,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2eae9ea', endColorstr='#eae9ea',GradientType=0 ); /* IE6-9 */
 
         .programas-wrapper {
             text-align: center;
@@ -260,8 +263,9 @@
                     position: relative;
                     z-index: 1;
                     width: 100%;
-                    height: 250px;
+                    height: 220px;
                     @media (min-width: $md) {
+                        height: 250px;
                         position: absolute;
                         top: 50%;
                         @include transform(translateY(-50%));
@@ -344,7 +348,7 @@
                         }
                     }
 
-                }//.destino-contenido
+                }//.programa-contenido
             }
 
             .btn-programas {
@@ -527,8 +531,8 @@
                     h1 {
                         text-transform: uppercase;
                         font-weight: 700;
-                        font-size: 1.2rem;
-                        margin-bottom: .5rem;
+                        font-size: 1.3rem;
+                        margin-bottom: .2rem;
                         width: 100%;
                     }
                     p {
@@ -692,11 +696,12 @@
                         height: 100%;
                         background-color: rgba(106,107,110,0.7);
                         zoom: 1;
+                        mix-blend-mode: multiply;
                         @include transition(all $transitionSpeed);
                         @media (min-width: $md) {
-                            background-color: rgb(106,107,110);
-                            filter: alpha(opacity=0);
-                            opacity: 0;
+                            //background-color: rgb(106,107,110);
+                            //filter: alpha(opacity=0);
+                            //opacity: 0;
                         }
                         
                     }
@@ -734,19 +739,19 @@
                     @include transition(all $transitionSpeed);
                     
                     @media (min-width: $md) {
-                        visibility: hidden;
-                        @include transform(translateY(50%));
+                        //visibility: hidden;
+                        //@include transform(translateY(50%));
                     }
 
                     h1 {
                         text-transform: uppercase;
                         font-weight: 700;
-                        font-size: 1rem;
+                        font-size: 1.1rem;
                         margin-bottom: .5rem;
                         width: 100%;
                     }
                     p {
-                        font-size: .7rem;
+                        font-size: .8rem;
                         line-height: 1rem;
                         margin-bottom: 1rem;
                         width: 100%;
@@ -762,9 +767,9 @@
                                 @include transform(translateY(-50%) scale(1.2));
                             }
                             .shutter {
-                                zoom: 1;
-                                filter: alpha(opacity=70);
-                                opacity: 0.7;
+                                //zoom: 1;
+                                //filter: alpha(opacity=70);
+                                //opacity: 0.7;
                             }
                         }
 

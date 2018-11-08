@@ -394,7 +394,14 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_meta_info_resumen' ) ) {
             __( 'Resumen:', 'ukpartnerstheme' ),
             'uk_partners_theme_add_metabox_meta_info_resumen_callback',
 			'cursos'
-		);	
+		);
+		
+		add_meta_box(
+            'meta-resumen',
+            __( 'Resumen:', 'ukpartnerstheme' ),
+            'uk_partners_theme_add_metabox_meta_info_resumen_callback',
+			'programas'
+		);
     }
 }
 

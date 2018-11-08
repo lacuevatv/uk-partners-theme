@@ -566,7 +566,7 @@ html, body {
   z-index: 11;
   font-size: 0.7rem;
   top: 37px;
-  min-width: 180px;
+  min-width: 120px;
   margin-left: -10px;
   display: flex;
   display: -o-flex;
@@ -672,7 +672,7 @@ html, body {
 }
 .barra-principal h1 {
   position: relative;
-  z-index: 111;
+  z-index: 1;
 }
 .barra-principal h1 img {
   position: relative;
@@ -818,13 +818,15 @@ html, body {
     margin-top: 0;
   }
 }
-.barra-principal .primary-menu-wrapper .primary-menu .current-menu-item > a {
-  color: #18bdca;
-}
-.barra-principal .primary-menu-wrapper .primary-menu .current-menu-item > a:before {
-  content: "";
-  display: block;
-  width: 30%;
+@media (min-width: 992px) {
+  .barra-principal .primary-menu-wrapper .primary-menu .current-menu-item > a {
+    color: #18bdca;
+  }
+  .barra-principal .primary-menu-wrapper .primary-menu .current-menu-item > a:before {
+    content: "";
+    display: block;
+    width: 30%;
+  }
 }
 .barra-principal .primary-menu-wrapper .primary-menu .menu-item-has-children {
   position: relative;
@@ -1381,7 +1383,7 @@ html, body {
 }
 .uk-front-page-wrapper section .title-section {
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   color: #595a5c;
   font-size: 1.5rem;
@@ -1450,7 +1452,15 @@ html, body {
   mix-blend-mode: multiply;
 }
 .uk-front-page-wrapper .uk-programas {
-  background-color: #e5e6e7;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eae9ea+0,eae9ea+100&0.76+0,1+100 */
+  background: -moz-linear-gradient(top, rgba(234, 233, 234, 0.76) 0%, #eae9ea 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(234, 233, 234, 0.76) 0%, #eae9ea 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(234, 233, 234, 0.76) 0%, #eae9ea 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#c2eae9ea", endColorstr="#eae9ea",GradientType=0 );
+  /* IE6-9 */
 }
 .uk-front-page-wrapper .uk-programas .programas-wrapper {
   text-align: center;
@@ -1478,10 +1488,11 @@ html, body {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 250px;
+  height: 220px;
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-programas .programas-wrapper .programa .programa-imagen {
+    height: 250px;
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1779,8 +1790,8 @@ html, body {
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido h1 {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
   width: 100%;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido p {
@@ -1941,17 +1952,11 @@ html, body {
   height: 100%;
   background-color: rgba(106, 107, 110, 0.7);
   zoom: 1;
+  mix-blend-mode: multiply;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
-}
-@media (min-width: 992px) {
-  .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-imagen .shutter {
-    background-color: #6a6b6e;
-    filter: alpha(opacity=0);
-    opacity: 0;
-  }
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-contenido {
   color: #fff;
@@ -1987,24 +1992,15 @@ html, body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-@media (min-width: 992px) {
-  .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-contenido {
-    visibility: hidden;
-    -webkit-transform: translateY(50%);
-    -moz-transform: translateY(50%);
-    -ms-transform: translateY(50%);
-    transform: translateY(50%);
-  }
-}
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-contenido h1 {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
   width: 100%;
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-contenido p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1rem;
   margin-bottom: 1rem;
   width: 100%;
@@ -2015,11 +2011,6 @@ html, body {
     -moz-transform: translateY(-50%) scale(1.2);
     -ms-transform: translateY(-50%) scale(1.2);
     transform: translateY(-50%) scale(1.2);
-  }
-  .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso:hover .curso-imagen .shutter {
-    zoom: 1;
-    filter: alpha(opacity=70);
-    opacity: 0.7;
   }
   .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso:hover .curso-contenido {
     visibility: visible;
@@ -2691,6 +2682,7 @@ html, body {
   -ms-justify-content: space-between;
   -o-justify-content: space-between;
   justify-content: space-between;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list {
@@ -3030,14 +3022,24 @@ html, body {
 }
 
 /*CORREGIMOS COLORES DE ACUERDO AL POST*/
-.cursos .tag-destacado {
+.programas .tag-destacado {
   background-color: #8a4398;
 }
-.cursos .entry-header .post-thumbnail {
+.programas .entry-header .post-thumbnail {
   background-color: #18bdca;
 }
-.cursos .entry-header .wrapper-title .entry-title:before {
+.programas .entry-header .wrapper-title .entry-title:before {
   background-color: #8a4398;
+}
+
+.cursos .tag-destacado {
+  background-color: #5fba46;
+}
+.cursos .entry-header .post-thumbnail {
+  background-color: #8a4398;
+}
+.cursos .entry-header .wrapper-title .entry-title:before {
+  background-color: #5fba46;
 }
 
 .destinos .tag-destacado {
@@ -3094,18 +3096,19 @@ html, body {
 .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
   padding: 0rem 0.5rem;
   text-transform: uppercase;
-  font-size: 0.6rem;
+  font-size: 0.55rem;
+  line-height: 1rem;
   background-color: #e5e6e7;
   display: flex;
   display: -o-flex;
   display: -ms-flex;
   display: -moz-flex;
   display: -webkit-flex;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  -o-align-items: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   -ms-justify-content: space-between;
@@ -3115,20 +3118,51 @@ html, body {
 @media (min-width: 768px) {
   .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
     padding: 0rem 1.5rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+  }
+}
+@media (min-width: 992px) {
+  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
+    padding: 0rem 1.5rem;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
   }
 }
 .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li {
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li {
+    padding-left: 1.4rem;
+  }
+}
 .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before {
   content: "";
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  display: block;
   width: 0.8rem;
   height: 0.8rem;
   background-color: #18bdca;
   margin-right: 0.5rem;
+}
+@media (min-width: 768px) {
+  .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list li:before {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
 }
 .post .entry-content-single, .cursos .entry-content-single, .destinos .entry-content-single {
   padding: 1rem 0 2rem;
@@ -3183,9 +3217,15 @@ html, body {
   }
 }
 .post .contact-sidebar .wrapper-contact-form .widget-title, .cursos .contact-sidebar .wrapper-contact-form .widget-title, .destinos .contact-sidebar .wrapper-contact-form .widget-title {
-  padding-top: 1rem;
-  font-size: 1rem;
-  font-weight: 700;
+  display: none;
+}
+@media (min-width: 992px) {
+  .post .contact-sidebar .wrapper-contact-form .widget-title, .cursos .contact-sidebar .wrapper-contact-form .widget-title, .destinos .contact-sidebar .wrapper-contact-form .widget-title {
+    display: block;
+    padding-top: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
 }
 .post .contact-sidebar .wrapper-contact-form .wpcf7, .cursos .contact-sidebar .wrapper-contact-form .wpcf7, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 {
   width: 100%;

@@ -212,7 +212,7 @@
 
 
 /*CORREGIMOS COLORES DE ACUERDO AL POST*/
-.cursos {
+.programas {
     .tag-destacado {
         background-color: $color-violeta;
     }
@@ -225,6 +225,25 @@
             .entry-title {
                 &:before {
                     background-color: $color-violeta;
+                }
+            }
+        }
+    }
+}
+
+.cursos {
+    .tag-destacado {
+        background-color: $color-verde;
+    }
+
+    .entry-header {
+        .post-thumbnail {
+            background-color: $color-violeta;
+        }
+        .wrapper-title { 
+            .entry-title {
+                &:before {
+                    background-color: $color-verde;
                 }
             }
         }
@@ -278,18 +297,19 @@
             .meta-resumen-list {
                 padding: 0rem .5rem;
                 text-transform: uppercase;
-                font-size: .6rem;
+                font-size: .55rem;
+                line-height: 1rem;
                 background-color: $color-fondo-gris-claro;
                 display: flex;
                 display: -o-flex;
                 display: -ms-flex;
                 display: -moz-flex;
                 display: -webkit-flex;
-                -webkit-align-items: center;
-                -moz-align-items: center;
-                -ms-align-items: center;
-                -o-align-items: center;
-                align-items: center;
+                -webkit-align-items: flex-start;
+                -moz-align-items: flex-start;
+                -ms-align-items: flex-start;
+                -o-align-items: flex-start;
+                align-items: flex-start;
                 -webkit-justify-content: space-between;
                 -moz-justify-content: space-between;
                 -ms-justify-content: space-between;
@@ -298,20 +318,44 @@
 
                 @media (min-width: $sm) {
                     padding: 0rem 1.5rem;
-                    font-size: .8rem;
+                    font-size: .9rem;
+                    line-height: 1.1rem;
+
+                }
+                @media (min-width: $md) {
+                    padding: 0rem 1.5rem;
+                    -webkit-align-items: center;
+                    -moz-align-items: center;
+                    -ms-align-items: center;
+                    -o-align-items: center;
+                    align-items: center;
                 }
 
                 li {
+                    position: relative;
+                    padding-left: 1rem;
+                    padding-right: .5rem;
                     padding-top: 1rem;
                     padding-bottom: 1rem;
+                    @media (min-width: $sm) {
+                        padding-left: 1.4rem;
+                        
+                    }
 
                     &:before {
                         content: '';
-                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        top: 1rem;
+                        display: block;
                         width: .8rem;
                         height: .8rem;
                         background-color: $color-turqueza;
                         margin-right: .5rem;
+                        @media (min-width: $sm) {
+                            top: 50%;
+                            @include transform(translateY(-50%));
+                        }
                     }
                 }
             }
@@ -366,9 +410,13 @@
             }
 
             .widget-title {
-                padding-top: 1rem;
-                font-size: 1rem;
-                font-weight: 700;
+                display: none;
+                @media (min-width: $md) {
+                    display: block;
+                    padding-top: 1rem;
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
             }
             
             /*

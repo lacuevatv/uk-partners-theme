@@ -1,5 +1,7 @@
 <?php
 global $metaProgramas;
+$postsIds = explode(',', $metaProgramas[4]);
+
 ?>
 
 <!-- **********PROGRAMAS ********* -->
@@ -14,8 +16,9 @@ global $metaProgramas;
             <?php
             $programas = new WP_Query( 
                 array(
-                    'post_type'      => 'programas',
-                    'order'          => 'desc',
+                    'post_type'       => 'programas',
+                    'order'           => 'desc',
+                    'post__in' => $postsIds,
                     ) 
             );
 
@@ -62,7 +65,7 @@ global $metaProgramas;
                 </ul>
 
                 <?php if ($metaProgramas[2] == '1' ) : ?>
-                    <a href="<?php esc_url($metaProgramas[3]); ?>" class="btn-programas btn-naranja">Ver más</a>
+                    <a href="<?php echo esc_url($metaProgramas[3]); ?>" class="btn-programas btn-naranja">Ver más</a>
                 <?php endif; ?>
 
             <?php endif; ?>
