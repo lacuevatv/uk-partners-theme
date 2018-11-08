@@ -214,8 +214,33 @@ jQuery(function($){
         }
 
         $(inputDestinos).val(destinosValores);
-    });
-
+    }); 
     
+    
+    //guarda los programas en un input al ser seleccionados
+    $(document).on('click', '.input_programas', function(e) {
+        
+        var idPrograma = $(this).attr('data-id');
+        var inputProgramas = $('#home_programas_id');
+        var programasValores = $(inputProgramas).val();
+        if ( $(this).attr('checked') ) {
+            //si es chequeado se agrega al inputCursos
+
+            //busca a ver si ya esta agregado y si esta no hace nada
+            if ( programasValores.indexOf(idPrograma) == '-1' ) {
+                programasValores = programasValores + idPrograma + ',';
+            }
+
+        } else {
+            //Si se desmarca hay que borrarlo
+            
+            if ( programasValores.indexOf(idPrograma) != '-1' ) {
+                programasValores = programasValores.replace( idPrograma+',' , '' );
+            }
+
+        }
+
+        $(inputProgramas).val(programasValores);
+    }); 
 
 });

@@ -1854,3 +1854,163 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_contact_form_code' ) ) {
 }
 
 add_action( 'save_post', 'uk_partners_theme_save_metabox_contact_form_code', 10, 2 );
+
+
+/*------------------
+* METABOX 7: SELECCIONAR PROGRAMAS
+-------------------*/
+
+if ( ! function_exists( 'uk_partners_theme_metabox_home_programas' ) ) {
+	/**
+	 * Register custom meta boxes for product. Section: header.
+	 *
+	 * @since 1.0
+	 *
+	 * @uses add_meta_box()
+	 */
+    function uk_partners_theme_metabox_home_programas() {
+
+		global $post;
+		$pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
+
+		if( $pageTemplate == 'page-home.php' || $pageTemplate == 'admin/page-home.php' ) {
+
+			add_meta_box(
+				'home_programas',
+				__( 'Programas:', 'ukpartnerstheme' ),
+				'uk_partners_theme_metabox_home_programas_callback',
+				'page'
+			);
+		}
+    }
+}
+
+add_action( 'add_meta_boxes', 'uk_partners_theme_metabox_home_programas' );
+
+if ( ! function_exists( 'uk_partners_theme_metabox_home_programas_callback' ) ) {
+	/**
+	 * Print HTML for meta box.
+	 *
+	 * @since 1.0
+	 *
+	 * @param WP_Post $post
+	 *
+	 * @see uk_partners_theme_metabox_home_programas()
+	 */
+    function uk_partners_theme_metabox_home_programas_callback( WP_Post $post ) {
+        wp_nonce_field( 'uk_partners_theme_metabox_home_programas_callback', 'uk_partners_theme_metabox_home_programas_callback_nonce' );
+
+		$programasSelected = get_post_meta( $post->ID, '_uk_meta_home_programas', true );
+		
+		?>
+
+		<div class="uk_partner_metabox_wrapper">
+			<input type="hidden" name="home_programas_id" id="home_programas_id" value="<?php echo isset($programasSelected[3]) ? $programasSelected[3] : ''; ?>">
+			<?php 
+			//busca programas cargados
+			$programas = new WP_Query( array(
+				'post_type' => 'programas',
+				)
+			);
+			if ($programas->have_posts()) : ?>
+
+				<p>
+					<?php _e('Activar el bloque, definir boton y url.', 'ukpartnerstheme' ); ?>
+				</p>
+				
+				<div class="uk_partner_metabox_input_data_wrapper">
+
+					<div class="metabox_input_data">
+						<label for="uk_partner_home_activar_programa"><?php esc_html_e( 'Activar Programas', 'ukpartnerstheme' ); ?></label>
+						<input type="checkbox" name="uk_partner_home_activar_programa" id="uk_partner_home_activar_programa" value="<?php echo isset($programasSelected[0]) ? esc_attr( $programasSelected[0]) : '' ?>" <?php if (isset($programasSelected[0]) && $programasSelected[0] == '1') {echo 'checked'; } ?>/>
+					</div>
+
+					<div class="metabox_input_data">
+						<label for="uk_partner_home_programa_leermas"><?php esc_html_e( 'Botón Leer más', 'ukpartnerstheme' ); ?></label>
+						<input type="checkbox" name="uk_partner_home_programa_leermas" id="uk_partner_home_programa_leermas" value="<?php echo isset($programasSelected[1]) ? esc_attr( $programasSelected[1]) : '' ?>" <?php if (isset($programasSelected[1]) && $programasSelected[1] == '1') {echo 'checked'; } ?>/>
+					</div>
+					<div class="metabox_input_data">
+						<label for="uk_partner_home_programas_url"><?php esc_html_e( 'Url', 'ukpartnerstheme' ); ?></label>
+						<input type="text" id="uk_partner_home_programas_url" name="uk_partner_home_programas_url" value="<?php echo isset($programasSelected[2]) ? esc_url( $programasSelected[2]) : '' ?>">
+					</div>
+
+					<h4 class="title-destacado-metabox">
+						<?php _e('Seleccionar programas para mostrar.', 'ukpartnerstheme' ); ?>
+					</h4>
+					<?php while ( $programas->have_posts() ) : $programas->the_post();
+						$nombre = get_the_title();
+						$id = get_the_id();
+						$resumen = get_the_excerpt();
+						?>
+						<div class="metabox_input_data">
+							<input type="checkbox" class="input_programas" name="programas_id" data-id="<?php echo $id; ?>"<?php if ( strpos($programasSelected[3], $id.',') !== false ) { echo ' checked'; }?>>
+							<label for="programas_id">
+								<?php echo $nombre; ?>
+							</label>
+						</div>
+
+					<?php endwhile; ?>
+			</div>
+
+		<?php else : ?>
+
+			<p>
+				<?php _e('No hay ningún programa cargado.', 'ukpartnerstheme' ); ?>
+			</p>
+
+		<?php endif; ?>
+		
+		</div>
+		
+		<?php
+
+    }
+}
+
+if ( ! function_exists( 'uk_partners_theme_save_metabox_home_programas' ) ) {
+	/**
+	 * Save meta data for a post.
+	 *
+	 * @param int     $post_id
+	 * @param WP_Post $post
+	 *
+	 * @since 1.0
+	 * @see uk_partners_theme_metabox_home_programas_callback()
+	 */
+    function uk_partners_theme_save_metabox_home_programas( $post_id, WP_Post $post ) {
+       		
+        //si es un autosave salir de la funcion
+        if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        	return;
+        }
+
+    	// Si no se aprueba el chequeo de seguridad, salir de la función.
+	   if ( ! isset( $_POST['uk_partners_theme_metabox_home_programas_callback_nonce'] ) || ! wp_verify_nonce( $_POST['uk_partners_theme_metabox_home_programas_callback_nonce'], 'uk_partners_theme_metabox_home_programas_callback' ) ) {
+		  return;
+	   }
+
+        $post_type = get_post_type_object( $post->post_type );
+
+        // Si el usuario actual no tiene permisos para modificar el post, salir de la función.
+        if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+            return;
+		}
+		
+        // Guardamos:
+		
+	    $programasSelected = array();
+
+		array_push($programasSelected, esc_attr( isset($_POST['uk_partner_home_activar_programa']) ? $_POST['uk_partner_home_activar_programa'] : '' ) );
+		array_push($programasSelected, esc_attr( isset($_POST['uk_partner_home_programa_leermas']) ? $_POST['uk_partner_home_programa_leermas'] : '' ) );
+		array_push($programasSelected, esc_url( isset($_POST['uk_partner_home_programas_url']) ? $_POST['uk_partner_home_programas_url'] : '' ) );
+		array_push($programasSelected, esc_attr( isset($_POST['home_programas_id']) ? $_POST['home_programas_id'] : '' ) );
+
+
+		if ( !empty( $programasSelected ) ) {
+			update_post_meta( $post_id, '_uk_meta_home_programas', $programasSelected );
+		}
+
+ 	}
+}
+
+add_action( 'save_post', 'uk_partners_theme_save_metabox_home_programas', 10, 2 );
