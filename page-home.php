@@ -49,9 +49,20 @@ get_header(); ?>
 				
 				<?php
 
+				/** 
+				 * 2. programas
+				*/
+				global $metaProgramas;
+				$metaProgramas = get_post_meta( $idHome, '_uk_meta_home_programas', true );
+
+				if ( $metaProgramas &&  $metaProgramas[0] == 1 && $metaProgramas != '' && is_array($metaProgramas) & ! empty($metaProgramas) ) :
+					
+					get_template_part( 'template-parts/page/content', 'home-programas' );
+				
+				endif;
 
 				/** 
-				 * 2. destinos
+				 * 3. destinos
 				*/
 				global $metaDestinos;
 				$metaDestinos = get_post_meta( $idHome, '_uk_home_destinos', true );
@@ -64,7 +75,7 @@ get_header(); ?>
 
 				
 				/** 
-				 * 3. separador
+				 * 4. separador
 				*/
 				global $separadorData;
 				$separadorData = get_post_meta( $idHome, '_uk_home_separador', true );
@@ -76,7 +87,7 @@ get_header(); ?>
 				endif;
 
 				/** 
-				 * 4. cursos
+				 * 5. cursos
 				*/
 				global $metaCursos;
 				$metaCursos = get_post_meta( $idHome, '_uk_home_cursos', true );
@@ -90,7 +101,7 @@ get_header(); ?>
 				
 
 				/** 
-				 * 5. alojamientos
+				 * 6. alojamientos
 				*/
 				global $alojamientoData;
 				$alojamientoData = get_post_meta( $idHome, '_uk_home_alojamientos', true );
@@ -103,7 +114,7 @@ get_header(); ?>
 
 				
 				/** 
-				 * 6. testimonios
+				 * 7. testimonios
 				*/
 				global $metaTestimonios;
 				$metaTestimonios = get_post_meta( $idHome, '_uk_home_testimonios', true );
@@ -116,7 +127,7 @@ get_header(); ?>
 				
 
 				/** 
-				 * 7. contacto
+				 * 8. contacto
 				*/
 				$metaContactFormCode = get_post_meta( $idHome, '_uk_home_contacto', true );
 				

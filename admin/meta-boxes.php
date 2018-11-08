@@ -1905,7 +1905,7 @@ if ( ! function_exists( 'uk_partners_theme_metabox_home_programas_callback' ) ) 
 		?>
 
 		<div class="uk_partner_metabox_wrapper">
-			<input type="hidden" name="home_programas_id" id="home_programas_id" value="<?php echo isset($programasSelected[3]) ? $programasSelected[3] : ''; ?>">
+			<input type="hidden" name="home_programas_id" id="home_programas_id" value="<?php echo isset($programasSelected[4]) ? $programasSelected[4] : ''; ?>">
 			<?php 
 			//busca programas cargados
 			$programas = new WP_Query( array(
@@ -1926,12 +1926,17 @@ if ( ! function_exists( 'uk_partners_theme_metabox_home_programas_callback' ) ) 
 					</div>
 
 					<div class="metabox_input_data">
+						<label for="uk_partner_home_programas_titulo"><?php esc_html_e( 'Título bloque', 'ukpartnerstheme' ); ?></label>
+						<input type="text" id="uk_partner_home_programas_titulo" name="uk_partner_home_programas_titulo" value="<?php echo isset($programasSelected[1]) ? sanitize_text_field( $programasSelected[1]) : '' ?>">
+					</div>
+
+					<div class="metabox_input_data">
 						<label for="uk_partner_home_programa_leermas"><?php esc_html_e( 'Botón Leer más', 'ukpartnerstheme' ); ?></label>
-						<input type="checkbox" name="uk_partner_home_programa_leermas" id="uk_partner_home_programa_leermas" value="<?php echo isset($programasSelected[1]) ? esc_attr( $programasSelected[1]) : '' ?>" <?php if (isset($programasSelected[1]) && $programasSelected[1] == '1') {echo 'checked'; } ?>/>
+						<input type="checkbox" name="uk_partner_home_programa_leermas" id="uk_partner_home_programa_leermas" value="<?php echo isset($programasSelected[2]) ? esc_attr( $programasSelected[2]) : '' ?>" <?php if (isset($programasSelected[2]) && $programasSelected[2] == '1') {echo 'checked'; } ?>/>
 					</div>
 					<div class="metabox_input_data">
 						<label for="uk_partner_home_programas_url"><?php esc_html_e( 'Url', 'ukpartnerstheme' ); ?></label>
-						<input type="text" id="uk_partner_home_programas_url" name="uk_partner_home_programas_url" value="<?php echo isset($programasSelected[2]) ? esc_url( $programasSelected[2]) : '' ?>">
+						<input type="text" id="uk_partner_home_programas_url" name="uk_partner_home_programas_url" value="<?php echo isset($programasSelected[3]) ? esc_url( $programasSelected[3]) : '' ?>">
 					</div>
 
 					<h4 class="title-destacado-metabox">
@@ -1943,7 +1948,7 @@ if ( ! function_exists( 'uk_partners_theme_metabox_home_programas_callback' ) ) 
 						$resumen = get_the_excerpt();
 						?>
 						<div class="metabox_input_data">
-							<input type="checkbox" class="input_programas" name="programas_id" data-id="<?php echo $id; ?>"<?php if ( strpos($programasSelected[3], $id.',') !== false ) { echo ' checked'; }?>>
+							<input type="checkbox" class="input_programas" name="programas_id" data-id="<?php echo $id; ?>"<?php if ( strpos($programasSelected[4], $id.',') !== false ) { echo ' checked'; }?>>
 							<label for="programas_id">
 								<?php echo $nombre; ?>
 							</label>
@@ -2000,10 +2005,11 @@ if ( ! function_exists( 'uk_partners_theme_save_metabox_home_programas' ) ) {
 		
 	    $programasSelected = array();
 
-		array_push($programasSelected, esc_attr( isset($_POST['uk_partner_home_activar_programa']) ? $_POST['uk_partner_home_activar_programa'] : '' ) );
-		array_push($programasSelected, esc_attr( isset($_POST['uk_partner_home_programa_leermas']) ? $_POST['uk_partner_home_programa_leermas'] : '' ) );
-		array_push($programasSelected, esc_url( isset($_POST['uk_partner_home_programas_url']) ? $_POST['uk_partner_home_programas_url'] : '' ) );
-		array_push($programasSelected, esc_attr( isset($_POST['home_programas_id']) ? $_POST['home_programas_id'] : '' ) );
+		array_push($programasSelected, isset($_POST['uk_partner_home_activar_programa']) ? esc_attr($_POST['uk_partner_home_activar_programa']) : '' );
+		array_push($programasSelected, isset($_POST['uk_partner_home_programas_titulo']) ? sanitize_text_field($_POST['uk_partner_home_programas_titulo']) : '' );
+		array_push($programasSelected, isset($_POST['uk_partner_home_programa_leermas']) ? esc_attr($_POST['uk_partner_home_programa_leermas']) : '' );
+		array_push($programasSelected, isset($_POST['uk_partner_home_programas_url']) ? esc_url($_POST['uk_partner_home_programas_url']) : '' );
+		array_push($programasSelected, isset($_POST['home_programas_id']) ? esc_attr($_POST['home_programas_id']) : '' );
 
 
 		if ( !empty( $programasSelected ) ) {
