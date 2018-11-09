@@ -3678,5 +3678,100 @@ html, body {
 .post .extra-single-wrapper .galeria-fotos .item, .cursos .extra-single-wrapper .galeria-fotos .item, .destinos .extra-single-wrapper .galeria-fotos .item {
   cursor: pointer;
 }
+.post .extra-single-wrapper #galeria-fotos-wrapper, .cursos .extra-single-wrapper #galeria-fotos-wrapper, .destinos .extra-single-wrapper #galeria-fotos-wrapper {
+  display: none;
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .inner-wrapper, .cursos .extra-single-wrapper #galeria-fotos-wrapper .inner-wrapper, .destinos .extra-single-wrapper #galeria-fotos-wrapper .inner-wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria, .cursos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria, .destinos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria {
+  position: relative;
+  width: 70%;
+  height: 70%;
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria, .cursos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria, .destinos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 11111;
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover, .cursos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover, .destinos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover {
+  zoom: 1;
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover::before, .cursos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover::before, .destinos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover::before {
+  background: #fff;
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover::after, .cursos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover::after, .destinos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria:hover::after {
+  background: #fff;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria::before, .cursos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria::before, .destinos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria::before {
+  content: "";
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: #fff;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.post .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria::after, .cursos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria::after, .destinos .extra-single-wrapper #galeria-fotos-wrapper .contenido-galeria .btn-close-galeria::after {
+  content: "";
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
 /*# sourceMappingURL=style.css.map */

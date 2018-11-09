@@ -27,21 +27,37 @@ if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) :
             $respuesta = null;
             $arraysId = isset($_POST['ids']) ? $_POST['ids'] : array();
             $mainID = isset($_POST['mainId']) ? $_POST['mainId'] : '';
+            $principalImage = array();
+            $respuesta = array();
 
             if ( ! empty($arraysId ) && $mainID != ''  ) {
+                $idslistados = array();
 
-                $respuesta = array();
+                //primero ubica la principal que es la que hizo click;
+                $principalImage['id'] = $mainID;
+                $principalImage['url'] = wp_get_attachment_image_src($mainID, 'full');
+
+                array_push($idslistados, $mainID);  
+                array_push($respuesta, $principalImage);
+
                 foreach ( $arraysId as $id ) {
-                    if ( $id != '' ) {
-                        $respuesta['id'] = $id;
-                        $respuesta['url'] = $urlImagen = wp_get_attachment_image_src($id, 'full');
+
+                    if ( $id != ''  && ! in_array($id, $idslistados) ) {
+                        $res['id'] = $id;
+                        $res['url'] = wp_get_attachment_image_src($id, 'full');
 
                         if ( $id == $mainID ) {
-                            $respuesta['active'] = true;
+                            $res['active'] = true;
                         } else {
-                            $respuesta['active'] = false;
+                            $res['active'] = false;
                         }
+
+                        array_push($idslistados, $id);    
+
+                        array_push($respuesta, $res);
                     }
+
+                    
                 }
 
             }

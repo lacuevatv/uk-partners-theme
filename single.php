@@ -118,11 +118,16 @@ get_header(); ?>
 					}
 					?>
 				</div><!-- .wrap -->
-			</aside>
 
-			<?php 
-			//esto tenia todo harcodeado
-			//get_template_part( 'template-parts/post/content', 'single-extra' ); ?>
+				<div id="galeria-fotos-wrapper">
+					<div class="inner-wrapper">
+						<div class="contenido-galeria">
+							<button class="btn-close-galeria"></button>
+							<div id="contenedor-owl"></div>
+						</div>
+					</div>
+				</div>
+			</aside>
 
 		<?php endwhile; ?>
 

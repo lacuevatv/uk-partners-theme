@@ -74,8 +74,9 @@ var is_alojamientos, is_home;
 
         //carousel de destinos o galería de imagen en single post
         getCarouselSinglePost(); 
-        //funcion que abre las imagenes en un popup
-        openGaleriaItem();
+        
+        //funcion que busca datos de las imagenes y las abre en un popup
+        getdataGaleria();
         //acordeon de cursos en single post
         initTabs();
         
@@ -440,7 +441,8 @@ var is_alojamientos, is_home;
         }
     }
 
-    function openGaleriaItem () {
+
+    function getdataGaleria () {
         
         $(document).on('click', '.item-imagen-galeria', function(e) {
             e.preventDefault();
@@ -451,7 +453,7 @@ var is_alojamientos, is_home;
                 items.each(function() {
                     arrayids.push( $(this).attr('data-id') );
                 });
-                console.log( mainId, arrayids );
+                
 
                 $.ajax( {
 		            type: 'POST',
@@ -462,18 +464,22 @@ var is_alojamientos, is_home;
                         ids: arrayids,
 		            },
 		            beforeSend: function() {
-		                console.log('enviando formulario');
-		                
+		                console.log('enviando formulario');  
 		            },
 		            success: function( response ) {
                         console.log(response);
                         try {
-                            var contentido = $.parseJSON(response);
+                            var data = $.parseJSON(response);
 
-                            console.log(contenido);
+                            //si el objeto no esta vacio abre y crea la galeria
+                            if ( ! $.isEmptyObject(data) ) {
+                                openGaleria(data);
+                            }
+                            
+                            
                         } catch (e) {
                             console.log(e, response);
-                         }
+                        }
                         
 		            }
 		        });//fin ajax
@@ -483,5 +489,58 @@ var is_alojamientos, is_home;
         });
     }
     
+
+    function openGaleria(data) {
+        console.log(data);
+        var wrapperFotos = $('#galeria-fotos-wrapper');
+        var contenedorFotos = $('#contenedor-owl');
+
+        //destruye el slider
+        owlOld = $(contenedorFotos).find('.owl-carousel');
+        if (owlOld.lenght > 0 ) {
+            $(owlOld).owlCarousel();
+            $(owlOld).owlCarousel('destroy');
+        }
+
+        //borra el contenido
+        $(contenedorFotos).empty();
+
+        //agrega contenido
+        var htmlGaleria = '<ul id="galeriaon" class="owl-carousel">';
+
+        for (var i = 0; i < data.length; i++) {
+            
+            htmlGaleria += '<li><img src="'+data[i].url[0]+'"></li>';
+        }
+
+        htmlGaleria += '</ul>';
+        $(contenedorFotos).append( $(htmlGaleria) );
+        
+        //crea un nuevo slider
+        $('#galeriaon').owlCarousel({
+            autoplay:true,
+            autoplayTimeout:4000,
+            autoplayHoverPause:true,
+            autoHeight: true,
+            loop:true,
+            margin:0,
+            lazyLoad:true,
+            nav:true,
+            navText : ['<span class="icon-arrow icon-arrow-left-d"></span>','<span class="icon-arrow icon-arrow-right-d"></span>'],
+            responsive:{
+                0:{
+                    items:1
+                },
+            }
+        });
+
+        $(wrapperFotos).fadeIn();
+
+        $(document).on('click', '.btn-close-galeria', function(){
+            $('#galeria-fotos-wrapper').fadeOut();
+        });
+
+    }
+        
 
 } )( jQuery );

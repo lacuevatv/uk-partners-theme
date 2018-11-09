@@ -777,6 +777,91 @@
             }
         }
 
+        #galeria-fotos-wrapper {
+            display: none;
+            .inner-wrapper {
+                background-color: $color-fondo-negro-transparente;
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                display: flex;
+                display: -o-flex;
+                display: -ms-flex;
+                display: -moz-flex;
+                display: -webkit-flex;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                -ms-align-items: center;
+                -o-align-items: center;
+                align-items: center;
+                -webkit-justify-content: center;
+                -moz-justify-content: center;
+                -ms-justify-content: center;
+                -o-justify-content: center;
+                justify-content: center;
+            }
+            
+
+            .contenido-galeria {
+                position: relative;
+                width: 70%;
+                height: 70%;
+
+                .btn-close-galeria {
+                    cursor: pointer;
+                    display: block;
+                    position: absolute;
+                    top: -3rem;
+                    right: 0;
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    @include transition(all $transitionSpeed);
+                    z-index: 11111;
+
+                    &:hover {
+                        zoom: 1;
+                        filter: alpha(opacity=70);
+                        opacity: 0.7;
+
+                        &::before {
+                            background: $color-blanco;
+                            @include transform(rotate(-30deg)); 
+                        }
+
+                        &::after {
+                            background: $color-blanco;
+                            @include transform(rotate(30deg)); 
+                        }
+                    }
+
+                    &::before {
+                        content: '';
+                        @include transition(all $transitionSpeed);
+                        display: block;
+                        width: 80%;
+                        height: 1px;
+                        background: $color-blanco;
+                        @include transform(rotate(-45deg));
+                    }
+
+                    &::after {
+                        content: '';
+                        @include transition(all $transitionSpeed);
+                        display: block;
+                        width: 80%;
+                        height: 1px;
+                        background: $color-blanco;
+                        @include transform(rotate(45deg));
+                    }
+
+                }
+            }
+            
+        }//#galeria-fotos-wrapper
+
     }//.extra-single-wrapper
 
 }//.post
