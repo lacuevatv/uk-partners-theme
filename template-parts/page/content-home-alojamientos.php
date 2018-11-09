@@ -7,7 +7,7 @@ $url = $alojamientoData[4];
 $target = $alojamientoData[5];
 $texto = $alojamientoData[6];
 $imagen = $alojamientoData[7];
-$imagenMovil = $alojamientoData[7];
+$imagenMovil = $alojamientoData[8];
 
 if ( $imagen == '' ) {
     $imagen = IMAGES_DIR . 'header-default.jpg';

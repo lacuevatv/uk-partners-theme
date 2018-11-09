@@ -159,11 +159,11 @@
             @extend .title-basic-dash;
             @extend .title-basic-dash-center;
             font-family: $fuente-principal;
-            font-weight: 700;
+            font-weight: 500;
             text-transform: uppercase;
             color: $color-texto-negro;
             font-size: 1.5rem;
-            line-height: 1.5rem;
+            line-height: 1.8rem;
             text-align: center;
             @media (min-width: $md) {
                 font-size: 1.5rem;
@@ -255,6 +255,7 @@
 
                 @media (min-width: $md) {
                     height: 250px;
+                    overflow: hidden;
                 }
 
                 .programa-imagen {
@@ -314,14 +315,37 @@
                     width: 100%;
                     text-align: center;
                     padding: 1rem .5rem;
+                    top: 0;
+                    display: flex;
+                    display: -o-flex;
+                    display: -ms-flex;
+                    display: -moz-flex;
+                    display: -webkit-flex;
+                    -webkit-align-items: center;
+                    -moz-align-items: center;
+                    -ms-align-items: center;
+                    -o-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: flex-start;
+                    -moz-justify-content: flex-start;
+                    -ms-justify-content: flex-start;
+                    -o-justify-content: flex-start;
+                    justify-content: flex-start;
+                    -webkit-flex-direction: column;
+                    -moz-flex-direction: column;
+                    -ms-flex-direction: column;
+                    -o-flex-direction: column;
+                    flex-direction: column;
+                    @include transition(all $transitionSpeed);
 
                     @media (min-width: $md) {
                         background-color: $color-violeta-transparente;
                         position: absolute;
-                        bottom: 0;
                         left: 0;
                         z-index: 11;
                         padding: 1rem .5rem;
+                        height: 100%;
+                        @include transform(translateY(80%));
                     }
                     
                     h1 {
@@ -329,16 +353,21 @@
                         text-transform: uppercase;
                         font-size: 1.3rem;
                         margin-bottom: 1rem;
+                        height: 20px;
+                        @include transition(all $transitionSpeed);
 
                         @media (min-width: $md) {
-                            margin-bottom: 0;
                             font-size: 1.5rem;
                             line-height: 1.2rem;
                         }
                     }
 
+                    .programas-resumen {
+                        margin-bottom: 1rem;
+                    }
+
                     button {
-                        font-size: .8rem;
+                        font-size: .7rem;
                         border: 1px solid $color-blanco;
                         padding: .5rem .8rem;
                         color: $color-blanco;
@@ -349,6 +378,19 @@
                     }
 
                 }//.programa-contenido
+
+                &:hover {
+                    @media (min-width: $md) {
+                        .programa-contenido {
+                            @include transform(translateY(0));
+                            -webkit-justify-content: center;
+                            -moz-justify-content: center;
+                            -ms-justify-content: center;
+                            -o-justify-content: center;
+                            justify-content: center;
+                        }
+                    }
+                }
             }
 
             .btn-programas {
@@ -590,6 +632,7 @@
 
         .title-section {
             color: $color-blanco;
+            font-weight: 700;
         }
 
         a {
@@ -636,15 +679,15 @@
             //article
             .curso {
                 position: relative;
-                height: 370px;
+                height: 400px;
                 @media (min-width: $md) {
-                    height: 300px;
-                }
-                @media (min-width: $lg) {
                     height: 350px;
                 }
+                @media (min-width: $lg) {
+                    height: 400px;
+                }
                 @media (min-width: $xlg) {
-                    height: 450px;
+                    height: 500px;
                 }
                 
                 .tag-destacado {
@@ -694,7 +737,7 @@
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        background-color: rgba(106,107,110,0.7);
+                        background-color: rgba(106,107,110,0.3);
                         zoom: 1;
                         mix-blend-mode: multiply;
                         @include transition(all $transitionSpeed);
@@ -806,6 +849,7 @@
 
         .title-section {
             color: $color-blanco;
+            font-weight: 700;
         }
 
         .sub-line {
@@ -977,6 +1021,8 @@
                     font-weight: 500;
                     font-size: .7rem;
                     border: none;
+                    -webkit-border: none;
+                    @include border-radius(0);
                 }
 
                 input {

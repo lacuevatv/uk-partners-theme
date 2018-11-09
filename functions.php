@@ -98,6 +98,14 @@ if ( ! function_exists( ' uk_partners_theme_setup' ) ) {
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+
+		//habilita los excerpt en las paginas
+		add_post_type_support( 'page', 'excerpt' );
+
+		//QUITA LOS ESTILOS DE LA GALERÍA POR DEFECTO
+		add_filter( 'use_default_gallery_style', '__return_false' );
+
     }
 }
 
@@ -212,25 +220,17 @@ if ( ! function_exists( 'uk_partners_theme_wp_admin_style_scripts' ) ) {
 add_action( 'admin_enqueue_scripts', 'uk_partners_theme_wp_admin_style_scripts' );
 
 
-//FILTROS
-
-
-
-/**
- * ADITIONALS
-*/
-//habilita los svg
-function ukpartners_upload_mimes($mimes = array()) {
-    $mimes['svg'] = 'image/svg+xml';
-    return $mimes;
+if ( ! function_exists( 'ukpartners_upload_mimes' ) ) {
+	/**
+	 * HABILITA EL UPLOAD DE SVG
+	*/
+	function ukpartners_upload_mimes($mimes = array()) {
+		$mimes['svg'] = 'image/svg+xml';
+		return $mimes;
+	}
 }
 add_filter('upload_mimes', 'ukpartners_upload_mimes');
 
-//habilita los excerpt en las paginas
-add_post_type_support( 'page', 'excerpt' );
-
-//QUITA LOS ESTILOS DE LA GALERÍA POR DEFECTO
-add_filter( 'use_default_gallery_style', '__return_false' );
 
 
 if ( ! function_exists( 'remove_editor_en_template_home' ) ) {
@@ -398,7 +398,7 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 				<?php _e('Galería de fotos', 'ukpartnerstheme'); ?>
 			</h2>
 
-			<div class="carousel-wrapper">
+			<div class="carousel-wrapper galeria-fotos">
 				<ul class="carousel-lista owl-carousel">
 					<?php 
 					foreach ($imagenes as $imagen) {
@@ -407,20 +407,20 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 						?>
 						
 						<li>
-							<article class="item">
+							<article class="item item-imagen-galeria">
 								<div class="item-imagen load-images-ajax">
 									<img data-src="<?php echo $urlImagen[0]; ?>">
-									<span class="shutter"></span>
+									<!--<span class="shutter"></span>-->
 								</div>
 
-								<div class="item-contenido">
+								<!--<div class="item-contenido">
 									<h1>
 										<?php //echo $destino['titulo']; ?>
 									</h1>
 									<p class="item-resumen">
 										<?php //echo $destino['texto']; ?>
 									</p>
-								</div>
+								</div>-->
 								
 							</article>
 						</li>
@@ -530,28 +530,34 @@ if ( ! function_exists( 'uk_clean_tel_to_link' ) ) {
 }
 
 
-
-function acortaTexto( $texto, $cantPalabras = 50, $final = null ) {
-	if ( null === $final ) {
-	$final = '&hellip;';
-	}	
-	$textoOriginal = $texto;
-	
-	//quitar html
-	$texto = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $texto );
-	$texto = strip_tags($texto);
-	
-	//reducir texto y agregar el final
-	 $words_array = preg_split( "/[\n\r\t ]+/", $texto, $cantPalabras + 1, PREG_SPLIT_NO_EMPTY );
-	$sep = ' ';
-	
-	//devolver texto reducido
-	if ( count( $words_array ) > $cantPalabras ) {
-		array_pop( $words_array );
-		$texto = implode( $sep, $words_array );
-		$texto = $texto . $final;
-	} else {
-		$texto = implode( $sep, $words_array );
+if ( ! function_exists( 'acortaTexto' ) ) {
+	/**
+	 * Recorta el texto por palabras
+	 *
+	 * @since 1.0
+	 */
+	function acortaTexto( $texto, $cantPalabras = 50, $final = null ) {
+		if ( null === $final ) {
+		$final = '&hellip;';
+		}	
+		$textoOriginal = $texto;
+		
+		//quitar html
+		$texto = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $texto );
+		$texto = strip_tags($texto);
+		
+		//reducir texto y agregar el final
+		$words_array = preg_split( "/[\n\r\t ]+/", $texto, $cantPalabras + 1, PREG_SPLIT_NO_EMPTY );
+		$sep = ' ';
+		
+		//devolver texto reducido
+		if ( count( $words_array ) > $cantPalabras ) {
+			array_pop( $words_array );
+			$texto = implode( $sep, $words_array );
+			$texto = $texto . $final;
+		} else {
+			$texto = implode( $sep, $words_array );
+		}
+		return $texto;
 	}
-	return $texto;
 }

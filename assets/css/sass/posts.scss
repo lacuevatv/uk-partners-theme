@@ -297,7 +297,7 @@
             .meta-resumen-list {
                 padding: 0rem .5rem;
                 text-transform: uppercase;
-                font-size: .55rem;
+                font-size: .7rem;
                 line-height: 1rem;
                 background-color: $color-fondo-gris-claro;
                 display: flex;
@@ -315,10 +315,21 @@
                 -ms-justify-content: space-between;
                 -o-justify-content: space-between;
                 justify-content: space-between;
+                -webkit-flex-direction: column;
+                -moz-flex-direction: column;
+                -ms-flex-direction: column;
+                -o-flex-direction: column;
+                flex-direction: column;
+                font-weight: 600;
 
                 @media (min-width: $sm) {
+                    -webkit-flex-direction: row;
+                    -moz-flex-direction: row;
+                    -ms-flex-direction: row;
+                    -o-flex-direction: row;
+                    flex-direction: row;
                     padding: 0rem 1.5rem;
-                    font-size: .9rem;
+                    font-size: .8rem;
                     line-height: 1.1rem;
 
                 }
@@ -333,32 +344,49 @@
 
                 li {
                     position: relative;
-                    padding-left: 1rem;
+                    padding-left: 1.5rem;
                     padding-right: .5rem;
-                    padding-top: 1rem;
-                    padding-bottom: 1rem;
+                    padding-top: .3rem;
+                    padding-bottom: .3rem;
                     @media (min-width: $sm) {
                         padding-left: 1.4rem;
+                        padding-right: .5rem;
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
                         
+                    }
+
+                    &:first-child {
+                        margin-top: .3rem;
+                        @media (min-width: $sm) {
+                            margin-top: 0;
+                        }
+                    }
+
+                    &:last-child {
+                        margin-bottom: .3rem;
+                        @media (min-width: $sm) {
+                            margin-bottom: 0;
+                        }
                     }
 
                     &:before {
                         content: '';
                         position: absolute;
                         left: 0;
-                        top: 1rem;
                         display: block;
                         width: .8rem;
                         height: .8rem;
                         background-color: $color-turqueza;
                         margin-right: .5rem;
+                        top: 50%;
+                        @include transform(translateY(-50%));
                         @media (min-width: $sm) {
-                            top: 50%;
-                            @include transform(translateY(-50%));
+
                         }
                     }
                 }
-            }
+            }//..meta-resumen-list
         }//meta-resumen-single-post-wrapper
         
     }//.wrapper-single-post-w-sidebar
@@ -405,7 +433,7 @@
                 height: initial;
                 overflow: visible;
                 position: relative;
-                top: -2rem;
+                top: -1.6rem;
                 z-index: 111;
             }
 
@@ -450,6 +478,8 @@
                         color: $color-texto;
                         background-color: $color-fondo-gris-claro-formulario;
                         border: none;
+                        -webkit-border: none;
+                        @include border-radius(0);
                     }
 
                     input {
@@ -742,6 +772,13 @@
                 }
             }
         }//.carousel-wrapper
+
+        .galeria-fotos {
+            .item {
+                cursor: pointer;
+            }
+        }
+
     }//.extra-single-wrapper
 
 }//.post

@@ -51,6 +51,10 @@ $postsIds = explode(',', $metaProgramas[4]);
                                             <?php the_title(); ?>
                                         </h1>
 
+                                        <p class="programas-resumen">
+                                            <?php echo acortaTexto($post->post_excerpt, 10); ?>
+                                        </p>
+
                                         <button type="button" class="btn btn-programa">
                                             <?php _e('Ver más', 'ukpartnerstheme'); ?>
                                         </button>

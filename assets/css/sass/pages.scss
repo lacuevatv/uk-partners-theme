@@ -125,6 +125,8 @@
                     font-size: .7rem;
                     background-color: $color-fondo-gris-claro;
                     border: none;
+                    -webkit-border: none;
+                    @include border-radius(0);
                 }
 
                 input {
