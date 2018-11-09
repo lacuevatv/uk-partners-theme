@@ -74,6 +74,8 @@ var is_alojamientos, is_home;
 
         //carousel de destinos o galería de imagen en single post
         getCarouselSinglePost(); 
+        //funcion que abre las imagenes en un popup
+        openGaleriaItem();
         //acordeon de cursos en single post
         initTabs();
         
@@ -437,5 +439,49 @@ var is_alojamientos, is_home;
             });
         }
     }
+
+    function openGaleriaItem () {
+        
+        $(document).on('click', '.item-imagen-galeria', function(e) {
+            e.preventDefault();
+            if (innerWidth > 960 ) {
+                var mainId = $(this).attr('data-id');
+                var items = $('.item-imagen-galeria');
+                var arrayids = [];
+                items.each(function() {
+                    arrayids.push( $(this).attr('data-id') );
+                });
+                console.log( mainId, arrayids );
+
+                $.ajax( {
+		            type: 'POST',
+                    url: window.UKPartnersScriptsData.ajaxurl,
+		            data: {
+                        action: 'get_data_galeria',
+                        mainId: mainId,
+                        ids: arrayids,
+		            },
+		            beforeSend: function() {
+		                console.log('enviando formulario');
+		                
+		            },
+		            success: function( response ) {
+                        console.log(response);
+                        try {
+                            var contentido = $.parseJSON(response);
+
+                            console.log(contenido);
+                        } catch (e) {
+                            console.log(e, response);
+                         }
+                        
+		            }
+		        });//fin ajax
+			
+
+            }
+        });
+    }
+    
 
 } )( jQuery );

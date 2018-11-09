@@ -1463,6 +1463,7 @@ html, body {
   /* IE6-9 */
 }
 .uk-front-page-wrapper .uk-programas .programas-wrapper {
+  margin-top: 4rem;
   text-align: center;
 }
 .uk-front-page-wrapper .uk-programas .programas-wrapper .programas-lista {
@@ -1552,7 +1553,7 @@ html, body {
   color: #fff;
   width: 100%;
   text-align: center;
-  padding: 1rem 0.5rem;
+  padding: 1rem 1rem;
   top: 0;
   display: flex;
   display: -o-flex;
@@ -1610,8 +1611,11 @@ html, body {
     line-height: 1.2rem;
   }
 }
-.uk-front-page-wrapper .uk-programas .programas-wrapper .programa .programa-contenido .programas-resumen {
+.uk-front-page-wrapper .uk-programas .programas-wrapper .programa .programa-contenido p {
+  font-size: 0.8rem;
+  line-height: 1rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 .uk-front-page-wrapper .uk-programas .programas-wrapper .programa .programa-contenido button {
   font-size: 0.7rem;
@@ -1845,7 +1849,7 @@ html, body {
   width: 100%;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .destino-contenido p {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1rem;
   margin-bottom: 1rem;
   width: 100%;
@@ -2008,6 +2012,15 @@ html, body {
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5b5f62+0,000000+100&0+29,1+100 */
+  background: -moz-linear-gradient(top, rgba(91, 95, 98, 0) 0%, rgba(65, 67, 70, 0) 29%, black 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(91, 95, 98, 0) 0%, rgba(65, 67, 70, 0) 29%, black 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(91, 95, 98, 0) 0%, rgba(65, 67, 70, 0) 29%, black 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#005b5f62", endColorstr="#000000",GradientType=0 );
+  /* IE6-9 */
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .curso-contenido {
   color: #fff;
@@ -2727,7 +2740,9 @@ html, body {
 .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list {
   padding: 0 0.5rem;
   text-transform: uppercase;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  color: #5b5f62;
   background-color: #e5e6e7;
   display: flex;
   display: -o-flex;
@@ -2739,22 +2754,39 @@ html, body {
   -ms-align-items: center;
   -o-align-items: center;
   align-items: center;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -o-justify-content: space-between;
-  justify-content: space-between;
-  font-weight: 700;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list {
     padding: 0 0.5rem;
-    font-size: 0.6rem;
   }
 }
 .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list li {
+  position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  margin-right: 1rem;
+  padding-left: 1.5rem;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper .meta-resumen-list li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #18bdca;
+  margin-right: 0.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .category-alojamientos-wrapper .contact-sidebar {
   width: 100%;
@@ -3156,6 +3188,7 @@ html, body {
   }
 }
 .post .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .cursos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list, .destinos .wrapper-single-post-w-sidebar .meta-resumen-single-post-wrapper .meta-resumen-list {
+  color: #5b5f62;
   padding: 0rem 0.5rem;
   text-transform: uppercase;
   font-size: 0.7rem;

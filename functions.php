@@ -271,7 +271,7 @@ require get_template_directory() . '/admin/meta-boxes.php';
 //Load settings files.
 require get_template_directory() . '/admin/settings.php';
 
-//require_once get_template_directory() . '/admin/ajax.php';
+require_once get_template_directory() . '/admin/ajax.php';
 
 
 /*
@@ -407,7 +407,7 @@ if ( ! function_exists( 'uk_get_meta_galeria' ) ) {
 						?>
 						
 						<li>
-							<article class="item item-imagen-galeria">
+							<article class="item item-imagen-galeria" data-id="<?php echo  $imagen; ?>">
 								<div class="item-imagen load-images-ajax">
 									<img data-src="<?php echo $urlImagen[0]; ?>">
 									<!--<span class="shutter"></span>-->

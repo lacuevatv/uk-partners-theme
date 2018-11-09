@@ -295,6 +295,7 @@
             }
 
             .meta-resumen-list {
+                color: #5b5f62;
                 padding: 0rem .5rem;
                 text-transform: uppercase;
                 font-size: .7rem;
@@ -381,9 +382,6 @@
                         margin-right: .5rem;
                         top: 50%;
                         @include transform(translateY(-50%));
-                        @media (min-width: $sm) {
-
-                        }
                     }
                 }
             }//..meta-resumen-list
