@@ -21,16 +21,17 @@ $post_type = get_post_type();
 
 	<header class="entry-header">
 		<?php if ( ! is_single() ) : ?>
-			
-			<div class="post-thumbnail">
-				<a href="<?php the_permalink(); ?>" class="load-images-ajax">
+			<a href="<?php the_permalink(); ?>" class="load-images-ajax">
+				<div class="post-thumbnail load-images-ajax">
+					
 					<?php 
 					if ( has_post_thumbnail()) {
 						echo '<img class="owl-lazy" data-src="' . get_the_post_thumbnail_url(null, 'medium') .'" alt="' . get_the_title() .'">';
 					}
 					?>
-				</a>
-			</div><!-- .post-thumbnail -->
+				
+				</div><!-- .post-thumbnail -->
+			</a>
 			
 		<?php endif; ?>
 
