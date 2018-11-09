@@ -1,6 +1,6 @@
 <?php
 global $metaProgramas;
-$postsIds = explode(',', $metaProgramas[4]);
+$postsIds = explode(',', $metaProgramas[5]);
 
 ?>
 
@@ -10,6 +10,10 @@ $postsIds = explode(',', $metaProgramas[4]);
         <h2 class="title-section">
             <?php esc_html_e($metaProgramas[1]); ?>
         </h2>
+
+        <p class="sub-line">
+            <?php esc_html_e($metaProgramas[2]); ?>
+        </p>
 
         <div class="programas-wrapper">
 
