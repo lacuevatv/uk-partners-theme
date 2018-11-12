@@ -55,6 +55,7 @@ function uk_partners_theme_time_link() {
 endif;
 
 
+
 if ( ! function_exists( 'uk_partners_theme_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -153,6 +154,54 @@ function uk_partners_theme_categorized_blog() {
 
 	return $category_count > 1;
 }
+
+
+if ( ! function_exists( 'uk_partners_theme_testimonio_date' ) ) :
+	/**
+	 * Gets a nicely formatted string for the published date.
+	 */
+	function uk_partners_theme_testimonio_date() {
+
+		//$meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+		$meses = array( 
+			__('Enero', 'ukpartnerstheme'),
+			__('Febrero', 'ukpartnerstheme'),
+			__('Marzo', 'ukpartnerstheme'),
+			__('Abril', 'ukpartnerstheme'),
+			__('Mayo', 'ukpartnerstheme'),
+			__('Junio', 'ukpartnerstheme'),
+			__('Julio', 'ukpartnerstheme'),
+			__('Agosto', 'ukpartnerstheme'),
+			__('Septiembre', 'ukpartnerstheme'),
+			__('Octubre', 'ukpartnerstheme'),
+			__('Noviembre', 'ukpartnerstheme'),
+			__('Diciembre', 'ukpartnerstheme'),
+			);
+		$dias = array(
+			__('Domingo', 'ukpartnerstheme'),
+			__('Lunes', 'ukpartnerstheme'),
+			__('Martes', 'ukpartnerstheme'),
+			__('Miércoles', 'ukpartnerstheme'),
+			__('Jueves', 'ukpartnerstheme'),
+			__('Viernes', 'ukpartnerstheme'),
+			__('Sábado', 'ukpartnerstheme'),
+			);
+
+		$date_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		
+		$date = get_the_date();
+		$fecha = $meses[get_the_date('n')-1] . ' ' . get_the_date('Y') ;
+		
+		$date_string = sprintf( $date_string,
+			get_the_date( DATE_W3C ),
+			$fecha
+		);
+		
+		return $date_string;
+		
+	}
+endif;
+
 
 
 /**

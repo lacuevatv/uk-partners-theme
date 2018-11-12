@@ -2127,56 +2127,45 @@ html, body {
   font-weight: 400;
   font-family: "Roboto", "Montserrat", sans-serif;
   font-size: 1rem;
-  margin: 5rem 0 2rem;
+  margin: 5rem auto 2rem;
+  width: 100%;
+  max-width: 850px;
 }
-@media (min-width: 992px) {
-  .uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item {
-    display: flex;
-    display: -o-flex;
-    display: -ms-flex;
-    display: -moz-flex;
-    display: -webkit-flex;
-    -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
-    -ms-justify-content: space-between;
-    -o-justify-content: space-between;
-    justify-content: space-between;
-  }
-}
-@media (min-width: 992px) {
-  .uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-image {
-    width: 20%;
-  }
-}
-.uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-image figure {
-  width: 8rem;
-  height: 8rem;
-  margin: 0 auto;
-  overflow: hidden;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-.uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-image figure img {
-  width: 110%;
-  position: relative;
-  left: -5%;
-  height: auto;
-}
-.uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-image .testimonio-nombre {
-  color: #18bdca;
-  font-size: 0.9rem;
+.uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item {
   text-align: center;
-  margin-top: 0.4rem;
+}
+.uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-nombre {
+  color: #18bdca;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+  font-family: "Roboto", "Montserrat", sans-serif;
+}
+.uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-nombre h3 {
+  margin-right: 0.5rem;
 }
 .uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-contenido {
-  text-align: left;
+  text-align: center;
+  margin: 0 auto;
   margin-top: 1.5rem;
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .testimonio-item .testimonio-contenido {
-    width: 80%;
     margin-top: 0.5rem;
   }
 }
@@ -2203,6 +2192,11 @@ html, body {
 @media (min-width: 576px) {
   .uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .owl-nav {
     display: block;
+  }
+}
+@media (min-width: 1250px) {
+  .uk-front-page-wrapper .uk-testimonios .testimonios-wrapper .owl-nav .icon-arrow {
+    top: 30%;
   }
 }
 .uk-front-page-wrapper .front-page-footer {

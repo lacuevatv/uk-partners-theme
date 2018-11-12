@@ -29,26 +29,19 @@ global $metaTestimonios;
                 <?php while ( $testimonios->have_posts() ) : $testimonios->the_post(); ?>
 
                     <li class="testimonio-item">
-                        <div class="testimonio-image">
-                            <figure>
-                                <?php 
-                                    if ( has_post_thumbnail()) {
-                                        echo '<img class="owl-lazy" data-src="' .get_the_post_thumbnail_url().'" alt="' . get_the_title() .'">';
-                                        
-                                    } else {
-                                        echo '<img class="owl-lazy" data-src="' . IMAGES_DIR .'default_persona.png" alt="' . get_the_title() .'">';
-                                    }
-                                    ?>
-                            </figure>
-                            <h3 class="testimonio-nombre">
-                                <?php the_title(); ?>
-                            </h3>
-                        </div>
 
                         <div class="testimonio-contenido">
                             <div class="slider-text">
                                 <?php the_content(); ?>
                             </div>
+                        </div>
+                        <div class="testimonio-nombre">
+                            <h3>
+                                <?php the_title(); ?>
+                            </h3>
+                            <p>
+                                (<?php echo uk_partners_theme_testimonio_date();  //the_date(); ?>)
+                            </p>
                         </div>
                     </li>
 

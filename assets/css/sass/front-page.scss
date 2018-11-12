@@ -884,55 +884,48 @@
             font-weight: 400;
             font-family: $fuente-secundaria;
             font-size: 1rem;
-            margin: 5rem 0 2rem;
+            margin: 5rem auto 2rem;
+            width: 100%;
+                max-width: 850px;
 
             .testimonio-item {
-                @media (min-width: $md) {
+                text-align: center;
+                
+
+                
+                    
+                .testimonio-nombre {
+                    color: $color-turqueza;
                     display: flex;
                     display: -o-flex;
                     display: -ms-flex;
                     display: -moz-flex;
                     display: -webkit-flex;
-                    -webkit-justify-content: space-between;
-                    -moz-justify-content: space-between;
-                    -ms-justify-content: space-between;
-                    -o-justify-content: space-between;
-                    justify-content: space-between;
-                }
+                    -webkit-align-items: center;
+                    -moz-align-items: center;
+                    -ms-align-items: center;
+                    -o-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: center;
+                    -moz-justify-content: center;
+                    -ms-justify-content: center;
+                    -o-justify-content: center;
+                    justify-content: center;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin-top: .8rem;
+                    font-family: $fuente-secundaria;
 
-                .testimonio-image {
-                    @media (min-width: $md) {
-                        width: 20%;
+                    h3 {
+                        margin-right: 0.5rem;
                     }
-                    figure {
-                        width: 8rem;
-                        height: 8rem;
-                        margin: 0 auto;
-                        overflow: hidden;
-                        @include border-radius(50%);
-
-                        img {
-                            width: 110%;
-                            position: relative;
-                            left: -5%;
-                            height: auto;
-                        }
-                    }
-                    
-                    .testimonio-nombre {
-                        //color: #1bbdca;
-                        color: $color-turqueza;
-                        font-size: .9rem;
-                        text-align: center;
-                        margin-top: .4rem;
-                    }
-                }//.testimonio-image
+                }//.testimonio-nombre
                 
                 .testimonio-contenido {
-                    text-align: left;
+                    text-align: center;
+                    margin: 0 auto;
                     margin-top: 1.5rem;
                     @media (min-width: $md) {
-                        width: 80%;
                         margin-top: .5rem;
                     }
 
@@ -960,6 +953,12 @@
                 display: none;
                 @media (min-width: $xs) {
                     display: block;
+                }
+
+                .icon-arrow {
+                    @media (min-width: $lg) {
+                        top: 30%;
+                    }
                 }
             }
         }//.testimonios-wrapper
