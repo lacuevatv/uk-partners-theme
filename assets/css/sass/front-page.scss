@@ -884,15 +884,16 @@
             font-weight: 400;
             font-family: $fuente-secundaria;
             font-size: 1rem;
-            margin: 5rem auto 2rem;
+            margin: 2rem auto 2rem;
             width: 100%;
-                max-width: 850px;
+            max-width: 850px;
+
+            @media (min-width: $md) {
+                margin-top: 5rem;
+            }
 
             .testimonio-item {
                 text-align: center;
-                
-
-                
                     
                 .testimonio-nombre {
                     color: $color-turqueza;
