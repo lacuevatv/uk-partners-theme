@@ -60,7 +60,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
                 'singular_name' => __( 'testimonio', 'ukpartnerstheme' ),
             ),
             'supports'      => array (
-                'title', 'editor', 'thumbnail'
+                'title', 'editor'
             ),
             'public'      => true,
             'has_archive' => false,

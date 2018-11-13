@@ -68,7 +68,7 @@ global $metaCursos;
             if ($metaCursos[3] == '1') : 
             ?>
                 <a class="btn btn-mas-cursos btn-violeta" href="<?php echo esc_url($metaCursos[4]); ?>">
-                    Ver más
+                    <?php _e('Ver más', 'ukpartnerstheme'); ?>
                 </a>
             <?php endif; ?>
         </div><!-- .wrap -->

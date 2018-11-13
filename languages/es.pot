@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: UKpartners Theme\n"
-"POT-Creation-Date: 2018-11-13 06:54-0300\n"
+"POT-Creation-Date: 2018-11-13 18:15-0300\n"
 "PO-Revision-Date: 2018-11-13 06:55-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -522,19 +523,19 @@ msgstr ""
 msgid "Categorías de Alojamientos"
 msgstr ""
 
-#: inc/post-type.php:234
+#: inc/post-type.php:226
 msgid "Categorías de Cursos"
 msgstr ""
 
-#: inc/post-type.php:254
+#: inc/post-type.php:238
 msgid "Categorías de Destinos"
 msgstr ""
 
-#: inc/post-type.php:274
+#: inc/post-type.php:250
 msgid "Categorías de Crew"
 msgstr ""
 
-#: inc/post-type.php:286
+#: inc/post-type.php:262
 msgid "Categorías de programas"
 msgstr ""
 
@@ -649,11 +650,11 @@ msgstr ""
 msgid "UK Partners"
 msgstr ""
 
-#: page-alojamientos.php:107 single.php:82
+#: page-alojamientos.php:107 single.php:81
 msgid "Formulario Contacto"
 msgstr ""
 
-#: page-alojamientos.php:110 single.php:85
+#: page-alojamientos.php:110 single.php:84
 msgid "Solicitar información"
 msgstr ""
 
@@ -680,14 +681,15 @@ msgstr ""
 msgid "Seguinos"
 msgstr ""
 
-#: template-parts/page/content-home-destinos.php:40
-#: template-parts/page/content-home-destinos.php:46
-msgid "Más lugares"
-msgstr ""
-
+#: template-parts/page/content-home-cursos.php:71
 #: template-parts/page/content-home-destinos.php:84
 #: template-parts/page/content-home-programas.php:63
 msgid "Ver más"
+msgstr ""
+
+#: template-parts/page/content-home-destinos.php:40
+#: template-parts/page/content-home-destinos.php:46
+msgid "Más lugares"
 msgstr ""
 
 #: template-parts/page/content-home-separador.php:28

@@ -1,6 +1,6 @@
 <wpml-config>
   <custom-types>
-    <custom-type translate="1">partners</custom-type>
+    <custom-type translate="0">partners</custom-type>
     <custom-type translate="1">testimonios</custom-type>
     <custom-type translate="1">sliders</custom-type>
     <custom-type translate="1">crew</custom-type>
@@ -19,7 +19,6 @@
   <custom-fields>
     <custom-field action="translate">_url_partner</custom-field>
     <custom-field action="translate">_uk_sliders</custom-field>
-    <custom-field action="translate">_crew</custom-field>
     <custom-field action="translate">_uk_meta_info_resumen</custom-field>
     <custom-field action="translate">_uk_meta_contact_form_code</custom-field>
     <custom-field action="translate">_uk_home_sliders</custom-field>
