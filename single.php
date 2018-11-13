@@ -10,7 +10,6 @@
  * @version 1.0
  */
 $post_type = get_post_type( $post->ID );
-
 get_header(); ?>
 
 <div id="primary" class="content-area">

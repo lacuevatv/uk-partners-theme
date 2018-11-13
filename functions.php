@@ -273,10 +273,10 @@ require get_template_directory() . '/admin/settings.php';
 
 require_once get_template_directory() . '/admin/ajax.php';
 
-
 /*
  * FUNCIONES DEL TEMA
  */
+
 
 if ( ! function_exists( 'uk_get_meta_info_resumen' ) ) {
 	/**

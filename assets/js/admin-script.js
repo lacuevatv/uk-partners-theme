@@ -59,7 +59,8 @@ jQuery(function($){
     });
 
     //metaboxes: checkbox
-    $('input[type=checkbox]').click(function(){
+    $('.input-checkbox').click(function(){
+        $(this).attr
         if ( $(this).attr('checked') == 'checked' ) {
             $(this).val('1');
         } else {

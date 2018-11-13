@@ -218,14 +218,6 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'show_in_nav_menus' => false,
             )
         );
-        /*register_taxonomy( 'tagalojamientos', 'alojamientos', array(
-            'label'        => __( 'Etiquetas de Alojamientos', 'ukpartnerstheme' ),
-            'public'       => true,
-            'rewrite'      => false,
-            'hierarchical' => false,
-            'show_in_nav_menus' => false,
-            )
-        );*/
 
         /**
          * CATEGORIA CURSOS
@@ -238,14 +230,6 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'show_in_nav_menus' => false,
             )
         );
-        /*register_taxonomy( 'tagcursos', 'cursos', array(
-            'label'        => __( 'Etiquetas de Cursos', 'ukpartnerstheme' ),
-            'public'       => true,
-            'rewrite'      => false,
-            'hierarchical' => false,
-            'show_in_nav_menus' => false,
-            )
-        );*/
 
         /**
          * CATEGORIA DESTINOS
@@ -258,14 +242,6 @@ if ( !function_exists( 'uk_partners_theme_register_private_taxonomy' ) ) :
             'show_in_nav_menus' => false,
             )
         );
-        /*register_taxonomy( 'tagdestinos', 'destinos', array(
-            'label'        => __( 'Etiquetas de Destinos', 'ukpartnerstheme' ),
-            'public'       => true,
-            'rewrite'      => false,
-            'hierarchical' => false,
-            'show_in_nav_menus' => false,
-            )
-        );*/
 
         /**
          * CATEGORIA CREW
@@ -296,49 +272,7 @@ endif;
 
 add_action( 'init', 'uk_partners_theme_register_private_taxonomy' );
 
-
-/**
- * Add metaboxes
- *
- * @see add_meta_box() for registering metaboxes
- * @link https://developer.wordpress.org/reference/functions/add_meta_box/
- * 
- * @package WordPress
- * @subpackage uk_partners_theme
- * @since 1.0
- */
-
-/**
-* Metabox para partners: url
-*/
-if ( ! function_exists( 'uk_partners_theme_meta_box_partners' ) ) :
-    function uk_partners_theme_meta_box_partners() {
-
-    }
-endif;
-
-/**
-* Metabox para Crew: cargo
-*/
-if ( ! function_exists( 'uk_partners_theme_meta_box_crew' ) ) :
-    function uk_partners_theme_meta_box_crew() {
-
-    }
-endif;
-
-/**
-* Metabox para sliders: texto boton, imagenes(movil y pc) + url
-*/
-if ( ! function_exists( 'uk_partners_theme_meta_box_sliders' ) ) :
-    function uk_partners_theme_meta_box_sliders() {
-
-    }
-endif;
-
-
 // funciones generales //
-
-
 
 /**
  * Reset rewrite rules for reentrly added post type and taxonomies.
@@ -354,17 +288,4 @@ function uk_partners_theme_flush_rewrite_rules() {
 		add_option( 'uk_partners_theme_flushed_rewrite_rules', true );
 	}
 }
-endif;
-
-/**
- * Delete template transients.
- *
- * @since 1.1
- */
-if ( ! function_exists( 'uk_partners_theme_delete_all_transients_created' ) ) :
-    add_action( 'save_post', 'uk_partners_theme_delete_all_transients_created' );
-    
-    function uk_partners_theme_delete_all_transients_created() {
-            //delete_transient( 'tarifas_shortcode_tarifas' );
-    }
 endif;

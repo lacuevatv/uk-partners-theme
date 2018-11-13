@@ -176,7 +176,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_sliders_callback' ) ) {
 	            	<label for="uk_open_sliders">
 						<?php esc_html_e( 'Abrir en ventana nueva', 'ukpartnerstheme' ); ?>
 					</label>
-            		<input type="checkbox" name="uk_open_sliders" id="uk_open_sliders" value="<?php echo isset($metaSliders[2]) ? esc_attr( $metaSliders[2]) : '' ?>" <?php if (isset($metaSliders[2]) && $metaSliders[2] == '1') {echo 'checked'; } ?>/>		
+            		<input type="checkbox" class="input-checkbox" name="uk_open_sliders" id="uk_open_sliders" value="<?php echo isset($metaSliders[2]) ? esc_attr( $metaSliders[2]) : '' ?>" <?php if (isset($metaSliders[2]) && $metaSliders[2] == '1') {echo 'checked'; } ?>/>		
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_imagen_sliders">
@@ -699,7 +699,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_select_cursos_callback' )
 							?>
 							
 							<div class="metabox_input_data">
-								<input type="checkbox" class="input_cursos" name="curso_id" data-id="<?php echo $id; ?>"<?php if ( strpos($cursosSelected, $id.',') !== false ) { echo ' checked'; }?>>
+								<input type="checkbox" class="input-checkbox input_cursos" name="curso_id" data-id="<?php echo $id; ?>"<?php if ( strpos($cursosSelected, $id.',') !== false ) { echo ' checked'; }?>>
 								<label for="curso_id">
 									<?php echo $nombre; ?>
 								</label>
@@ -821,7 +821,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_select_destinos_callback'
 						$resumen = get_the_excerpt();
 						?>
 						<div class="metabox_input_data">
-							<input type="checkbox" class="input_destinos" name="destino_id" data-id="<?php echo $id; ?>"<?php if ( strpos($destinosSelected, $id.',') !== false ) { echo ' checked'; }?>>
+							<input type="checkbox" class="input-checkbox input_destinos" name="destino_id" data-id="<?php echo $id; ?>"<?php if ( strpos($destinosSelected, $id.',') !== false ) { echo ' checked'; }?>>
 							<label for="destino_id">
 								<?php echo $nombre; ?>
 							</label>
@@ -944,7 +944,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_sliders_callback' ) 
         	<div class="uk_partner_metabox_input_data_wrapper">
         		<div class="metabox_input_data">
 					<label for="uk_home_sliders"><?php esc_html_e( 'Activar Slider', 'ukpartnerstheme' ); ?></label>
-					<input type="checkbox" name="uk_home_sliders" id="uk_home_sliders" value="<?php echo isset($checkHomeSliders) ? esc_attr( $checkHomeSliders) : '' ?>" <?php if (isset($checkHomeSliders) && $checkHomeSliders == '1') {echo 'checked'; } ?>/>
+					<input class="input-checkbox" type="checkbox" name="uk_home_sliders" id="uk_home_sliders" value="<?php echo isset($checkHomeSliders) ? esc_attr( $checkHomeSliders) : '' ?>" <?php if (isset($checkHomeSliders) && $checkHomeSliders == '1') {echo 'checked'; } ?>/>
 				</div>
 			</div>
         </div>
@@ -1047,7 +1047,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_destinos_callback' )
         	<div class="uk_partner_metabox_input_data_wrapper">
 				<div class="metabox_input_data">
 					<label for="uk_home_destinos"><?php esc_html_e( 'Activar Destinos', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_destinos" id="uk_home_destinos" value="<?php echo isset($metaDestinos[0]) ? esc_attr( $metaDestinos[0]) : '' ?>" <?php if (isset($metaDestinos[0]) && $metaDestinos[0] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_destinos" id="uk_home_destinos" value="<?php echo isset($metaDestinos[0]) ? esc_attr( $metaDestinos[0]) : '' ?>" <?php if (isset($metaDestinos[0]) && $metaDestinos[0] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_numeros_destinos">
@@ -1057,7 +1057,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_destinos_callback' )
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_home_destinos_ver_mas"><?php esc_html_e( 'Bloque Leer más', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_destinos_ver_mas" id="uk_home_destinos_ver_mas" value="<?php echo isset($metaDestinos[2]) ? esc_attr( $metaDestinos[2]) : '' ?>" <?php if (isset($metaDestinos[2]) && $metaDestinos[2] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_destinos_ver_mas" id="uk_home_destinos_ver_mas" value="<?php echo isset($metaDestinos[2]) ? esc_attr( $metaDestinos[2]) : '' ?>" <?php if (isset($metaDestinos[2]) && $metaDestinos[2] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_url_destinos">
@@ -1186,7 +1186,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_separador_callback' 
         	<div class="uk_partner_metabox_input_data_wrapper">
 				<div class="metabox_input_data">
 					<label for="uk_home_separador"><?php esc_html_e( 'Activar bloque separador', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_separador" id="uk_home_separador" value="<?php echo isset($separadorData[0]) ? esc_attr( $separadorData[0]) : '' ?>" <?php if (isset($separadorData[0]) && $separadorData[0] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_separador" id="uk_home_separador" value="<?php echo isset($separadorData[0]) ? esc_attr( $separadorData[0]) : '' ?>" <?php if (isset($separadorData[0]) && $separadorData[0] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_titulo">
@@ -1208,7 +1208,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_separador_callback' 
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_home_separador_target_boton"><?php esc_html_e( 'Abrir en nueva pestaña', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_separador_target_boton" id="uk_home_separador_target_boton" value="<?php echo isset($separadorData[4]) ? esc_attr( $separadorData[4]) : '' ?>" <?php if (isset($separadorData[4]) && $separadorData[4] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_separador_target_boton" id="uk_home_separador_target_boton" value="<?php echo isset($separadorData[4]) ? esc_attr( $separadorData[4]) : '' ?>" <?php if (isset($separadorData[4]) && $separadorData[4] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_home_separador_texto_bloque"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
@@ -1340,7 +1340,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_cursos_callback' ) )
         	<div class="uk_partner_metabox_input_data_wrapper">
 				<div class="metabox_input_data">
 					<label for="uk_home_cursos"><?php esc_html_e( 'Activar Cursos', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_cursos" id="uk_home_cursos" value="<?php echo isset($metaDestinos[0]) ? esc_attr( $metaDestinos[0]) : '' ?>" <?php if (isset($metaDestinos[0]) && $metaDestinos[0] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_cursos" id="uk_home_cursos" value="<?php echo isset($metaDestinos[0]) ? esc_attr( $metaDestinos[0]) : '' ?>" <?php if (isset($metaDestinos[0]) && $metaDestinos[0] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_numeros_cursos">
@@ -1356,7 +1356,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_cursos_callback' ) )
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_home_cursos_ver_mas"><?php esc_html_e( 'Botón Leer más', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_cursos_ver_mas" id="uk_home_cursos_ver_mas" value="<?php echo isset($metaDestinos[3]) ? esc_attr( $metaDestinos[3]) : '' ?>" <?php if (isset($metaDestinos[3]) && $metaDestinos[3] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_cursos_ver_mas" id="uk_home_cursos_ver_mas" value="<?php echo isset($metaDestinos[3]) ? esc_attr( $metaDestinos[3]) : '' ?>" <?php if (isset($metaDestinos[3]) && $metaDestinos[3] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_url_cursos">
@@ -1478,7 +1478,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_alojamientos_callbac
         	<div class="uk_partner_metabox_input_data_wrapper">
 				<div class="metabox_input_data">
 					<label for="uk_home_alojamiento"><?php esc_html_e( 'Activar bloque alojamientos', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_alojamiento" id="uk_home_alojamiento" value="<?php echo isset($alojamientoData[0]) ? esc_attr( $alojamientoData[0]) : '' ?>" <?php if (isset($alojamientoData[0]) && $alojamientoData[0] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_alojamiento" id="uk_home_alojamiento" value="<?php echo isset($alojamientoData[0]) ? esc_attr( $alojamientoData[0]) : '' ?>" <?php if (isset($alojamientoData[0]) && $alojamientoData[0] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_alojamiento_titulo">
@@ -1506,7 +1506,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_alojamientos_callbac
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_home_alojamiento_target_boton"><?php esc_html_e( 'Abrir en nueva pestaña', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_alojamiento_target_boton" id="uk_home_alojamiento_target_boton" value="<?php echo isset($alojamientoData[5]) ? esc_attr( $alojamientoData[5]) : '' ?>" <?php if (isset($alojamientoData[5]) && $alojamientoData[5] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_alojamiento_target_boton" id="uk_home_alojamiento_target_boton" value="<?php echo isset($alojamientoData[5]) ? esc_attr( $alojamientoData[5]) : '' ?>" <?php if (isset($alojamientoData[5]) && $alojamientoData[5] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 					<label for="uk_home_alojamiento_texto_bloque"><?php esc_html_e( 'Texto del bloque', 'ukpartnerstheme' ); ?></label>	
@@ -1639,7 +1639,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_home_testimonios_callback
         	<div class="uk_partner_metabox_input_data_wrapper">
 				<div class="metabox_input_data">
 					<label for="uk_home_testimonios"><?php esc_html_e( 'Activar Testimonios', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_home_testimonios" id="uk_home_testimonios" value="<?php echo isset($metaTestimonios[0]) ? esc_attr( $metaTestimonios[0]) : '' ?>" <?php if (isset($metaTestimonios[0]) && $metaTestimonios[0] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_home_testimonios" id="uk_home_testimonios" value="<?php echo isset($metaTestimonios[0]) ? esc_attr( $metaTestimonios[0]) : '' ?>" <?php if (isset($metaTestimonios[0]) && $metaTestimonios[0] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_home_numeros_testimonios">
@@ -1766,7 +1766,7 @@ if ( ! function_exists( 'uk_partners_theme_add_metabox_contact_form_code_callbac
         	<div class="uk_partner_metabox_input_data_wrapper">
 				<div class="metabox_input_data">
 					<label for="uk_contact_code"><?php esc_html_e( 'Activar bloque Contacto', 'ukpartnerstheme' ); ?></label>	
-					<input type="checkbox" name="uk_contact_code" id="uk_contact_code" value="<?php echo isset($metaContactFormCode[0]) ? esc_attr( $metaContactFormCode[0]) : '' ?>" <?php if (isset($metaContactFormCode[0]) && $metaContactFormCode[0] == '1') {echo 'checked'; } ?>/>	
+					<input class="input-checkbox" type="checkbox" name="uk_contact_code" id="uk_contact_code" value="<?php echo isset($metaContactFormCode[0]) ? esc_attr( $metaContactFormCode[0]) : '' ?>" <?php if (isset($metaContactFormCode[0]) && $metaContactFormCode[0] == '1') {echo 'checked'; } ?>/>	
 				</div>
 				<div class="metabox_input_data">
 	            	<label for="uk_contact_code_titulo">
@@ -1929,7 +1929,7 @@ if ( ! function_exists( 'uk_partners_theme_metabox_home_programas_callback' ) ) 
 
 					<div class="metabox_input_data">
 						<label for="uk_partner_home_activar_programa"><?php esc_html_e( 'Activar Programas', 'ukpartnerstheme' ); ?></label>
-						<input type="checkbox" name="uk_partner_home_activar_programa" id="uk_partner_home_activar_programa" value="<?php echo isset($programasSelected[0]) ? esc_attr( $programasSelected[0]) : '' ?>" <?php if (isset($programasSelected[0]) && $programasSelected[0] == '1') {echo 'checked'; } ?>/>
+						<input class="input-checkbox" type="checkbox" name="uk_partner_home_activar_programa" id="uk_partner_home_activar_programa" value="<?php echo isset($programasSelected[0]) ? esc_attr( $programasSelected[0]) : '' ?>" <?php if (isset($programasSelected[0]) && $programasSelected[0] == '1') {echo 'checked'; } ?>/>
 					</div>
 
 					<div class="metabox_input_data">
@@ -1944,7 +1944,7 @@ if ( ! function_exists( 'uk_partners_theme_metabox_home_programas_callback' ) ) 
 
 					<div class="metabox_input_data">
 						<label for="uk_partner_home_programa_leermas"><?php esc_html_e( 'Botón Leer más', 'ukpartnerstheme' ); ?></label>
-						<input type="checkbox" name="uk_partner_home_programa_leermas" id="uk_partner_home_programa_leermas" value="<?php echo isset($programasSelected[3]) ? esc_attr( $programasSelected[3]) : '' ?>" <?php if (isset($programasSelected[3]) && $programasSelected[3] == '1') {echo 'checked'; } ?>/>
+						<input class="input-checkbox" type="checkbox" name="uk_partner_home_programa_leermas" id="uk_partner_home_programa_leermas" value="<?php echo isset($programasSelected[3]) ? esc_attr( $programasSelected[3]) : '' ?>" <?php if (isset($programasSelected[3]) && $programasSelected[3] == '1') {echo 'checked'; } ?>/>
 					</div>
 					<div class="metabox_input_data">
 						<label for="uk_partner_home_programas_url"><?php esc_html_e( 'Url', 'ukpartnerstheme' ); ?></label>
@@ -1960,7 +1960,7 @@ if ( ! function_exists( 'uk_partners_theme_metabox_home_programas_callback' ) ) 
 						$resumen = get_the_excerpt();
 						?>
 						<div class="metabox_input_data">
-							<input type="checkbox" class="input_programas" name="programas_id" data-id="<?php echo $id; ?>"<?php if ( strpos($programasSelected[5], $id.',') !== false ) { echo ' checked'; }?>>
+							<input type="checkbox" class="input-checkbox input_programas" name="programas_id" data-id="<?php echo $id; ?>"<?php if ( strpos($programasSelected[5], $id.',') !== false ) { echo ' checked'; }?>>
 							<label for="programas_id">
 								<?php echo $nombre; ?>
 							</label>
