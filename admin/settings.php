@@ -251,7 +251,7 @@ function uk_partners_theme_settings_admin_html_redes_footer() {
     <!-- seccion header -->
     <div class="uk-settings-page-inputs">
         <label for="uk_partners_theme_settings[uk_partners_theme_footer_seguinos]"><?php _e('Mostrar en Footer', 'ukpartnerstheme'); ?></label>
-        <input type="checkbox" name="uk_partners_theme_settings[uk_partners_theme_footer_seguinos]" value="<?php echo esc_attr( $seguinos); ?>" <?php if ($seguinos == '1') {echo 'checked'; } ?>/>	
+        <input class="input-checkbox" type="checkbox" name="uk_partners_theme_settings[uk_partners_theme_footer_seguinos]" value="<?php echo esc_attr( $seguinos); ?>" <?php if ($seguinos == '1') {echo 'checked'; } ?>/>	
     </div>
     
 <?php
@@ -267,7 +267,7 @@ function uk_partners_theme_settings_admin_html_instagram_footer() {
     <!-- seccion header -->
     <div class="uk-settings-page-inputs">
         <label for="uk_partners_theme_settings[uk_partners_theme_footer_instagram]"><?php _e('Mostrar en Footer', 'ukpartnerstheme'); ?></label>
-        <input type="checkbox" name="uk_partners_theme_settings[uk_partners_theme_footer_instagram]" value="<?php echo esc_attr( $activar); ?>" <?php if ($activar == '1') {echo 'checked'; } ?>/>	
+        <input class="input-checkbox" type="checkbox" name="uk_partners_theme_settings[uk_partners_theme_footer_instagram]" value="<?php echo esc_attr( $activar); ?>" <?php if ($activar == '1') {echo 'checked'; } ?>/>	
     </div>
 
     <div class="uk-settings-page-inputs">
