@@ -568,6 +568,9 @@
                         color: $color-texto;
                         background-color: $color-fondo-gris-claro-formulario;
                         border: none;
+                        border: none;
+                        -webkit-border: none;
+                        @include border-radius(0);
                     }
 
                     input {
