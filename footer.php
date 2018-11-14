@@ -58,7 +58,7 @@
 									//si no hay imagen destacada no lo muestra porque no tiene sentido
 									if ( has_post_thumbnail()) :
 									$url = get_post_meta( $post->ID, '_url_partner', true );
-									$imagen = get_the_post_thumbnail_url();
+									$imagen = get_the_post_thumbnail_url(null, 'full');
 									?>
 									
 									<li>
