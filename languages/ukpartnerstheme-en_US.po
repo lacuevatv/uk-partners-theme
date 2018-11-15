@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: UKpartners Theme\n"
-"POT-Creation-Date: 2018-11-13 18:37-0300\n"
-"PO-Revision-Date: 2018-11-13 18:38-0300\n"
+"POT-Creation-Date: 2018-11-15 14:37-0300\n"
+"PO-Revision-Date: 2018-11-15 14:38-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -428,7 +428,9 @@ msgid "Galería de fotos"
 msgstr "Photo gallery"
 
 #: functions.php:462
-msgid "Donde estudiar"
+#, fuzzy
+#| msgid "Donde estudiar"
+msgid "Dónde estudiar"
 msgstr "Where to study"
 
 #: header.php:29

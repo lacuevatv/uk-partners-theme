@@ -202,7 +202,7 @@ var is_alojamientos, is_home;
             autoplay:true,
             autoplayTimeout:4000,
             autoplayHoverPause:true,
-            loop:true,
+            //loop:true,
             margin:0,
             nav:true,
             lazyLoad:true,

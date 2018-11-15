@@ -459,7 +459,7 @@ if ( ! function_exists( 'uk_get_meta_destinos' ) ) {
 			ob_start();
 			?>
 			<h2 class="title-section">
-				<?php _e('Donde estudiar', 'ukpartnerstheme'); ?>
+				<?php _e('Dónde estudiar', 'ukpartnerstheme'); ?>
 			</h2>
 
 			<div class="carousel-wrapper">
