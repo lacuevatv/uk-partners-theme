@@ -1613,9 +1613,10 @@ html, body {
 }
 .uk-front-page-wrapper .uk-programas .programas-wrapper .programa .programa-contenido p {
   font-size: 0.8rem;
-  line-height: 1rem;
+  line-height: 1.2rem;
   margin-bottom: 1rem;
   width: 100%;
+  max-width: 400px;
 }
 .uk-front-page-wrapper .uk-programas .programas-wrapper .programa .programa-contenido button {
   font-size: 0.7rem;
@@ -1689,7 +1690,7 @@ html, body {
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 576px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino {
