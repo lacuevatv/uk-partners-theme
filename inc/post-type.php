@@ -120,7 +120,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
                 'title', 'excerpt', 'editor', 'thumbnail',
             ),
             'public'      => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'taxonomies' => array('catdestinos', 'post_tag'),
             'rewrite' => array('slug' => __( 'destinos', 'ukpartnerstheme' ),'with_front' => false),
             'menu_icon'   => 'dashicons-location-alt'
@@ -178,7 +178,7 @@ if ( !function_exists( 'uk_partners_theme_create_post_type' ) ) :
                 'title', 'excerpt', 'editor', 'thumbnail',
             ),
             'public'      => true,
-            'has_archive' => true,
+            'has_archive' => false,
             'taxonomies' => array('catprogramas', 'post_tag'),
             'rewrite' => array('slug' => __( 'programas', 'ukpartnerstheme' ),'with_front' => false),
             'menu_icon'   => 'dashicons-palmtree'

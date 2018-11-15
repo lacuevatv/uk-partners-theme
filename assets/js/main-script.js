@@ -168,9 +168,11 @@ var is_alojamientos, is_home;
             lazyLoad:true,
             nav:true,
             navText : ['<span class="icon-arrow icon-arrow-left-d"></span>','<span class="icon-arrow icon-arrow-right-d"></span>'],
+            responsiveClass:true,
             responsive:{
                 0:{
-                    items:1
+                    items:1,
+                    nav:true,
                 },
             }
         });

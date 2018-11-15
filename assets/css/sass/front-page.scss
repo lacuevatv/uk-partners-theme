@@ -365,9 +365,10 @@
 
                     p {
                         font-size: .8rem;
-                        line-height: 1rem;
+                        line-height: 1.2rem;
                         margin-bottom: 1rem;
                         width: 100%;
+                        max-width: 400px;
                     }
 
                     button {
@@ -448,7 +449,7 @@
             //article
             .destino {
                 position: relative;
-                margin-bottom: 4rem;
+                margin-bottom: 2rem;
                 @media (min-width: $xs) {
                     height: 450px;
                     width: 90%;
