@@ -56,11 +56,17 @@ $postsIds = explode(',', $metaProgramas[5]);
                                         </h1>
 
                                         <p class="programas-resumen">
-                                            <?php echo acortaTexto($post->post_excerpt, 10); ?>
+                                            <?php 
+                                                if ( dispositivo() != 'movil' ) {
+                                                    echo acortaTexto($post->post_excerpt, 20);
+                                                } else {
+                                                    echo acortaTexto($post->post_excerpt, 10);
+                                                }
+                                            ?>
                                         </p>
 
                                         <button type="button" class="btn btn-programa">
-                                            <?php _e('Ver más', 'ukpartnerstheme'); ?>
+                                            <?php _e('Leer más', 'ukpartnerstheme'); ?>
                                         </button>
                                     </div>
                                 </a>
@@ -73,7 +79,9 @@ $postsIds = explode(',', $metaProgramas[5]);
                 </ul>
 
                 <?php if ($metaProgramas[3] == '1' ) : ?>
-                    <a href="<?php echo esc_url($metaProgramas[4]); ?>" class="btn-programas btn-naranja">Ver más</a>
+                    <a href="<?php echo esc_url($metaProgramas[4]); ?>" class="btn-programas btn-naranja">
+                        <?php _e('Ver más', 'ukpartnerstheme'); ?>
+                    </a>
                 <?php endif; ?>
 
             <?php endif; ?>

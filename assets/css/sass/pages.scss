@@ -307,6 +307,20 @@
 
         .uk-content {
             font-family: $fuente-secundaria;
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            @media (min-width: $sm) {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+            @media (min-width: $md) {
+                font-size: 1.5rem;
+                line-height: 1.8rem;
+            }
+
+            strong {
+                font-weight: 700;
+            }
         }
         
         .title-category-alojamiento {
@@ -398,7 +412,7 @@
                     font-size: .9rem;
                     font-family: $fuente-secundaria;
                     border-bottom: 1px solid $color-fondo-gris-claro;
-                    height: 125px;
+                    height: auto;
                     overflow: hidden;
 
                     @media (min-width: $sm) {
@@ -442,28 +456,48 @@
                     display: -ms-flex;
                     display: -moz-flex;
                     display: -webkit-flex;
-                    -webkit-align-items: center;
-                    -moz-align-items: center;
-                    -ms-align-items: center;
-                    -o-align-items: center;
-                    align-items: center;
+                    -webkit-align-items: flex-start;
+                    -moz-align-items: flex-start;
+                    -ms-align-items: flex-start;
+                    -o-align-items: flex-start;
+                    align-items: flex-start;
                     -webkit-justify-content: flex-start;
                     -moz-justify-content: flex-start;
                     -ms-justify-content: flex-start;
                     -o-justify-content: flex-start;
                     justify-content: flex-start;
                     font-weight: 600;
+                    -webkit-flex-direction: column;
+                    -moz-flex-direction: column;
+                    -ms-flex-direction: column;
+                    -o-flex-direction: column;
+                    flex-direction: column;
     
                     @media (min-width: $sm) {
                         padding: 0 .5rem;
+                        -webkit-align-items: center;
+                        -moz-align-items: center;
+                        -ms-align-items: center;
+                        -o-align-items: center;
+                        align-items: center;
+                        -webkit-flex-direction: row;
+                        -moz-flex-direction: row;
+                        -ms-flex-direction: row;
+                        -o-flex-direction: row;
+                        flex-direction: row;
                     }
 
                     li {
                         position: relative;
-                        padding-top: 1rem;
-                        padding-bottom: 1rem;
+                        padding-top: .5rem;
+                        padding-bottom: .5rem;
                         margin-right: 1rem;
                         padding-left: 1.5rem;
+
+                        @media (min-width: $sm) {
+                            padding-top: 1rem;
+                            padding-bottom: 1rem;
+                        }
 
                         &:before {
                             content: '';
@@ -532,8 +566,12 @@
                 padding-top: 1rem;
                 font-size: .85rem;
                 font-weight: 700;
+                display: none;
                 @media (min-width: $xs) {
                     font-size: 1rem;
+                }
+                @media (min-width: $md) {
+                    display: block;
                 }
             }
             

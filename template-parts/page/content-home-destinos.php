@@ -81,7 +81,7 @@ global $metaDestinos;
                                         </p>
 
                                         <button type="button" class="btn btn-turqueza">
-                                            <?php _e('Ver más', 'ukpartnerstheme'); ?>
+                                            <?php _e('Leer más', 'ukpartnerstheme'); ?>
                                         </button>
                                     </div>
                                 </a>

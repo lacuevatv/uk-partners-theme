@@ -36,7 +36,7 @@
                         <source srcset="<?php echo $imagen_movil; ?>" media="(max-width: 769px)">
                         <img src="<?php echo $imagen; ?>" alt="<?php echo $titulo; ?>">
                     </picture>
-                    <span class="shutter">
+                    
                 </div>
                 <div class="slider-contenido">
                     <div class="wrap">

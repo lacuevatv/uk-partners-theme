@@ -273,6 +273,8 @@ require get_template_directory() . '/admin/settings.php';
 
 require_once get_template_directory() . '/admin/ajax.php';
 
+require_once  get_template_directory() . '/inc/lib/mobile-detect/Mobile_Detect.php';
+
 /*
  * FUNCIONES DEL TEMA
  */
@@ -561,3 +563,29 @@ if ( ! function_exists( 'acortaTexto' ) ) {
 		return $texto;
 	}
 }
+
+
+if ( ! function_exists( 'dispositivo' ) ) {
+	/**
+	 * detecta dispositivo
+	 *
+	 * @since 1.0
+	 */
+	function dispositivo() {
+
+		$dispositivo = 'pc';
+		$detect = new Mobile_Detect;
+		if ( $detect->isMobile() ) {
+			$dispositivo = 'movil';
+		}
+			
+		// Any tablet device.
+		if( $detect->isTablet() ){
+			$dispositivo = 'tablet';
+		}
+
+		return $dispositivo;
+
+	}
+}
+

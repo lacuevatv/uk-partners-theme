@@ -74,7 +74,7 @@ if ( have_posts() ) :  the_post() ?>
 							$cargo = get_post_meta( $post->ID, '_crew', true );
 							
 							if ( has_post_thumbnail()) {
-								$imagen = get_the_post_thumbnail(); 
+								$imagen = get_the_post_thumbnail_url(null, 'full'); 
 							} else {
 								$imagen = IMAGES_DIR . 'default_persona.png';
 							}
@@ -87,6 +87,7 @@ if ( have_posts() ) :  the_post() ?>
 											<img data-src="<?php echo $imagen; ?>" alt="Sobre Uk Partners">
 										</picture>
 									</div>
+									
 									<h1>
 										<?php echo $nombre; ?>
 									</h1>

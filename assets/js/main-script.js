@@ -39,6 +39,10 @@ var is_alojamientos, is_home;
         $('.tag-destacado a').click(function(e) {
             e.preventDefault();
         });
+
+        $('.tag-destacado-alojamientos a').click(function(e) {
+            e.preventDefault();
+        });
         
     });//document-ready
 
@@ -182,6 +186,7 @@ var is_alojamientos, is_home;
             margin:0,
             nav:true,
             lazyLoad:true,
+            dots:true,
             navText : ['<span class="icon-arrow icon-arrow-left-d"></span>','<span class="icon-arrow icon-arrow-right-d"></span>'],
             responsive:{
                 0:{
