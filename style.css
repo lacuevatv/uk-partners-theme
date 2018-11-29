@@ -3273,7 +3273,7 @@ html, body {
   transform: translateX(-50%);
 }
 .post .tag-destacado a, .cursos .tag-destacado a, .destinos .tag-destacado a, .programas .tag-destacado a {
-  padding: 0.6rem 0.8rem;
+  padding: 0.3rem 0.8rem;
 }
 .post:hover .entry-header .post-thumbnail img, .cursos:hover .entry-header .post-thumbnail img, .destinos:hover .entry-header .post-thumbnail img, .programas:hover .entry-header .post-thumbnail img {
   -webkit-transform: translateY(-50%) scale(1.2);
