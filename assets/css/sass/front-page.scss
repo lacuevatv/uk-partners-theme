@@ -532,7 +532,7 @@
                     @include transform(translateX(-50%));
 
                     @media (min-width: $md) {
-                        top: .3rem;
+                        top: 0;
                     }
 
                     a {
@@ -775,6 +775,7 @@
                     text-transform: uppercase;
                     font-weight: 700;
                     font-size: .8rem;
+                    
                     
                     a {
                         padding: .3rem 1rem;

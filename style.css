@@ -1792,7 +1792,7 @@ html, body {
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado {
-    top: 0.3rem;
+    top: 0;
   }
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado a {
@@ -3263,7 +3263,7 @@ html, body {
   text-transform: uppercase;
   position: absolute;
   z-index: 111;
-  top: -0.7rem;
+  top: -1rem;
   left: 50%;
   font-weight: 700;
   font-size: 0.8rem;
