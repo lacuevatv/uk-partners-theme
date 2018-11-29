@@ -259,6 +259,43 @@
                     overflow: hidden;
                 }
 
+                .tag-destacado {
+                    display: flex;
+                    display: -o-flex;
+                    display: -ms-flex;
+                    display: -moz-flex;
+                    display: -webkit-flex;
+                    -webkit-align-items: center;
+                    -moz-align-items: center;
+                    -ms-align-items: center;
+                    -o-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: center;
+                    -moz-justify-content: center;
+                    -ms-justify-content: center;
+                    -o-justify-content: center;
+                    justify-content: center;
+                    text-align: center;
+                    background-color: $color-rojo;
+                    color: $color-blanco;
+                    text-transform: uppercase;
+                    position: absolute;
+                    z-index: 111;
+                    top: -0.7rem;
+                    left: 50%;
+                    font-weight: 700;
+                    font-size: .8rem;
+                    @include transform(translateX(-50%));
+
+                    @media (min-width: $md) {
+                        top: 0;
+                    }
+
+                    a {
+                        padding: 0.3rem 0.5rem;
+                    }
+                }    
+
                 .programa-imagen {
                     overflow: hidden;
                     background-color: $color-negro;
@@ -401,7 +438,7 @@
             .btn-programas {
                 color: $color-blanco;
                 text-transform: uppercase;
-                padding: 1rem 2rem;
+                padding: 0.6rem 1rem;
             }
         }//.programas-wrapper
     }//.uk-programa
@@ -467,14 +504,30 @@
                 }
                 
                 .tag-destacado {
-                    display: block;
-                    background-color: $color-turqueza;
+                    display: flex;
+                    display: -o-flex;
+                    display: -ms-flex;
+                    display: -moz-flex;
+                    display: -webkit-flex;
+                    -webkit-align-items: center;
+                    -moz-align-items: center;
+                    -ms-align-items: center;
+                    -o-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: center;
+                    -moz-justify-content: center;
+                    -ms-justify-content: center;
+                    -o-justify-content: center;
+                    justify-content: center;
+                    text-align: center;
+                    background-color: $color-rojo;
                     color: $color-blanco;
                     text-transform: uppercase;
                     position: absolute;
                     z-index: 111;
                     top: -0.7rem;
                     left: 50%;
+                    font-weight: 700;
                     font-size: .8rem;
                     @include transform(translateX(-50%));
 
@@ -696,14 +749,29 @@
                 }
                 
                 .tag-destacado {
-                    display: block;
+                    display: flex;
+                    display: -o-flex;
+                    display: -ms-flex;
+                    display: -moz-flex;
+                    display: -webkit-flex;
+                    -webkit-align-items: center;
+                    -moz-align-items: center;
+                    -ms-align-items: center;
+                    -o-align-items: center;
+                    align-items: center;
+                    -webkit-justify-content: center;
+                    -moz-justify-content: center;
+                    -ms-justify-content: center;
+                    -o-justify-content: center;
+                    justify-content: center;
+                    text-align: center;
                     position: absolute;
                     z-index: 111;
                     left: 50%;
                     @include transform(translateX(-50%));
                     top: .3rem;
                     color: $color-blanco;
-                    background-color: $color-violeta;
+                    background-color: $color-rojo;
                     text-transform: uppercase;
                     font-weight: 700;
                     font-size: .8rem;

@@ -266,6 +266,12 @@
             @media (min-width: $md) {
                 width: 59px;
             }
+
+            &:hover {
+                zoom: 1;
+                filter: alpha(opacity=60);
+                opacity: 0.6;
+              }
         }
         
         .image-loader {

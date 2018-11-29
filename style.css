@@ -690,6 +690,11 @@ html, body {
     width: 59px;
   }
 }
+.barra-principal h1 img:hover {
+  zoom: 1;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
 .barra-principal h1 .image-loader {
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
@@ -1484,6 +1489,45 @@ html, body {
     overflow: hidden;
   }
 }
+.uk-front-page-wrapper .uk-programas .programas-wrapper .programa .tag-destacado {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ec1c24;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 111;
+  top: -0.7rem;
+  left: 50%;
+  font-weight: 700;
+  font-size: 0.8rem;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+@media (min-width: 992px) {
+  .uk-front-page-wrapper .uk-programas .programas-wrapper .programa .tag-destacado {
+    top: 0;
+  }
+}
+.uk-front-page-wrapper .uk-programas .programas-wrapper .programa .tag-destacado a {
+  padding: 0.3rem 0.5rem;
+}
 .uk-front-page-wrapper .uk-programas .programas-wrapper .programa .programa-imagen {
   overflow: hidden;
   background-color: #323232;
@@ -1646,7 +1690,7 @@ html, body {
 .uk-front-page-wrapper .uk-programas .programas-wrapper .btn-programas {
   color: #fff;
   text-transform: uppercase;
-  padding: 1rem 2rem;
+  padding: 0.6rem 1rem;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper {
   margin-top: 4rem;
@@ -1716,14 +1760,30 @@ html, body {
   }
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destino .tag-destacado {
-  display: block;
-  background-color: #18bdca;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ec1c24;
   color: #fff;
   text-transform: uppercase;
   position: absolute;
   z-index: 111;
   top: -0.7rem;
   left: 50%;
+  font-weight: 700;
   font-size: 0.8rem;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -1954,7 +2014,22 @@ html, body {
   }
 }
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .curso .tag-destacado {
-  display: block;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  text-align: center;
   position: absolute;
   z-index: 111;
   left: 50%;
@@ -1964,7 +2039,7 @@ html, body {
   transform: translateX(-50%);
   top: 0.3rem;
   color: #fff;
-  background-color: #8a4398;
+  background-color: #ec1c24;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.8rem;
@@ -3167,8 +3242,23 @@ html, body {
   text-decoration: underline;
 }
 .post .tag-destacado, .cursos .tag-destacado, .destinos .tag-destacado, .programas .tag-destacado {
-  display: block;
-  background-color: #18bdca;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ec1c24;
   color: #fff;
   text-transform: uppercase;
   position: absolute;
@@ -3193,8 +3283,10 @@ html, body {
 }
 
 /*CORREGIMOS COLORES DE ACUERDO AL POST*/
-.programas .tag-destacado {
-  background-color: #8a4398;
+.programas {
+  /*.tag-destacado {
+      background-color: $color-violeta;
+  }*/
 }
 .programas .entry-header .post-thumbnail {
   background-color: #18bdca;
@@ -3221,8 +3313,10 @@ html, body {
         }
     }
 }*/
-.destinos .tag-destacado {
-  background-color: #18bdca;
+.destinos {
+  /*.tag-destacado {
+      background-color: $color-turqueza;
+  }*/
 }
 .destinos .entry-header .post-thumbnail {
   background-color: #8a4398;
@@ -3611,7 +3705,22 @@ html, body {
   }
 }
 .post .extra-single-wrapper .carousel-wrapper .item .tag-destacado, .cursos .extra-single-wrapper .carousel-wrapper .item .tag-destacado, .destinos .extra-single-wrapper .carousel-wrapper .item .tag-destacado {
-  display: block;
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  text-align: center;
   position: absolute;
   z-index: 111;
   left: 50%;
@@ -3621,7 +3730,7 @@ html, body {
   transform: translateX(-50%);
   top: 0.3rem;
   color: #fff;
-  background-color: #18bdca;
+  background-color: #ec1c24;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.8rem;

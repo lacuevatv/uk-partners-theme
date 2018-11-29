@@ -36,7 +36,11 @@ $postsIds = explode(',', $metaProgramas[5]);
                     
                         <li>
                             <article class="programa">
-
+                                <span class="tag-destacado">
+                                    
+                                    <?php the_tags('', ' ' ); ?>
+                                
+                                </span>
                                 <a href="<?php the_permalink(); ?>">
                                     <div class="programa-imagen load-images-ajax">
                                         <?php 
@@ -79,8 +83,8 @@ $postsIds = explode(',', $metaProgramas[5]);
                 </ul>
 
                 <?php if ($metaProgramas[3] == '1' ) : ?>
-                    <a href="<?php echo esc_url($metaProgramas[4]); ?>" class="btn-programas btn-naranja">
-                        <?php _e('Ver más', 'ukpartnerstheme'); ?>
+                    <a href="<?php echo esc_url($metaProgramas[4]); ?>" class="btn btn-programas btn-naranja">
+                        <?php _e('Más Programas', 'ukpartnerstheme'); ?>
                     </a>
                 <?php endif; ?>
 
