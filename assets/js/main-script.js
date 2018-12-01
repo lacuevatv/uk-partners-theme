@@ -366,7 +366,7 @@ var is_alojamientos, is_home;
             var form = $('.wrapper-contact-form');
 
             if ( $(form).height() == 0 ) {
-                var h = $(form).prop('scrollHeight')
+                var h = $(form).prop('scrollHeight')+30;
                 $(form).css('height', h + 'px');
             } else {
                 $(form).css('height', 0);
