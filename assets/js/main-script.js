@@ -263,14 +263,14 @@ var is_alojamientos, is_home;
             
             //arma tu viaje
             var viaje = $('section.uk-arma-viaje').find('.background-section-wrapper img');
-            var mover1 = (barra * 1.9 / 100 )+10;
+            var mover1 = (barra * 1.9 / 100 )-30;
 
             if (innerWidth<960 && innerWidth>550) {
-                mover1 = (barra * 1.9 / 100 )+90;
+                mover1 = (barra * 1.9 / 100 )+50;
             }
 
             if (innerWidth>960) {
-                mover1 = (barra * 1.9 / 100 )+50;
+                mover1 = (barra * 1.9 / 100 )+30;
             }
 
             if (innerWidth>1500) {
@@ -284,7 +284,7 @@ var is_alojamientos, is_home;
             var mover2 = (barra * 1.9 / 100 );
 
             if (innerWidth<500) {
-                mover2 = (barra * 1.9 / 100 )-10;
+                mover2 = (barra * 1.9 / 100 )-50;
             }
 
             $(alojamiento).css('top',  mover2 + '%'); 

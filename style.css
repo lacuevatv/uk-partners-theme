@@ -1693,10 +1693,12 @@ html, body {
   color: #fff;
   text-transform: uppercase;
   padding: 0.6rem 1rem;
+  min-width: 200px;
 }
 .uk-front-page-wrapper .uk-destinos .destinos-wrapper {
   margin-top: 4rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 @media (min-width: 576px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destinos-lista {
@@ -1946,6 +1948,12 @@ html, body {
     transform: translateY(0);
   }
 }
+.uk-front-page-wrapper .uk-destinos .destinos-wrapper .btn-destinos {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  min-width: 200px;
+}
 .uk-front-page-wrapper .uk-arma-viaje {
   position: relative;
   background-color: #323232;
@@ -1960,6 +1968,7 @@ html, body {
 }
 .uk-front-page-wrapper .uk-arma-viaje a {
   margin-top: 3rem;
+  min-width: 200px;
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-arma-viaje a {
@@ -2170,6 +2179,9 @@ html, body {
     display: block;
   }
 }
+.uk-front-page-wrapper .uk-cursos .cursos-wrapper .owl-nav.disabled {
+  visibility: hidden;
+}
 .uk-front-page-wrapper .uk-cursos .cursos-wrapper .owl-dots {
   display: flex;
   display: -o-flex;
@@ -2199,6 +2211,7 @@ html, body {
 }
 .uk-front-page-wrapper .uk-cursos .btn-mas-cursos {
   color: #fff;
+  min-width: 200px;
 }
 .uk-front-page-wrapper .uk-alojamiento {
   position: relative;
@@ -2221,6 +2234,7 @@ html, body {
 }
 .uk-front-page-wrapper .uk-alojamiento a {
   margin-top: 1rem;
+  min-width: 200px;
 }
 @media (min-width: 992px) {
   .uk-front-page-wrapper .uk-alojamiento a {
@@ -2854,6 +2868,9 @@ html, body {
   padding: 0.5rem 0;
   font-size: 1.2rem;
   height: 40px;
+}
+.category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .post-content .tag-destacado-alojamientos a {
+  cursor: initial;
 }
 .category-alojamientos-wrapper .content-posts-wrapper-alojamiento .inner-wrapper-alojamiento .meta-resumen-single-post-wrapper {
   position: relative;
@@ -3878,6 +3895,9 @@ html, body {
     display: block;
   }
 }
+.post .extra-single-wrapper .carousel-wrapper .owl-nav.disabled, .cursos .extra-single-wrapper .carousel-wrapper .owl-nav.disabled, .destinos .extra-single-wrapper .carousel-wrapper .owl-nav.disabled {
+  visibility: hidden;
+}
 .post .extra-single-wrapper .galeria-fotos .item, .cursos .extra-single-wrapper .galeria-fotos .item, .destinos .extra-single-wrapper .galeria-fotos .item {
   cursor: pointer;
 }
@@ -3981,21 +4001,33 @@ html, body {
 /*--------------------------------------------------------------
 9.0 STYLES DE PLUGGINS
 --------------------------------------------------------------*/
+.wpcf7-form-control-wrap {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
 span.wpcf7-not-valid-tip {
   color: #f00;
   font-size: 1em;
   font-weight: normal;
   display: block;
-  position: relative;
+  position: absolute;
   z-index: 11;
   text-align: right;
   padding: 0.7rem 2rem;
   font-size: 0.65rem;
+  line-height: 0.9rem;
+  top: 0;
+  right: 0;
 }
 
 div.wpcf7-response-output {
   font-size: 0.8rem;
   margin-top: 0rem;
+  border: none;
+  color: #323232;
+  line-height: 1rem;
 }
 @media (max-width: 992px) {
   div.wpcf7-response-output {

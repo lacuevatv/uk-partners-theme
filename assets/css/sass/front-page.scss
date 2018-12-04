@@ -439,6 +439,7 @@
                 color: $color-blanco;
                 text-transform: uppercase;
                 padding: 0.6rem 1rem;
+                min-width: 200px;
             }
         }//.programas-wrapper
     }//.uk-programa
@@ -448,6 +449,7 @@
         .destinos-wrapper {
             margin-top: 4rem;
             margin-bottom: 2rem;
+            text-align: center;
             
             .destinos-lista {
                 @media (min-width: $xs) {
@@ -675,7 +677,13 @@
 
             }//.destino
 
-            
+            .btn-destinos {
+                color: $color-blanco;
+                text-transform: uppercase;
+                padding: 0.6rem 1rem;
+                min-width: 200px;
+            }
+
         }//.destinos-wrapper
 
     }//.uk-destinos
@@ -695,6 +703,7 @@
 
         a {
             margin-top: 3rem;
+            min-width: 200px;
             @media (min-width: $md) {
                 margin-top: 12rem;
             }
@@ -913,6 +922,10 @@
                 }
             }
 
+            .owl-nav.disabled {
+                visibility: hidden;
+            }
+
             .owl-dots {
                 display: flex;
                 display: -o-flex;
@@ -945,6 +958,7 @@
 
         .btn-mas-cursos {
             color: $color-blanco;
+            min-width: 200px;
         }
     }//.uk-cursos
 
@@ -969,6 +983,7 @@
         
         a {
             margin-top: 1rem;
+            min-width: 200px;
             @media (min-width: $md) {
                 margin-top: 2rem;
             }

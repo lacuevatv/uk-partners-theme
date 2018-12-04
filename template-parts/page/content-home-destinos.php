@@ -22,35 +22,14 @@ global $metaDestinos;
                     'order'          => 'desc',
                     ) 
             );
-            $counterDestinos = 0;
+            
 			if ( $destinos->have_posts() ) : ?>
             
                 <ul class="destinos-lista">
 
                     <?php 
-                    while ( $destinos->have_posts() ) : $destinos->the_post();
-                    $counterDestinos++;
+                    while ( $destinos->have_posts() ) : $destinos->the_post(); ?>
 
-                    if ($metaDestinos[2] == 1 && $counterDestinos == $metaDestinos[1] ) { ?>
-                        <li>
-                            <a href="<?php esc_html_e($metaDestinos[3]); ?>">
-                                <article class="destino">
-                                    
-                                    <div class="destino-imagen load-images-ajax">
-                                        <img data-src="<?php echo IMAGES_DIR; ?>default_destinos.png" alt="<?php _e('Más lugares', 'ukpartnerstheme'); ?>">
-                                        <span class="shutter"></span>
-                                    </div>
-
-                                    <div class="destino-contenido">
-                                        <h1>
-                                            <?php _e('Más lugares', 'ukpartnerstheme'); ?>
-                                        </h1>
-                                    </div>
-                                    
-                                </article>
-                            </a>
-                        </li>
-                    <?php } else { ?>
                         <li>
                             <article class="destino">
                                 
@@ -88,12 +67,18 @@ global $metaDestinos;
                                 
                             </article>
                         </li>
-                    <?php }
                     
-                    endwhile; ?>
+                    <?php endwhile; ?>
                 
                 </ul>
 
+                <?php if ($metaDestinos[2] == 1 ) : ?>
+                
+                    <a href="<?php echo esc_url($metaDestinos[3]); ?>" class="btn btn-destinos btn-naranja">
+                        <?php _e('Más Destinos', 'ukpartnerstheme'); ?>
+                    </a>
+                
+                <?php endif; ?>                                            
             <?php endif; ?>
                 
         </div>

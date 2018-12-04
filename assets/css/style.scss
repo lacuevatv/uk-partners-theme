@@ -110,21 +110,33 @@ html, body {
 9.0 STYLES DE PLUGGINS
 --------------------------------------------------------------*/
 
+.wpcf7-form-control-wrap {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
 span.wpcf7-not-valid-tip {
     color: #f00;
     font-size: 1em;
     font-weight: normal;
     display: block;
-    position: relative;
+    position: absolute;
     z-index: 11;
     text-align: right;
     padding: .7rem 2rem;
     font-size: .65rem;
+    line-height: .9rem;
+    top: 0;
+    right: 0;
 }
 
 div.wpcf7-response-output {
     font-size: .8rem;
     margin-top: 0rem;
+    border: none;
+    color: $color-negro;
+    line-height: 1rem;
     
     @media (max-width: $md) {
         font-size: 0.65rem;

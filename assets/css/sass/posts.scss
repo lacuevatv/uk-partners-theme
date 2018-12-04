@@ -804,6 +804,10 @@
                     display: block;
                 }
             }
+
+            .owl-nav.disabled {
+                visibility: hidden;
+            }
         }//.carousel-wrapper
 
         .galeria-fotos {
