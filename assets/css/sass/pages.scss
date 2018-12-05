@@ -279,6 +279,19 @@
                 @media (min-width: $md) {
                     margin: 0 2%;
                 }
+
+                .crew-item {
+                    @media (min-width: $md) {
+                        padding: 0;
+                    }
+
+                    .image-crew {
+                        @media (min-width: $md) {
+                            max-width: 300px;
+                            height: 300px;
+                        }
+                    }
+                }
             }
         }//.jefes
 

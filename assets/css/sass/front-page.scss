@@ -452,6 +452,7 @@
             text-align: center;
             
             .destinos-lista {
+                margin-bottom: 3rem;
                 @media (min-width: $xs) {
                     display: flex;
                     display: -o-flex;

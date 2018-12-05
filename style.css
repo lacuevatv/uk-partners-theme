@@ -1700,6 +1700,9 @@ html, body {
   margin-bottom: 2rem;
   text-align: center;
 }
+.uk-front-page-wrapper .uk-destinos .destinos-wrapper .destinos-lista {
+  margin-bottom: 3rem;
+}
 @media (min-width: 576px) {
   .uk-front-page-wrapper .uk-destinos .destinos-wrapper .destinos-lista {
     display: flex;
@@ -2687,6 +2690,17 @@ html, body {
 @media (min-width: 992px) {
   .page-content-wrapper .crew-section .jefes li {
     margin: 0 2%;
+  }
+}
+@media (min-width: 992px) {
+  .page-content-wrapper .crew-section .jefes li .crew-item {
+    padding: 0;
+  }
+}
+@media (min-width: 992px) {
+  .page-content-wrapper .crew-section .jefes li .crew-item .image-crew {
+    max-width: 300px;
+    height: 300px;
   }
 }
 
