@@ -72,6 +72,21 @@ if ( have_posts() ) :  the_post() ?>
 							$nombre = get_the_title();
 							$parrafo = get_the_content();
 							$cargo = get_post_meta( $post->ID, '_crew', true );
+
+							//separa los cargos para mostrarlos en dos lineas
+							$cargo = explode('-', $cargo);
+							if ( count($cargo) > 1 ) {
+								$html = '';
+								for ($i=0; $i <count($cargo) ; $i++) { 
+									if ($i != 0) {
+										$html .= '<br>';
+									}
+									$html .= $cargo[$i];
+								}
+								$cargo = $html;
+							} else {
+								$cargo = $cargo[0];
+							}
 							
 							if ( has_post_thumbnail()) {
 								$imagen = get_the_post_thumbnail_url(null, 'full'); 
@@ -133,8 +148,24 @@ if ( have_posts() ) :  the_post() ?>
 							$nombre = get_the_title();
 							$parrafo = get_the_content();
 							$cargo = get_post_meta( $post->ID, '_crew', true );
+
+							//separa los cargos para mostrarlos en dos lineas
+							$cargo = explode('-', $cargo);
+							if ( count($cargo) > 1 ) {
+								$html = '';
+								for ($i=0; $i <count($cargo) ; $i++) { 
+									if ($i != 0) {
+										$html .= '<br>';
+									}
+									$html .= $cargo[$i];
+								}
+								$cargo = $html;
+							} else {
+								$cargo = $cargo[0];
+							}
+
 							if ( has_post_thumbnail()) {
-								$imagen = get_the_post_thumbnail(); 
+								$imagen = get_the_post_thumbnail_url(null, 'full');
 							} else {
 								$imagen = IMAGES_DIR . 'default_persona.png';
 							}
