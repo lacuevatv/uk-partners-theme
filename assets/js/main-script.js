@@ -51,9 +51,16 @@ var is_alojamientos, is_home;
     * window load
     */
 	$(window).on('load', function(){
-        //oculta el loader
+        //oculta el loader y muestra instagram
         setTimeout(function(){
             loaderOff();
+            
+            var iframe = $('#iframe_instagram_data');
+            var data = $(iframe).attr('data-iframe');
+
+            $('#iframe_instagram').append($(data));
+
+
         },10);
         
         //carousel de logos en el footer se inicia siempre
