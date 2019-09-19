@@ -3575,7 +3575,7 @@ html, body {
 .post .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form label:last-child {
   position: relative;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form input, .post .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form input, .post .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .post .contact-sidebar .wrapper-contact-form .wpcf7 form select, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form select, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form select {
   width: 100%;
   padding: 1rem 0.5rem;
   font-family: "Montserrat", sans-serif;
@@ -3590,7 +3590,7 @@ html, body {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-.post .contact-sidebar .wrapper-contact-form .wpcf7 form input, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input {
+.post .contact-sidebar .wrapper-contact-form .wpcf7 form input, .post .contact-sidebar .wrapper-contact-form .wpcf7 form select, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form select, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form input, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form select {
   height: 2.5rem;
 }
 .post .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .cursos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea, .destinos .contact-sidebar .wrapper-contact-form .wpcf7 form textarea {
