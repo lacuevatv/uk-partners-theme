@@ -589,3 +589,21 @@ if ( ! function_exists( 'dispositivo' ) ) {
 	}
 }
 
+function whatsapp_wp_footer() {
+	?>
+	<script type="text/javascript">
+		var waPhone = '541167395443';
+		var href = 'https://wa.me/'+waPhone;
+		var wa = document.createElement('a');
+			wa.setAttribute('href', href);
+			wa.setAttribute('target', '_blank');
+			wa.classList.add('btn-wap');
+			
+			wa.innerHTML='<span class="text">Estamos<br>Online!</span><img src="<?php echo get_template_directory_uri(); ?>/whatsapp-brands.svg">';
+		
+		document.body.appendChild(wa);
+	</script>
+	<?php 
+}
+
+add_action( 'wp_footer', 'whatsapp_wp_footer' );

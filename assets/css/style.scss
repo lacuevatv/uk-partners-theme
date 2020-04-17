@@ -25,6 +25,7 @@ Tags:
 8.0 PAGES
 9.0 STYLES DE PLUGGINS
 a) contact form 7
+10.0 whatsapp
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -148,4 +149,73 @@ div.wpcf7-response-output {
         left: -1.5rem;
         color: #000;
     }
+}
+
+/*WHATSAPP*/
+
+.btn-wap {
+    display: block;
+    position: fixed;
+    right: 3%;
+    bottom: 0%;
+    height: 55px;
+    z-index: 3000;
+    background-color: #0CBC47;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 0 0;
+    padding: 8px 1% 5px 1%;
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    -o-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.btn-wap img {
+    color: #fff;
+    font-size: 40px;
+    animation: animaWapp 3s ease-in infinite;
+    transform-origin: 50% 50%;
+    display: inline-block;
+    text-align: left;
+    width: 35px;
+}
+
+.btn-wap .text {
+    font-size: 18px;
+    color: #fff;
+    display: inline-block;
+    line-height: 18px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+@media (max-width: 767px) {
+    .btn-wap {
+        padding: 8px 3% 5px 3% 
+    }
+
+
+    .btn-wap .text {
+        display: none;
+    }
+}
+
+@keyframes animaWapp {
+    0% {  transform: scale(1) }
+    8.33333% {  transform:scale(.9) rotate(-8deg) }
+    16.66667% {  transform:scale(.9) rotate(-8deg) }
+    25% {  transform:scale(1.3) rotate(8deg) }
+    33.33333% {  transform:scale(1.3) rotate(-8deg) }
+    41.66667% {  transform:scale(1.3) rotate(8deg) }
+    50% {  transform:scale(1.3) rotate(-8deg) }
+    58.33333% {  transform:scale(1.3) rotate(8deg) }
+    66.66667% {  transform:scale(1) rotate(0) }
+    100% {  transform:scale(1) rotate(0) }
 }

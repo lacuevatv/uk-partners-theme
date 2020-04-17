@@ -80,13 +80,13 @@
 			</div><!-- .first-footer -->
 				
 			
-			<div class="second-footer">
+			<!--<div class="second-footer">
 				<div class="wrap">
 					<p class="legales-sitio">
-						<?php _e('Desarrollo por', 'ukpartnerstheme'); ?> <a href="#">Natalia Costanzo</a>
+						<?php //_e('Desarrollo por', 'ukpartnerstheme'); ?> <a href="#">Natalia Costanzo</a>
 					</p>
-				</div><!-- .wrap -->
-			</div><!-- .second-footer -->
+				</div>
+			</div>-->
 
 			
 		</footer><!-- #colophon -->
