@@ -2532,7 +2532,13 @@ html, body {
 .page-content-wrapper .main-content-editor .wpcf7 form label:last-child {
   position: relative;
 }
-.page-content-wrapper .main-content-editor .wpcf7 form input, .page-content-wrapper .main-content-editor .wpcf7 form textarea {
+.page-content-wrapper .main-content-editor .wpcf7 form .especial-tag-select {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: -4px;
+  text-align: left;
+}
+.page-content-wrapper .main-content-editor .wpcf7 form input, .page-content-wrapper .main-content-editor .wpcf7 form textarea, .page-content-wrapper .main-content-editor .wpcf7 form select {
   width: 100%;
   padding: 1rem 0.5rem;
   font-family: "Montserrat", sans-serif;
@@ -2546,7 +2552,7 @@ html, body {
   -ms-border-radius: 0;
   border-radius: 0;
 }
-.page-content-wrapper .main-content-editor .wpcf7 form input {
+.page-content-wrapper .main-content-editor .wpcf7 form input, .page-content-wrapper .main-content-editor .wpcf7 form select {
   height: 2.5rem;
 }
 .page-content-wrapper .main-content-editor .wpcf7 form textarea {
